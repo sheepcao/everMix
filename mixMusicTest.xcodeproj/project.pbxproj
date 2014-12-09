@@ -1,0 +1,427 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A4AC86071A36CFE700CD19CA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A4AC86061A36CFE700CD19CA /* main.m */; };
+		A4AC860A1A36CFE700CD19CA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A4AC86091A36CFE700CD19CA /* AppDelegate.m */; };
+		A4AC860D1A36CFE700CD19CA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4AC860C1A36CFE700CD19CA /* ViewController.m */; };
+		A4AC86101A36CFE700CD19CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4AC860E1A36CFE700CD19CA /* Main.storyboard */; };
+		A4AC86121A36CFE700CD19CA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4AC86111A36CFE700CD19CA /* Images.xcassets */; };
+		A4AC86151A36CFE700CD19CA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4AC86131A36CFE700CD19CA /* LaunchScreen.xib */; };
+		A4AC86211A36CFE700CD19CA /* mixMusicTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A4AC86201A36CFE700CD19CA /* mixMusicTestTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A4AC861B1A36CFE700CD19CA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A4AC85F91A36CFE700CD19CA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A4AC86001A36CFE700CD19CA;
+			remoteInfo = mixMusicTest;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A4AC86011A36CFE700CD19CA /* mixMusicTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mixMusicTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4AC86051A36CFE700CD19CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A4AC86061A36CFE700CD19CA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A4AC86081A36CFE700CD19CA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		A4AC86091A36CFE700CD19CA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		A4AC860B1A36CFE700CD19CA /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		A4AC860C1A36CFE700CD19CA /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		A4AC860F1A36CFE700CD19CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A4AC86111A36CFE700CD19CA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		A4AC86141A36CFE700CD19CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		A4AC861A1A36CFE700CD19CA /* mixMusicTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mixMusicTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4AC861F1A36CFE700CD19CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A4AC86201A36CFE700CD19CA /* mixMusicTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = mixMusicTestTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A4AC85FE1A36CFE700CD19CA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A4AC86171A36CFE700CD19CA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A4AC85F81A36CFE700CD19CA = {
+			isa = PBXGroup;
+			children = (
+				A4AC86031A36CFE700CD19CA /* mixMusicTest */,
+				A4AC861D1A36CFE700CD19CA /* mixMusicTestTests */,
+				A4AC86021A36CFE700CD19CA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A4AC86021A36CFE700CD19CA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A4AC86011A36CFE700CD19CA /* mixMusicTest.app */,
+				A4AC861A1A36CFE700CD19CA /* mixMusicTestTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A4AC86031A36CFE700CD19CA /* mixMusicTest */ = {
+			isa = PBXGroup;
+			children = (
+				A4AC86081A36CFE700CD19CA /* AppDelegate.h */,
+				A4AC86091A36CFE700CD19CA /* AppDelegate.m */,
+				A4AC860B1A36CFE700CD19CA /* ViewController.h */,
+				A4AC860C1A36CFE700CD19CA /* ViewController.m */,
+				A4AC860E1A36CFE700CD19CA /* Main.storyboard */,
+				A4AC86111A36CFE700CD19CA /* Images.xcassets */,
+				A4AC86131A36CFE700CD19CA /* LaunchScreen.xib */,
+				A4AC86041A36CFE700CD19CA /* Supporting Files */,
+			);
+			path = mixMusicTest;
+			sourceTree = "<group>";
+		};
+		A4AC86041A36CFE700CD19CA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A4AC86051A36CFE700CD19CA /* Info.plist */,
+				A4AC86061A36CFE700CD19CA /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A4AC861D1A36CFE700CD19CA /* mixMusicTestTests */ = {
+			isa = PBXGroup;
+			children = (
+				A4AC86201A36CFE700CD19CA /* mixMusicTestTests.m */,
+				A4AC861E1A36CFE700CD19CA /* Supporting Files */,
+			);
+			path = mixMusicTestTests;
+			sourceTree = "<group>";
+		};
+		A4AC861E1A36CFE700CD19CA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A4AC861F1A36CFE700CD19CA /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A4AC86001A36CFE700CD19CA /* mixMusicTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A4AC86241A36CFE700CD19CA /* Build configuration list for PBXNativeTarget "mixMusicTest" */;
+			buildPhases = (
+				A4AC85FD1A36CFE700CD19CA /* Sources */,
+				A4AC85FE1A36CFE700CD19CA /* Frameworks */,
+				A4AC85FF1A36CFE700CD19CA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = mixMusicTest;
+			productName = mixMusicTest;
+			productReference = A4AC86011A36CFE700CD19CA /* mixMusicTest.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A4AC86191A36CFE700CD19CA /* mixMusicTestTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A4AC86271A36CFE700CD19CA /* Build configuration list for PBXNativeTarget "mixMusicTestTests" */;
+			buildPhases = (
+				A4AC86161A36CFE700CD19CA /* Sources */,
+				A4AC86171A36CFE700CD19CA /* Frameworks */,
+				A4AC86181A36CFE700CD19CA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A4AC861C1A36CFE700CD19CA /* PBXTargetDependency */,
+			);
+			name = mixMusicTestTests;
+			productName = mixMusicTestTests;
+			productReference = A4AC861A1A36CFE700CD19CA /* mixMusicTestTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A4AC85F91A36CFE700CD19CA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Eric Cao";
+				TargetAttributes = {
+					A4AC86001A36CFE700CD19CA = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					A4AC86191A36CFE700CD19CA = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = A4AC86001A36CFE700CD19CA;
+					};
+				};
+			};
+			buildConfigurationList = A4AC85FC1A36CFE700CD19CA /* Build configuration list for PBXProject "mixMusicTest" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A4AC85F81A36CFE700CD19CA;
+			productRefGroup = A4AC86021A36CFE700CD19CA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A4AC86001A36CFE700CD19CA /* mixMusicTest */,
+				A4AC86191A36CFE700CD19CA /* mixMusicTestTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A4AC85FF1A36CFE700CD19CA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A4AC86101A36CFE700CD19CA /* Main.storyboard in Resources */,
+				A4AC86151A36CFE700CD19CA /* LaunchScreen.xib in Resources */,
+				A4AC86121A36CFE700CD19CA /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A4AC86181A36CFE700CD19CA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A4AC85FD1A36CFE700CD19CA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A4AC860D1A36CFE700CD19CA /* ViewController.m in Sources */,
+				A4AC860A1A36CFE700CD19CA /* AppDelegate.m in Sources */,
+				A4AC86071A36CFE700CD19CA /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A4AC86161A36CFE700CD19CA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A4AC86211A36CFE700CD19CA /* mixMusicTestTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A4AC861C1A36CFE700CD19CA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A4AC86001A36CFE700CD19CA /* mixMusicTest */;
+			targetProxy = A4AC861B1A36CFE700CD19CA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A4AC860E1A36CFE700CD19CA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A4AC860F1A36CFE700CD19CA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A4AC86131A36CFE700CD19CA /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A4AC86141A36CFE700CD19CA /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A4AC86221A36CFE700CD19CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		A4AC86231A36CFE700CD19CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A4AC86251A36CFE700CD19CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = mixMusicTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A4AC86261A36CFE700CD19CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = mixMusicTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		A4AC86281A36CFE700CD19CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = mixMusicTestTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mixMusicTest.app/mixMusicTest";
+			};
+			name = Debug;
+		};
+		A4AC86291A36CFE700CD19CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = mixMusicTestTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mixMusicTest.app/mixMusicTest";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A4AC85FC1A36CFE700CD19CA /* Build configuration list for PBXProject "mixMusicTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A4AC86221A36CFE700CD19CA /* Debug */,
+				A4AC86231A36CFE700CD19CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A4AC86241A36CFE700CD19CA /* Build configuration list for PBXNativeTarget "mixMusicTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A4AC86251A36CFE700CD19CA /* Debug */,
+				A4AC86261A36CFE700CD19CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		A4AC86271A36CFE700CD19CA /* Build configuration list for PBXNativeTarget "mixMusicTestTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A4AC86281A36CFE700CD19CA /* Debug */,
+				A4AC86291A36CFE700CD19CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A4AC85F91A36CFE700CD19CA /* Project object */;
+}
