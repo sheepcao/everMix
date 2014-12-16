@@ -1,15 +1,55 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="gameViewController"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Disk-CD-icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="Jk0-uJ-d98">
+                    <rect key="frame" x="8" y="20" width="60" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="azj-7y-TQ3"/>
+                        <constraint firstAttribute="width" secondItem="Jk0-uJ-d98" secondAttribute="height" multiplier="1:1" id="lxe-Ke-ZND"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" tag="200" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q47-65-J0f">
+                    <rect key="frame" x="277" y="32" width="35" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="q47-65-J0f" secondAttribute="height" multiplier="1:1" id="gJf-Kj-x9y"/>
+                        <constraint firstAttribute="height" constant="35" id="phM-cE-WAB"/>
+                    </constraints>
+                    <state key="normal" title="Button" image="tip.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.24900205291970803" green="0.8433793339416058" blue="0.63420962591240881" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="q47-65-J0f" secondAttribute="trailing" constant="8" id="Bao-zA-LoC"/>
+                <constraint firstAttribute="centerY" secondItem="q47-65-J0f" secondAttribute="centerY" constant="0.5" id="BpU-Bo-qSr"/>
+                <constraint firstItem="Jk0-uJ-d98" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="tGW-Fy-tfl"/>
+                <constraint firstAttribute="centerY" secondItem="Jk0-uJ-d98" secondAttribute="centerY" id="vFE-QM-GXd"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="283" y="303"/>
         </view>
     </objects>
+    <resources>
+        <image name="Disk-CD-icon.png" width="256" height="256"/>
+        <image name="tip.png" width="128" height="128"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
 </document>

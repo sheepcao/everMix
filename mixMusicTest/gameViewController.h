@@ -7,8 +7,37 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
 
-@interface ViewController : UIViewController
+#define DISK_TAG 100
+#define TIPS_TAG 200
+
+@interface gameViewController : UIViewController
+
+@property (nonatomic,strong) NSString *levelTitle;
+@property (nonatomic, strong) AVAudioPlayer *myAudioPlayer;
+@property (nonatomic, strong) NSMutableArray *myAudioArray;
+
+@property (weak, nonatomic) IBOutlet UIButton *playBtn;
+@property int diffculty;
+@property (nonatomic, strong) NSMutableArray *singleMusicsViewArray;
+@property (nonatomic, strong) NSMutableArray *musicsArray;
+@property (nonatomic, strong) NSMutableArray *choicesBoardArray;
+
+
+
+
+
+//subviews
+@property (weak, nonatomic) IBOutlet UIView *playConsoleView;
+@property (weak, nonatomic) IBOutlet UIView *downPartView;
+@property (strong, nonatomic) IBOutlet UIView *choicesBoardView;
+
+
+
+- (IBAction)playBtn:(id)sender;
+
+
 
 
 @end

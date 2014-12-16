@@ -1,25 +1,209 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="1mw-ay-E1q">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="Vc3-rh-7SE">
+            <objects>
+                <navigationController id="1mw-ay-E1q" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wGZ-Pq-rJ6">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BpU-Vf-ayy" kind="relationship" relationship="rootViewController" id="UpI-wB-dWV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PfG-21-MHy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-883.73333333333335" y="-93.010000000000005"/>
+        </scene>
+        <!--gameViewController-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" userLabel="gameViewController" customClass="gameViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NHA-cp-bF4" userLabel="playConsoleView">
+                                <rect key="frame" x="0.0" y="64" width="320" height="109"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xc8-Od-y6t">
+                                        <rect key="frame" x="106" y="5" width="100" height="100"/>
+                                        <state key="normal" title="PLAY" image="Print-CD-icon.png">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="playBtn:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="9q4-87-bHj"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zrr-J5-ds5">
+                                        <rect key="frame" x="24" y="35" width="40" height="40"/>
+                                        <state key="normal" title="Button" image="share.png">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jr1-RO-99m">
+                                        <rect key="frame" x="249" y="35" width="40" height="40"/>
+                                        <state key="normal" title="Button" image="refresh.png">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.96986199819999996" green="0.97653398719999995" blue="0.95686017339999996" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Xd-Wx-jPI" userLabel="downPartView">
+                                <rect key="frame" x="0.0" y="181" width="320" height="387"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="nCC-XG-mVP"/>
+                    <connections>
+                        <outlet property="downPartView" destination="5Xd-Wx-jPI" id="zkd-pL-m0v"/>
+                        <outlet property="playBtn" destination="Xc8-Od-y6t" id="mXq-05-AGv"/>
+                        <outlet property="playConsoleView" destination="NHA-cp-bF4" id="p5s-gY-jsQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-65" y="-94"/>
+        </scene>
+        <!--mainViewController-->
+        <scene sceneID="aGj-j8-wIv">
+            <objects>
+                <viewController id="BpU-Vf-ayy" userLabel="mainViewController" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="j9o-P9-UcH"/>
+                        <viewControllerLayoutGuide type="bottom" id="xpo-PE-fGQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZeD-Ew-WKC" customClass="view">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qNQ-Ph-nXm">
+                                <rect key="frame" x="50" y="191" width="72" height="72"/>
+                                <color key="backgroundColor" red="0.7764883668" green="0.70329607660000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="开始">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="vXZ-lx-hvc" kind="push" id="6Qz-ut-XEf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oJy-Pu-OcZ">
+                                <rect key="frame" x="199" y="191" width="72" height="72"/>
+                                <color key="backgroundColor" red="0.77648836678832112" green="0.70329607664233573" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="继续">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="InV-ug-iyC">
+                                <rect key="frame" x="260" y="338" width="35" height="35"/>
+                                <state key="normal" image="1418297882_star.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iKE-Vm-WMA">
+                                <rect key="frame" x="44" y="486" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="6kX-p2-SjQ"/>
+                                    <constraint firstAttribute="height" constant="40" id="GW5-3t-fjI"/>
+                                </constraints>
+                                <state key="normal" image="audio-on.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gaK-c0-OeE">
+                                <rect key="frame" x="108" y="486" width="40" height="40"/>
+                                <state key="normal" image="money-128.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0lK-re-drz">
+                                <rect key="frame" x="236" y="486" width="40" height="40"/>
+                                <state key="normal" image="info.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2tZ-su-ce7">
+                                <rect key="frame" x="104" y="338" width="35" height="35"/>
+                                <state key="normal" image="1418297882_star.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TCk-0B-kEu">
+                                <rect key="frame" x="143" y="338" width="35" height="35"/>
+                                <state key="normal" image="1418297882_star.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CVD-Cc-FRb">
+                                <rect key="frame" x="182" y="338" width="35" height="35"/>
+                                <state key="normal" image="1418297882_star.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gPt-ue-OZA">
+                                <rect key="frame" x="221" y="338" width="35" height="35"/>
+                                <state key="normal" image="1418297882_star.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e8J-Z4-tGE">
+                                <rect key="frame" x="176" y="486" width="40" height="40"/>
+                                <state key="normal" image="music.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="e8J-Z4-tGE" firstAttribute="width" secondItem="iKE-Vm-WMA" secondAttribute="width" id="2Fk-Tx-skg"/>
+                            <constraint firstItem="iKE-Vm-WMA" firstAttribute="top" secondItem="0lK-re-drz" secondAttribute="top" id="7P3-Hn-p23"/>
+                            <constraint firstItem="e8J-Z4-tGE" firstAttribute="height" secondItem="iKE-Vm-WMA" secondAttribute="height" id="9EB-us-R5g"/>
+                            <constraint firstItem="gaK-c0-OeE" firstAttribute="top" secondItem="iKE-Vm-WMA" secondAttribute="top" id="GIL-Rf-mSb"/>
+                            <constraint firstItem="e8J-Z4-tGE" firstAttribute="leading" secondItem="gaK-c0-OeE" secondAttribute="trailing" constant="28" id="MFN-WG-mjj"/>
+                            <constraint firstItem="gaK-c0-OeE" firstAttribute="leading" secondItem="iKE-Vm-WMA" secondAttribute="trailing" constant="24" id="NYb-Qt-xBa"/>
+                            <constraint firstItem="xpo-PE-fGQ" firstAttribute="top" secondItem="iKE-Vm-WMA" secondAttribute="bottom" constant="42" id="Nvt-N5-Jj9"/>
+                            <constraint firstItem="iKE-Vm-WMA" firstAttribute="leading" secondItem="ZeD-Ew-WKC" secondAttribute="leadingMargin" constant="28" id="RcF-20-Tgf"/>
+                            <constraint firstItem="gaK-c0-OeE" firstAttribute="height" secondItem="iKE-Vm-WMA" secondAttribute="height" id="W4i-mO-cdy"/>
+                            <constraint firstItem="iKE-Vm-WMA" firstAttribute="height" secondItem="0lK-re-drz" secondAttribute="height" id="XXX-o1-TDr"/>
+                            <constraint firstItem="gaK-c0-OeE" firstAttribute="width" secondItem="iKE-Vm-WMA" secondAttribute="width" id="bJA-ds-rtY"/>
+                            <constraint firstItem="0lK-re-drz" firstAttribute="leading" secondItem="e8J-Z4-tGE" secondAttribute="trailing" constant="20" id="ngV-fz-wph"/>
+                            <constraint firstItem="iKE-Vm-WMA" firstAttribute="width" secondItem="0lK-re-drz" secondAttribute="width" id="rBX-Sl-Rfc"/>
+                            <constraint firstItem="e8J-Z4-tGE" firstAttribute="top" secondItem="iKE-Vm-WMA" secondAttribute="top" id="ufK-3a-l7Z"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="6Jm-nc-1U7"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1rk-KA-T0l" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-469" y="-94"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="1418297882_star.png" width="87" height="87"/>
+        <image name="Print-CD-icon.png" width="512" height="512"/>
+        <image name="audio-on.png" width="128" height="128"/>
+        <image name="info.png" width="128" height="128"/>
+        <image name="money-128.png" width="128" height="128"/>
+        <image name="music.png" width="128" height="128"/>
+        <image name="refresh.png" width="128" height="128"/>
+        <image name="share.png" width="128" height="128"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
 </document>
