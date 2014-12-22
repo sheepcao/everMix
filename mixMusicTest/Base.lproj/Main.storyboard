@@ -62,7 +62,51 @@
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Xd-Wx-jPI" userLabel="downPartView">
                                 <rect key="frame" x="0.0" y="181" width="320" height="387"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EIc-jM-yoy">
+                                        <rect key="frame" x="50" y="42" width="80" height="80"/>
+                                        <state key="normal" image="Disk-CD-icon.png"/>
+                                        <connections>
+                                            <action selector="diskTap:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="OuX-yu-Cxt"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zok-7w-kCG">
+                                        <rect key="frame" x="190" y="42" width="80" height="80"/>
+                                        <state key="normal" image="Disk-CD-icon.png"/>
+                                        <connections>
+                                            <action selector="diskTap:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="jib-SH-lrd"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wr6-DD-hCu">
+                                        <rect key="frame" x="50" y="155" width="80" height="80"/>
+                                        <state key="normal" image="Disk-CD-icon.png"/>
+                                        <connections>
+                                            <action selector="diskTap:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="eEQ-Ce-NWV"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5aj-nA-ncK">
+                                        <rect key="frame" x="190" y="155" width="80" height="80"/>
+                                        <state key="normal" image="Disk-CD-icon.png"/>
+                                        <connections>
+                                            <action selector="diskTap:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="pQD-vE-Vjf"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aU6-fp-kEA">
+                                        <rect key="frame" x="190" y="268" width="80" height="80"/>
+                                        <state key="normal" image="Disk-CD-icon.png"/>
+                                        <connections>
+                                            <action selector="diskTap:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="JVq-Id-VYa"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fDV-nk-d3u">
+                                        <rect key="frame" x="50" y="268" width="80" height="80"/>
+                                        <state key="normal" image="Disk-CD-icon.png"/>
+                                        <connections>
+                                            <action selector="diskTap:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="7Gg-cZ-5k3"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -72,6 +116,12 @@
                         <outlet property="downPartView" destination="5Xd-Wx-jPI" id="zkd-pL-m0v"/>
                         <outlet property="playBtn" destination="Xc8-Od-y6t" id="mXq-05-AGv"/>
                         <outlet property="playConsoleView" destination="NHA-cp-bF4" id="p5s-gY-jsQ"/>
+                        <outletCollection property="diskButtons" destination="Wr6-DD-hCu" id="mKy-Cp-swl"/>
+                        <outletCollection property="diskButtons" destination="zok-7w-kCG" id="pl9-pu-bUx"/>
+                        <outletCollection property="diskButtons" destination="5aj-nA-ncK" id="UfB-XD-pix"/>
+                        <outletCollection property="diskButtons" destination="fDV-nk-d3u" id="iVF-gM-Ymc"/>
+                        <outletCollection property="diskButtons" destination="aU6-fp-kEA" id="F0g-UD-cSf"/>
+                        <outletCollection property="diskButtons" destination="EIc-jM-yoy" id="BYp-HP-f1Z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -193,6 +243,7 @@
     </scenes>
     <resources>
         <image name="1418297882_star.png" width="87" height="87"/>
+        <image name="Disk-CD-icon.png" width="256" height="256"/>
         <image name="Print-CD-icon.png" width="512" height="512"/>
         <image name="audio-on.png" width="128" height="128"/>
         <image name="info.png" width="128" height="128"/>

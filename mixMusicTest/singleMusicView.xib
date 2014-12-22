@@ -12,14 +12,14 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Disk-CD-icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="Jk0-uJ-d98">
-                    <rect key="frame" x="8" y="20" width="60" height="60"/>
+                    <rect key="frame" x="3" y="20" width="60" height="60"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="60" id="azj-7y-TQ3"/>
                         <constraint firstAttribute="width" secondItem="Jk0-uJ-d98" secondAttribute="height" multiplier="1:1" id="lxe-Ke-ZND"/>
                     </constraints>
                 </imageView>
                 <button opaque="NO" tag="200" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q47-65-J0f">
-                    <rect key="frame" x="277" y="32" width="35" height="35"/>
+                    <rect key="frame" x="282" y="32" width="35" height="35"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="q47-65-J0f" secondAttribute="height" multiplier="1:1" id="gJf-Kj-x9y"/>
                         <constraint firstAttribute="height" constant="35" id="phM-cE-WAB"/>
@@ -31,9 +31,9 @@
             </subviews>
             <color key="backgroundColor" red="0.24900205291970803" green="0.8433793339416058" blue="0.63420962591240881" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="q47-65-J0f" secondAttribute="trailing" constant="8" id="Bao-zA-LoC"/>
+                <constraint firstAttribute="trailing" secondItem="q47-65-J0f" secondAttribute="trailing" constant="3" id="Bao-zA-LoC"/>
                 <constraint firstAttribute="centerY" secondItem="q47-65-J0f" secondAttribute="centerY" constant="0.5" id="BpU-Bo-qSr"/>
-                <constraint firstItem="Jk0-uJ-d98" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="tGW-Fy-tfl"/>
+                <constraint firstItem="Jk0-uJ-d98" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="3" id="tGW-Fy-tfl"/>
                 <constraint firstAttribute="centerY" secondItem="Jk0-uJ-d98" secondAttribute="centerY" id="vFE-QM-GXd"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>

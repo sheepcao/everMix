@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>032CA3FB-4DF1-4316-827C-8B07D75D0895</string>
+	<key>IDESourceControlProjectName</key>
+	<string>mixMusicTest</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>A8ED4A9AE4BC1A98B78F3662C809FC320148E5DD</key>
+		<string>https://github.com/sheepcao/everMix.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>mixMusicTest.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>A8ED4A9AE4BC1A98B78F3662C809FC320148E5DD</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/sheepcao/everMix.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>A8ED4A9AE4BC1A98B78F3662C809FC320148E5DD</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>A8ED4A9AE4BC1A98B78F3662C809FC320148E5DD</string>
+			<key>IDESourceControlWCCName</key>
+			<string>mixMusicTest</string>
+		</dict>
+	</array>
+</dict>
+</plist>

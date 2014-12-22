@@ -33,12 +33,16 @@
 @property (weak, nonatomic) IBOutlet UIView *downPartView;
 @property (strong, nonatomic) IBOutlet UIView *choicesBoardView;
 
+@property (strong, nonatomic) NSMutableArray *diskButtonFrameArray;
 
 
 - (IBAction)playBtn:(id)sender;
 
+@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *diskButtons;
+- (IBAction)diskTap:(UIButton *)sender;
 
 
+- (void)spinWithOptions: (UIViewAnimationOptions) options :(UIView *)destRotateView ;
 
 @end
 
