@@ -31,7 +31,7 @@
 //subviews
 @property (weak, nonatomic) IBOutlet UIView *playConsoleView;
 @property (weak, nonatomic) IBOutlet UIView *downPartView;
-@property (strong, nonatomic) IBOutlet UIView *choicesBoardView;
+@property (strong, nonatomic) UIView *choicesBoardView;
 
 @property (strong, nonatomic) NSMutableArray *diskButtonFrameArray;
 
@@ -41,6 +41,7 @@
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *diskButtons;
 - (IBAction)diskTap:(UIButton *)sender;
 
+- (IBAction)returnChoicesBoard:(UIButton *)sender;
 
 - (void)spinWithOptions: (UIViewAnimationOptions) options :(UIView *)destRotateView ;
 

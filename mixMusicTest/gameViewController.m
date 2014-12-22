@@ -10,10 +10,12 @@
 
 @interface gameViewController ()
 
+
 @end
 
 bool isplayed;
 BOOL animating;
+int totalRotateTimes;
 @implementation gameViewController
 
 - (void)viewDidLoad {
@@ -40,26 +42,60 @@ BOOL animating;
 }
 
 
-#pragma mark disk animation
 - (IBAction)diskTap:(UIButton *)sender {
+//    sender.tag = 1;
+    int diskNumber = -1;
+    
+    for(int i = 0 ; i < self.diskButtons.count ; i++ )
+    {
+        if (sender == self.diskButtons[i]) {
+            diskNumber = i;
+        }
+    }
+    
+    self.choicesBoardView = [[[NSBundle mainBundle] loadNibNamed:@"choicesBoardView" owner:self options:nil] objectAtIndex:0];
+    [self.choicesBoardView setFrame:CGRectMake(self.downPartView.frame.origin.x,[UIScreen mainScreen].bounds.size.height , self.downPartView.frame.size.width,[UIScreen mainScreen].bounds.size.height)];
+    [self.view addSubview:self.choicesBoardView];
+    
+    [UIView animateWithDuration:0.9 delay:0.1 usingSpringWithDamping:0.5 initialSpringVelocity:0.89 options:0 animations:^{
+        [self.choicesBoardView setFrame:CGRectMake(self.downPartView.frame.origin.x,self.downPartView.frame.origin.y, self.downPartView.frame.size.width,[UIScreen mainScreen].bounds.size.height)];
+    } completion:nil];
+    
+//    NSLog(@"buttonText:%@",sender.titleLabel.text);
+//    NSLog(@"buttonNum:%@",[self.diskButtons[diskNumber] titleLabel].text);
+
+    
 }
+
+- (IBAction)returnChoicesBoard:(UIButton *)sender {
+    
+    [UIView animateWithDuration:0.5 delay:0.1 usingSpringWithDamping:0.7 initialSpringVelocity:1.0 options:0 animations:^{
+        [self.choicesBoardView setFrame:CGRectMake(self.downPartView.frame.origin.x,[UIScreen mainScreen].bounds.size.height , self.downPartView.frame.size.width,[UIScreen mainScreen].bounds.size.height)];
+    } completion:nil];
+    
+}
+
+
+#pragma mark disk animation
 
 - (void)spinWithOptions: (UIViewAnimationOptions) options :(UIView *)destRotateView {
     // this spin completes 360 degrees every 2 seconds
-    [UIView animateWithDuration: 0.5f
+    [UIView animateWithDuration: 0.15f
                           delay: 0.0f
                         options: options
                      animations: ^{
-                         destRotateView.transform = CGAffineTransformRotate(destRotateView.transform, M_PI / 2);
+                         destRotateView.transform = CGAffineTransformRotate(destRotateView.transform, M_PI/4 );
                      }
                      completion: ^(BOOL finished) {
                          if (finished) {
+                             if (destRotateView == self.diskButtons[0]) {
+                                 totalRotateTimes ++;
+                             }
+
                              if (animating) {
                                  // if flag still set, keep spinning with constant speed
+
                                 [self spinWithOptions:UIViewAnimationOptionCurveLinear :destRotateView];
-                             } else if (options != UIViewAnimationOptionCurveEaseOut) {
-                                 // one last spin, with deceleration
-                                 [self spinWithOptions: UIViewAnimationOptionCurveEaseOut :destRotateView];
                              }
                          }
                      }];
@@ -86,7 +122,7 @@ BOOL animating;
 {
     
     
-    for (int i = 0;i<6;i++) {
+    for (int i = 0;i<self.diskButtons.count;i++) {
         CGRect destFrame = [self.diskButtons[i] frame];
         
         CGRect startFrame = destFrame;
@@ -101,9 +137,12 @@ BOOL animating;
 }
 -(void)diskPopUp
 {
-    for (int i = 0;i<6;i++) {
+    for (int i = 0;i<self.diskButtons.count;i++) {
         
-        [UIView animateWithDuration:1.2+i*0.17 delay:0.5 usingSpringWithDamping:0.5 initialSpringVelocity:0.4 options:0 animations:^{
+        [self.diskButtons[i] setEnabled:NO];
+
+        
+        [UIView animateWithDuration:0.65+i*0.12 delay:0.35 usingSpringWithDamping:0.5 initialSpringVelocity:0.4 options:0 animations:^{
             [self.diskButtons[i] setFrame:[[self.diskButtonFrameArray objectAtIndex:i] CGRectValue]];
         } completion:nil];
 
@@ -184,8 +223,25 @@ BOOL animating;
         }
     }
     [self stopSpin];
+    
+    [self performSelector:@selector(enableButtons) withObject:nil afterDelay:0.35];
 }
 
+-(void)enableButtons
+{
+    for (UIButton *button in self.diskButtons) {
+        [UIView animateWithDuration: 0.03f
+                              delay: 0.0f
+                            options: 0
+                         animations: ^{
+                             button.transform = CGAffineTransformRotate(button.transform, -(totalRotateTimes%8) *( M_PI/4));
+                         }
+                         completion:nil];
+        
+        [button setEnabled:YES];
+    }
+    totalRotateTimes = 0;
+}
 
 
 - (void)didReceiveMemoryWarning {
@@ -199,7 +255,11 @@ BOOL animating;
     
     [self.playBtn setTitle:self.levelTitle forState:UIControlStateNormal];
     if (isplayed) {
+        
+        [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(stop10secondMusics) object:nil];
+
         [self stopMusics];
+        
         isplayed =false;
     }else
     {
@@ -213,7 +273,7 @@ BOOL animating;
 {
     [self.myAudioArray removeAllObjects];
     
-    for (int i = 0; i< self.musicsArray.count; i++) {
+    for (int i = 0; i< 2; i++) {
         [self tapSound:self.musicsArray[i] withType:@"m4a"];
     }
     [self startSpin];
