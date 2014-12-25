@@ -21,17 +21,17 @@ int totalRotateTimes;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    
+//    UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStyleBordered target:self action:@selector(home:)];
+//    self.navigationItem.leftBarButtonItem=newBackButton;
     //eric:for debug...
     self.diskButtonFrameArray = [[NSMutableArray alloc] init];
-    self.musicsArray = [NSMutableArray arrayWithObjects:@"海阔天空",@"小苹果",@"一场游戏一场梦",@"我可以抱你吗",@"红日", nil];
+//    self.musicsArray = [NSMutableArray arrayWithObjects:@"海阔天空",@"小苹果",@"一场游戏一场梦",@"我可以抱你吗",@"红日", nil];
     
     self.myAudioArray = [NSMutableArray new];
     self.singleMusicsViewArray = [NSMutableArray new];
 
     isplayed =false;
 
-//    [self drawSingleSongView];
 
     [self diskHideToTop];
     [self diskPopUp];
@@ -41,6 +41,13 @@ int totalRotateTimes;
     
 }
 
+-(void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(stop10secondMusics) object:nil];
+    [self stopMusics];
+
+}
 
 - (IBAction)diskTap:(UIButton *)sender {
 //    sender.tag = 1;
@@ -120,7 +127,7 @@ int totalRotateTimes;
 
 -(void)diskHideToTop
 {
-    
+    NSInteger musicCount = self.musicsArray.count;
     
     for (int i = 0;i<self.diskButtons.count;i++) {
         CGRect destFrame = [self.diskButtons[i] frame];
@@ -130,6 +137,14 @@ int totalRotateTimes;
         [self.diskButtons[i] setFrame:startFrame];
         
         [self.diskButtonFrameArray insertObject: [NSValue valueWithCGRect:destFrame] atIndex:i];
+        
+        if (i < musicCount) {
+            [self.diskButtons[i] setHidden:NO];
+        }else
+        {
+            [self.diskButtons[i] setHidden:YES];
+
+        }
         
     }
     
@@ -153,46 +168,46 @@ int totalRotateTimes;
 
 
 
--(void)drawSingleSongView
-{
-    int diff = 5;
-    
-    for (int i = 0 ; i<diff; i++) {
-        
-        CGFloat viewWidth = [UIScreen mainScreen].bounds.size.width;
-        CGFloat viewHeight = (self.downPartView.frame.size.height-50)/5;
-        
-        UIView *singleMusicView = [[[NSBundle mainBundle] loadNibNamed:@"singleMusicView" owner:self options:nil] objectAtIndex:0];
-        [singleMusicView setFrame:CGRectMake(0,i*viewHeight , viewWidth,viewHeight )];
-        
-        NSInteger wordsCount = [self.musicsArray[i] length];
-        
-        if(wordsCount < 7)
-        {
-            float firstWord_X = ((282+66)- wordsCount*(35+2))/2;
-            for (int j = 0; j<wordsCount; j++) {
-                UIImageView *answerWordBackground = [[UIImageView alloc] initWithFrame:CGRectMake(firstWord_X + j*37, (viewHeight-35)/2, 35, 35)];
-                [answerWordBackground setImage:[UIImage imageNamed:@"Square"]];
-                [singleMusicView addSubview:answerWordBackground];
-                
-            }
-        }else //eric: do not longer than 8 words...
-        {
-            float firstWord_X = 67;
-            float wordLength = (282 - 66)/wordsCount;
-            for (int j = 0; j<wordsCount; j++) {
-                UIImageView *answerWordBackground = [[UIImageView alloc] initWithFrame:CGRectMake(firstWord_X + j * wordLength, (viewHeight-wordLength)/2, (wordLength-1), (wordLength-1))];
-                [answerWordBackground setImage:[UIImage imageNamed:@"Square"]];
-                [singleMusicView addSubview:answerWordBackground];
-                
-            }
-            
-        }
-        
-        [self.downPartView addSubview:singleMusicView];
-        [self.singleMusicsViewArray insertObject:singleMusicView atIndex:i];
-    }
-}
+//-(void)drawSingleSongView
+//{
+//    int diff = 5;
+//    
+//    for (int i = 0 ; i<diff; i++) {
+//        
+//        CGFloat viewWidth = [UIScreen mainScreen].bounds.size.width;
+//        CGFloat viewHeight = (self.downPartView.frame.size.height-50)/5;
+//        
+//        UIView *singleMusicView = [[[NSBundle mainBundle] loadNibNamed:@"singleMusicView" owner:self options:nil] objectAtIndex:0];
+//        [singleMusicView setFrame:CGRectMake(0,i*viewHeight , viewWidth,viewHeight )];
+//        
+//        NSInteger wordsCount = [self.musicsArray[i] length];
+//        
+//        if(wordsCount < 7)
+//        {
+//            float firstWord_X = ((282+66)- wordsCount*(35+2))/2;
+//            for (int j = 0; j<wordsCount; j++) {
+//                UIImageView *answerWordBackground = [[UIImageView alloc] initWithFrame:CGRectMake(firstWord_X + j*37, (viewHeight-35)/2, 35, 35)];
+//                [answerWordBackground setImage:[UIImage imageNamed:@"Square"]];
+//                [singleMusicView addSubview:answerWordBackground];
+//                
+//            }
+//        }else //eric: do not longer than 8 words...
+//        {
+//            float firstWord_X = 67;
+//            float wordLength = (282 - 66)/wordsCount;
+//            for (int j = 0; j<wordsCount; j++) {
+//                UIImageView *answerWordBackground = [[UIImageView alloc] initWithFrame:CGRectMake(firstWord_X + j * wordLength, (viewHeight-wordLength)/2, (wordLength-1), (wordLength-1))];
+//                [answerWordBackground setImage:[UIImage imageNamed:@"Square"]];
+//                [singleMusicView addSubview:answerWordBackground];
+//                
+//            }
+//            
+//        }
+//        
+//        [self.downPartView addSubview:singleMusicView];
+//        [self.singleMusicsViewArray insertObject:singleMusicView atIndex:i];
+//    }
+//}
 
 -(void)tapButton
 {
@@ -204,9 +219,29 @@ int totalRotateTimes;
 
 -(void)tapSound:(NSString *)name withType:(NSString *)type
 {
-    
+    NSString *documentsDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+
     NSString *soundFilePath = [[NSBundle mainBundle] pathForResource:name ofType:type];
-    NSURL *fileURL = [[NSURL alloc] initFileURLWithPath:soundFilePath ];
+    NSString *folderPath = [documentsDirectory stringByAppendingPathComponent:[ NSString stringWithFormat:@"%@.%@",name,type]];
+
+    if (soundFilePath)
+    {
+        NSError *error;
+        
+        NSFileManager *fileManager =[NSFileManager defaultManager];
+        
+        if([fileManager fileExistsAtPath:folderPath] == NO)
+        {
+            
+            [[NSFileManager defaultManager] copyItemAtPath:soundFilePath
+                                                    toPath:folderPath
+                                                     error:&error];
+            NSLog(@"Error description-%@ \n", [error localizedDescription]);
+            NSLog(@"Error reason-%@", [error localizedFailureReason]);
+        }
+        
+    }
+    NSURL *fileURL = [[NSURL alloc] initFileURLWithPath:folderPath ];
     AVAudioPlayer *myAudioPlayer= [[AVAudioPlayer alloc] initWithContentsOfURL:fileURL error:nil];
     myAudioPlayer.volume = 1.0f;
 
@@ -273,7 +308,7 @@ int totalRotateTimes;
 {
     [self.myAudioArray removeAllObjects];
     
-    for (int i = 0; i< 2; i++) {
+    for (int i = 0; i< self.musicsArray.count; i++) {
         [self tapSound:self.musicsArray[i] withType:@"m4a"];
     }
     [self startSpin];

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>choices</key>
+	<dict>
+		<key>红日</key>
+		<string>韩,孩,晚,相,遇,身,见,日,情,水,笨,歌,红,恨,你,单,手,小,爱,见,说</string>
+		<key>我可以抱你吗</key>
+		<string>身,水,抱,相,我,喜,夜,水,吗,爱,以,单,你,爱,红,歌,手,小,日,红,可</string>
+		<key>一场游戏一场梦</key>
+		<string>三,游,夜,一,雨,戏,流,零,我,言,场,语,是,浪,场,千,只,两,梦,冰,一</string>
+		<key>小苹果</key>
+		<string>零,我,言,小,数,妃,有,生,果,爱,鸭,青,苹,园,一,王,歌,牵,乐,你,手</string>
+		<key>海阔天空</key>
+		<string>空,期,我,海,星,自,阔,一,大,过,突,笑,然,而,城,书,的,天,忘,我,愿</string>
+	</dict>
+	<key>musicFinished</key>
+	<array/>
+	<key>musicUnfinished</key>
+	<array>
+		<string>海阔天空</string>
+		<string>小苹果</string>
+		<string>一场游戏一场梦</string>
+		<string>我可以抱你吗</string>
+		<string>红日</string>
+	</array>
+	<key>money</key>
+	<string>500</string>
+	<key>difficulty</key>
+	<string>2</string>
+</dict>
+</plist>

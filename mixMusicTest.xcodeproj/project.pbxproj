@@ -22,7 +22,7 @@
 		A4AC86331A36D12A00CD19CA /* choiceSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4AC862E1A36D12A00CD19CA /* choiceSound.mp3 */; };
 		A4AC86401A36F47100CD19CA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4AC863F1A36F47100CD19CA /* ViewController.m */; };
 		A4B76BFA1A3976760014014D /* singleMusicView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4B76BF91A3976760014014D /* singleMusicView.xib */; };
-		A4B76C101A3982EC0014014D /* 1418297882_star.png in Resources */ = {isa = PBXBuildFile; fileRef = A4B76C041A3982EC0014014D /* 1418297882_star.png */; };
+		A4B76C101A3982EC0014014D /* star1.png in Resources */ = {isa = PBXBuildFile; fileRef = A4B76C041A3982EC0014014D /* star1.png */; };
 		A4B76C111A3982EC0014014D /* audio-off.png in Resources */ = {isa = PBXBuildFile; fileRef = A4B76C051A3982EC0014014D /* audio-off.png */; };
 		A4B76C121A3982EC0014014D /* audio-on.png in Resources */ = {isa = PBXBuildFile; fileRef = A4B76C061A3982EC0014014D /* audio-on.png */; };
 		A4B76C131A3982EC0014014D /* Disk-CD-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A4B76C071A3982EC0014014D /* Disk-CD-icon.png */; };
@@ -32,9 +32,12 @@
 		A4B76C171A3982EC0014014D /* Print-CD-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A4B76C0B1A3982EC0014014D /* Print-CD-icon.png */; };
 		A4B76C181A3982EC0014014D /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = A4B76C0C1A3982EC0014014D /* refresh.png */; };
 		A4B76C191A3982EC0014014D /* share.png in Resources */ = {isa = PBXBuildFile; fileRef = A4B76C0D1A3982EC0014014D /* share.png */; };
-		A4B76C1A1A3982EC0014014D /* Square.png in Resources */ = {isa = PBXBuildFile; fileRef = A4B76C0E1A3982EC0014014D /* Square.png */; };
+		A4B76C1A1A3982EC0014014D /* Squarea.png in Resources */ = {isa = PBXBuildFile; fileRef = A4B76C0E1A3982EC0014014D /* Squarea.png */; };
 		A4B76C1B1A3982EC0014014D /* tip.png in Resources */ = {isa = PBXBuildFile; fileRef = A4B76C0F1A3982EC0014014D /* tip.png */; };
 		A4B76C1D1A3997600014014D /* choicesBoardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4B76C1C1A3997600014014D /* choicesBoardView.xib */; };
+		A4E094F81A4BDA8F001AD626 /* Square.png in Resources */ = {isa = PBXBuildFile; fileRef = A4E094F71A4BDA8F001AD626 /* Square.png */; };
+		A4E094FA1A4BDD8D001AD626 /* star2.png in Resources */ = {isa = PBXBuildFile; fileRef = A4E094F91A4BDD8D001AD626 /* star2.png */; };
+		A4E094FC1A4BE07B001AD626 /* gameData.plist in Resources */ = {isa = PBXBuildFile; fileRef = A4E094FB1A4BE07B001AD626 /* gameData.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,7 +74,7 @@
 		A4AC863E1A36F47100CD19CA /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		A4AC863F1A36F47100CD19CA /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		A4B76BF91A3976760014014D /* singleMusicView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = singleMusicView.xib; sourceTree = "<group>"; };
-		A4B76C041A3982EC0014014D /* 1418297882_star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1418297882_star.png; sourceTree = "<group>"; };
+		A4B76C041A3982EC0014014D /* star1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star1.png; sourceTree = "<group>"; };
 		A4B76C051A3982EC0014014D /* audio-off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "audio-off.png"; sourceTree = "<group>"; };
 		A4B76C061A3982EC0014014D /* audio-on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "audio-on.png"; sourceTree = "<group>"; };
 		A4B76C071A3982EC0014014D /* Disk-CD-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Disk-CD-icon.png"; sourceTree = "<group>"; };
@@ -81,9 +84,12 @@
 		A4B76C0B1A3982EC0014014D /* Print-CD-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Print-CD-icon.png"; sourceTree = "<group>"; };
 		A4B76C0C1A3982EC0014014D /* refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refresh.png; sourceTree = "<group>"; };
 		A4B76C0D1A3982EC0014014D /* share.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share.png; sourceTree = "<group>"; };
-		A4B76C0E1A3982EC0014014D /* Square.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Square.png; sourceTree = "<group>"; };
+		A4B76C0E1A3982EC0014014D /* Squarea.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Squarea.png; sourceTree = "<group>"; };
 		A4B76C0F1A3982EC0014014D /* tip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tip.png; sourceTree = "<group>"; };
 		A4B76C1C1A3997600014014D /* choicesBoardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = choicesBoardView.xib; sourceTree = "<group>"; };
+		A4E094F71A4BDA8F001AD626 /* Square.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Square.png; sourceTree = "<group>"; };
+		A4E094F91A4BDD8D001AD626 /* star2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star2.png; sourceTree = "<group>"; };
+		A4E094FB1A4BE07B001AD626 /* gameData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = gameData.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,12 +152,8 @@
 			isa = PBXGroup;
 			children = (
 				A4B76C031A3982EC0014014D /* icons */,
-				A4A374FA1A4560260064AF00 /* 一场游戏一场梦.m4a */,
-				A4A374FB1A4560260064AF00 /* 小苹果.m4a */,
-				A4A374FC1A4560260064AF00 /* 我可以抱你吗.m4a */,
-				A4A374FD1A4560260064AF00 /* 海阔天空.m4a */,
-				A4A374FE1A4560260064AF00 /* 红日.m4a */,
-				A4AC862E1A36D12A00CD19CA /* choiceSound.mp3 */,
+				A4E094FD1A4BE092001AD626 /* sound */,
+				A4E094FB1A4BE07B001AD626 /* gameData.plist */,
 				A4AC86051A36CFE700CD19CA /* Info.plist */,
 				A4AC86061A36CFE700CD19CA /* main.m */,
 			);
@@ -178,7 +180,9 @@
 		A4B76C031A3982EC0014014D /* icons */ = {
 			isa = PBXGroup;
 			children = (
-				A4B76C041A3982EC0014014D /* 1418297882_star.png */,
+				A4B76C041A3982EC0014014D /* star1.png */,
+				A4E094F91A4BDD8D001AD626 /* star2.png */,
+				A4E094F71A4BDA8F001AD626 /* Square.png */,
 				A4B76C051A3982EC0014014D /* audio-off.png */,
 				A4B76C061A3982EC0014014D /* audio-on.png */,
 				A4B76C071A3982EC0014014D /* Disk-CD-icon.png */,
@@ -188,10 +192,23 @@
 				A4B76C0B1A3982EC0014014D /* Print-CD-icon.png */,
 				A4B76C0C1A3982EC0014014D /* refresh.png */,
 				A4B76C0D1A3982EC0014014D /* share.png */,
-				A4B76C0E1A3982EC0014014D /* Square.png */,
+				A4B76C0E1A3982EC0014014D /* Squarea.png */,
 				A4B76C0F1A3982EC0014014D /* tip.png */,
 			);
 			path = icons;
+			sourceTree = "<group>";
+		};
+		A4E094FD1A4BE092001AD626 /* sound */ = {
+			isa = PBXGroup;
+			children = (
+				A4A374FA1A4560260064AF00 /* 一场游戏一场梦.m4a */,
+				A4A374FB1A4560260064AF00 /* 小苹果.m4a */,
+				A4A374FC1A4560260064AF00 /* 我可以抱你吗.m4a */,
+				A4A374FD1A4560260064AF00 /* 海阔天空.m4a */,
+				A4A374FE1A4560260064AF00 /* 红日.m4a */,
+				A4AC862E1A36D12A00CD19CA /* choiceSound.mp3 */,
+			);
+			name = sound;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -280,14 +297,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A4B76C1A1A3982EC0014014D /* Square.png in Resources */,
+				A4B76C1A1A3982EC0014014D /* Squarea.png in Resources */,
 				A4B76C131A3982EC0014014D /* Disk-CD-icon.png in Resources */,
+				A4E094FC1A4BE07B001AD626 /* gameData.plist in Resources */,
 				A4A374FF1A4560260064AF00 /* 一场游戏一场梦.m4a in Resources */,
 				A4A375001A4560260064AF00 /* 小苹果.m4a in Resources */,
 				A4AC86101A36CFE700CD19CA /* Main.storyboard in Resources */,
 				A4AC86331A36D12A00CD19CA /* choiceSound.mp3 in Resources */,
 				A4B76C171A3982EC0014014D /* Print-CD-icon.png in Resources */,
 				A4B76C191A3982EC0014014D /* share.png in Resources */,
+				A4E094F81A4BDA8F001AD626 /* Square.png in Resources */,
+				A4E094FA1A4BDD8D001AD626 /* star2.png in Resources */,
 				A4A375031A4560260064AF00 /* 红日.m4a in Resources */,
 				A4B76C161A3982EC0014014D /* music.png in Resources */,
 				A4B76BFA1A3976760014014D /* singleMusicView.xib in Resources */,
@@ -299,7 +319,7 @@
 				A4A375021A4560260064AF00 /* 海阔天空.m4a in Resources */,
 				A4B76C141A3982EC0014014D /* info.png in Resources */,
 				A4B76C111A3982EC0014014D /* audio-off.png in Resources */,
-				A4B76C101A3982EC0014014D /* 1418297882_star.png in Resources */,
+				A4B76C101A3982EC0014014D /* star1.png in Resources */,
 				A4AC86151A36CFE700CD19CA /* LaunchScreen.xib in Resources */,
 				A4AC86121A36CFE700CD19CA /* Images.xcassets in Resources */,
 				A4B76C181A3982EC0014014D /* refresh.png in Resources */,
