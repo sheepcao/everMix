@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
+#import "AnswerButton.h"
 
 #define DISK_TAG 100
 #define TIPS_TAG 200
@@ -23,6 +24,7 @@
 @property (nonatomic, strong) NSMutableArray *singleMusicsViewArray;
 @property (nonatomic, strong) NSMutableArray *musicsArray;
 @property (nonatomic, strong) NSMutableArray *choicesBoardArray;
+@property (nonatomic, strong) NSMutableDictionary *gameDataForSingleLevel;
 
 
 
@@ -34,6 +36,7 @@
 @property (strong, nonatomic) UIView *choicesBoardView;
 
 @property (strong, nonatomic) NSMutableArray *diskButtonFrameArray;
+//choiceBoard
 
 
 - (IBAction)playBtn:(id)sender;

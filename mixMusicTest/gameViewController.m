@@ -51,6 +51,10 @@ int totalRotateTimes;
 
 - (IBAction)diskTap:(UIButton *)sender {
 //    sender.tag = 1;
+    
+    self.gameDataForSingleLevel = [self readDataFromPlist:@"gameData"] ;
+    NSDictionary *allAnswers = [self.gameDataForSingleLevel objectForKey:@"choices"];
+
     int diskNumber = -1;
     
     for(int i = 0 ; i < self.diskButtons.count ; i++ )
@@ -59,10 +63,41 @@ int totalRotateTimes;
             diskNumber = i;
         }
     }
+    NSString *songName = self.musicsArray[diskNumber];
+    NSString *songAnswer = [allAnswers objectForKey:songName];
+    NSArray *songAnswerSingleLetter = [songAnswer componentsSeparatedByString:@","];
+    NSLog(@"answer count:%ld",songAnswerSingleLetter.count);
+    NSLog(@"songName:%@",songName);
+
     
-    self.choicesBoardView = [[[NSBundle mainBundle] loadNibNamed:@"choicesBoardView" owner:self options:nil] objectAtIndex:0];
-    [self.choicesBoardView setFrame:CGRectMake(self.downPartView.frame.origin.x,[UIScreen mainScreen].bounds.size.height , self.downPartView.frame.size.width,[UIScreen mainScreen].bounds.size.height)];
-    [self.view addSubview:self.choicesBoardView];
+    if(!self.choicesBoardView)
+    {
+        self.choicesBoardView = [[[NSBundle mainBundle] loadNibNamed:@"choicesBoardView" owner:self options:nil] objectAtIndex:0];
+        [self.choicesBoardView setFrame:CGRectMake(self.downPartView.frame.origin.x,[UIScreen mainScreen].bounds.size.height , self.downPartView.frame.size.width,[UIScreen mainScreen].bounds.size.height)];
+        [self.view addSubview:self.choicesBoardView];
+
+    }
+    //only support less than 7 letters.
+    NSLog(@"center:%f",self.choicesBoardView.center.x);
+    CGFloat firstAnswerSquare_X = (self.choicesBoardView.center.x - (40+2) *songName.length/2);//considering the distance between two squares . distance = 2.
+    UIImage *buttonBackImage = [UIImage imageNamed:@"Square"];
+    for (int i = 0; i<songName.length; i++) {
+         UIButton *answerButton = (UIButton *)[self.choicesBoardView viewWithTag:1];
+        
+        AnswerButton *myAnswerBtn = [[AnswerButton alloc] initWithFrame:CGRectMake(firstAnswerSquare_X+1 + i*(2+40), answerButton.frame.origin.y - 75, 40, 40)];
+        
+        [myAnswerBtn addTarget:self action:@selector(answerTapped:) forControlEvents:UIControlEventTouchUpInside];
+        myAnswerBtn.isFromTag = -1;
+        [myAnswerBtn setBackgroundImage:buttonBackImage forState:UIControlStateNormal];
+        [self.choicesBoardView addSubview:myAnswerBtn];
+    }
+    
+//    NSLog(@"sub:%@",[self.choicesBoardView subviews]);
+
+    for (int i = 1; i < 22; i++) {
+        UIButton *answerButton = (UIButton *)[self.choicesBoardView viewWithTag:i];
+        [answerButton setTitle:songAnswerSingleLetter[i-1] forState:UIControlStateNormal];
+    }
     
     [UIView animateWithDuration:0.9 delay:0.1 usingSpringWithDamping:0.5 initialSpringVelocity:0.89 options:0 animations:^{
         [self.choicesBoardView setFrame:CGRectMake(self.downPartView.frame.origin.x,self.downPartView.frame.origin.y, self.downPartView.frame.size.width,[UIScreen mainScreen].bounds.size.height)];
@@ -74,11 +109,27 @@ int totalRotateTimes;
     
 }
 
+-(void)answerTapped:(AnswerButton *)sender
+{
+    NSLog(@"tag:%d",sender.isFromTag);
+}
+
 - (IBAction)returnChoicesBoard:(UIButton *)sender {
     
     [UIView animateWithDuration:0.5 delay:0.1 usingSpringWithDamping:0.7 initialSpringVelocity:1.0 options:0 animations:^{
         [self.choicesBoardView setFrame:CGRectMake(self.downPartView.frame.origin.x,[UIScreen mainScreen].bounds.size.height , self.downPartView.frame.size.width,[UIScreen mainScreen].bounds.size.height)];
-    } completion:nil];
+    } completion:^(BOOL finished){
+    
+        if (finished) {
+            for (UIView *subview in [self.choicesBoardView subviews]) {
+                if ([subview isKindOfClass:[AnswerButton class]]) {
+                    [subview removeFromSuperview];
+                }
+            }
+        }
+    }];
+    
+
     
 }
 
@@ -140,6 +191,7 @@ int totalRotateTimes;
         
         if (i < musicCount) {
             [self.diskButtons[i] setHidden:NO];
+
         }else
         {
             [self.diskButtons[i] setHidden:YES];
@@ -236,8 +288,8 @@ int totalRotateTimes;
             [[NSFileManager defaultManager] copyItemAtPath:soundFilePath
                                                     toPath:folderPath
                                                      error:&error];
-            NSLog(@"Error description-%@ \n", [error localizedDescription]);
-            NSLog(@"Error reason-%@", [error localizedFailureReason]);
+//            NSLog(@"Error description-%@ \n", [error localizedDescription]);
+//            NSLog(@"Error reason-%@", [error localizedFailureReason]);
         }
         
     }
@@ -264,7 +316,10 @@ int totalRotateTimes;
 
 -(void)enableButtons
 {
-    for (UIButton *button in self.diskButtons) {
+    for (int i=0;i<self.diskButtons.count;i++) {
+        
+        UIButton *button = self.diskButtons[i];
+        
         [UIView animateWithDuration: 0.03f
                               delay: 0.0f
                             options: 0
@@ -273,7 +328,11 @@ int totalRotateTimes;
                          }
                          completion:nil];
         
-        [button setEnabled:YES];
+        if (![button isHidden]) {
+            [button setEnabled:YES];
+            [button setTitle:[NSString stringWithFormat:@"%lu字歌",[self.musicsArray[i] length]] forState:UIControlStateNormal];
+
+        }
     }
     totalRotateTimes = 0;
 }
@@ -320,5 +379,17 @@ int totalRotateTimes;
         [self stopMusics];
         isplayed =false;
     }
+}
+
+
+-(NSMutableDictionary *)readDataFromPlist:(NSString *)plistname
+{
+    //read level data from plist
+    NSString *documentsDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    NSString *plistPath = [documentsDirectory stringByAppendingPathComponent:[ NSString stringWithFormat:@"%@.plist",plistname ]];
+    NSMutableDictionary *levelData = [[NSMutableDictionary alloc] initWithContentsOfFile:plistPath];
+//    NSLog(@"levelData%@",levelData);
+    return levelData;
+    
 }
 @end

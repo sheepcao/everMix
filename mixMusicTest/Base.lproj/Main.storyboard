@@ -42,7 +42,7 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="EIc-jM-yoy" secondAttribute="height" multiplier="1:1" id="MFw-Nk-zmf"/>
                                         </constraints>
-                                        <state key="normal" title="1" image="audio-off.png">
+                                        <state key="normal" title="1" backgroundImage="circle.png">
                                             <color key="titleColor" red="0.0078431377000000007" green="0.10588235999999999" blue="0.25098040999999999" alpha="1" colorSpace="deviceRGB"/>
                                         </state>
                                         <state key="disabled" image="Disk-CD-icon.png"/>
@@ -55,7 +55,7 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="zok-7w-kCG" secondAttribute="height" multiplier="1:1" id="aRk-ax-P0D"/>
                                         </constraints>
-                                        <state key="normal" title="2" image="audio-off.png">
+                                        <state key="normal" title="2" backgroundImage="circle.png">
                                             <color key="titleColor" red="0.0078431377000000007" green="0.10588235999999999" blue="0.25098040999999999" alpha="1" colorSpace="deviceRGB"/>
                                         </state>
                                         <state key="disabled" image="Disk-CD-icon.png"/>
@@ -68,7 +68,7 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Wr6-DD-hCu" secondAttribute="height" multiplier="1:1" id="WHE-VP-64S"/>
                                         </constraints>
-                                        <state key="normal" title="3" image="audio-off.png">
+                                        <state key="normal" title="3" backgroundImage="circle.png">
                                             <color key="titleColor" red="0.0078431377000000007" green="0.10588235999999999" blue="0.25098040999999999" alpha="1" colorSpace="deviceRGB"/>
                                         </state>
                                         <state key="disabled" image="Disk-CD-icon.png"/>
@@ -81,7 +81,7 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="5aj-nA-ncK" secondAttribute="height" multiplier="1:1" id="SNE-Qq-RGf"/>
                                         </constraints>
-                                        <state key="normal" title="4" image="audio-off.png">
+                                        <state key="normal" title="4" backgroundImage="circle.png">
                                             <color key="titleColor" red="0.0078431377000000007" green="0.10588235999999999" blue="0.25098040999999999" alpha="1" colorSpace="deviceRGB"/>
                                         </state>
                                         <state key="disabled" image="Disk-CD-icon.png"/>
@@ -94,7 +94,7 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="aU6-fp-kEA" secondAttribute="height" multiplier="1:1" id="fxV-S7-k5c"/>
                                         </constraints>
-                                        <state key="normal" title="6" image="audio-off.png">
+                                        <state key="normal" title="6" backgroundImage="circle.png">
                                             <color key="titleColor" red="0.0078431377000000007" green="0.10588235999999999" blue="0.25098040999999999" alpha="1" colorSpace="deviceRGB"/>
                                         </state>
                                         <state key="disabled" image="Disk-CD-icon.png"/>
@@ -107,7 +107,7 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="fDV-nk-d3u" secondAttribute="height" multiplier="1:1" id="2mg-Fw-HOZ"/>
                                         </constraints>
-                                        <state key="normal" title="5" image="audio-off.png">
+                                        <state key="normal" title="5" backgroundImage="circle.png">
                                             <color key="titleColor" red="0.0078431377000000007" green="0.10588235999999999" blue="0.25098040999999999" alpha="1" colorSpace="deviceRGB"/>
                                         </state>
                                         <state key="disabled" image="Disk-CD-icon.png"/>
@@ -367,8 +367,8 @@
     <resources>
         <image name="Disk-CD-icon.png" width="256" height="256"/>
         <image name="Print-CD-icon.png" width="512" height="512"/>
-        <image name="audio-off.png" width="128" height="128"/>
         <image name="audio-on.png" width="128" height="128"/>
+        <image name="circle.png" width="128" height="128"/>
         <image name="info.png" width="128" height="128"/>
         <image name="money-128.png" width="128" height="128"/>
         <image name="music.png" width="128" height="128"/>

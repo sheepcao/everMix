@@ -35,6 +35,8 @@
 		A4B76C1A1A3982EC0014014D /* Squarea.png in Resources */ = {isa = PBXBuildFile; fileRef = A4B76C0E1A3982EC0014014D /* Squarea.png */; };
 		A4B76C1B1A3982EC0014014D /* tip.png in Resources */ = {isa = PBXBuildFile; fileRef = A4B76C0F1A3982EC0014014D /* tip.png */; };
 		A4B76C1D1A3997600014014D /* choicesBoardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4B76C1C1A3997600014014D /* choicesBoardView.xib */; };
+		A4DDB6E31A4D036F00CFF980 /* AnswerButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DDB6E21A4D036F00CFF980 /* AnswerButton.m */; };
+		A4DDB6E51A4D399A00CFF980 /* circle.png in Resources */ = {isa = PBXBuildFile; fileRef = A4DDB6E41A4D399A00CFF980 /* circle.png */; };
 		A4E094F81A4BDA8F001AD626 /* Square.png in Resources */ = {isa = PBXBuildFile; fileRef = A4E094F71A4BDA8F001AD626 /* Square.png */; };
 		A4E094FA1A4BDD8D001AD626 /* star2.png in Resources */ = {isa = PBXBuildFile; fileRef = A4E094F91A4BDD8D001AD626 /* star2.png */; };
 		A4E094FC1A4BE07B001AD626 /* gameData.plist in Resources */ = {isa = PBXBuildFile; fileRef = A4E094FB1A4BE07B001AD626 /* gameData.plist */; };
@@ -87,6 +89,9 @@
 		A4B76C0E1A3982EC0014014D /* Squarea.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Squarea.png; sourceTree = "<group>"; };
 		A4B76C0F1A3982EC0014014D /* tip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tip.png; sourceTree = "<group>"; };
 		A4B76C1C1A3997600014014D /* choicesBoardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = choicesBoardView.xib; sourceTree = "<group>"; };
+		A4DDB6E11A4D036F00CFF980 /* AnswerButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnswerButton.h; sourceTree = "<group>"; };
+		A4DDB6E21A4D036F00CFF980 /* AnswerButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnswerButton.m; sourceTree = "<group>"; };
+		A4DDB6E41A4D399A00CFF980 /* circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = circle.png; sourceTree = "<group>"; };
 		A4E094F71A4BDA8F001AD626 /* Square.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Square.png; sourceTree = "<group>"; };
 		A4E094F91A4BDD8D001AD626 /* star2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star2.png; sourceTree = "<group>"; };
 		A4E094FB1A4BE07B001AD626 /* gameData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = gameData.plist; sourceTree = "<group>"; };
@@ -132,6 +137,8 @@
 			isa = PBXGroup;
 			children = (
 				A4A375041A47D37F0064AF00 /* mixMusicTest.entitlements */,
+				A4DDB6E11A4D036F00CFF980 /* AnswerButton.h */,
+				A4DDB6E21A4D036F00CFF980 /* AnswerButton.m */,
 				A4AC86081A36CFE700CD19CA /* AppDelegate.h */,
 				A4AC86091A36CFE700CD19CA /* AppDelegate.m */,
 				A4AC863E1A36F47100CD19CA /* ViewController.h */,
@@ -182,6 +189,7 @@
 			children = (
 				A4B76C041A3982EC0014014D /* star1.png */,
 				A4E094F91A4BDD8D001AD626 /* star2.png */,
+				A4DDB6E41A4D399A00CFF980 /* circle.png */,
 				A4E094F71A4BDA8F001AD626 /* Square.png */,
 				A4B76C051A3982EC0014014D /* audio-off.png */,
 				A4B76C061A3982EC0014014D /* audio-on.png */,
@@ -318,6 +326,7 @@
 				A4B76C151A3982EC0014014D /* money-128.png in Resources */,
 				A4A375021A4560260064AF00 /* 海阔天空.m4a in Resources */,
 				A4B76C141A3982EC0014014D /* info.png in Resources */,
+				A4DDB6E51A4D399A00CFF980 /* circle.png in Resources */,
 				A4B76C111A3982EC0014014D /* audio-off.png in Resources */,
 				A4B76C101A3982EC0014014D /* star1.png in Resources */,
 				A4AC86151A36CFE700CD19CA /* LaunchScreen.xib in Resources */,
@@ -343,6 +352,7 @@
 				A4AC860D1A36CFE700CD19CA /* gameViewController.m in Sources */,
 				A4AC860A1A36CFE700CD19CA /* AppDelegate.m in Sources */,
 				A4AC86401A36F47100CD19CA /* ViewController.m in Sources */,
+				A4DDB6E31A4D036F00CFF980 /* AnswerButton.m in Sources */,
 				A4AC86071A36CFE700CD19CA /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

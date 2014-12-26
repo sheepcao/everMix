@@ -61,16 +61,40 @@
 
     NSString *currentDifficulty = [self.gameData objectForKey:@"difficulty"];
     NSArray *unfinishedSongs = [NSArray arrayWithArray:[self.gameData objectForKey:@"musicUnfinished"]];
-    NSMutableArray * allSongsNumber = [[NSMutableArray alloc] init];
+    
+    NSMutableArray * allArrayNumber = [[NSMutableArray alloc] init];
     for (int i = 0; i < unfinishedSongs.count; i++) {
-        [allSongsNumber addObject:[NSNumber numberWithInt:i]];
+        if ([(NSArray *)unfinishedSongs[i] count]>0)
+        {
+            [allArrayNumber addObject:[NSNumber numberWithInt:i]];
+        }
     }
     for (int i = 0; i < [currentDifficulty intValue]+1; i++) {
-        unsigned int randomNumber = arc4random()%allSongsNumber.count;
-        int songPicked = [allSongsNumber[randomNumber] intValue];
-        [musicToNextView addObject:unfinishedSongs[songPicked]];
-        [allSongsNumber removeObjectAtIndex:randomNumber];
+        unsigned int randomNumber = arc4random()%allArrayNumber.count;
+        int subArrayPicked = [allArrayNumber[randomNumber] intValue];
+        
+        unsigned int randomElement = arc4random()%[unfinishedSongs[subArrayPicked] count];
+        NSString *songPicked = [unfinishedSongs[subArrayPicked] objectAtIndex: randomElement] ;
+        
+        
+        [musicToNextView addObject:songPicked];
+        [unfinishedSongs[subArrayPicked] removeObjectAtIndex:randomElement];
+        [self deleteSongsFromPlist:@"gameData" withArrayNum:subArrayPicked andElementNum:randomElement];
+        
+        [allArrayNumber removeObjectAtIndex:randomNumber];
     }
+    
+    
+//    NSMutableArray * allSongsNumber = [[NSMutableArray alloc] init];
+//    for (int i = 0; i < unfinishedSongs.count; i++) {
+//        [allSongsNumber addObject:[NSNumber numberWithInt:i]];
+//    }
+//    for (int i = 0; i < [currentDifficulty intValue]+1; i++) {
+//        unsigned int randomNumber = arc4random()%allSongsNumber.count;
+//        int songPicked = [allSongsNumber[randomNumber] intValue];
+//        [musicToNextView addObject:unfinishedSongs[songPicked]];
+//        [allSongsNumber removeObjectAtIndex:randomNumber];
+//    }
 
     return musicToNextView;
 }
@@ -137,7 +161,7 @@
     NSString *documentsDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
     NSString *plistPath = [documentsDirectory stringByAppendingPathComponent:[ NSString stringWithFormat:@"%@.plist",plistname ]];
     NSMutableDictionary *levelData = [[NSMutableDictionary alloc] initWithContentsOfFile:plistPath];
-    NSLog(@"levelData%@",levelData);
+//    NSLog(@"levelData%@",levelData);
     return levelData;
     
 }
@@ -158,4 +182,25 @@
         }
     }
 }
+
+-(void)deleteSongsFromPlist:(NSString *)plistname withArrayNum:(int)arrayNum andElementNum:(int)elementNum
+{
+    NSString *documentsDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    NSString *plistPath = [documentsDirectory stringByAppendingPathComponent:[ NSString stringWithFormat:@"%@.plist",plistname ]];
+    NSFileManager* manager = [NSFileManager defaultManager];
+    if ([manager fileExistsAtPath:plistPath] == YES)
+    {
+        if ([manager isWritableFileAtPath:plistPath])
+        {
+            NSMutableDictionary* infoDict = [NSMutableDictionary dictionaryWithContentsOfFile:plistPath];
+            NSArray *allUnfinishedSongs = [infoDict objectForKey:@"musicUnfinished"];
+            [allUnfinishedSongs[arrayNum] removeObjectAtIndex:elementNum];
+            [infoDict setObject:allUnfinishedSongs forKey:@"musicUnfinished"];
+            [infoDict writeToFile:plistPath atomically:NO];
+            [manager setAttributes:[NSDictionary dictionaryWithObject:[NSDate date] forKey:NSFileModificationDate] ofItemAtPath:[[NSBundle mainBundle] bundlePath] error:nil];
+        }
+    }
+}
+
+
 @end
