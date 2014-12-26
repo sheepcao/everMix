@@ -37,6 +37,7 @@
 
 @property (strong, nonatomic) NSMutableArray *diskButtonFrameArray;
 //choiceBoard
+- (IBAction)choicesTaped:(id)sender;
 
 
 - (IBAction)playBtn:(id)sender;

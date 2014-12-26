@@ -25,6 +25,9 @@
                         <color key="titleColor" red="0.0078431377000000007" green="0.10588235999999999" blue="0.25098040999999999" alpha="1" colorSpace="deviceRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="choicesTaped:" destination="-1" eventType="touchUpInside" id="Dzr-nx-bWn"/>
+                    </connections>
                 </button>
                 <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CBW-rJ-qcz">
                     <rect key="frame" x="55" y="197" width="40" height="40"/>
@@ -33,6 +36,9 @@
                         <color key="titleColor" red="0.0078431377000000007" green="0.10588235999999999" blue="0.25098040999999999" alpha="1" colorSpace="deviceRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="choicesTaped:" destination="-1" eventType="touchUpInside" id="Dua-At-SuL"/>
+                    </connections>
                 </button>
                 <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZKo-n7-VYS">
                     <rect key="frame" x="97" y="197" width="40" height="40"/>
@@ -41,6 +47,9 @@
                         <color key="titleColor" red="0.0078431377000000007" green="0.10588235999999999" blue="0.25098040999999999" alpha="1" colorSpace="deviceRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="choicesTaped:" destination="-1" eventType="touchUpInside" id="7LT-y2-cKJ"/>
+                    </connections>
                 </button>
                 <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Si5-06-zFK">
                     <rect key="frame" x="140" y="197" width="40" height="40"/>
@@ -49,6 +58,9 @@
                         <color key="titleColor" red="0.0078431377000000007" green="0.10588235999999999" blue="0.25098040999999999" alpha="1" colorSpace="deviceRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="choicesTaped:" destination="-1" eventType="touchUpInside" id="PY1-R9-MR9"/>
+                    </connections>
                 </button>
                 <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zaF-D3-6v2">
                     <rect key="frame" x="182" y="197" width="40" height="40"/>
@@ -57,6 +69,9 @@
                         <color key="titleColor" red="0.0078431377000000007" green="0.10588235999999999" blue="0.25098040999999999" alpha="1" colorSpace="deviceRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="choicesTaped:" destination="-1" eventType="touchUpInside" id="AWc-ic-g9v"/>
+                    </connections>
                 </button>
                 <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Er-xI-UMb">
                     <rect key="frame" x="224" y="197" width="40" height="40"/>
@@ -65,6 +80,9 @@
                         <color key="titleColor" red="0.0078431377000000007" green="0.10588235999999999" blue="0.25098040999999999" alpha="1" colorSpace="deviceRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="choicesTaped:" destination="-1" eventType="touchUpInside" id="uyI-N8-irM"/>
+                    </connections>
                 </button>
                 <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OOF-Px-U39">
                     <rect key="frame" x="267" y="197" width="40" height="40"/>
@@ -73,6 +91,9 @@
                         <color key="titleColor" red="0.0078431377000000007" green="0.10588235999999999" blue="0.25098040999999999" alpha="1" colorSpace="deviceRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="choicesTaped:" destination="-1" eventType="touchUpInside" id="xhn-V9-Xz2"/>
+                    </connections>
                 </button>
                 <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Ca-0z-p1M">
                     <rect key="frame" x="13" y="245" width="40" height="40"/>
@@ -85,6 +106,9 @@
                         <color key="titleColor" red="0.0078431377000000007" green="0.10588235999999999" blue="0.25098040999999999" alpha="1" colorSpace="deviceRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="choicesTaped:" destination="-1" eventType="touchUpInside" id="KcB-Jg-2SE"/>
+                    </connections>
                 </button>
                 <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wWC-27-fWf">
                     <rect key="frame" x="55" y="245" width="40" height="40"/>
@@ -93,6 +117,9 @@
                         <color key="titleColor" red="0.0078431377000000007" green="0.10588235999999999" blue="0.25098040999999999" alpha="1" colorSpace="deviceRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="choicesTaped:" destination="-1" eventType="touchUpInside" id="dgH-i3-UT1"/>
+                    </connections>
                 </button>
                 <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Xz-gw-d8m">
                     <rect key="frame" x="97" y="245" width="40" height="40"/>
@@ -101,6 +128,9 @@
                         <color key="titleColor" red="0.0078431377000000007" green="0.10588235999999999" blue="0.25098040999999999" alpha="1" colorSpace="deviceRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="choicesTaped:" destination="-1" eventType="touchUpInside" id="i1p-oe-9iQ"/>
+                    </connections>
                 </button>
                 <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JOF-Gt-wRf">
                     <rect key="frame" x="140" y="245" width="40" height="40"/>
@@ -113,6 +143,9 @@
                         <color key="titleColor" red="0.0078431377000000007" green="0.10588235999999999" blue="0.25098040999999999" alpha="1" colorSpace="deviceRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="choicesTaped:" destination="-1" eventType="touchUpInside" id="e87-AH-p6i"/>
+                    </connections>
                 </button>
                 <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5OT-in-4OR">
                     <rect key="frame" x="182" y="245" width="40" height="40"/>
@@ -125,6 +158,9 @@
                         <color key="titleColor" red="0.0078431377000000007" green="0.10588235999999999" blue="0.25098040999999999" alpha="1" colorSpace="deviceRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="choicesTaped:" destination="-1" eventType="touchUpInside" id="gMm-QA-xKD"/>
+                    </connections>
                 </button>
                 <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mij-Jx-zHh">
                     <rect key="frame" x="224" y="245" width="40" height="40"/>
@@ -133,6 +169,9 @@
                         <color key="titleColor" red="0.0078431377000000007" green="0.10588235999999999" blue="0.25098040999999999" alpha="1" colorSpace="deviceRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="choicesTaped:" destination="-1" eventType="touchUpInside" id="Ttj-85-sIx"/>
+                    </connections>
                 </button>
                 <button opaque="NO" tag="14" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="26X-0l-Mqj">
                     <rect key="frame" x="267" y="245" width="40" height="40"/>
@@ -141,6 +180,9 @@
                         <color key="titleColor" red="0.0078431377000000007" green="0.10588235999999999" blue="0.25098040999999999" alpha="1" colorSpace="deviceRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="choicesTaped:" destination="-1" eventType="touchUpInside" id="RPP-Pb-puE"/>
+                    </connections>
                 </button>
                 <button opaque="NO" tag="15" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gxt-U0-oeZ">
                     <rect key="frame" x="13" y="293" width="40" height="40"/>
@@ -153,6 +195,9 @@
                         <color key="titleColor" red="0.0078431377000000007" green="0.10588235999999999" blue="0.25098040999999999" alpha="1" colorSpace="deviceRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="choicesTaped:" destination="-1" eventType="touchUpInside" id="5f7-4j-nTb"/>
+                    </connections>
                 </button>
                 <button opaque="NO" tag="16" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CwL-x2-h0L">
                     <rect key="frame" x="55" y="293" width="40" height="40"/>
@@ -161,6 +206,9 @@
                         <color key="titleColor" red="0.0078431377000000007" green="0.10588235999999999" blue="0.25098040999999999" alpha="1" colorSpace="deviceRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="choicesTaped:" destination="-1" eventType="touchUpInside" id="fsK-EW-faV"/>
+                    </connections>
                 </button>
                 <button opaque="NO" tag="17" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NW8-e6-QhY">
                     <rect key="frame" x="97" y="293" width="40" height="40"/>
@@ -169,6 +217,9 @@
                         <color key="titleColor" red="0.0078431377000000007" green="0.10588235999999999" blue="0.25098040999999999" alpha="1" colorSpace="deviceRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="choicesTaped:" destination="-1" eventType="touchUpInside" id="sx3-oi-XeO"/>
+                    </connections>
                 </button>
                 <button opaque="NO" tag="18" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uN0-1i-MpA">
                     <rect key="frame" x="140" y="293" width="40" height="40"/>
@@ -177,6 +228,9 @@
                         <color key="titleColor" red="0.0078431377000000007" green="0.10588235999999999" blue="0.25098040999999999" alpha="1" colorSpace="deviceRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="choicesTaped:" destination="-1" eventType="touchUpInside" id="S3P-M3-cWv"/>
+                    </connections>
                 </button>
                 <button opaque="NO" tag="19" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Dr-cV-Avx">
                     <rect key="frame" x="182" y="293" width="40" height="40"/>
@@ -185,6 +239,9 @@
                         <color key="titleColor" red="0.0078431377000000007" green="0.10588235999999999" blue="0.25098040999999999" alpha="1" colorSpace="deviceRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="choicesTaped:" destination="-1" eventType="touchUpInside" id="hZQ-6F-41D"/>
+                    </connections>
                 </button>
                 <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d9R-WH-BIR">
                     <rect key="frame" x="224" y="293" width="40" height="40"/>
@@ -193,6 +250,9 @@
                         <color key="titleColor" red="0.0078431377000000007" green="0.10588235999999999" blue="0.25098040999999999" alpha="1" colorSpace="deviceRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="choicesTaped:" destination="-1" eventType="touchUpInside" id="itB-2P-VLf"/>
+                    </connections>
                 </button>
                 <button opaque="NO" tag="21" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nzd-ar-Yto">
                     <rect key="frame" x="267" y="293" width="40" height="40"/>
@@ -205,6 +265,9 @@
                         <color key="titleColor" red="0.0078431377000000007" green="0.10588235999999999" blue="0.25098040999999999" alpha="1" colorSpace="deviceRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="choicesTaped:" destination="-1" eventType="touchUpInside" id="tNI-ar-7TK"/>
+                    </connections>
                 </button>
                 <button opaque="NO" tag="200" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mQo-1E-YD5">
                     <rect key="frame" x="46" y="58" width="40" height="40"/>

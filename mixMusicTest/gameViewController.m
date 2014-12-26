@@ -87,6 +87,9 @@ int totalRotateTimes;
         AnswerButton *myAnswerBtn = [[AnswerButton alloc] initWithFrame:CGRectMake(firstAnswerSquare_X+1 + i*(2+40), answerButton.frame.origin.y - 75, 40, 40)];
         
         [myAnswerBtn addTarget:self action:@selector(answerTapped:) forControlEvents:UIControlEventTouchUpInside];
+        myAnswerBtn.titleLabel.font = [UIFont systemFontOfSize:21];
+        [myAnswerBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        myAnswerBtn.tag = i+100;
         myAnswerBtn.isFromTag = -1;
         [myAnswerBtn setBackgroundImage:buttonBackImage forState:UIControlStateNormal];
         [self.choicesBoardView addSubview:myAnswerBtn];
@@ -111,7 +114,29 @@ int totalRotateTimes;
 
 -(void)answerTapped:(AnswerButton *)sender
 {
-    NSLog(@"tag:%d",sender.isFromTag);
+    NSLog(@"tag:%ld",sender.tag);
+}
+
+- (IBAction)choicesTaped:(UIButton *)sender {
+    
+    NSMutableArray *decisions = [[NSMutableArray alloc] init];
+    
+    for (UIView *subview in [self.choicesBoardView subviews]) {
+        if ([subview isKindOfClass:[AnswerButton class]]) {
+            [decisions insertObject:subview atIndex:(subview.tag-100)];
+        }
+    }
+    
+    for (int i = 0;i<decisions.count;i++) {
+        UIButton *answer = decisions[i];
+        if (!answer.titleLabel.text) {
+            [answer setTitle:sender.titleLabel.text forState:UIControlStateNormal];
+            break;
+        }
+    }
+    
+    
+    
 }
 
 - (IBAction)returnChoicesBoard:(UIButton *)sender {
@@ -275,6 +300,8 @@ int totalRotateTimes;
 
     NSString *soundFilePath = [[NSBundle mainBundle] pathForResource:name ofType:type];
     NSString *folderPath = [documentsDirectory stringByAppendingPathComponent:[ NSString stringWithFormat:@"%@.%@",name,type]];
+    
+    NSLog(@"folderPath:%@",folderPath);
 
     if (soundFilePath)
     {
@@ -285,11 +312,12 @@ int totalRotateTimes;
         if([fileManager fileExistsAtPath:folderPath] == NO)
         {
             
-            [[NSFileManager defaultManager] copyItemAtPath:soundFilePath
+           BOOL success = [[NSFileManager defaultManager] copyItemAtPath:soundFilePath
                                                     toPath:folderPath
                                                      error:&error];
 //            NSLog(@"Error description-%@ \n", [error localizedDescription]);
 //            NSLog(@"Error reason-%@", [error localizedFailureReason]);
+            NSLog(@"succsee:%d",success);
         }
         
     }
@@ -297,8 +325,12 @@ int totalRotateTimes;
     AVAudioPlayer *myAudioPlayer= [[AVAudioPlayer alloc] initWithContentsOfURL:fileURL error:nil];
     myAudioPlayer.volume = 1.0f;
 
-    [self.myAudioArray addObject:myAudioPlayer];
-    [myAudioPlayer play];
+    NSLog(@"Audio:%@",myAudioPlayer);
+    if (myAudioPlayer) {
+        [self.myAudioArray addObject:myAudioPlayer];
+        [myAudioPlayer play];
+    }
+  
     
 }
 -(void)stopMusics
@@ -343,9 +375,10 @@ int totalRotateTimes;
     // Dispose of any resources that can be recreated.
 }
 
+
+
 - (IBAction)playBtn:(id)sender {
     
-
     
     [self.playBtn setTitle:self.levelTitle forState:UIControlStateNormal];
     if (isplayed) {
