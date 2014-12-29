@@ -7,13 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "gameViewController.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController<prepareSongsDelegate>
 
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *starButtons;
 
 - (IBAction)starTapped:(UIButton *)sender;
 
+- (IBAction)beginTapped:(UIButton *)sender;
 @property (strong,nonatomic) NSMutableDictionary *gameData;
 //@property (strong,nonatomic) NSMutableArray *musicToNextView;
 @end

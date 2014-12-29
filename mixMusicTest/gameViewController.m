@@ -8,7 +8,7 @@
 
 #import "gameViewController.h"
 
-@interface gameViewController ()
+@interface gameViewController ()<UIAlertViewDelegate>
 
 
 @end
@@ -16,17 +16,16 @@
 bool isplayed;
 BOOL animating;
 int totalRotateTimes;
+int answerPickedCount;
 @implementation gameViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-//    UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStyleBordered target:self action:@selector(home:)];
-//    self.navigationItem.leftBarButtonItem=newBackButton;
-    //eric:for debug...
-    self.diskButtonFrameArray = [[NSMutableArray alloc] init];
-//    self.musicsArray = [NSMutableArray arrayWithObjects:@"海阔天空",@"小苹果",@"一场游戏一场梦",@"我可以抱你吗",@"红日", nil];
+
     
+    self.diskButtonFrameArray = [[NSMutableArray alloc] init];
+    
+    self.musicsPlayArray = [NSMutableArray arrayWithArray:self.musicsArray];
     self.myAudioArray = [NSMutableArray new];
     self.singleMusicsViewArray = [NSMutableArray new];
 
@@ -74,6 +73,7 @@ int totalRotateTimes;
     {
         self.choicesBoardView = [[[NSBundle mainBundle] loadNibNamed:@"choicesBoardView" owner:self options:nil] objectAtIndex:0];
         [self.choicesBoardView setFrame:CGRectMake(self.downPartView.frame.origin.x,[UIScreen mainScreen].bounds.size.height , self.downPartView.frame.size.width,[UIScreen mainScreen].bounds.size.height)];
+        self.choicesBoardView.songName = @"";
         [self.view addSubview:self.choicesBoardView];
 
     }
@@ -99,12 +99,19 @@ int totalRotateTimes;
 
     for (int i = 1; i < 22; i++) {
         UIButton *answerButton = (UIButton *)[self.choicesBoardView viewWithTag:i];
+        [answerButton setHidden:NO];
         [answerButton setTitle:songAnswerSingleLetter[i-1] forState:UIControlStateNormal];
     }
     
     [UIView animateWithDuration:0.9 delay:0.1 usingSpringWithDamping:0.5 initialSpringVelocity:0.89 options:0 animations:^{
         [self.choicesBoardView setFrame:CGRectMake(self.downPartView.frame.origin.x,self.downPartView.frame.origin.y, self.downPartView.frame.size.width,[UIScreen mainScreen].bounds.size.height)];
     } completion:nil];
+    
+    //init this song's answer pick count.
+    self.choicesBoardView.songName = songName;
+    self.choicesBoardView.songNumber = diskNumber;
+
+    answerPickedCount = 0;
     
 //    NSLog(@"buttonText:%@",sender.titleLabel.text);
 //    NSLog(@"buttonNum:%@",[self.diskButtons[diskNumber] titleLabel].text);
@@ -115,6 +122,18 @@ int totalRotateTimes;
 -(void)answerTapped:(AnswerButton *)sender
 {
     NSLog(@"tag:%ld",sender.tag);
+    
+    if  (sender.titleLabel.text && ![sender.titleLabel.text isEqualToString:@" "])
+    {
+        [sender setTitle:@" " forState:UIControlStateNormal];
+        UIButton *isFromButton = (UIButton *)[self.choicesBoardView viewWithTag:sender.isFromTag];
+        [isFromButton setHidden:NO];
+        answerPickedCount --;
+    }
+    
+  
+
+    
 }
 
 - (IBAction)choicesTaped:(UIButton *)sender {
@@ -128,16 +147,62 @@ int totalRotateTimes;
     }
     
     for (int i = 0;i<decisions.count;i++) {
-        UIButton *answer = decisions[i];
-        if (!answer.titleLabel.text) {
+        AnswerButton *answer = decisions[i];
+        if (!answer.titleLabel.text || [answer.titleLabel.text isEqualToString:@" "]) {
+                
             [answer setTitle:sender.titleLabel.text forState:UIControlStateNormal];
+            answer.isFromTag =(int)sender.tag;
+            answerPickedCount ++;
+            
+            [sender setHidden:YES];
             break;
+        }
+        
+    }
+    if (answerPickedCount == decisions.count) {
+        NSString *songNameGuessed = @"";
+        for (int i = 0;i<decisions.count;i++) {
+            AnswerButton *answer = decisions[i];
+            songNameGuessed = [songNameGuessed stringByAppendingString:answer.titleLabel.text];
+        }
+        if ([songNameGuessed isEqualToString:self.choicesBoardView.songName]) {
+            NSLog(@"you got it");
+            [self.diskButtons[self.choicesBoardView.songNumber] setHidden:YES];
+            UILabel *songResult = [[UILabel alloc] initWithFrame:[(UIButton *)self.diskButtons[self.choicesBoardView.songNumber] frame] ];
+            songResult.text = songNameGuessed;
+            [self.downPartView addSubview:songResult];
+            [self.musicsPlayArray removeObjectAtIndex:self.choicesBoardView.songNumber];
+            [self returnChoicesBoard:nil];
+
+            if (self.musicsPlayArray.count == 0) {
+                [self nextLevel];
+            }
+            
+        }else
+        {
+            NSLog(@"you failed it.");
+            UIAlertView *failAlert = [[UIAlertView alloc] initWithTitle:@"再试一次" message:@"答错啦，大侠重头来过吧" delegate:self cancelButtonTitle:@"返回" otherButtonTitles:@"重新来过", nil];
+            [failAlert show];
         }
     }
     
     
-    
 }
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 1) {
+        
+        for (UIView *subview in [self.choicesBoardView subviews]) {
+            if ([subview isKindOfClass:[AnswerButton class]]) {
+                [((AnswerButton *)subview) setTitle:@" " forState:UIControlStateNormal];
+                answerPickedCount = 0;
+            }
+            [subview setHidden:NO];
+        }
+    }
+}
+
 
 - (IBAction)returnChoicesBoard:(UIButton *)sender {
     
@@ -322,7 +387,10 @@ int totalRotateTimes;
         
     }
     NSURL *fileURL = [[NSURL alloc] initFileURLWithPath:folderPath ];
-    AVAudioPlayer *myAudioPlayer= [[AVAudioPlayer alloc] initWithContentsOfURL:fileURL error:nil];
+    
+    NSError *error;
+    AVAudioPlayer *myAudioPlayer= [[AVAudioPlayer alloc] initWithContentsOfURL:fileURL error:&error];
+    NSLog(@"error:%@",[error localizedDescription]);
     myAudioPlayer.volume = 1.0f;
 
     NSLog(@"Audio:%@",myAudioPlayer);
@@ -400,8 +468,8 @@ int totalRotateTimes;
 {
     [self.myAudioArray removeAllObjects];
     
-    for (int i = 0; i< self.musicsArray.count; i++) {
-        [self tapSound:self.musicsArray[i] withType:@"m4a"];
+    for (int i = 0; i< self.musicsPlayArray.count; i++) {
+        [self tapSound:self.musicsPlayArray[i] withType:@"m4a"];
     }
     [self startSpin];
 
@@ -423,6 +491,24 @@ int totalRotateTimes;
     NSMutableDictionary *levelData = [[NSMutableDictionary alloc] initWithContentsOfFile:plistPath];
 //    NSLog(@"levelData%@",levelData);
     return levelData;
+    
+}
+
+-(void)nextLevel
+{
+    gameViewController *myGameViewController = [[gameViewController alloc] initWithNibName:@"gameViewController" bundle:nil];
+    myGameViewController.levelTitle = @"PLAY1234";
+    NSMutableArray *passMusics = [self.delegate configSongs];
+    
+    myGameViewController.musicsArray = passMusics;
+    
+    myGameViewController.delegate = self.delegate;
+    
+    NSArray *arrayControllers = self.navigationController.viewControllers;
+    NSMutableArray *arrayControllerNew = [NSMutableArray arrayWithArray:arrayControllers];
+    [arrayControllerNew removeLastObject];
+    [arrayControllerNew addObject:myGameViewController];
+    [self.navigationController setViewControllers:arrayControllerNew animated:YES];
     
 }
 @end

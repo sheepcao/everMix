@@ -7,11 +7,56 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A4A374FF1A4560260064AF00 /* 一场游戏一场梦.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A4A374FA1A4560260064AF00 /* 一场游戏一场梦.m4a */; };
-		A4A375001A4560260064AF00 /* 小苹果.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A4A374FB1A4560260064AF00 /* 小苹果.m4a */; };
-		A4A375011A4560260064AF00 /* 我可以抱你吗.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A4A374FC1A4560260064AF00 /* 我可以抱你吗.m4a */; };
-		A4A375021A4560260064AF00 /* 海阔天空.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A4A374FD1A4560260064AF00 /* 海阔天空.m4a */; };
-		A4A375031A4560260064AF00 /* 红日.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A4A374FE1A4560260064AF00 /* 红日.m4a */; };
+		A4A0A3921A50F7C4007A0876 /* high歌.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A4A0A3621A50F7C4007A0876 /* high歌.m4a */; };
+		A4A0A3931A50F7C4007A0876 /* 一场游戏一场梦.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A4A0A3631A50F7C4007A0876 /* 一场游戏一场梦.m4a */; };
+		A4A0A3941A50F7C4007A0876 /* 不管有多苦.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A4A0A3641A50F7C4007A0876 /* 不管有多苦.m4a */; };
+		A4A0A3951A50F7C4007A0876 /* 为爱疯狂.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A4A0A3651A50F7C4007A0876 /* 为爱疯狂.m4a */; };
+		A4A0A3961A50F7C4007A0876 /* 今天你要嫁给我.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A4A0A3661A50F7C4007A0876 /* 今天你要嫁给我.m4a */; };
+		A4A0A3971A50F7C4007A0876 /* 倒带.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A4A0A3671A50F7C4007A0876 /* 倒带.m4a */; };
+		A4A0A3981A50F7C4007A0876 /* 倔强.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A4A0A3681A50F7C4007A0876 /* 倔强.m4a */; };
+		A4A0A3991A50F7C4007A0876 /* 出卖.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A4A0A3691A50F7C4007A0876 /* 出卖.m4a */; };
+		A4A0A39A1A50F7C4007A0876 /* 勇敢的心.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A4A0A36A1A50F7C4007A0876 /* 勇敢的心.m4a */; };
+		A4A0A39B1A50F7C4007A0876 /* 匆匆那年.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A4A0A36B1A50F7C4007A0876 /* 匆匆那年.m4a */; };
+		A4A0A39C1A50F7C4007A0876 /* 十年.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A4A0A36C1A50F7C4007A0876 /* 十年.m4a */; };
+		A4A0A39D1A50F7C4007A0876 /* 单车.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A4A0A36D1A50F7C4007A0876 /* 单车.m4a */; };
+		A4A0A39E1A50F7C4007A0876 /* 可惜不是你.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A4A0A36E1A50F7C4007A0876 /* 可惜不是你.m4a */; };
+		A4A0A39F1A50F7C4007A0876 /* 后来.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A4A0A36F1A50F7C4007A0876 /* 后来.m4a */; };
+		A4A0A3A01A50F7C4007A0876 /* 听妈妈的话.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A4A0A3701A50F7C4007A0876 /* 听妈妈的话.m4a */; };
+		A4A0A3A11A50F7C4007A0876 /* 因为爱情.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A4A0A3711A50F7C4007A0876 /* 因为爱情.m4a */; };
+		A4A0A3A21A50F7C4007A0876 /* 在雨中.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A4A0A3721A50F7C4007A0876 /* 在雨中.m4a */; };
+		A4A0A3A31A50F7C4007A0876 /* 壁虎漫步.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A4A0A3731A50F7C4007A0876 /* 壁虎漫步.m4a */; };
+		A4A0A3A41A50F7C4007A0876 /* 女人花.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A4A0A3741A50F7C4007A0876 /* 女人花.m4a */; };
+		A4A0A3A51A50F7C4007A0876 /* 好久不见.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A4A0A3751A50F7C4007A0876 /* 好久不见.m4a */; };
+		A4A0A3A61A50F7C4007A0876 /* 存在.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A4A0A3761A50F7C4007A0876 /* 存在.m4a */; };
+		A4A0A3A71A50F7C4007A0876 /* 安静.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A4A0A3771A50F7C4007A0876 /* 安静.m4a */; };
+		A4A0A3A81A50F7C4007A0876 /* 小苹果.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A4A0A3781A50F7C4007A0876 /* 小苹果.m4a */; };
+		A4A0A3A91A50F7C4007A0876 /* 就是我.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A4A0A3791A50F7C4007A0876 /* 就是我.m4a */; };
+		A4A0A3AA1A50F7C4007A0876 /* 布拉格广场.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A4A0A37A1A50F7C4007A0876 /* 布拉格广场.m4a */; };
+		A4A0A3AB1A50F7C4007A0876 /* 忠孝东路走九遍.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A4A0A37B1A50F7C4007A0876 /* 忠孝东路走九遍.m4a */; };
+		A4A0A3AC1A50F7C4007A0876 /* 快乐崇拜.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A4A0A37C1A50F7C4007A0876 /* 快乐崇拜.m4a */; };
+		A4A0A3AD1A50F7C4007A0876 /* 情书.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A4A0A37D1A50F7C4007A0876 /* 情书.m4a */; };
+		A4A0A3AE1A50F7C4007A0876 /* 我们的爱.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A4A0A37E1A50F7C4007A0876 /* 我们的爱.m4a */; };
+		A4A0A3AF1A50F7C4007A0876 /* 我可以抱你吗.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A4A0A37F1A50F7C4007A0876 /* 我可以抱你吗.m4a */; };
+		A4A0A3B01A50F7C4007A0876 /* 我怀念的.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A4A0A3801A50F7C4007A0876 /* 我怀念的.m4a */; };
+		A4A0A3B11A50F7C4007A0876 /* 我的滑板鞋.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A4A0A3811A50F7C4007A0876 /* 我的滑板鞋.m4a */; };
+		A4A0A3B21A50F7C4007A0876 /* 断桥残雪.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A4A0A3821A50F7C4007A0876 /* 断桥残雪.m4a */; };
+		A4A0A3B31A50F7C4007A0876 /* 新贵妃醉酒.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A4A0A3831A50F7C4007A0876 /* 新贵妃醉酒.m4a */; };
+		A4A0A3B41A50F7C4007A0876 /* 时间煮雨.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A4A0A3841A50F7C4007A0876 /* 时间煮雨.m4a */; };
+		A4A0A3B51A50F7C4007A0876 /* 晴天.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A4A0A3851A50F7C4007A0876 /* 晴天.m4a */; };
+		A4A0A3B61A50F7C4007A0876 /* 海阔天空.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A4A0A3861A50F7C4007A0876 /* 海阔天空.m4a */; };
+		A4A0A3B71A50F7C4007A0876 /* 爱的供养.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A4A0A3871A50F7C4007A0876 /* 爱的供养.m4a */; };
+		A4A0A3B81A50F7C4007A0876 /* 牡丹亭外.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A4A0A3881A50F7C4007A0876 /* 牡丹亭外.m4a */; };
+		A4A0A3B91A50F7C4007A0876 /* 生如夏花.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A4A0A3891A50F7C4007A0876 /* 生如夏花.m4a */; };
+		A4A0A3BA1A50F7C4007A0876 /* 盛夏光年.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A4A0A38A1A50F7C4007A0876 /* 盛夏光年.m4a */; };
+		A4A0A3BB1A50F7C4007A0876 /* 离歌.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A4A0A38B1A50F7C4007A0876 /* 离歌.m4a */; };
+		A4A0A3BC1A50F7C4007A0876 /* 童话.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A4A0A38C1A50F7C4007A0876 /* 童话.m4a */; };
+		A4A0A3BD1A50F7C4007A0876 /* 类似爱情.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A4A0A38D1A50F7C4007A0876 /* 类似爱情.m4a */; };
+		A4A0A3BE1A50F7C4007A0876 /* 素颜.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A4A0A38E1A50F7C4007A0876 /* 素颜.m4a */; };
+		A4A0A3BF1A50F7C4007A0876 /* 红日.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A4A0A38F1A50F7C4007A0876 /* 红日.m4a */; };
+		A4A0A3C01A50F7C4007A0876 /* 红豆.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A4A0A3901A50F7C4007A0876 /* 红豆.m4a */; };
+		A4A0A3C31A50F80E007A0876 /* 至少还有你.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A4A0A3C21A50F80E007A0876 /* 至少还有你.m4a */; };
+		A4A0A3C61A5128C0007A0876 /* boardView.m in Sources */ = {isa = PBXBuildFile; fileRef = A4A0A3C51A5128C0007A0876 /* boardView.m */; };
+		A4A0A3C81A514835007A0876 /* gameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4A0A3C71A514835007A0876 /* gameViewController.xib */; };
 		A4AC86071A36CFE700CD19CA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A4AC86061A36CFE700CD19CA /* main.m */; };
 		A4AC860A1A36CFE700CD19CA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A4AC86091A36CFE700CD19CA /* AppDelegate.m */; };
 		A4AC860D1A36CFE700CD19CA /* gameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4AC860C1A36CFE700CD19CA /* gameViewController.m */; };
@@ -19,7 +64,6 @@
 		A4AC86121A36CFE700CD19CA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4AC86111A36CFE700CD19CA /* Images.xcassets */; };
 		A4AC86151A36CFE700CD19CA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4AC86131A36CFE700CD19CA /* LaunchScreen.xib */; };
 		A4AC86211A36CFE700CD19CA /* mixMusicTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A4AC86201A36CFE700CD19CA /* mixMusicTestTests.m */; };
-		A4AC86331A36D12A00CD19CA /* choiceSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4AC862E1A36D12A00CD19CA /* choiceSound.mp3 */; };
 		A4AC86401A36F47100CD19CA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4AC863F1A36F47100CD19CA /* ViewController.m */; };
 		A4B76BFA1A3976760014014D /* singleMusicView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4B76BF91A3976760014014D /* singleMusicView.xib */; };
 		A4B76C101A3982EC0014014D /* star1.png in Resources */ = {isa = PBXBuildFile; fileRef = A4B76C041A3982EC0014014D /* star1.png */; };
@@ -53,11 +97,57 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A4A374FA1A4560260064AF00 /* 一场游戏一场梦.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "一场游戏一场梦.m4a"; sourceTree = "<group>"; };
-		A4A374FB1A4560260064AF00 /* 小苹果.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "小苹果.m4a"; sourceTree = "<group>"; };
-		A4A374FC1A4560260064AF00 /* 我可以抱你吗.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "我可以抱你吗.m4a"; sourceTree = "<group>"; };
-		A4A374FD1A4560260064AF00 /* 海阔天空.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "海阔天空.m4a"; sourceTree = "<group>"; };
-		A4A374FE1A4560260064AF00 /* 红日.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "红日.m4a"; sourceTree = "<group>"; };
+		A4A0A3621A50F7C4007A0876 /* high歌.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "high歌.m4a"; sourceTree = "<group>"; };
+		A4A0A3631A50F7C4007A0876 /* 一场游戏一场梦.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "一场游戏一场梦.m4a"; sourceTree = "<group>"; };
+		A4A0A3641A50F7C4007A0876 /* 不管有多苦.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "不管有多苦.m4a"; sourceTree = "<group>"; };
+		A4A0A3651A50F7C4007A0876 /* 为爱疯狂.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "为爱疯狂.m4a"; sourceTree = "<group>"; };
+		A4A0A3661A50F7C4007A0876 /* 今天你要嫁给我.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "今天你要嫁给我.m4a"; sourceTree = "<group>"; };
+		A4A0A3671A50F7C4007A0876 /* 倒带.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "倒带.m4a"; sourceTree = "<group>"; };
+		A4A0A3681A50F7C4007A0876 /* 倔强.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "倔强.m4a"; sourceTree = "<group>"; };
+		A4A0A3691A50F7C4007A0876 /* 出卖.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "出卖.m4a"; sourceTree = "<group>"; };
+		A4A0A36A1A50F7C4007A0876 /* 勇敢的心.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "勇敢的心.m4a"; sourceTree = "<group>"; };
+		A4A0A36B1A50F7C4007A0876 /* 匆匆那年.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "匆匆那年.m4a"; sourceTree = "<group>"; };
+		A4A0A36C1A50F7C4007A0876 /* 十年.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "十年.m4a"; sourceTree = "<group>"; };
+		A4A0A36D1A50F7C4007A0876 /* 单车.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "单车.m4a"; sourceTree = "<group>"; };
+		A4A0A36E1A50F7C4007A0876 /* 可惜不是你.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "可惜不是你.m4a"; sourceTree = "<group>"; };
+		A4A0A36F1A50F7C4007A0876 /* 后来.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "后来.m4a"; sourceTree = "<group>"; };
+		A4A0A3701A50F7C4007A0876 /* 听妈妈的话.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "听妈妈的话.m4a"; sourceTree = "<group>"; };
+		A4A0A3711A50F7C4007A0876 /* 因为爱情.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "因为爱情.m4a"; sourceTree = "<group>"; };
+		A4A0A3721A50F7C4007A0876 /* 在雨中.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "在雨中.m4a"; sourceTree = "<group>"; };
+		A4A0A3731A50F7C4007A0876 /* 壁虎漫步.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "壁虎漫步.m4a"; sourceTree = "<group>"; };
+		A4A0A3741A50F7C4007A0876 /* 女人花.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "女人花.m4a"; sourceTree = "<group>"; };
+		A4A0A3751A50F7C4007A0876 /* 好久不见.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "好久不见.m4a"; sourceTree = "<group>"; };
+		A4A0A3761A50F7C4007A0876 /* 存在.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "存在.m4a"; sourceTree = "<group>"; };
+		A4A0A3771A50F7C4007A0876 /* 安静.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "安静.m4a"; sourceTree = "<group>"; };
+		A4A0A3781A50F7C4007A0876 /* 小苹果.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "小苹果.m4a"; sourceTree = "<group>"; };
+		A4A0A3791A50F7C4007A0876 /* 就是我.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "就是我.m4a"; sourceTree = "<group>"; };
+		A4A0A37A1A50F7C4007A0876 /* 布拉格广场.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "布拉格广场.m4a"; sourceTree = "<group>"; };
+		A4A0A37B1A50F7C4007A0876 /* 忠孝东路走九遍.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "忠孝东路走九遍.m4a"; sourceTree = "<group>"; };
+		A4A0A37C1A50F7C4007A0876 /* 快乐崇拜.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "快乐崇拜.m4a"; sourceTree = "<group>"; };
+		A4A0A37D1A50F7C4007A0876 /* 情书.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "情书.m4a"; sourceTree = "<group>"; };
+		A4A0A37E1A50F7C4007A0876 /* 我们的爱.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "我们的爱.m4a"; sourceTree = "<group>"; };
+		A4A0A37F1A50F7C4007A0876 /* 我可以抱你吗.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "我可以抱你吗.m4a"; sourceTree = "<group>"; };
+		A4A0A3801A50F7C4007A0876 /* 我怀念的.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "我怀念的.m4a"; sourceTree = "<group>"; };
+		A4A0A3811A50F7C4007A0876 /* 我的滑板鞋.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "我的滑板鞋.m4a"; sourceTree = "<group>"; };
+		A4A0A3821A50F7C4007A0876 /* 断桥残雪.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "断桥残雪.m4a"; sourceTree = "<group>"; };
+		A4A0A3831A50F7C4007A0876 /* 新贵妃醉酒.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "新贵妃醉酒.m4a"; sourceTree = "<group>"; };
+		A4A0A3841A50F7C4007A0876 /* 时间煮雨.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "时间煮雨.m4a"; sourceTree = "<group>"; };
+		A4A0A3851A50F7C4007A0876 /* 晴天.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "晴天.m4a"; sourceTree = "<group>"; };
+		A4A0A3861A50F7C4007A0876 /* 海阔天空.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "海阔天空.m4a"; sourceTree = "<group>"; };
+		A4A0A3871A50F7C4007A0876 /* 爱的供养.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "爱的供养.m4a"; sourceTree = "<group>"; };
+		A4A0A3881A50F7C4007A0876 /* 牡丹亭外.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "牡丹亭外.m4a"; sourceTree = "<group>"; };
+		A4A0A3891A50F7C4007A0876 /* 生如夏花.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "生如夏花.m4a"; sourceTree = "<group>"; };
+		A4A0A38A1A50F7C4007A0876 /* 盛夏光年.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "盛夏光年.m4a"; sourceTree = "<group>"; };
+		A4A0A38B1A50F7C4007A0876 /* 离歌.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "离歌.m4a"; sourceTree = "<group>"; };
+		A4A0A38C1A50F7C4007A0876 /* 童话.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "童话.m4a"; sourceTree = "<group>"; };
+		A4A0A38D1A50F7C4007A0876 /* 类似爱情.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "类似爱情.m4a"; sourceTree = "<group>"; };
+		A4A0A38E1A50F7C4007A0876 /* 素颜.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "素颜.m4a"; sourceTree = "<group>"; };
+		A4A0A38F1A50F7C4007A0876 /* 红日.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "红日.m4a"; sourceTree = "<group>"; };
+		A4A0A3901A50F7C4007A0876 /* 红豆.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "红豆.m4a"; sourceTree = "<group>"; };
+		A4A0A3C21A50F80E007A0876 /* 至少还有你.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "至少还有你.m4a"; sourceTree = "<group>"; };
+		A4A0A3C41A5128C0007A0876 /* boardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = boardView.h; sourceTree = "<group>"; };
+		A4A0A3C51A5128C0007A0876 /* boardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = boardView.m; sourceTree = "<group>"; };
+		A4A0A3C71A514835007A0876 /* gameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = gameViewController.xib; sourceTree = "<group>"; };
 		A4A375041A47D37F0064AF00 /* mixMusicTest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = mixMusicTest.entitlements; sourceTree = "<group>"; };
 		A4AC86011A36CFE700CD19CA /* mixMusicTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mixMusicTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4AC86051A36CFE700CD19CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -72,7 +162,6 @@
 		A4AC861A1A36CFE700CD19CA /* mixMusicTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mixMusicTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4AC861F1A36CFE700CD19CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A4AC86201A36CFE700CD19CA /* mixMusicTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = mixMusicTestTests.m; sourceTree = "<group>"; };
-		A4AC862E1A36D12A00CD19CA /* choiceSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = choiceSound.mp3; sourceTree = "<group>"; };
 		A4AC863E1A36F47100CD19CA /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		A4AC863F1A36F47100CD19CA /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		A4B76BF91A3976760014014D /* singleMusicView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = singleMusicView.xib; sourceTree = "<group>"; };
@@ -139,6 +228,8 @@
 				A4A375041A47D37F0064AF00 /* mixMusicTest.entitlements */,
 				A4DDB6E11A4D036F00CFF980 /* AnswerButton.h */,
 				A4DDB6E21A4D036F00CFF980 /* AnswerButton.m */,
+				A4A0A3C41A5128C0007A0876 /* boardView.h */,
+				A4A0A3C51A5128C0007A0876 /* boardView.m */,
 				A4AC86081A36CFE700CD19CA /* AppDelegate.h */,
 				A4AC86091A36CFE700CD19CA /* AppDelegate.m */,
 				A4AC863E1A36F47100CD19CA /* ViewController.h */,
@@ -149,6 +240,7 @@
 				A4AC86111A36CFE700CD19CA /* Images.xcassets */,
 				A4AC86131A36CFE700CD19CA /* LaunchScreen.xib */,
 				A4B76BF91A3976760014014D /* singleMusicView.xib */,
+				A4A0A3C71A514835007A0876 /* gameViewController.xib */,
 				A4B76C1C1A3997600014014D /* choicesBoardView.xib */,
 				A4AC86041A36CFE700CD19CA /* Supporting Files */,
 			);
@@ -209,12 +301,54 @@
 		A4E094FD1A4BE092001AD626 /* sound */ = {
 			isa = PBXGroup;
 			children = (
-				A4A374FA1A4560260064AF00 /* 一场游戏一场梦.m4a */,
-				A4A374FB1A4560260064AF00 /* 小苹果.m4a */,
-				A4A374FC1A4560260064AF00 /* 我可以抱你吗.m4a */,
-				A4A374FD1A4560260064AF00 /* 海阔天空.m4a */,
-				A4A374FE1A4560260064AF00 /* 红日.m4a */,
-				A4AC862E1A36D12A00CD19CA /* choiceSound.mp3 */,
+				A4A0A3671A50F7C4007A0876 /* 倒带.m4a */,
+				A4A0A3681A50F7C4007A0876 /* 倔强.m4a */,
+				A4A0A3691A50F7C4007A0876 /* 出卖.m4a */,
+				A4A0A36C1A50F7C4007A0876 /* 十年.m4a */,
+				A4A0A36D1A50F7C4007A0876 /* 单车.m4a */,
+				A4A0A36F1A50F7C4007A0876 /* 后来.m4a */,
+				A4A0A3761A50F7C4007A0876 /* 存在.m4a */,
+				A4A0A3771A50F7C4007A0876 /* 安静.m4a */,
+				A4A0A37D1A50F7C4007A0876 /* 情书.m4a */,
+				A4A0A3851A50F7C4007A0876 /* 晴天.m4a */,
+				A4A0A38B1A50F7C4007A0876 /* 离歌.m4a */,
+				A4A0A38C1A50F7C4007A0876 /* 童话.m4a */,
+				A4A0A38E1A50F7C4007A0876 /* 素颜.m4a */,
+				A4A0A38F1A50F7C4007A0876 /* 红日.m4a */,
+				A4A0A3901A50F7C4007A0876 /* 红豆.m4a */,
+				A4A0A3721A50F7C4007A0876 /* 在雨中.m4a */,
+				A4A0A3741A50F7C4007A0876 /* 女人花.m4a */,
+				A4A0A3781A50F7C4007A0876 /* 小苹果.m4a */,
+				A4A0A3791A50F7C4007A0876 /* 就是我.m4a */,
+				A4A0A3651A50F7C4007A0876 /* 为爱疯狂.m4a */,
+				A4A0A36A1A50F7C4007A0876 /* 勇敢的心.m4a */,
+				A4A0A36B1A50F7C4007A0876 /* 匆匆那年.m4a */,
+				A4A0A37C1A50F7C4007A0876 /* 快乐崇拜.m4a */,
+				A4A0A3711A50F7C4007A0876 /* 因为爱情.m4a */,
+				A4A0A3731A50F7C4007A0876 /* 壁虎漫步.m4a */,
+				A4A0A37E1A50F7C4007A0876 /* 我们的爱.m4a */,
+				A4A0A3801A50F7C4007A0876 /* 我怀念的.m4a */,
+				A4A0A3751A50F7C4007A0876 /* 好久不见.m4a */,
+				A4A0A3821A50F7C4007A0876 /* 断桥残雪.m4a */,
+				A4A0A3841A50F7C4007A0876 /* 时间煮雨.m4a */,
+				A4A0A3861A50F7C4007A0876 /* 海阔天空.m4a */,
+				A4A0A3871A50F7C4007A0876 /* 爱的供养.m4a */,
+				A4A0A3881A50F7C4007A0876 /* 牡丹亭外.m4a */,
+				A4A0A3891A50F7C4007A0876 /* 生如夏花.m4a */,
+				A4A0A38A1A50F7C4007A0876 /* 盛夏光年.m4a */,
+				A4A0A38D1A50F7C4007A0876 /* 类似爱情.m4a */,
+				A4A0A3621A50F7C4007A0876 /* high歌.m4a */,
+				A4A0A36E1A50F7C4007A0876 /* 可惜不是你.m4a */,
+				A4A0A3641A50F7C4007A0876 /* 不管有多苦.m4a */,
+				A4A0A3701A50F7C4007A0876 /* 听妈妈的话.m4a */,
+				A4A0A37A1A50F7C4007A0876 /* 布拉格广场.m4a */,
+				A4A0A3811A50F7C4007A0876 /* 我的滑板鞋.m4a */,
+				A4A0A3831A50F7C4007A0876 /* 新贵妃醉酒.m4a */,
+				A4A0A3C21A50F80E007A0876 /* 至少还有你.m4a */,
+				A4A0A37F1A50F7C4007A0876 /* 我可以抱你吗.m4a */,
+				A4A0A37B1A50F7C4007A0876 /* 忠孝东路走九遍.m4a */,
+				A4A0A3661A50F7C4007A0876 /* 今天你要嫁给我.m4a */,
+				A4A0A3631A50F7C4007A0876 /* 一场游戏一场梦.m4a */,
 			);
 			name = sound;
 			sourceTree = "<group>";
@@ -305,32 +439,75 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4A0A3BC1A50F7C4007A0876 /* 童话.m4a in Resources */,
 				A4B76C1A1A3982EC0014014D /* Squarea.png in Resources */,
+				A4A0A3AF1A50F7C4007A0876 /* 我可以抱你吗.m4a in Resources */,
 				A4B76C131A3982EC0014014D /* Disk-CD-icon.png in Resources */,
 				A4E094FC1A4BE07B001AD626 /* gameData.plist in Resources */,
-				A4A374FF1A4560260064AF00 /* 一场游戏一场梦.m4a in Resources */,
-				A4A375001A4560260064AF00 /* 小苹果.m4a in Resources */,
+				A4A0A3A61A50F7C4007A0876 /* 存在.m4a in Resources */,
 				A4AC86101A36CFE700CD19CA /* Main.storyboard in Resources */,
-				A4AC86331A36D12A00CD19CA /* choiceSound.mp3 in Resources */,
+				A4A0A3AE1A50F7C4007A0876 /* 我们的爱.m4a in Resources */,
+				A4A0A3AA1A50F7C4007A0876 /* 布拉格广场.m4a in Resources */,
 				A4B76C171A3982EC0014014D /* Print-CD-icon.png in Resources */,
+				A4A0A3A31A50F7C4007A0876 /* 壁虎漫步.m4a in Resources */,
+				A4A0A3961A50F7C4007A0876 /* 今天你要嫁给我.m4a in Resources */,
 				A4B76C191A3982EC0014014D /* share.png in Resources */,
+				A4A0A3A21A50F7C4007A0876 /* 在雨中.m4a in Resources */,
+				A4A0A3931A50F7C4007A0876 /* 一场游戏一场梦.m4a in Resources */,
+				A4A0A3AB1A50F7C4007A0876 /* 忠孝东路走九遍.m4a in Resources */,
 				A4E094F81A4BDA8F001AD626 /* Square.png in Resources */,
 				A4E094FA1A4BDD8D001AD626 /* star2.png in Resources */,
-				A4A375031A4560260064AF00 /* 红日.m4a in Resources */,
+				A4A0A3AC1A50F7C4007A0876 /* 快乐崇拜.m4a in Resources */,
+				A4A0A3AD1A50F7C4007A0876 /* 情书.m4a in Resources */,
+				A4A0A3C01A50F7C4007A0876 /* 红豆.m4a in Resources */,
+				A4A0A3BE1A50F7C4007A0876 /* 素颜.m4a in Resources */,
+				A4A0A3C81A514835007A0876 /* gameViewController.xib in Resources */,
 				A4B76C161A3982EC0014014D /* music.png in Resources */,
 				A4B76BFA1A3976760014014D /* singleMusicView.xib in Resources */,
 				A4B76C1B1A3982EC0014014D /* tip.png in Resources */,
+				A4A0A3C31A50F80E007A0876 /* 至少还有你.m4a in Resources */,
+				A4A0A39C1A50F7C4007A0876 /* 十年.m4a in Resources */,
+				A4A0A3A01A50F7C4007A0876 /* 听妈妈的话.m4a in Resources */,
+				A4A0A3B01A50F7C4007A0876 /* 我怀念的.m4a in Resources */,
+				A4A0A3BA1A50F7C4007A0876 /* 盛夏光年.m4a in Resources */,
 				A4B76C121A3982EC0014014D /* audio-on.png in Resources */,
+				A4A0A3B91A50F7C4007A0876 /* 生如夏花.m4a in Resources */,
 				A4B76C1D1A3997600014014D /* choicesBoardView.xib in Resources */,
-				A4A375011A4560260064AF00 /* 我可以抱你吗.m4a in Resources */,
+				A4A0A3951A50F7C4007A0876 /* 为爱疯狂.m4a in Resources */,
+				A4A0A39B1A50F7C4007A0876 /* 匆匆那年.m4a in Resources */,
+				A4A0A3B11A50F7C4007A0876 /* 我的滑板鞋.m4a in Resources */,
+				A4A0A3B71A50F7C4007A0876 /* 爱的供养.m4a in Resources */,
+				A4A0A3B31A50F7C4007A0876 /* 新贵妃醉酒.m4a in Resources */,
+				A4A0A3941A50F7C4007A0876 /* 不管有多苦.m4a in Resources */,
+				A4A0A3A51A50F7C4007A0876 /* 好久不见.m4a in Resources */,
 				A4B76C151A3982EC0014014D /* money-128.png in Resources */,
-				A4A375021A4560260064AF00 /* 海阔天空.m4a in Resources */,
+				A4A0A3A11A50F7C4007A0876 /* 因为爱情.m4a in Resources */,
+				A4A0A3A41A50F7C4007A0876 /* 女人花.m4a in Resources */,
+				A4A0A39D1A50F7C4007A0876 /* 单车.m4a in Resources */,
 				A4B76C141A3982EC0014014D /* info.png in Resources */,
+				A4A0A3A81A50F7C4007A0876 /* 小苹果.m4a in Resources */,
+				A4A0A3B51A50F7C4007A0876 /* 晴天.m4a in Resources */,
+				A4A0A39F1A50F7C4007A0876 /* 后来.m4a in Resources */,
 				A4DDB6E51A4D399A00CFF980 /* circle.png in Resources */,
+				A4A0A39A1A50F7C4007A0876 /* 勇敢的心.m4a in Resources */,
+				A4A0A3981A50F7C4007A0876 /* 倔强.m4a in Resources */,
+				A4A0A3B81A50F7C4007A0876 /* 牡丹亭外.m4a in Resources */,
+				A4A0A3BB1A50F7C4007A0876 /* 离歌.m4a in Resources */,
 				A4B76C111A3982EC0014014D /* audio-off.png in Resources */,
+				A4A0A3921A50F7C4007A0876 /* high歌.m4a in Resources */,
+				A4A0A3B61A50F7C4007A0876 /* 海阔天空.m4a in Resources */,
+				A4A0A3A91A50F7C4007A0876 /* 就是我.m4a in Resources */,
 				A4B76C101A3982EC0014014D /* star1.png in Resources */,
+				A4A0A3991A50F7C4007A0876 /* 出卖.m4a in Resources */,
+				A4A0A3B21A50F7C4007A0876 /* 断桥残雪.m4a in Resources */,
+				A4A0A3BF1A50F7C4007A0876 /* 红日.m4a in Resources */,
+				A4A0A3A71A50F7C4007A0876 /* 安静.m4a in Resources */,
+				A4A0A3B41A50F7C4007A0876 /* 时间煮雨.m4a in Resources */,
 				A4AC86151A36CFE700CD19CA /* LaunchScreen.xib in Resources */,
+				A4A0A3971A50F7C4007A0876 /* 倒带.m4a in Resources */,
+				A4A0A3BD1A50F7C4007A0876 /* 类似爱情.m4a in Resources */,
 				A4AC86121A36CFE700CD19CA /* Images.xcassets in Resources */,
+				A4A0A39E1A50F7C4007A0876 /* 可惜不是你.m4a in Resources */,
 				A4B76C181A3982EC0014014D /* refresh.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -354,6 +531,7 @@
 				A4AC86401A36F47100CD19CA /* ViewController.m in Sources */,
 				A4DDB6E31A4D036F00CFF980 /* AnswerButton.m in Sources */,
 				A4AC86071A36CFE700CD19CA /* main.m in Sources */,
+				A4A0A3C61A5128C0007A0876 /* boardView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

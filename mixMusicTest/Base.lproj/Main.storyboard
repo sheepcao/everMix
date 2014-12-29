@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="1mw-ay-E1q">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -21,200 +20,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PfG-21-MHy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-883.73333333333335" y="-93.010000000000005"/>
-        </scene>
-        <!--gameViewController-->
-        <scene sceneID="ufC-wZ-h7g">
-            <objects>
-                <viewController id="vXZ-lx-hvc" userLabel="gameViewController" customClass="gameViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
-                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Xd-Wx-jPI" userLabel="downPartView">
-                                <rect key="frame" x="0.0" y="181" width="320" height="387"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EIc-jM-yoy">
-                                        <rect key="frame" x="50" y="33" width="80" height="80"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="EIc-jM-yoy" secondAttribute="height" multiplier="1:1" id="MFw-Nk-zmf"/>
-                                        </constraints>
-                                        <state key="normal" title="1" backgroundImage="circle.png">
-                                            <color key="titleColor" red="0.0078431377000000007" green="0.10588235999999999" blue="0.25098040999999999" alpha="1" colorSpace="deviceRGB"/>
-                                        </state>
-                                        <state key="disabled" image="Disk-CD-icon.png"/>
-                                        <connections>
-                                            <action selector="diskTap:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="OuX-yu-Cxt"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zok-7w-kCG">
-                                        <rect key="frame" x="190" y="33" width="80" height="80"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="zok-7w-kCG" secondAttribute="height" multiplier="1:1" id="aRk-ax-P0D"/>
-                                        </constraints>
-                                        <state key="normal" title="2" backgroundImage="circle.png">
-                                            <color key="titleColor" red="0.0078431377000000007" green="0.10588235999999999" blue="0.25098040999999999" alpha="1" colorSpace="deviceRGB"/>
-                                        </state>
-                                        <state key="disabled" image="Disk-CD-icon.png"/>
-                                        <connections>
-                                            <action selector="diskTap:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="jib-SH-lrd"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wr6-DD-hCu">
-                                        <rect key="frame" x="50" y="146" width="80" height="80"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="Wr6-DD-hCu" secondAttribute="height" multiplier="1:1" id="WHE-VP-64S"/>
-                                        </constraints>
-                                        <state key="normal" title="3" backgroundImage="circle.png">
-                                            <color key="titleColor" red="0.0078431377000000007" green="0.10588235999999999" blue="0.25098040999999999" alpha="1" colorSpace="deviceRGB"/>
-                                        </state>
-                                        <state key="disabled" image="Disk-CD-icon.png"/>
-                                        <connections>
-                                            <action selector="diskTap:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="eEQ-Ce-NWV"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5aj-nA-ncK">
-                                        <rect key="frame" x="190" y="146" width="80" height="80"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="5aj-nA-ncK" secondAttribute="height" multiplier="1:1" id="SNE-Qq-RGf"/>
-                                        </constraints>
-                                        <state key="normal" title="4" backgroundImage="circle.png">
-                                            <color key="titleColor" red="0.0078431377000000007" green="0.10588235999999999" blue="0.25098040999999999" alpha="1" colorSpace="deviceRGB"/>
-                                        </state>
-                                        <state key="disabled" image="Disk-CD-icon.png"/>
-                                        <connections>
-                                            <action selector="diskTap:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="pQD-vE-Vjf"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aU6-fp-kEA">
-                                        <rect key="frame" x="190" y="259" width="80" height="80"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="aU6-fp-kEA" secondAttribute="height" multiplier="1:1" id="fxV-S7-k5c"/>
-                                        </constraints>
-                                        <state key="normal" title="6" backgroundImage="circle.png">
-                                            <color key="titleColor" red="0.0078431377000000007" green="0.10588235999999999" blue="0.25098040999999999" alpha="1" colorSpace="deviceRGB"/>
-                                        </state>
-                                        <state key="disabled" image="Disk-CD-icon.png"/>
-                                        <connections>
-                                            <action selector="diskTap:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="JVq-Id-VYa"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fDV-nk-d3u">
-                                        <rect key="frame" x="50" y="259" width="80" height="80"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="fDV-nk-d3u" secondAttribute="height" multiplier="1:1" id="2mg-Fw-HOZ"/>
-                                        </constraints>
-                                        <state key="normal" title="5" backgroundImage="circle.png">
-                                            <color key="titleColor" red="0.0078431377000000007" green="0.10588235999999999" blue="0.25098040999999999" alpha="1" colorSpace="deviceRGB"/>
-                                        </state>
-                                        <state key="disabled" image="Disk-CD-icon.png"/>
-                                        <connections>
-                                            <action selector="diskTap:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="p3i-4g-2nw"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JLN-cR-YMH">
-                                        <rect key="frame" x="160" y="0.0" width="1" height="387"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="1" id="j6W-kp-ob8"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="JLN-cR-YMH" firstAttribute="leading" secondItem="EIc-jM-yoy" secondAttribute="trailing" constant="30" id="9ey-b8-rOt"/>
-                                    <constraint firstAttribute="centerX" secondItem="JLN-cR-YMH" secondAttribute="centerX" constant="-0.5" id="BtP-c5-2FX"/>
-                                    <constraint firstAttribute="trailing" secondItem="zok-7w-kCG" secondAttribute="trailing" constant="50" id="Ctm-PK-drO"/>
-                                    <constraint firstAttribute="trailing" secondItem="aU6-fp-kEA" secondAttribute="trailing" constant="50" id="FhL-IL-V3c"/>
-                                    <constraint firstItem="zok-7w-kCG" firstAttribute="leading" secondItem="JLN-cR-YMH" secondAttribute="trailing" constant="29" id="IiH-Ee-V1c"/>
-                                    <constraint firstItem="JLN-cR-YMH" firstAttribute="leading" secondItem="fDV-nk-d3u" secondAttribute="trailing" constant="30" id="J1c-5x-Bye"/>
-                                    <constraint firstAttribute="height" constant="387" id="JJr-Ep-5yK"/>
-                                    <constraint firstItem="EIc-jM-yoy" firstAttribute="leading" secondItem="5Xd-Wx-jPI" secondAttribute="leading" constant="50" id="JWZ-r1-Ook"/>
-                                    <constraint firstAttribute="centerY" secondItem="Wr6-DD-hCu" secondAttribute="centerY" constant="7.5" id="KVw-3z-aIe"/>
-                                    <constraint firstAttribute="trailing" secondItem="5aj-nA-ncK" secondAttribute="trailing" constant="50" id="MuI-gq-ldc"/>
-                                    <constraint firstItem="5aj-nA-ncK" firstAttribute="top" secondItem="zok-7w-kCG" secondAttribute="bottom" constant="33" id="U7U-ap-o7Z"/>
-                                    <constraint firstItem="aU6-fp-kEA" firstAttribute="leading" secondItem="JLN-cR-YMH" secondAttribute="trailing" constant="29" id="UP3-v4-90z"/>
-                                    <constraint firstAttribute="bottom" secondItem="JLN-cR-YMH" secondAttribute="bottom" id="VQb-e5-V5o"/>
-                                    <constraint firstItem="Wr6-DD-hCu" firstAttribute="top" secondItem="EIc-jM-yoy" secondAttribute="bottom" constant="33" id="Zhx-lc-rYv"/>
-                                    <constraint firstItem="5aj-nA-ncK" firstAttribute="leading" secondItem="JLN-cR-YMH" secondAttribute="trailing" constant="29" id="atJ-6g-ju6"/>
-                                    <constraint firstAttribute="centerY" secondItem="5aj-nA-ncK" secondAttribute="centerY" constant="7.5" id="cOg-zM-vut"/>
-                                    <constraint firstItem="Wr6-DD-hCu" firstAttribute="leading" secondItem="5Xd-Wx-jPI" secondAttribute="leading" constant="50" id="flT-6c-1nT"/>
-                                    <constraint firstItem="fDV-nk-d3u" firstAttribute="top" secondItem="Wr6-DD-hCu" secondAttribute="bottom" constant="33" id="h4M-Bi-UT2"/>
-                                    <constraint firstItem="fDV-nk-d3u" firstAttribute="leading" secondItem="5Xd-Wx-jPI" secondAttribute="leading" constant="50" id="hYr-Zk-xuK"/>
-                                    <constraint firstItem="JLN-cR-YMH" firstAttribute="top" secondItem="5Xd-Wx-jPI" secondAttribute="top" id="kR5-HO-xfO"/>
-                                    <constraint firstItem="JLN-cR-YMH" firstAttribute="leading" secondItem="Wr6-DD-hCu" secondAttribute="trailing" constant="30" id="rWx-mO-CHQ"/>
-                                    <constraint firstItem="aU6-fp-kEA" firstAttribute="top" secondItem="5aj-nA-ncK" secondAttribute="bottom" constant="33" id="v5R-Gc-06J"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NHA-cp-bF4" userLabel="playConsoleView">
-                                <rect key="frame" x="0.0" y="64" width="320" height="117"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xc8-Od-y6t">
-                                        <rect key="frame" x="106" y="4" width="100" height="100"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="100" id="ZGZ-Tk-9xH"/>
-                                            <constraint firstAttribute="height" constant="100" id="kcl-eb-dN5"/>
-                                        </constraints>
-                                        <state key="normal" title="PLAY" image="Print-CD-icon.png">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="playBtn:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="9q4-87-bHj"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zrr-J5-ds5">
-                                        <rect key="frame" x="24" y="35" width="40" height="40"/>
-                                        <state key="normal" title="Button" image="share.png">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jr1-RO-99m">
-                                        <rect key="frame" x="249" y="35" width="40" height="40"/>
-                                        <state key="normal" title="Button" image="refresh.png">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" red="0.96986199819999996" green="0.97653398719999995" blue="0.95686017339999996" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="centerX" secondItem="Xc8-Od-y6t" secondAttribute="centerX" constant="4" id="EZn-cj-QkA"/>
-                                    <constraint firstAttribute="height" constant="117" id="Pr0-A2-Aut"/>
-                                    <constraint firstAttribute="centerY" secondItem="Xc8-Od-y6t" secondAttribute="centerY" constant="4.5" id="ya5-3x-xGw"/>
-                                </constraints>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="5Xd-Wx-jPI" firstAttribute="top" secondItem="NHA-cp-bF4" secondAttribute="bottom" id="2R7-5o-gva"/>
-                            <constraint firstItem="5Xd-Wx-jPI" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="6Ea-Le-SLp"/>
-                            <constraint firstItem="NHA-cp-bF4" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="7jK-Gt-A7g"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="NHA-cp-bF4" secondAttribute="trailing" constant="-16" id="EYG-D2-ZCy"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="5Xd-Wx-jPI" secondAttribute="trailing" constant="-16" id="K78-gV-BUX"/>
-                            <constraint firstItem="NHA-cp-bF4" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="mRa-aO-ew7"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="5Xd-Wx-jPI" secondAttribute="bottom" id="ss2-qk-1Te"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="nCC-XG-mVP"/>
-                    <connections>
-                        <outlet property="downPartView" destination="5Xd-Wx-jPI" id="zkd-pL-m0v"/>
-                        <outlet property="playBtn" destination="Xc8-Od-y6t" id="mXq-05-AGv"/>
-                        <outlet property="playConsoleView" destination="NHA-cp-bF4" id="p5s-gY-jsQ"/>
-                        <outletCollection property="diskButtons" destination="EIc-jM-yoy" id="BYp-HP-f1Z"/>
-                        <outletCollection property="diskButtons" destination="zok-7w-kCG" id="bcA-qj-Ehp"/>
-                        <outletCollection property="diskButtons" destination="Wr6-DD-hCu" id="Br4-eY-Z6L"/>
-                        <outletCollection property="diskButtons" destination="5aj-nA-ncK" id="gVd-d5-Wxp"/>
-                        <outletCollection property="diskButtons" destination="fDV-nk-d3u" id="5yW-7i-bum"/>
-                        <outletCollection property="diskButtons" destination="aU6-fp-kEA" id="c8G-Hf-tc2"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-65" y="-94"/>
         </scene>
         <!--mainViewController-->
         <scene sceneID="aGj-j8-wIv">
@@ -239,7 +44,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="vXZ-lx-hvc" kind="push" id="6Qz-ut-XEf"/>
+                                    <action selector="beginTapped:" destination="BpU-Vf-ayy" eventType="touchUpInside" id="c77-qU-paZ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oJy-Pu-OcZ">
@@ -365,15 +170,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Disk-CD-icon.png" width="256" height="256"/>
-        <image name="Print-CD-icon.png" width="512" height="512"/>
         <image name="audio-on.png" width="128" height="128"/>
-        <image name="circle.png" width="128" height="128"/>
         <image name="info.png" width="128" height="128"/>
         <image name="money-128.png" width="128" height="128"/>
         <image name="music.png" width="128" height="128"/>
-        <image name="refresh.png" width="128" height="128"/>
-        <image name="share.png" width="128" height="128"/>
         <image name="star1.png" width="87" height="87"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

@@ -9,11 +9,21 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 #import "AnswerButton.h"
+#import "boardView.h"
 
 #define DISK_TAG 100
 #define TIPS_TAG 200
 
+@protocol prepareSongsDelegate <NSObject>
+-(NSMutableArray *)configSongs;
+
+@end
+
+
 @interface gameViewController : UIViewController
+
+@property (nonatomic,weak) id<prepareSongsDelegate> delegate;
+
 
 @property (nonatomic,strong) NSString *levelTitle;
 @property (nonatomic, strong) AVAudioPlayer *myAudioPlayer;
@@ -23,6 +33,8 @@
 @property int diffculty;
 @property (nonatomic, strong) NSMutableArray *singleMusicsViewArray;
 @property (nonatomic, strong) NSMutableArray *musicsArray;
+@property (nonatomic, strong) NSMutableArray *musicsPlayArray;
+
 @property (nonatomic, strong) NSMutableArray *choicesBoardArray;
 @property (nonatomic, strong) NSMutableDictionary *gameDataForSingleLevel;
 
@@ -33,7 +45,7 @@
 //subviews
 @property (weak, nonatomic) IBOutlet UIView *playConsoleView;
 @property (weak, nonatomic) IBOutlet UIView *downPartView;
-@property (strong, nonatomic) UIView *choicesBoardView;
+@property (strong, nonatomic) boardView *choicesBoardView;
 
 @property (strong, nonatomic) NSMutableArray *diskButtonFrameArray;
 //choiceBoard

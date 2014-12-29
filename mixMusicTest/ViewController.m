@@ -7,7 +7,6 @@
 //
 
 #import "ViewController.h"
-#import "gameViewController.h"
 @interface ViewController ()
 
 @end
@@ -42,18 +41,20 @@
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-    
-    gameViewController *myGameViewController = [segue destinationViewController];
-    myGameViewController.levelTitle = @"PLAY1234";
-    NSMutableArray *passMusics = [self configSongs];
-    
-    myGameViewController.musicsArray = passMusics;
-    
-}
+//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+//    // Get the new view controller using [segue destinationViewController].
+//    // Pass the selected object to the new view controller.
+//    
+//    gameViewController *myGameViewController = [segue destinationViewController];
+//    myGameViewController.levelTitle = @"PLAY1234";
+//    NSMutableArray *passMusics = [self configSongs];
+//    
+//    myGameViewController.musicsArray = passMusics;
+//    myGameViewController.delegate = self;
+//    
+//}
 
+#pragma mark ConfigSongs delegate
 -(NSMutableArray *)configSongs
 {
     NSMutableArray *musicToNextView = [[NSMutableArray alloc] init];
@@ -85,16 +86,7 @@
     }
     
     
-//    NSMutableArray * allSongsNumber = [[NSMutableArray alloc] init];
-//    for (int i = 0; i < unfinishedSongs.count; i++) {
-//        [allSongsNumber addObject:[NSNumber numberWithInt:i]];
-//    }
-//    for (int i = 0; i < [currentDifficulty intValue]+1; i++) {
-//        unsigned int randomNumber = arc4random()%allSongsNumber.count;
-//        int songPicked = [allSongsNumber[randomNumber] intValue];
-//        [musicToNextView addObject:unfinishedSongs[songPicked]];
-//        [allSongsNumber removeObjectAtIndex:randomNumber];
-//    }
+
 
     return musicToNextView;
 }
@@ -130,6 +122,18 @@
     
     [self drawStars:starNumber];
 
+}
+
+- (IBAction)beginTapped:(UIButton *)sender {
+    
+    gameViewController *myGameViewController = [[gameViewController alloc] initWithNibName:@"gameViewController" bundle:nil];
+    myGameViewController.levelTitle = @"PLAY1234";
+    NSMutableArray *passMusics = [self configSongs];
+    
+    myGameViewController.musicsArray = passMusics;
+    myGameViewController.delegate = self;
+    myGameViewController.navigationItem.title = @"难度";
+    [self.navigationController pushViewController:myGameViewController animated:YES];
 }
 
 -(void)copyPlistToDocument:(NSString *)plistname
