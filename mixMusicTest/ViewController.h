@@ -11,7 +11,10 @@
 
 @interface ViewController : UIViewController<prepareSongsDelegate>
 
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundImg;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *starButtons;
+@property (weak, nonatomic) IBOutlet UIButton *begainGame;
+@property (weak, nonatomic) IBOutlet UIButton *continueGame;
 
 - (IBAction)starTapped:(UIButton *)sender;
 

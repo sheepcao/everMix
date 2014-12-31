@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "myAlertView.h"
 @interface ViewController ()
 
 @end
@@ -18,18 +19,41 @@
     // Do any additional setup after loading the view.
     [self copyPlistToDocument:@"gameData"];
 
+    [self.view sendSubviewToBack:self.backgroundImg];
     
 }
 
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+
+    
+}
+-(void)viewDidLayoutSubviews
+{
+    [super viewDidLayoutSubviews];
     self.gameData = [self readDataFromPlist:@"gameData"] ;
     NSString *currentDifficulty = [self.gameData objectForKey:@"difficulty"];
     
     [self drawStars:[currentDifficulty intValue]];
     
+    NSMutableArray *currentMusics = [[NSUserDefaults standardUserDefaults] objectForKey:@"currentMusics"];
     
+    if (currentMusics && currentMusics.count > 0) {
+        
+        [self.begainGame setTitle:@"重新开始" forState:UIControlStateNormal];
+        [self.begainGame setFrame:CGRectMake([[UIScreen mainScreen] bounds].size.width - self.continueGame.frame.origin.x - self.continueGame.frame.size.width, self.continueGame.frame.origin.y, self.continueGame.frame.size.width, self.continueGame.frame.size.height)];
+        [self.continueGame setHidden:NO];
+    }else
+    {
+        
+        [self.begainGame setTitle:@"开始" forState:UIControlStateNormal];
+        [self.begainGame setFrame:CGRectMake([[UIScreen mainScreen] bounds].size.width/2 - self.continueGame.frame.size.width/2 , self.continueGame.frame.origin.y, self.continueGame.frame.size.width, self.continueGame.frame.size.height)];
+        [self.continueGame setHidden:YES];
+        
+        
+    }
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -110,30 +134,101 @@
 
 - (IBAction)starTapped:(UIButton *)sender {
     
-    int starNumber = -1; //init with a invalid value.
+    myAlertView *resetAlert = [[myAlertView alloc] initWithTitle:@"且慢!" message:@"变更难度将重置已猜歌曲的进度,请君三思。" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确认", nil];
     
-    for (int i = 0; i<5; i++) {
-        if(sender == self.starButtons[i])
-        {
-            starNumber = i;
+    resetAlert.chooseWhichButton = sender;
+    [resetAlert show];
+    
+    
+    
+//    int starNumber = -1; //init with a invalid value.
+//    
+//    for (int i = 0; i<5; i++) {
+//        if(sender == self.starButtons[i])
+//        {
+//            starNumber = i;
+//        }
+//
+//    }
+//    
+//    [self drawStars:starNumber];
+
+}
+
+- (void)alertView:(myAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 1) {
+
+        
+        //reset plist
+        [self removePlistFromDocument:@"gameData"];
+        NSMutableArray *currentMusics = [[[NSUserDefaults standardUserDefaults] objectForKey:@"currentMusics"] mutableCopy];
+        [currentMusics removeAllObjects];
+        [[NSUserDefaults standardUserDefaults] setObject:currentMusics forKey:@"currentMusics"];
+        
+        [self.begainGame setTitle:@"开始" forState:UIControlStateNormal];
+        [self.begainGame setFrame:CGRectMake([[UIScreen mainScreen] bounds].size.width/2 - self.continueGame.frame.size.width/2 , self.continueGame.frame.origin.y, self.continueGame.frame.size.width, self.continueGame.frame.size.height)];
+        [self.continueGame setHidden:YES];
+    
+        
+
+        [self copyPlistToDocument:@"gameData"];
+        
+        
+        int starNumber = -1; //init with a invalid value.
+        
+        for (int i = 0; i<5; i++) {
+            if(alertView.chooseWhichButton == self.starButtons[i])
+            {
+                starNumber = i;
+            }
+            
         }
-
+        
+        [self drawStars:starNumber];
+        
     }
-    
-    [self drawStars:starNumber];
-
 }
 
 - (IBAction)beginTapped:(UIButton *)sender {
     
     gameViewController *myGameViewController = [[gameViewController alloc] initWithNibName:@"gameViewController" bundle:nil];
     myGameViewController.levelTitle = @"PLAY1234";
-    NSMutableArray *passMusics = [self configSongs];
+   
+    NSMutableArray *currentMusics = [[NSUserDefaults standardUserDefaults] objectForKey:@"currentMusics"];
     
-    myGameViewController.musicsArray = passMusics;
+    if (currentMusics && currentMusics.count > 0) {
+       
+        myGameViewController.musicsArray = currentMusics;
+
+    }else
+    {
+        NSMutableArray *passMusics = [self configSongs];
+        myGameViewController.musicsArray = passMusics;
+        [[NSUserDefaults standardUserDefaults] setObject:passMusics forKey:@"currentMusics"];
+
+    }
     myGameViewController.delegate = self;
     myGameViewController.navigationItem.title = @"难度";
     [self.navigationController pushViewController:myGameViewController animated:YES];
+}
+
+-(void)removePlistFromDocument:(NSString *)plistname
+{
+    NSString *documentsDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    NSString *folderPath = [documentsDirectory stringByAppendingPathComponent:[ NSString stringWithFormat:@"%@.plist",plistname ]];
+    NSError *error;
+    
+    NSFileManager *fileManager =[NSFileManager defaultManager];
+    if([fileManager fileExistsAtPath:folderPath] == YES)
+    {
+        
+        
+        [[NSFileManager defaultManager] removeItemAtPath:folderPath error:&error];
+        NSLog(@"Error description-%@ \n", [error localizedDescription]);
+        NSLog(@"Error reason-%@", [error localizedFailureReason]);
+    }
+    
 }
 
 -(void)copyPlistToDocument:(NSString *)plistname
@@ -149,6 +244,7 @@
 
     if([fileManager fileExistsAtPath:folderPath] == NO)
     {
+       
         
         [[NSFileManager defaultManager] copyItemAtPath:sourcePath
                                                 toPath:folderPath

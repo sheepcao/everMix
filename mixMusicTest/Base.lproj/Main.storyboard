@@ -9,6 +9,7 @@
         <scene sceneID="Vc3-rh-7SE">
             <objects>
                 <navigationController id="1mw-ay-E1q" sceneMemberID="viewController">
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="wGZ-Pq-rJ6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -33,6 +34,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainBackground.png" translatesAutoresizingMaskIntoConstraints="NO" id="I4A-bF-7f7">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qNQ-Ph-nXm">
                                 <rect key="frame" x="50" y="191" width="72" height="72"/>
                                 <color key="backgroundColor" red="0.7764883668" green="0.70329607660000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -142,21 +146,28 @@
                             <constraint firstAttribute="centerX" secondItem="oJy-Pu-OcZ" secondAttribute="centerX" constant="-75" id="BZB-HB-cvP"/>
                             <constraint firstAttribute="centerX" secondItem="qNQ-Ph-nXm" secondAttribute="centerX" constant="74" id="DT4-Ek-Yd0"/>
                             <constraint firstItem="gaK-c0-OeE" firstAttribute="top" secondItem="iKE-Vm-WMA" secondAttribute="top" id="GIL-Rf-mSb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="I4A-bF-7f7" secondAttribute="trailing" constant="-16" id="I2E-J4-twM"/>
                             <constraint firstItem="oJy-Pu-OcZ" firstAttribute="leading" secondItem="qNQ-Ph-nXm" secondAttribute="trailing" constant="77" id="LAs-5U-q8o"/>
                             <constraint firstItem="e8J-Z4-tGE" firstAttribute="leading" secondItem="gaK-c0-OeE" secondAttribute="trailing" constant="28" id="MFN-WG-mjj"/>
                             <constraint firstItem="gaK-c0-OeE" firstAttribute="leading" secondItem="iKE-Vm-WMA" secondAttribute="trailing" constant="24" id="NYb-Qt-xBa"/>
                             <constraint firstItem="xpo-PE-fGQ" firstAttribute="top" secondItem="iKE-Vm-WMA" secondAttribute="bottom" constant="42" id="Nvt-N5-Jj9"/>
                             <constraint firstItem="iKE-Vm-WMA" firstAttribute="leading" secondItem="ZeD-Ew-WKC" secondAttribute="leadingMargin" constant="28" id="RcF-20-Tgf"/>
+                            <constraint firstItem="I4A-bF-7f7" firstAttribute="top" secondItem="j9o-P9-UcH" secondAttribute="bottom" constant="-64" id="TnB-GO-8TW"/>
                             <constraint firstItem="gaK-c0-OeE" firstAttribute="height" secondItem="iKE-Vm-WMA" secondAttribute="height" id="W4i-mO-cdy"/>
                             <constraint firstItem="iKE-Vm-WMA" firstAttribute="height" secondItem="0lK-re-drz" secondAttribute="height" id="XXX-o1-TDr"/>
                             <constraint firstItem="gaK-c0-OeE" firstAttribute="width" secondItem="iKE-Vm-WMA" secondAttribute="width" id="bJA-ds-rtY"/>
                             <constraint firstItem="0lK-re-drz" firstAttribute="leading" secondItem="e8J-Z4-tGE" secondAttribute="trailing" constant="20" id="ngV-fz-wph"/>
+                            <constraint firstItem="I4A-bF-7f7" firstAttribute="leading" secondItem="ZeD-Ew-WKC" secondAttribute="leadingMargin" constant="-16" id="oHP-tv-vyx"/>
                             <constraint firstItem="iKE-Vm-WMA" firstAttribute="width" secondItem="0lK-re-drz" secondAttribute="width" id="rBX-Sl-Rfc"/>
+                            <constraint firstItem="xpo-PE-fGQ" firstAttribute="top" secondItem="I4A-bF-7f7" secondAttribute="bottom" id="sP0-5h-mUC"/>
                             <constraint firstItem="e8J-Z4-tGE" firstAttribute="top" secondItem="iKE-Vm-WMA" secondAttribute="top" id="ufK-3a-l7Z"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="6Jm-nc-1U7"/>
                     <connections>
+                        <outlet property="backgroundImg" destination="I4A-bF-7f7" id="Cye-bJ-4M5"/>
+                        <outlet property="begainGame" destination="qNQ-Ph-nXm" id="dHf-ZX-0KJ"/>
+                        <outlet property="continueGame" destination="oJy-Pu-OcZ" id="aF9-Dw-fTr"/>
                         <outletCollection property="starButtons" destination="2tZ-su-ce7" id="vpW-Eu-mqG"/>
                         <outletCollection property="starButtons" destination="TCk-0B-kEu" id="FzO-d5-P5E"/>
                         <outletCollection property="starButtons" destination="CVD-Cc-FRb" id="Ujr-0T-Bhs"/>
@@ -172,6 +183,7 @@
     <resources>
         <image name="audio-on.png" width="128" height="128"/>
         <image name="info.png" width="128" height="128"/>
+        <image name="mainBackground.png" width="1080" height="1920"/>
         <image name="money-128.png" width="128" height="128"/>
         <image name="music.png" width="128" height="128"/>
         <image name="star1.png" width="87" height="87"/>

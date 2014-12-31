@@ -23,6 +23,15 @@ int answerPickedCount;
     [super viewDidLoad];
 
     
+    //test:
+//    self.musicsPlayArray = [[NSMutableArray alloc] initWithObjects:@"像风一样自由64",@"我的歌声里64",@"突然的自我128",@"给你们64", nil];
+    
+//    self.musicsPlayArray = [[NSMutableArray alloc] initWithObjects:@"像风一样自由128",@"我的歌声里128",@"突然的自我128",@"给你们128", nil];
+//    
+//    self.musicsArray = [[NSMutableArray alloc] initWithObjects:@"红日",@"海阔天空",@"我可以抱你吗", nil];
+
+    
+    
     self.diskButtonFrameArray = [[NSMutableArray alloc] init];
     
     self.musicsPlayArray = [NSMutableArray arrayWithArray:self.musicsArray];
@@ -171,10 +180,14 @@ int answerPickedCount;
             UILabel *songResult = [[UILabel alloc] initWithFrame:[(UIButton *)self.diskButtons[self.choicesBoardView.songNumber] frame] ];
             songResult.text = songNameGuessed;
             [self.downPartView addSubview:songResult];
-            [self.musicsPlayArray removeObjectAtIndex:self.choicesBoardView.songNumber];
+            [self.musicsPlayArray removeObject:songNameGuessed];
             [self returnChoicesBoard:nil];
 
             if (self.musicsPlayArray.count == 0) {
+                NSMutableArray *currentMusics = [[[NSUserDefaults standardUserDefaults] objectForKey:@"currentMusics"] mutableCopy];
+                [currentMusics removeAllObjects];
+                [[NSUserDefaults standardUserDefaults] setObject:currentMusics forKey:@"currentMusics"];
+                
                 [self nextLevel];
             }
             
@@ -254,6 +267,8 @@ int answerPickedCount;
         animating = YES;
         for (UIButton * button in self.diskButtons) {
             if (button.tag == 0) {
+                [button setEnabled:NO];
+                [button setTitle:@" " forState:UIControlStateNormal];
                 [self spinWithOptions: UIViewAnimationOptionCurveEaseIn:button];
             }
 
@@ -498,9 +513,25 @@ int answerPickedCount;
 {
     gameViewController *myGameViewController = [[gameViewController alloc] initWithNibName:@"gameViewController" bundle:nil];
     myGameViewController.levelTitle = @"PLAY1234";
-    NSMutableArray *passMusics = [self.delegate configSongs];
     
-    myGameViewController.musicsArray = passMusics;
+    
+    NSMutableArray *currentMusics = [[NSUserDefaults standardUserDefaults] objectForKey:@"currentMusics"];
+
+    if (currentMusics && currentMusics.count > 0) {
+        
+        myGameViewController.musicsArray = currentMusics;
+        
+    }else
+    {
+        NSMutableArray *passMusics = [self.delegate configSongs];
+        myGameViewController.musicsArray = passMusics;
+        [[NSUserDefaults standardUserDefaults] setObject:passMusics forKey:@"currentMusics"];
+        
+    }
+    
+//    NSMutableArray *passMusics = [self.delegate configSongs];
+//    
+//    myGameViewController.musicsArray = passMusics;
     
     myGameViewController.delegate = self.delegate;
     
