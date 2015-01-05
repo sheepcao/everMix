@@ -80,5 +80,7 @@
 	</array>
 	<key>difficulty</key>
 	<string>2</string>
+	<key>currentLevel</key>
+	<string>0</string>
 </dict>
 </plist>

@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *continueGame;
 
 - (IBAction)starTapped:(UIButton *)sender;
+- (IBAction)continueTapped:(UIButton *)sender;
 
 - (IBAction)beginTapped:(UIButton *)sender;
 @property (strong,nonatomic) NSMutableDictionary *gameData;

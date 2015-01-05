@@ -128,16 +128,36 @@
     
     [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%d",Differentlevel] forKey:@"difficulty"];
 
+
     
 }
 
 
 - (IBAction)starTapped:(UIButton *)sender {
     
-    myAlertView *resetAlert = [[myAlertView alloc] initWithTitle:@"且慢!" message:@"变更难度将重置已猜歌曲的进度,请君三思。" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确认", nil];
-    
-    resetAlert.chooseWhichButton = sender;
-    [resetAlert show];
+    if ([self.continueGame isHidden]) {
+        int starNumber = -1; //init with a invalid value.
+        
+        for (int i = 0; i<5; i++) {
+            if(sender == self.starButtons[i])
+            {
+                starNumber = i;
+            }
+            
+        }
+        
+        [self drawStars:starNumber];
+        [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%d",starNumber*20] forKey:@"currentLevel"];
+        
+    }else
+    {
+        myAlertView *resetAlert = [[myAlertView alloc] initWithTitle:@"且慢!" message:@"变更难度将重置已猜歌曲的进度,请君三思。" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确认", nil];
+        
+        resetAlert.chooseWhichButton = sender;
+        resetAlert.tag = 1;
+        
+        [resetAlert show];
+    }
     
     
     
@@ -155,62 +175,125 @@
 
 }
 
-- (void)alertView:(myAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+-(void)resetPlist
 {
-    if (buttonIndex == 1) {
-
-        
-        //reset plist
-        [self removePlistFromDocument:@"gameData"];
-        NSMutableArray *currentMusics = [[[NSUserDefaults standardUserDefaults] objectForKey:@"currentMusics"] mutableCopy];
-        [currentMusics removeAllObjects];
-        [[NSUserDefaults standardUserDefaults] setObject:currentMusics forKey:@"currentMusics"];
-        
-        [self.begainGame setTitle:@"开始" forState:UIControlStateNormal];
-        [self.begainGame setFrame:CGRectMake([[UIScreen mainScreen] bounds].size.width/2 - self.continueGame.frame.size.width/2 , self.continueGame.frame.origin.y, self.continueGame.frame.size.width, self.continueGame.frame.size.height)];
-        [self.continueGame setHidden:YES];
+    [self removePlistFromDocument:@"gameData"];
+    NSMutableArray *currentMusics = [[[NSUserDefaults standardUserDefaults] objectForKey:@"currentMusics"] mutableCopy];
+    [currentMusics removeAllObjects];
+    [[NSUserDefaults standardUserDefaults] setObject:currentMusics forKey:@"currentMusics"];
     
-        
+    [self.begainGame setTitle:@"开始" forState:UIControlStateNormal];
+    [self.begainGame setFrame:CGRectMake([[UIScreen mainScreen] bounds].size.width/2 - self.continueGame.frame.size.width/2 , self.continueGame.frame.origin.y, self.continueGame.frame.size.width, self.continueGame.frame.size.height)];
+    [self.continueGame setHidden:YES];
+    
+    
+    
+    [self copyPlistToDocument:@"gameData"];
 
-        [self copyPlistToDocument:@"gameData"];
-        
-        
-        int starNumber = -1; //init with a invalid value.
-        
-        for (int i = 0; i<5; i++) {
-            if(alertView.chooseWhichButton == self.starButtons[i])
-            {
-                starNumber = i;
-            }
-            
-        }
-        
-        [self drawStars:starNumber];
-        
-    }
 }
 
-- (IBAction)beginTapped:(UIButton *)sender {
+- (void)alertView:(myAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    
+    if (buttonIndex == 1) {
+        
+        if (alertView.tag == 1) {
+            //reset plist
+            
+            [self resetPlist];
+            int starNumber = -1; //init with a invalid value.
+            
+            for (int i = 0; i<5; i++) {
+                if(alertView.chooseWhichButton == self.starButtons[i])
+                {
+                    starNumber = i;
+                }
+                
+            }
+            
+            [self drawStars:starNumber];
+            [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%d",starNumber*20] forKey:@"currentLevel"];
+
+        }
+        if (alertView.tag == 2) {
+            [self resetPlist];
+            [self drawStars:2];
+            [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%d",2*20] forKey:@"currentLevel"];
+
+            
+        }
+
+        
+    }
+  
+}
+
+
+- (IBAction)continueTapped:(UIButton *)sender {
+    NSString *currentLevel = [self.gameData objectForKey:@"currentLevel"];
+    NSString *currentDifficulty = [self.gameData objectForKey:@"difficulty"];
+    int levelNow = [currentLevel intValue] - [currentDifficulty intValue] * 20 ;
+
     
     gameViewController *myGameViewController = [[gameViewController alloc] initWithNibName:@"gameViewController" bundle:nil];
-    myGameViewController.levelTitle = @"PLAY1234";
-   
+    myGameViewController.levelTitle = [NSString stringWithFormat:@"%d",levelNow];
+    
     NSMutableArray *currentMusics = [[NSUserDefaults standardUserDefaults] objectForKey:@"currentMusics"];
     
     if (currentMusics && currentMusics.count > 0) {
-       
+        
         myGameViewController.musicsArray = currentMusics;
-
+        
     }else
     {
         NSMutableArray *passMusics = [self configSongs];
         myGameViewController.musicsArray = passMusics;
         [[NSUserDefaults standardUserDefaults] setObject:passMusics forKey:@"currentMusics"];
-
+        
     }
     myGameViewController.delegate = self;
-    myGameViewController.navigationItem.title = @"难度";
+    myGameViewController.navigationItem.title = [NSString stringWithFormat:@"%d",levelNow];
+    myGameViewController.currentDifficulty = [self.gameData objectForKey:@"difficulty"];
     [self.navigationController pushViewController:myGameViewController animated:YES];
+
+}
+
+
+- (IBAction)beginTapped:(UIButton *)sender {
+    
+
+    NSMutableArray *currentMusics = [[NSUserDefaults standardUserDefaults] objectForKey:@"currentMusics"];
+
+    if (currentMusics && currentMusics.count > 0) // renew game
+    {
+       
+        myAlertView *resetAlert = [[myAlertView alloc] initWithTitle:@"且慢!" message:@"变更难度将重置已猜歌曲的进度,请君三思。" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确认", nil];
+        
+        resetAlert.chooseWhichButton = sender;
+        resetAlert.tag = 2;
+        [resetAlert show];
+
+        
+    }else// fresh new..
+    {
+        NSString *currentLevel = [self.gameData objectForKey:@"currentLevel"];
+        NSString *currentDifficulty = [self.gameData objectForKey:@"difficulty"];
+        int levelNow = [currentLevel intValue] - [currentDifficulty intValue] * 20 + 1;
+        [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%d",levelNow + [currentDifficulty intValue] * 20] forKey:@"currentLevel"];
+        
+        gameViewController *myGameViewController = [[gameViewController alloc] initWithNibName:@"gameViewController" bundle:nil];
+        myGameViewController.levelTitle = @"PLAY1234";
+        
+        NSMutableArray *passMusics = [self configSongs];
+        myGameViewController.musicsArray = passMusics;
+        [[NSUserDefaults standardUserDefaults] setObject:passMusics forKey:@"currentMusics"];
+        myGameViewController.delegate = self;
+        myGameViewController.navigationItem.title = [NSString stringWithFormat:@"%d",levelNow];
+        myGameViewController.currentDifficulty = [self.gameData objectForKey:@"difficulty"];
+        [self.navigationController pushViewController:myGameViewController animated:YES];
+
+    }
+
 }
 
 -(void)removePlistFromDocument:(NSString *)plistname

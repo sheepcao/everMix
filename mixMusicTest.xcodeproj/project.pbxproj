@@ -68,6 +68,7 @@
 		A4AC86151A36CFE700CD19CA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4AC86131A36CFE700CD19CA /* LaunchScreen.xib */; };
 		A4AC86211A36CFE700CD19CA /* mixMusicTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A4AC86201A36CFE700CD19CA /* mixMusicTestTests.m */; };
 		A4AC86401A36F47100CD19CA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4AC863F1A36F47100CD19CA /* ViewController.m */; };
+		A4B7533F1A593B1200CD7D32 /* back2.png in Resources */ = {isa = PBXBuildFile; fileRef = A4B7533E1A593B1200CD7D32 /* back2.png */; };
 		A4B76BFA1A3976760014014D /* singleMusicView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4B76BF91A3976760014014D /* singleMusicView.xib */; };
 		A4B76C101A3982EC0014014D /* star1.png in Resources */ = {isa = PBXBuildFile; fileRef = A4B76C041A3982EC0014014D /* star1.png */; };
 		A4B76C111A3982EC0014014D /* audio-off.png in Resources */ = {isa = PBXBuildFile; fileRef = A4B76C051A3982EC0014014D /* audio-off.png */; };
@@ -180,6 +181,7 @@
 		A4AC86201A36CFE700CD19CA /* mixMusicTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = mixMusicTestTests.m; sourceTree = "<group>"; };
 		A4AC863E1A36F47100CD19CA /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		A4AC863F1A36F47100CD19CA /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		A4B7533E1A593B1200CD7D32 /* back2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back2.png; sourceTree = "<group>"; };
 		A4B76BF91A3976760014014D /* singleMusicView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = singleMusicView.xib; sourceTree = "<group>"; };
 		A4B76C041A3982EC0014014D /* star1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star1.png; sourceTree = "<group>"; };
 		A4B76C051A3982EC0014014D /* audio-off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "audio-off.png"; sourceTree = "<group>"; };
@@ -314,6 +316,7 @@
 			isa = PBXGroup;
 			children = (
 				A4E47CE41A5391DC0039BDF6 /* mainBackground.png */,
+				A4B7533E1A593B1200CD7D32 /* back2.png */,
 				A4B76C041A3982EC0014014D /* star1.png */,
 				A4E094F91A4BDD8D001AD626 /* star2.png */,
 				A4DDB6E41A4D399A00CFF980 /* circle.png */,
@@ -525,6 +528,7 @@
 				A4A0A3BA1A50F7C4007A0876 /* 盛夏光年.m4a in Resources */,
 				A4B76C121A3982EC0014014D /* audio-on.png in Resources */,
 				A4A0A3B91A50F7C4007A0876 /* 生如夏花.m4a in Resources */,
+				A4B7533F1A593B1200CD7D32 /* back2.png in Resources */,
 				A4E47CE31A538FEF0039BDF6 /* 给你们128.m4a in Resources */,
 				A4B76C1D1A3997600014014D /* choicesBoardView.xib in Resources */,
 				A4A0A3951A50F7C4007A0876 /* 为爱疯狂.m4a in Resources */,

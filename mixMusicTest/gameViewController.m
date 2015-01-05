@@ -10,6 +10,7 @@
 
 @interface gameViewController ()<UIAlertViewDelegate>
 
+@property (nonatomic ,strong) NSMutableArray *ignoreArray;
 
 @end
 
@@ -18,6 +19,8 @@ BOOL animating;
 int totalRotateTimes;
 int answerPickedCount;
 @implementation gameViewController
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -30,7 +33,7 @@ int answerPickedCount;
 //    
 //    self.musicsArray = [[NSMutableArray alloc] initWithObjects:@"红日",@"海阔天空",@"我可以抱你吗", nil];
 
-    
+    self.ignoreArray = [[NSMutableArray alloc] init];
     
     self.diskButtonFrameArray = [[NSMutableArray alloc] init];
     
@@ -43,6 +46,8 @@ int answerPickedCount;
 
     [self diskHideToTop];
     [self diskPopUp];
+    self.gameDataForSingleLevel = [self readDataFromPlist:@"gameData"] ;
+
     
     [self.view bringSubviewToFront:self.playConsoleView];
     
@@ -54,13 +59,14 @@ int answerPickedCount;
     [super viewDidDisappear:animated];
     [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(stop10secondMusics) object:nil];
     [self stopMusics];
+    isplayed =false;
+
 
 }
 
 - (IBAction)diskTap:(UIButton *)sender {
 //    sender.tag = 1;
     
-    self.gameDataForSingleLevel = [self readDataFromPlist:@"gameData"] ;
     NSDictionary *allAnswers = [self.gameDataForSingleLevel objectForKey:@"choices"];
 
     int diskNumber = -1;
@@ -188,13 +194,29 @@ int answerPickedCount;
                 [currentMusics removeAllObjects];
                 [[NSUserDefaults standardUserDefaults] setObject:currentMusics forKey:@"currentMusics"];
                 
-                [self nextLevel];
+                int levelNow = [[self.gameDataForSingleLevel objectForKey:@"currentLevel"] intValue];
+                if (levelNow == 100) {
+                    
+                    UIAlertView *finishLevelAlert = [[UIAlertView alloc] initWithTitle:@"赞" message:@"玩爆关啦！我们会尽快更新曲库，请大大持续关注！" delegate:self cancelButtonTitle:@"耐心期待" otherButtonTitles:nil, nil];
+                    [finishLevelAlert show];
+                    
+                }else if (levelNow % 20 == 0) {
+                    UIAlertView *finishLevelAlert = [[UIAlertView alloc] initWithTitle:@"恭喜" message:@"该难度已被你玩爆，下面来点更刺激的！" delegate:self cancelButtonTitle:nil otherButtonTitles:@"勇往直前", nil];
+                    finishLevelAlert.tag = 2;
+                    [finishLevelAlert show];
+                }else
+                {
+                     [self nextLevel];
+                }
+                
+               
             }
             
         }else
         {
             NSLog(@"you failed it.");
             UIAlertView *failAlert = [[UIAlertView alloc] initWithTitle:@"再试一次" message:@"答错啦，大侠重头来过吧" delegate:self cancelButtonTitle:@"返回" otherButtonTitles:@"重新来过", nil];
+            failAlert.tag = 1;
             [failAlert show];
         }
     }
@@ -202,16 +224,63 @@ int answerPickedCount;
     
 }
 
+- (IBAction)shareButton:(UIButton *)sender {
+}
+
+- (IBAction)refreshMusics:(UIButton *)sender {//delete one song
+    
+    if(self.musicsArray.count <= 1)
+    {
+        UIAlertView *noDeleteAlert = [[UIAlertView alloc] initWithTitle:@"注意" message:@"就剩一首了，再删就没得玩啦" delegate:nil cancelButtonTitle:@"继续猜" otherButtonTitles:nil, nil];
+        [noDeleteAlert show];
+        return;
+    }
+        
+    
+    int diskNumber = -1;
+    
+    for(int i = (int)(self.diskButtons.count -1) ; i >= 0 ; i-- )
+    {
+        if (![self.diskButtons[i] isHidden]) {
+            diskNumber = i;
+            
+            UILabel *ignoreLabel = [[UILabel alloc] initWithFrame:[self.diskButtons[i] frame]];
+            [ignoreLabel setText:@"无视"];
+            [self. downPartView addSubview:ignoreLabel];
+            [self.diskButtons[i] setHidden:YES];
+            
+            break;
+        }
+    }
+    NSString *songName = self.musicsArray[diskNumber];
+    
+    [self.musicsArray removeObject:songName];
+    [self.musicsPlayArray removeObject:songName];
+
+    NSMutableArray *currentMusics = [[[NSUserDefaults standardUserDefaults] objectForKey:@"currentMusics"] mutableCopy];
+    [currentMusics removeObject:songName];
+    [[NSUserDefaults standardUserDefaults] setObject:currentMusics forKey:@"currentMusics"];
+
+    
+}
+
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if (buttonIndex == 1) {
         
-        for (UIView *subview in [self.choicesBoardView subviews]) {
-            if ([subview isKindOfClass:[AnswerButton class]]) {
-                [((AnswerButton *)subview) setTitle:@" " forState:UIControlStateNormal];
-                answerPickedCount = 0;
+        if (alertView.tag == 1) {
+            
+            for (UIView *subview in [self.choicesBoardView subviews]) {
+                if ([subview isKindOfClass:[AnswerButton class]]) {
+                    [((AnswerButton *)subview) setTitle:@" " forState:UIControlStateNormal];
+                    answerPickedCount = 0;
+                }
+                [subview setHidden:NO];
             }
-            [subview setHidden:NO];
+        }
+        
+        if (alertView.tag == 2) {
+            [self nextLevel];
         }
     }
 }
@@ -292,6 +361,25 @@ int answerPickedCount;
         startFrame.origin.y = 0 - self.playConsoleView.frame.size.height - destFrame.size.height;
         [self.diskButtons[i] setFrame:startFrame];
         
+       
+        
+        [self.diskButtons[i] setTitle:@" " forState:UIControlStateNormal];
+        
+        
+        
+        UILabel *ignoreLabel = [[UILabel alloc] initWithFrame:[self.diskButtons[i] frame]];
+        [ignoreLabel setText:@"无视"];
+        [self.ignoreArray insertObject:ignoreLabel atIndex:i];
+        [self. downPartView addSubview:ignoreLabel];
+        [ignoreLabel setHidden:YES];
+        
+        if (i >= musicCount && i <= [self.currentDifficulty intValue]) {
+        
+            [ignoreLabel setHidden:NO];
+
+        }
+        
+        
         [self.diskButtonFrameArray insertObject: [NSValue valueWithCGRect:destFrame] atIndex:i];
         
         if (i < musicCount) {
@@ -316,9 +404,23 @@ int answerPickedCount;
         
         [UIView animateWithDuration:0.65+i*0.12 delay:0.35 usingSpringWithDamping:0.5 initialSpringVelocity:0.4 options:0 animations:^{
             [self.diskButtons[i] setFrame:[[self.diskButtonFrameArray objectAtIndex:i] CGRectValue]];
+
+            
         } completion:nil];
+        
+
+        if (self.ignoreArray.count > 0 && self.ignoreArray[i]!=nil) {
+
+        [UIView animateWithDuration:0.65+i*0.12 delay:0.35 usingSpringWithDamping:0.5 initialSpringVelocity:0.4 options:0 animations:^{
+            [self.ignoreArray[i] setFrame:[[self.diskButtonFrameArray objectAtIndex:i] CGRectValue]];
+            
+            
+        } completion:nil];
+    }
 
     }
+    
+    
     
     
 }
@@ -425,6 +527,8 @@ int answerPickedCount;
         }
     }
     [self stopSpin];
+    [self.deleteOneBtn setEnabled:YES];
+    [self.shareBtn setEnabled:YES];
     
     [self performSelector:@selector(enableButtons) withObject:nil afterDelay:0.35];
 }
@@ -487,6 +591,9 @@ int answerPickedCount;
         [self tapSound:self.musicsPlayArray[i] withType:@"m4a"];
     }
     [self startSpin];
+    
+    [self.deleteOneBtn setEnabled:NO];
+    [self.shareBtn setEnabled:NO];
 
 }
 -(void)stop10secondMusics
@@ -498,21 +605,16 @@ int answerPickedCount;
 }
 
 
--(NSMutableDictionary *)readDataFromPlist:(NSString *)plistname
-{
-    //read level data from plist
-    NSString *documentsDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
-    NSString *plistPath = [documentsDirectory stringByAppendingPathComponent:[ NSString stringWithFormat:@"%@.plist",plistname ]];
-    NSMutableDictionary *levelData = [[NSMutableDictionary alloc] initWithContentsOfFile:plistPath];
-//    NSLog(@"levelData%@",levelData);
-    return levelData;
-    
-}
 
 -(void)nextLevel
 {
+    NSString *currentDifficulty = [self.gameDataForSingleLevel objectForKey:@"difficulty"];
+
+    int levelNow = [[self.gameDataForSingleLevel objectForKey:@"currentLevel"] intValue];
+    [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%d",levelNow+1] forKey:@"currentLevel"];
+    
     gameViewController *myGameViewController = [[gameViewController alloc] initWithNibName:@"gameViewController" bundle:nil];
-    myGameViewController.levelTitle = @"PLAY1234";
+//    myGameViewController.levelTitle = @"PLAY1234";
     
     
     NSMutableArray *currentMusics = [[NSUserDefaults standardUserDefaults] objectForKey:@"currentMusics"];
@@ -534,6 +636,8 @@ int answerPickedCount;
 //    myGameViewController.musicsArray = passMusics;
     
     myGameViewController.delegate = self.delegate;
+    myGameViewController.navigationItem.title = [NSString stringWithFormat:@"%d",(levelNow + 1 - [currentDifficulty intValue]*20)];
+    myGameViewController.currentDifficulty = [self.gameDataForSingleLevel objectForKey:@"difficulty"];
     
     NSArray *arrayControllers = self.navigationController.viewControllers;
     NSMutableArray *arrayControllerNew = [NSMutableArray arrayWithArray:arrayControllers];
@@ -542,4 +646,33 @@ int answerPickedCount;
     [self.navigationController setViewControllers:arrayControllerNew animated:YES];
     
 }
+
+
+-(NSMutableDictionary *)readDataFromPlist:(NSString *)plistname
+{
+    //read level data from plist
+    NSString *documentsDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    NSString *plistPath = [documentsDirectory stringByAppendingPathComponent:[ NSString stringWithFormat:@"%@.plist",plistname ]];
+    NSMutableDictionary *levelData = [[NSMutableDictionary alloc] initWithContentsOfFile:plistPath];
+    //    NSLog(@"levelData%@",levelData);
+    return levelData;
+    
+}
+-(void)modifyPlist:(NSString *)plistname withValue:(NSString *)value forKey:(NSString *)key
+{
+    NSString *documentsDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    NSString *plistPath = [documentsDirectory stringByAppendingPathComponent:[ NSString stringWithFormat:@"%@.plist",plistname ]];
+    NSFileManager* manager = [NSFileManager defaultManager];
+    if ([manager fileExistsAtPath:plistPath] == YES)
+    {
+        if ([manager isWritableFileAtPath:plistPath])
+        {
+            NSMutableDictionary* infoDict = [NSMutableDictionary dictionaryWithContentsOfFile:plistPath];
+            [infoDict setObject:value forKey:key];
+            [infoDict writeToFile:plistPath atomically:NO];
+            [manager setAttributes:[NSDictionary dictionaryWithObject:[NSDate date] forKey:NSFileModificationDate] ofItemAtPath:[[NSBundle mainBundle] bundlePath] error:nil];
+        }
+    }
+}
+
 @end

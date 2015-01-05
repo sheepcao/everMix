@@ -26,6 +26,8 @@
 
 
 @property (nonatomic,strong) NSString *levelTitle;
+@property (nonatomic,strong) NSString *currentDifficulty;
+
 @property (nonatomic, strong) AVAudioPlayer *myAudioPlayer;
 @property (nonatomic, strong) NSMutableArray *myAudioArray;
 
@@ -39,7 +41,9 @@
 @property (nonatomic, strong) NSMutableDictionary *gameDataForSingleLevel;
 
 
+@property (weak, nonatomic) IBOutlet UIButton *shareBtn;
 
+@property (weak, nonatomic) IBOutlet UIButton *deleteOneBtn;
 
 
 //subviews
@@ -50,6 +54,9 @@
 @property (strong, nonatomic) NSMutableArray *diskButtonFrameArray;
 //choiceBoard
 - (IBAction)choicesTaped:(id)sender;
+
+- (IBAction)shareButton:(UIButton *)sender;
+- (IBAction)refreshMusics:(UIButton *)sender;
 
 
 - (IBAction)playBtn:(id)sender;
