@@ -37,17 +37,17 @@
     
     [self drawStars:[currentDifficulty intValue]];
     
-    NSMutableArray *currentMusics = [[NSUserDefaults standardUserDefaults] objectForKey:@"currentMusics"];
+    NSMutableArray *currentMusics = [self.gameData objectForKey:@"musicPlaying"];
     
     if (currentMusics && currentMusics.count > 0) {
         
-        [self.begainGame setTitle:@"重新开始" forState:UIControlStateNormal];
+        [self.begainGame setImage:[UIImage imageNamed:@"重新开始"] forState:UIControlStateNormal];
         [self.begainGame setFrame:CGRectMake([[UIScreen mainScreen] bounds].size.width - self.continueGame.frame.origin.x - self.continueGame.frame.size.width, self.continueGame.frame.origin.y, self.continueGame.frame.size.width, self.continueGame.frame.size.height)];
         [self.continueGame setHidden:NO];
     }else
     {
         
-        [self.begainGame setTitle:@"开始" forState:UIControlStateNormal];
+        [self.begainGame setImage:[UIImage imageNamed:@"开始"] forState:UIControlStateNormal];
         [self.begainGame setFrame:CGRectMake([[UIScreen mainScreen] bounds].size.width/2 - self.continueGame.frame.size.width/2 , self.continueGame.frame.origin.y, self.continueGame.frame.size.width, self.continueGame.frame.size.height)];
         [self.continueGame setHidden:YES];
         
@@ -178,11 +178,11 @@
 -(void)resetPlist
 {
     [self removePlistFromDocument:@"gameData"];
-    NSMutableArray *currentMusics = [[[NSUserDefaults standardUserDefaults] objectForKey:@"currentMusics"] mutableCopy];
-    [currentMusics removeAllObjects];
-    [[NSUserDefaults standardUserDefaults] setObject:currentMusics forKey:@"currentMusics"];
+//    NSMutableArray *currentMusics = [[[NSUserDefaults standardUserDefaults] objectForKey:@"currentMusics"] mutableCopy];
+//    [currentMusics removeAllObjects];
+//    [[NSUserDefaults standardUserDefaults] setObject:currentMusics forKey:@"currentMusics"];
     
-    [self.begainGame setTitle:@"开始" forState:UIControlStateNormal];
+    [self.begainGame setImage:[UIImage imageNamed:@"开始"] forState:UIControlStateNormal];
     [self.begainGame setFrame:CGRectMake([[UIScreen mainScreen] bounds].size.width/2 - self.continueGame.frame.size.width/2 , self.continueGame.frame.origin.y, self.continueGame.frame.size.width, self.continueGame.frame.size.height)];
     [self.continueGame setHidden:YES];
     
@@ -230,6 +230,8 @@
 
 
 - (IBAction)continueTapped:(UIButton *)sender {
+    self.gameData = [self readDataFromPlist:@"gameData"] ;
+
     NSString *currentLevel = [self.gameData objectForKey:@"currentLevel"];
     NSString *currentDifficulty = [self.gameData objectForKey:@"difficulty"];
     int levelNow = [currentLevel intValue] - [currentDifficulty intValue] * 20 ;
@@ -238,7 +240,9 @@
     gameViewController *myGameViewController = [[gameViewController alloc] initWithNibName:@"gameViewController" bundle:nil];
     myGameViewController.levelTitle = [NSString stringWithFormat:@"%d",levelNow];
     
-    NSMutableArray *currentMusics = [[NSUserDefaults standardUserDefaults] objectForKey:@"currentMusics"];
+//    NSMutableArray *currentMusics = [[NSUserDefaults standardUserDefaults] objectForKey:@"currentMusics"];
+    NSMutableArray *currentMusics = [self.gameData objectForKey:@"musicPlaying"];
+
     
     if (currentMusics && currentMusics.count > 0) {
         
@@ -248,7 +252,8 @@
     {
         NSMutableArray *passMusics = [self configSongs];
         myGameViewController.musicsArray = passMusics;
-        [[NSUserDefaults standardUserDefaults] setObject:passMusics forKey:@"currentMusics"];
+        [self modifyPlist:@"gameData" withValue:passMusics forKey:@"musicPlaying"];
+
         
     }
     myGameViewController.delegate = self;
@@ -262,7 +267,10 @@
 - (IBAction)beginTapped:(UIButton *)sender {
     
 
-    NSMutableArray *currentMusics = [[NSUserDefaults standardUserDefaults] objectForKey:@"currentMusics"];
+//    NSMutableArray *currentMusics = [[NSUserDefaults standardUserDefaults] objectForKey:@"currentMusics"];
+    self.gameData = [self readDataFromPlist:@"gameData"] ;
+
+    NSMutableArray *currentMusics = [self.gameData objectForKey:@"musicPlaying"];
 
     if (currentMusics && currentMusics.count > 0) // renew game
     {
@@ -276,8 +284,12 @@
         
     }else// fresh new..
     {
-        NSString *currentLevel = [self.gameData objectForKey:@"currentLevel"];
-        NSString *currentDifficulty = [self.gameData objectForKey:@"difficulty"];
+        NSString *currentLevel = @"";
+        NSString *currentDifficulty = @"";
+        self.gameData = [self readDataFromPlist:@"gameData"] ;
+
+        currentLevel = [self.gameData objectForKey:@"currentLevel"];
+        currentDifficulty = [self.gameData objectForKey:@"difficulty"];
         int levelNow = [currentLevel intValue] - [currentDifficulty intValue] * 20 + 1;
         [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%d",levelNow + [currentDifficulty intValue] * 20] forKey:@"currentLevel"];
         
@@ -286,7 +298,9 @@
         
         NSMutableArray *passMusics = [self configSongs];
         myGameViewController.musicsArray = passMusics;
-        [[NSUserDefaults standardUserDefaults] setObject:passMusics forKey:@"currentMusics"];
+//        [[NSUserDefaults standardUserDefaults] setObject:passMusics forKey:@"currentMusics"];
+        [self modifyPlist:@"gameData" withValue:passMusics forKey:@"musicPlaying"];
+
         myGameViewController.delegate = self;
         myGameViewController.navigationItem.title = [NSString stringWithFormat:@"%d",levelNow];
         myGameViewController.currentDifficulty = [self.gameData objectForKey:@"difficulty"];
@@ -349,7 +363,7 @@
     
 }
 
--(void)modifyPlist:(NSString *)plistname withValue:(NSString *)value forKey:(NSString *)key
+-(void)modifyPlist:(NSString *)plistname withValue:(id)value forKey:(NSString *)key
 {
     NSString *documentsDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
     NSString *plistPath = [documentsDirectory stringByAppendingPathComponent:[ NSString stringWithFormat:@"%@.plist",plistname ]];

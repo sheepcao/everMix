@@ -11,6 +11,7 @@
             <objects>
                 <navigationController id="1mw-ay-E1q" sceneMemberID="viewController">
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="wGZ-Pq-rJ6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -35,35 +36,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back2.png" translatesAutoresizingMaskIntoConstraints="NO" id="I4A-bF-7f7">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background.png" translatesAutoresizingMaskIntoConstraints="NO" id="I4A-bF-7f7">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qNQ-Ph-nXm">
-                                <rect key="frame" x="50" y="191" width="72" height="72"/>
-                                <color key="backgroundColor" red="0.7764883668" green="0.70329607660000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qNQ-Ph-nXm">
+                                <rect key="frame" x="50" y="191" width="100" height="100"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="72" id="DLE-T9-P2s"/>
-                                    <constraint firstAttribute="height" constant="72" id="y9b-vC-aDK"/>
+                                    <constraint firstAttribute="width" constant="100" id="DLE-T9-P2s"/>
+                                    <constraint firstAttribute="height" constant="100" id="y9b-vC-aDK"/>
                                 </constraints>
-                                <state key="normal" title="开始">
+                                <state key="normal" image="开始.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="beginTapped:" destination="BpU-Vf-ayy" eventType="touchUpInside" id="c77-qU-paZ"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oJy-Pu-OcZ">
-                                <rect key="frame" x="199" y="191" width="72" height="72"/>
-                                <color key="backgroundColor" red="0.77648836678832112" green="0.70329607664233573" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="72" id="Ohh-xr-3Aq"/>
-                                    <constraint firstAttribute="height" constant="72" id="Yzw-Tg-PB6"/>
-                                </constraints>
-                                <state key="normal" title="继续">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="continueTapped:" destination="BpU-Vf-ayy" eventType="touchUpInside" id="chz-8Y-QrN"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="InV-ug-iyC">
@@ -139,19 +125,32 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oJy-Pu-OcZ">
+                                <rect key="frame" x="170" y="191" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="Ohh-xr-3Aq"/>
+                                    <constraint firstAttribute="height" constant="100" id="Yzw-Tg-PB6"/>
+                                </constraints>
+                                <state key="normal" image="继续.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="continueTapped:" destination="BpU-Vf-ayy" eventType="touchUpInside" id="chz-8Y-QrN"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="e8J-Z4-tGE" firstAttribute="width" secondItem="iKE-Vm-WMA" secondAttribute="width" id="2Fk-Tx-skg"/>
-                            <constraint firstAttribute="centerY" secondItem="qNQ-Ph-nXm" secondAttribute="centerY" constant="57" id="3JG-aD-aR7"/>
+                            <constraint firstAttribute="centerY" secondItem="qNQ-Ph-nXm" secondAttribute="centerY" constant="43" id="3JG-aD-aR7"/>
                             <constraint firstItem="iKE-Vm-WMA" firstAttribute="top" secondItem="0lK-re-drz" secondAttribute="top" id="7P3-Hn-p23"/>
+                            <constraint firstItem="oJy-Pu-OcZ" firstAttribute="leading" secondItem="qNQ-Ph-nXm" secondAttribute="trailing" constant="20" id="8kq-oc-2SM"/>
                             <constraint firstItem="e8J-Z4-tGE" firstAttribute="height" secondItem="iKE-Vm-WMA" secondAttribute="height" id="9EB-us-R5g"/>
-                            <constraint firstAttribute="centerY" secondItem="oJy-Pu-OcZ" secondAttribute="centerY" constant="57" id="Aop-Gn-hwC"/>
-                            <constraint firstAttribute="centerX" secondItem="oJy-Pu-OcZ" secondAttribute="centerX" constant="-75" id="BZB-HB-cvP"/>
-                            <constraint firstAttribute="centerX" secondItem="qNQ-Ph-nXm" secondAttribute="centerX" constant="74" id="DT4-Ek-Yd0"/>
+                            <constraint firstAttribute="centerY" secondItem="oJy-Pu-OcZ" secondAttribute="centerY" constant="43" id="Aop-Gn-hwC"/>
+                            <constraint firstAttribute="centerX" secondItem="oJy-Pu-OcZ" secondAttribute="centerX" constant="-60" id="BZB-HB-cvP"/>
+                            <constraint firstAttribute="centerX" secondItem="qNQ-Ph-nXm" secondAttribute="centerX" constant="60" id="DT4-Ek-Yd0"/>
                             <constraint firstItem="gaK-c0-OeE" firstAttribute="top" secondItem="iKE-Vm-WMA" secondAttribute="top" id="GIL-Rf-mSb"/>
                             <constraint firstAttribute="trailingMargin" secondItem="I4A-bF-7f7" secondAttribute="trailing" constant="-16" id="I2E-J4-twM"/>
-                            <constraint firstItem="oJy-Pu-OcZ" firstAttribute="leading" secondItem="qNQ-Ph-nXm" secondAttribute="trailing" constant="77" id="LAs-5U-q8o"/>
                             <constraint firstItem="e8J-Z4-tGE" firstAttribute="leading" secondItem="gaK-c0-OeE" secondAttribute="trailing" constant="28" id="MFN-WG-mjj"/>
                             <constraint firstItem="gaK-c0-OeE" firstAttribute="leading" secondItem="iKE-Vm-WMA" secondAttribute="trailing" constant="24" id="NYb-Qt-xBa"/>
                             <constraint firstItem="xpo-PE-fGQ" firstAttribute="top" secondItem="iKE-Vm-WMA" secondAttribute="bottom" constant="42" id="Nvt-N5-Jj9"/>
@@ -186,11 +185,13 @@
     </scenes>
     <resources>
         <image name="audio-on.png" width="128" height="128"/>
-        <image name="back2.png" width="1436" height="1920"/>
+        <image name="background.png" width="640" height="1136"/>
         <image name="info.png" width="128" height="128"/>
         <image name="money-128.png" width="128" height="128"/>
         <image name="music.png" width="128" height="128"/>
         <image name="star1.png" width="87" height="87"/>
+        <image name="开始.png" width="350" height="350"/>
+        <image name="继续.png" width="350" height="350"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

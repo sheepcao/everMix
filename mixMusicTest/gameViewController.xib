@@ -39,7 +39,7 @@
                             <state key="normal" title="1" backgroundImage="circle.png">
                                 <color key="titleColor" red="0.0078431377000000007" green="0.10588235999999999" blue="0.25098040999999999" alpha="1" colorSpace="deviceRGB"/>
                             </state>
-                            <state key="disabled" image="Disk-CD-icon.png"/>
+                            <state key="disabled" image="cd1.png"/>
                             <connections>
                                 <action selector="diskTap:" destination="-1" eventType="touchUpInside" id="vcl-yt-05t"/>
                             </connections>
@@ -202,6 +202,7 @@
     <resources>
         <image name="Disk-CD-icon.png" width="256" height="256"/>
         <image name="Print-CD-icon.png" width="512" height="512"/>
+        <image name="cd1.png" width="350" height="350"/>
         <image name="circle.png" width="128" height="128"/>
         <image name="refresh.png" width="128" height="128"/>
         <image name="share.png" width="128" height="128"/>

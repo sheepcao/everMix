@@ -15,7 +15,7 @@
 		<key>海阔天空</key>
 		<string>空,期,我,海,星,自,阔,一,大,过,突,笑,然,而,城,书,的,天,忘,我,愿</string>
 	</dict>
-	<key>musicFinished</key>
+	<key>musicPlaying</key>
 	<array/>
 	<key>musicUnfinished</key>
 	<array>
@@ -24,7 +24,7 @@
 			<string>倔强</string>
 			<string>出卖</string>
 			<string>十年</string>
-			<string>单车</string>
+			<string>大地</string>
 			<string>后来</string>
 			<string>存在</string>
 			<string>安静</string>
@@ -34,16 +34,38 @@
 			<string>童话</string>
 			<string>素颜</string>
 			<string>红日</string>
-			<string>红豆</string>
+			<string>趁早</string>
+			<string>逆战</string>
+			<string>王妃</string>
+			<string>说谎</string>
+			<string>曹操</string>
+			<string>天下</string>
 		</array>
 		<array>
 			<string>在雨中</string>
+			<string>倍儿爽</string>
+			<string>喜欢你</string>
 			<string>女人花</string>
 			<string>小苹果</string>
+			<string>小酒窝</string>
+			<string>当</string>
 			<string>就是我</string>
+			<string>爱</string>
+			<string>爱情路</string>
+			<string>爱相随</string>
+			<string>牧马人</string>
+			<string>狼</string>
+			<string>笨小孩</string>
+			<string>红蜻蜓</string>
+			<string>给你们</string>
+			<string>说爱你</string>
+			<string>谁</string>
+			<string>走天涯</string>
+			<string>那一天</string>
 		</array>
 		<array>
 			<string>为爱疯狂</string>
+			<string>一无所有</string>
 			<string>勇敢的心</string>
 			<string>匆匆那年</string>
 			<string>快乐崇拜</string>
@@ -56,31 +78,61 @@
 			<string>时间煮雨</string>
 			<string>海阔天空</string>
 			<string>爱的供养</string>
-			<string>牡丹亭外</string>
+			<string>爱的海洋</string>
 			<string>生如夏花</string>
-			<string>盛夏光年</string>
+			<string>花房姑娘</string>
 			<string>类似爱情</string>
+			<string>没离开过</string>
+			<string>那些花儿</string>
 		</array>
 		<array>
-			<string>high歌</string>
+			<string>High歌</string>
+			<string>一万个理由</string>
+			<string>一生中最爱</string>
+			<string>如果没有你</string>
+			<string>兄弟抱一下</string>
+			<string>另一个天堂</string>
 			<string>可惜不是你</string>
 			<string>不管有多苦</string>
 			<string>听妈妈的话</string>
 			<string>布拉格广场</string>
+			<string>心中的日月</string>
+			<string>我从草原来</string>
+			<string>我很想爱他</string>
+			<string>我的歌声里</string>
 			<string>我的滑板鞋</string>
 			<string>新贵妃醉酒</string>
 			<string>至少还有你</string>
+			<string>有一点动心</string>
+			<string>突然的自我</string>
+			<string>终于等到你</string>
 		</array>
 		<array>
 			<string>我可以抱你吗</string>
+			<string>BADBOY</string>
+			<string>一个人的精彩</string>
+			<string>以为爱所以爱</string>
 			<string>忠孝东路走九遍</string>
+			<string>像梦一样自由</string>
+			<string>像风一样自由</string>
+			<string>分手总要在雨天</string>
 			<string>一场游戏一场梦</string>
+			<string>外婆的澎湖湾</string>
+			<string>当爱已成往事</string>
 			<string>今天你要嫁给我</string>
+			<string>想把我唱给你听</string>
+			<string>我的未来不是梦</string>
+			<string>有没有人告诉你</string>
+			<string>流着泪的你的脸</string>
+			<string>男人哭吧不是罪</string>
+			<string>白天不懂夜得黑</string>
+			<string>看月亮爬上来</string>
+			<string>难以抗拒你容颜</string>
 		</array>
 	</array>
 	<key>difficulty</key>
 	<string>2</string>
 	<key>currentLevel</key>
-	<string>0</string>
+	<string>40</string>
 </dict>
 </plist>

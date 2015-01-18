@@ -190,9 +190,11 @@ int answerPickedCount;
             [self returnChoicesBoard:nil];
 
             if (self.musicsPlayArray.count == 0) {
-                NSMutableArray *currentMusics = [[[NSUserDefaults standardUserDefaults] objectForKey:@"currentMusics"] mutableCopy];
-                [currentMusics removeAllObjects];
-                [[NSUserDefaults standardUserDefaults] setObject:currentMusics forKey:@"currentMusics"];
+//                NSMutableArray *currentMusics = [[[NSUserDefaults standardUserDefaults] objectForKey:@"currentMusics"] mutableCopy];
+//                [currentMusics removeAllObjects];
+//                [[NSUserDefaults standardUserDefaults] setObject:currentMusics forKey:@"currentMusics"];
+                
+                [self modifyPlist:@"gameData" withValue:[NSMutableArray arrayWithObject:nil] forKey:@"musicPlaying"];
                 
                 int levelNow = [[self.gameDataForSingleLevel objectForKey:@"currentLevel"] intValue];
                 if (levelNow == 100) {
@@ -257,10 +259,16 @@ int answerPickedCount;
     [self.musicsArray removeObject:songName];
     [self.musicsPlayArray removeObject:songName];
 
-    NSMutableArray *currentMusics = [[[NSUserDefaults standardUserDefaults] objectForKey:@"currentMusics"] mutableCopy];
+//    NSMutableArray *currentMusics = [[[NSUserDefaults standardUserDefaults] objectForKey:@"currentMusics"] mutableCopy];
+//    [currentMusics removeObject:songName];
+//    [[NSUserDefaults standardUserDefaults] setObject:currentMusics forKey:@"currentMusics"];
+    
+    self.gameDataForSingleLevel = [self readDataFromPlist:@"gameData"] ;
+    
+    NSMutableArray *currentMusics = [self.gameDataForSingleLevel objectForKey:@"musicPlaying"];
     [currentMusics removeObject:songName];
-    [[NSUserDefaults standardUserDefaults] setObject:currentMusics forKey:@"currentMusics"];
-
+    [self modifyPlist:@"gameData" withValue:currentMusics forKey:@"musicPlaying"];
+    
     
 }
 
@@ -310,11 +318,11 @@ int answerPickedCount;
 
 - (void)spinWithOptions: (UIViewAnimationOptions) options :(UIView *)destRotateView {
     // this spin completes 360 degrees every 2 seconds
-    [UIView animateWithDuration: 0.15f
+    [UIView animateWithDuration: 0.01f
                           delay: 0.0f
                         options: options
                      animations: ^{
-                         destRotateView.transform = CGAffineTransformRotate(destRotateView.transform, M_PI/4 );
+                         destRotateView.transform = CGAffineTransformRotate(destRotateView.transform, M_PI/32 );
                      }
                      completion: ^(BOOL finished) {
                          if (finished) {
@@ -325,7 +333,9 @@ int answerPickedCount;
                              if (animating) {
                                  // if flag still set, keep spinning with constant speed
 
-                                [self spinWithOptions:UIViewAnimationOptionCurveLinear :destRotateView];
+                                [self spinWithOptions:UIViewAnimationOptionTransitionNone :destRotateView];
+                                 
+                                 
                              }
                          }
                      }];
@@ -338,7 +348,8 @@ int answerPickedCount;
             if (button.tag == 0) {
                 [button setEnabled:NO];
                 [button setTitle:@" " forState:UIControlStateNormal];
-                [self spinWithOptions: UIViewAnimationOptionCurveEaseIn:button];
+                [self spinWithOptions: UIViewAnimationOptionTransitionNone:button];
+                NSLog(@"frame:%f",button.frame.origin.x);
             }
 
         }
@@ -543,7 +554,7 @@ int answerPickedCount;
                               delay: 0.0f
                             options: 0
                          animations: ^{
-                             button.transform = CGAffineTransformRotate(button.transform, -(totalRotateTimes%8) *( M_PI/4));
+                             button.transform = CGAffineTransformRotate(button.transform, -(totalRotateTimes%64) *( M_PI/32));
                          }
                          completion:nil];
         
@@ -617,7 +628,10 @@ int answerPickedCount;
 //    myGameViewController.levelTitle = @"PLAY1234";
     
     
-    NSMutableArray *currentMusics = [[NSUserDefaults standardUserDefaults] objectForKey:@"currentMusics"];
+//    NSMutableArray *currentMusics = [[NSUserDefaults standardUserDefaults] objectForKey:@"currentMusics"];
+    
+    self.gameDataForSingleLevel = [self readDataFromPlist:@"gameData"] ;
+    NSMutableArray *currentMusics = [self.gameDataForSingleLevel objectForKey:@"musicPlaying"];
 
     if (currentMusics && currentMusics.count > 0) {
         
@@ -627,7 +641,8 @@ int answerPickedCount;
     {
         NSMutableArray *passMusics = [self.delegate configSongs];
         myGameViewController.musicsArray = passMusics;
-        [[NSUserDefaults standardUserDefaults] setObject:passMusics forKey:@"currentMusics"];
+        [self modifyPlist:@"gameData" withValue:passMusics forKey:@"musicPlaying"];
+
         
     }
     
@@ -658,7 +673,7 @@ int answerPickedCount;
     return levelData;
     
 }
--(void)modifyPlist:(NSString *)plistname withValue:(NSString *)value forKey:(NSString *)key
+-(void)modifyPlist:(NSString *)plistname withValue:(id)value forKey:(NSString *)key
 {
     NSString *documentsDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
     NSString *plistPath = [documentsDirectory stringByAppendingPathComponent:[ NSString stringWithFormat:@"%@.plist",plistname ]];
