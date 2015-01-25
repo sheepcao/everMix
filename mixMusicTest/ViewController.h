@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "gameViewController.h"
+#import "buyCoinsViewController.h"
 
 @interface ViewController : UIViewController<prepareSongsDelegate>
 
@@ -20,6 +21,17 @@
 - (IBAction)continueTapped:(UIButton *)sender;
 
 - (IBAction)beginTapped:(UIButton *)sender;
+
+@property (strong, nonatomic) IBOutlet UIButton *bugCoinsBtn;
+@property (strong, nonatomic) IBOutlet UIButton *coinsShowing;
+
+- (IBAction)buyCoinsTapped:(id)sender;
+
 @property (strong,nonatomic) NSMutableDictionary *gameData;
+@property (strong,nonatomic) buyCoinsViewController *myBuyController;
+@property (strong,nonatomic) UIView *buyCoinsView;
+
+@property (strong,nonatomic) UITableView *itemsToBuy;
+@property (nonatomic,strong) UIRefreshControl *refreshControl NS_AVAILABLE_IOS(6_0);
 //@property (strong,nonatomic) NSMutableArray *musicToNextView;
 @end

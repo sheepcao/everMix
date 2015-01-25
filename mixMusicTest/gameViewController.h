@@ -10,9 +10,11 @@
 #import <AVFoundation/AVFoundation.h>
 #import "AnswerButton.h"
 #import "boardView.h"
+#import "CommonUtility.h"
 
 #define DISK_TAG 100
 #define TIPS_TAG 200
+#define CD_SZIE 80
 
 @protocol prepareSongsDelegate <NSObject>
 -(NSMutableArray *)configSongs;
@@ -61,7 +63,7 @@
 
 - (IBAction)playBtn:(id)sender;
 
-@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *diskButtons;
+@property (strong, nonatomic) NSArray *diskButtons;
 - (IBAction)diskTap:(UIButton *)sender;
 
 - (IBAction)returnChoicesBoard:(UIButton *)sender;

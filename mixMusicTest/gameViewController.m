@@ -25,13 +25,7 @@ int answerPickedCount;
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    
-    //test:
-//    self.musicsPlayArray = [[NSMutableArray alloc] initWithObjects:@"像风一样自由64",@"我的歌声里64",@"突然的自我128",@"给你们64", nil];
-    
-//    self.musicsPlayArray = [[NSMutableArray alloc] initWithObjects:@"像风一样自由128",@"我的歌声里128",@"突然的自我128",@"给你们128", nil];
-//    
-//    self.musicsArray = [[NSMutableArray alloc] initWithObjects:@"红日",@"海阔天空",@"我可以抱你吗", nil];
+    [self.navigationController setNavigationBarHidden:NO];
 
     self.ignoreArray = [[NSMutableArray alloc] init];
     
@@ -42,7 +36,8 @@ int answerPickedCount;
     self.singleMusicsViewArray = [NSMutableArray new];
 
     isplayed =false;
-
+    
+    [self setupButtonsView];
 
     [self diskHideToTop];
     [self diskPopUp];
@@ -64,7 +59,47 @@ int answerPickedCount;
 
 }
 
-- (IBAction)diskTap:(UIButton *)sender {
+
+-(void)setupButtonsView
+{
+    CGFloat distance = 33;
+    
+    UIButton *cd1Btn = [[UIButton alloc] initWithFrame:CGRectMake(50, distance, CD_SZIE, CD_SZIE)];
+    UIButton *cd2Btn = [[UIButton alloc] initWithFrame:CGRectMake(190, distance, CD_SZIE, CD_SZIE)];
+    UIButton *cd3Btn = [[UIButton alloc] initWithFrame:CGRectMake(50, 2*distance+CD_SZIE, CD_SZIE, CD_SZIE)];
+    UIButton *cd4Btn = [[UIButton alloc] initWithFrame:CGRectMake(190, 2*distance+CD_SZIE, CD_SZIE, CD_SZIE)];
+    UIButton *cd5Btn = [[UIButton alloc] initWithFrame:CGRectMake(50, 3*distance+2*CD_SZIE, CD_SZIE, CD_SZIE)];
+    
+    [cd1Btn addTarget:self action:@selector(diskTap:) forControlEvents:UIControlEventTouchUpInside];
+    [cd2Btn addTarget:self action:@selector(diskTap:) forControlEvents:UIControlEventTouchUpInside];
+    [cd3Btn addTarget:self action:@selector(diskTap:) forControlEvents:UIControlEventTouchUpInside];
+    [cd4Btn addTarget:self action:@selector(diskTap:) forControlEvents:UIControlEventTouchUpInside];
+    [cd5Btn addTarget:self action:@selector(diskTap:) forControlEvents:UIControlEventTouchUpInside];
+    
+    
+    [cd1Btn setImage:[UIImage imageNamed:@"cd1"] forState:UIControlStateDisabled];
+    [cd2Btn setImage:[UIImage imageNamed:@"cd2"] forState:UIControlStateDisabled];
+    [cd3Btn setImage:[UIImage imageNamed:@"cd3"] forState:UIControlStateDisabled];
+    [cd4Btn setImage:[UIImage imageNamed:@"cd4"] forState:UIControlStateDisabled];
+    [cd5Btn setImage:[UIImage imageNamed:@"cd5"] forState:UIControlStateDisabled];
+    
+    self.diskButtons = [NSArray arrayWithObjects:cd1Btn,cd2Btn,cd3Btn,cd4Btn,cd5Btn, nil];
+    for (int i = 0; i<self.diskButtons.count; i++) {
+        UIButton *button = self.diskButtons[i];
+        [button setBackgroundImage:[UIImage imageNamed:@"cycle"] forState:UIControlStateNormal];
+        [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    }
+    
+    [self.downPartView addSubview:cd1Btn];
+    [self.downPartView addSubview:cd2Btn];
+    [self.downPartView addSubview:cd3Btn];
+    [self.downPartView addSubview:cd4Btn];
+    [self.downPartView addSubview:cd5Btn];
+
+
+}
+
+- (void)diskTap:(UIButton *)sender {
 //    sender.tag = 1;
     
     NSDictionary *allAnswers = [self.gameDataForSingleLevel objectForKey:@"choices"];
@@ -80,7 +115,7 @@ int answerPickedCount;
     NSString *songName = self.musicsArray[diskNumber];
     NSString *songAnswer = [allAnswers objectForKey:songName];
     NSArray *songAnswerSingleLetter = [songAnswer componentsSeparatedByString:@","];
-    NSLog(@"answer count:%ld",songAnswerSingleLetter.count);
+    NSLog(@"answer count:%ld",(unsigned long)songAnswerSingleLetter.count);
     NSLog(@"songName:%@",songName);
 
     
@@ -231,7 +266,7 @@ int answerPickedCount;
 
 - (IBAction)refreshMusics:(UIButton *)sender {//delete one song
     
-    if(self.musicsArray.count <= 1)
+    if(self.musicsPlayArray.count <= 1)
     {
         UIAlertView *noDeleteAlert = [[UIAlertView alloc] initWithTitle:@"注意" message:@"就剩一首了，再删就没得玩啦" delegate:nil cancelButtonTitle:@"继续猜" otherButtonTitles:nil, nil];
         [noDeleteAlert show];

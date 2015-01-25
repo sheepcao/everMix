@@ -9,8 +9,9 @@
         <!--Navigation Controller-->
         <scene sceneID="Vc3-rh-7SE">
             <objects>
-                <navigationController id="1mw-ay-E1q" sceneMemberID="viewController">
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                <navigationController navigationBarHidden="YES" id="1mw-ay-E1q" sceneMemberID="viewController">
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="wGZ-Pq-rJ6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -36,8 +37,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background.png" translatesAutoresizingMaskIntoConstraints="NO" id="I4A-bF-7f7">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GussMuic.png" translatesAutoresizingMaskIntoConstraints="NO" id="I4A-bF-7f7">
+                                <rect key="frame" x="0.0" y="-44" width="320" height="612"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qNQ-Ph-nXm">
                                 <rect key="frame" x="50" y="191" width="100" height="100"/>
@@ -76,6 +77,9 @@
                                 <state key="normal" image="money-128.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="buyCoinsTapped:" destination="BpU-Vf-ayy" eventType="touchUpInside" id="1fn-iV-rgw"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0lK-re-drz">
                                 <rect key="frame" x="236" y="486" width="40" height="40"/>
@@ -138,6 +142,16 @@
                                     <action selector="continueTapped:" destination="BpU-Vf-ayy" eventType="touchUpInside" id="chz-8Y-QrN"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5D0-iC-I9D">
+                                <rect key="frame" x="236" y="28" width="68" height="30"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="1" green="0.88446624087591241" blue="0.13506500912408756" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buyCoinsTapped:" destination="BpU-Vf-ayy" eventType="touchUpInside" id="QtR-Bt-kIR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -170,6 +184,8 @@
                     <connections>
                         <outlet property="backgroundImg" destination="I4A-bF-7f7" id="Cye-bJ-4M5"/>
                         <outlet property="begainGame" destination="qNQ-Ph-nXm" id="dHf-ZX-0KJ"/>
+                        <outlet property="bugCoinsBtn" destination="gaK-c0-OeE" id="21v-bu-O0c"/>
+                        <outlet property="coinsShowing" destination="5D0-iC-I9D" id="kAO-2p-d1Q"/>
                         <outlet property="continueGame" destination="oJy-Pu-OcZ" id="aF9-Dw-fTr"/>
                         <outletCollection property="starButtons" destination="2tZ-su-ce7" id="vpW-Eu-mqG"/>
                         <outletCollection property="starButtons" destination="TCk-0B-kEu" id="FzO-d5-P5E"/>
@@ -184,8 +200,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="GussMuic.png" width="1080" height="1920"/>
         <image name="audio-on.png" width="128" height="128"/>
-        <image name="background.png" width="640" height="1136"/>
         <image name="info.png" width="128" height="128"/>
         <image name="money-128.png" width="128" height="128"/>
         <image name="music.png" width="128" height="128"/>

@@ -16,8 +16,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
     // Do any additional setup after loading the view.
     [self copyPlistToDocument:@"gameData"];
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"coinsAmount"] ==nil) {
+        [[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%d",500] forKey:@"coinsAmount"];
+    }
 
     [self.view sendSubviewToBack:self.backgroundImg];
     
@@ -26,6 +30,12 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES];
+
+    
+    NSString *currentCoins = [NSString stringWithFormat:@"%d",[CommonUtility fetchCoinAmount]];
+    
+    [self.coinsShowing setTitle:currentCoins forState:UIControlStateNormal];
 
     
 }
@@ -400,4 +410,51 @@
 }
 
 
+- (IBAction)buyCoinsTapped:(id)sender {
+
+//    buyCoinsViewController *myBuyCoinsViewController = [[buyCoinsViewController alloc] initWithNibName:@"buyCoinsViewController" bundle:nil];
+//    [self.navigationController pushViewController:myBuyCoinsViewController animated:YES];
+
+    if (!self.buyCoinsView) {
+        
+        self.buyCoinsView = [[[NSBundle mainBundle] loadNibNamed:@"buyCoinsViewController" owner:self options:nil] objectAtIndex:0];
+    }
+
+    
+    UILabel *coinsLabel = (UILabel *)[self.buyCoinsView viewWithTag:2];
+    [coinsLabel setText:[NSString stringWithFormat:@"%d",[CommonUtility fetchCoinAmount]]];
+    self.myBuyController = [[buyCoinsViewController alloc] initWithCoinLabel:coinsLabel];
+ 
+    [self.buyCoinsView setFrame:CGRectMake(0, [UIScreen mainScreen].bounds.size.height, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
+    [self.view addSubview:self.buyCoinsView];
+    
+    UIButton *closeBuyView = (UIButton *)[self.buyCoinsView viewWithTag:1];
+    [closeBuyView addTarget:self action:@selector(closingBuy) forControlEvents:UIControlEventTouchUpInside];
+    
+    
+    
+    
+    self.itemsToBuy = (UITableView *)[self.buyCoinsView viewWithTag:10];
+    self.itemsToBuy.delegate = self.myBuyController;
+    self.itemsToBuy.dataSource = self.myBuyController;
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.itemsToBuy addSubview:self.refreshControl];
+    
+    [self.refreshControl addTarget:self.myBuyController action:@selector(reloadwithRefreshControl:andTableView:) forControlEvents:UIControlEventValueChanged];
+    [self.myBuyController reloadwithRefreshControl:self.refreshControl andTableView:self.itemsToBuy];
+    [self.refreshControl beginRefreshing];
+    
+    [UIView animateWithDuration:0.65 delay:0.05 usingSpringWithDamping:0.8 initialSpringVelocity:0.4 options:0 animations:^{
+        [self.buyCoinsView setFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
+    } completion:nil];
+    
+}
+
+-(void)closingBuy
+{
+    [UIView animateWithDuration:0.65 delay:0.05 usingSpringWithDamping:0.8 initialSpringVelocity:0.4 options:0 animations:^{
+        [self.buyCoinsView setFrame:CGRectMake(0, [UIScreen mainScreen].bounds.size.height, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
+        
+    } completion:nil];
+}
 @end

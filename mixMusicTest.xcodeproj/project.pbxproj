@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A40CA9001A72469E00ED071F /* CommonUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = A40CA8FF1A72469E00ED071F /* CommonUtility.m */; };
+		A41384371A6FADAF00B7B10E /* IAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A41384341A6FADAF00B7B10E /* IAPHelper.m */; };
+		A41384381A6FADAF00B7B10E /* myIAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A41384361A6FADAF00B7B10E /* myIAPHelper.m */; };
+		A41D8B9A1A722A26008F9240 /* itemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A41D8B981A722A26008F9240 /* itemTableViewCell.m */; };
+		A41D8B9B1A722A26008F9240 /* itemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A41D8B991A722A26008F9240 /* itemTableViewCell.xib */; };
+		A44236761A722026008C3051 /* buyCoinsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A44236741A722026008C3051 /* buyCoinsViewController.m */; };
+		A44236771A722026008C3051 /* buyCoinsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A44236751A722026008C3051 /* buyCoinsViewController.xib */; };
 		A47E00001A67B8E6000FCAF7 /* 狼.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A47EFF991A67B8E6000FCAF7 /* 狼.m4a */; };
 		A47E00011A67B8E6000FCAF7 /* 笨小孩.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A47EFF9A1A67B8E6000FCAF7 /* 笨小孩.m4a */; };
 		A47E00021A67B8E6000FCAF7 /* 红蜻蜓.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A47EFF9B1A67B8E6000FCAF7 /* 红蜻蜓.m4a */; };
@@ -109,18 +116,30 @@
 		A47EFFFF1A67B8E6000FCAF7 /* 牧马人.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A47EFF981A67B8E6000FCAF7 /* 牧马人.m4a */; };
 		A4A0A3C61A5128C0007A0876 /* boardView.m in Sources */ = {isa = PBXBuildFile; fileRef = A4A0A3C51A5128C0007A0876 /* boardView.m */; };
 		A4A0A3C81A514835007A0876 /* gameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4A0A3C71A514835007A0876 /* gameViewController.xib */; };
+		A4A1C4241A7145D1002A2D56 /* GussMuic.png in Resources */ = {isa = PBXBuildFile; fileRef = A4A1C4231A7145D1002A2D56 /* GussMuic.png */; };
+		A4A5A2F31A74AAA8005634E9 /* UMSocialLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A4A5A2D91A74AAA8005634E9 /* UMSocialLocalizable.strings */; };
+		A4A5A2F41A74AAA8005634E9 /* libUMSocial_Sdk_4.2.1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A4A5A2E71A74AAA8005634E9 /* libUMSocial_Sdk_4.2.1.a */; };
+		A4A5A2F51A74AAA8005634E9 /* UMSCommentDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4A5A2E91A74AAA8005634E9 /* UMSCommentDetailController.xib */; };
+		A4A5A2F61A74AAA8005634E9 /* UMSCommentInputController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4A5A2EA1A74AAA8005634E9 /* UMSCommentInputController.xib */; };
+		A4A5A2F71A74AAA8005634E9 /* UMSCommentInputControlleriPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4A5A2EB1A74AAA8005634E9 /* UMSCommentInputControlleriPad.xib */; };
+		A4A5A2F81A74AAA8005634E9 /* UMShareEditViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4A5A2EC1A74AAA8005634E9 /* UMShareEditViewController.xib */; };
+		A4A5A2F91A74AAA8005634E9 /* UMShareEditViewControlleriPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4A5A2ED1A74AAA8005634E9 /* UMShareEditViewControlleriPad.xib */; };
+		A4A5A2FA1A74AAA8005634E9 /* UMSLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4A5A2EE1A74AAA8005634E9 /* UMSLoginViewController.xib */; };
+		A4A5A2FB1A74AAA8005634E9 /* UMSnsAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4A5A2EF1A74AAA8005634E9 /* UMSnsAccountViewController.xib */; };
+		A4A5A2FC1A74AAA8005634E9 /* UMSShareListController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4A5A2F01A74AAA8005634E9 /* UMSShareListController.xib */; };
+		A4A5A2FD1A74AAA8005634E9 /* UMSocialSDKResourcesNew.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A4A5A2F11A74AAA8005634E9 /* UMSocialSDKResourcesNew.bundle */; };
 		A4A6C1301A6B713600C6095C /* cd1.png in Resources */ = {isa = PBXBuildFile; fileRef = A4A6C1261A6B713600C6095C /* cd1.png */; };
-		A4A6C1311A6B713600C6095C /* cd2.png in Resources */ = {isa = PBXBuildFile; fileRef = A4A6C1271A6B713600C6095C /* cd2.png */; };
-		A4A6C1321A6B713600C6095C /* cd3.png in Resources */ = {isa = PBXBuildFile; fileRef = A4A6C1281A6B713600C6095C /* cd3.png */; };
-		A4A6C1331A6B713600C6095C /* cd4.png in Resources */ = {isa = PBXBuildFile; fileRef = A4A6C1291A6B713600C6095C /* cd4.png */; };
-		A4A6C1341A6B713600C6095C /* cd5.png in Resources */ = {isa = PBXBuildFile; fileRef = A4A6C12A1A6B713600C6095C /* cd5.png */; };
-		A4A6C1351A6B713600C6095C /* cd6.png in Resources */ = {isa = PBXBuildFile; fileRef = A4A6C12B1A6B713600C6095C /* cd6.png */; };
-		A4A6C1361A6B713600C6095C /* cycle.png in Resources */ = {isa = PBXBuildFile; fileRef = A4A6C12C1A6B713600C6095C /* cycle.png */; };
-		A4A6C1371A6B713600C6095C /* 开始.png in Resources */ = {isa = PBXBuildFile; fileRef = A4A6C12D1A6B713600C6095C /* 开始.png */; };
-		A4A6C1381A6B713600C6095C /* 继续.png in Resources */ = {isa = PBXBuildFile; fileRef = A4A6C12E1A6B713600C6095C /* 继续.png */; };
-		A4A6C1391A6B713600C6095C /* 重新开始.png in Resources */ = {isa = PBXBuildFile; fileRef = A4A6C12F1A6B713600C6095C /* 重新开始.png */; };
+		A4A6C1321A6B713600C6095C /* cd2.png in Resources */ = {isa = PBXBuildFile; fileRef = A4A6C1281A6B713600C6095C /* cd2.png */; };
+		A4A6C1331A6B713600C6095C /* cd3.png in Resources */ = {isa = PBXBuildFile; fileRef = A4A6C1291A6B713600C6095C /* cd3.png */; };
+		A4A6C1341A6B713600C6095C /* cd4.png in Resources */ = {isa = PBXBuildFile; fileRef = A4A6C12A1A6B713600C6095C /* cd4.png */; };
+		A4A6C1351A6B713600C6095C /* cd5.png in Resources */ = {isa = PBXBuildFile; fileRef = A4A6C12B1A6B713600C6095C /* cd5.png */; };
 		A4A6C13B1A6B7EF000C6095C /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = A4A6C13A1A6B7EF000C6095C /* background.png */; };
-		A4A75D0A1A53CECF00E87191 /* money.plist in Resources */ = {isa = PBXBuildFile; fileRef = A4A75D091A53CECF00E87191 /* money.plist */; };
+		A4A6C1441A6BF66600C6095C /* cycle.png in Resources */ = {isa = PBXBuildFile; fileRef = A4A6C13E1A6BF66600C6095C /* cycle.png */; };
+		A4A6C1451A6BF66600C6095C /* 开始.png in Resources */ = {isa = PBXBuildFile; fileRef = A4A6C13F1A6BF66600C6095C /* 开始.png */; };
+		A4A6C1461A6BF66600C6095C /* back6.png in Resources */ = {isa = PBXBuildFile; fileRef = A4A6C1401A6BF66600C6095C /* back6.png */; };
+		A4A6C1471A6BF66600C6095C /* 重新开始.png in Resources */ = {isa = PBXBuildFile; fileRef = A4A6C1411A6BF66600C6095C /* 重新开始.png */; };
+		A4A6C1481A6BF66600C6095C /* back8.png in Resources */ = {isa = PBXBuildFile; fileRef = A4A6C1421A6BF66600C6095C /* back8.png */; };
+		A4A6C1491A6BF66600C6095C /* 继续.png in Resources */ = {isa = PBXBuildFile; fileRef = A4A6C1431A6BF66600C6095C /* 继续.png */; };
 		A4A75D0C1A53DC4800E87191 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4A75D0B1A53DC4800E87191 /* GameKit.framework */; };
 		A4A75D0E1A53DC4B00E87191 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4A75D0D1A53DC4B00E87191 /* StoreKit.framework */; };
 		A4AC86071A36CFE700CD19CA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A4AC86061A36CFE700CD19CA /* main.m */; };
@@ -130,7 +149,6 @@
 		A4AC86121A36CFE700CD19CA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4AC86111A36CFE700CD19CA /* Images.xcassets */; };
 		A4AC86211A36CFE700CD19CA /* mixMusicTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A4AC86201A36CFE700CD19CA /* mixMusicTestTests.m */; };
 		A4AC86401A36F47100CD19CA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4AC863F1A36F47100CD19CA /* ViewController.m */; };
-		A4B76BFA1A3976760014014D /* singleMusicView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4B76BF91A3976760014014D /* singleMusicView.xib */; };
 		A4B76C101A3982EC0014014D /* star1.png in Resources */ = {isa = PBXBuildFile; fileRef = A4B76C041A3982EC0014014D /* star1.png */; };
 		A4B76C111A3982EC0014014D /* audio-off.png in Resources */ = {isa = PBXBuildFile; fileRef = A4B76C051A3982EC0014014D /* audio-off.png */; };
 		A4B76C121A3982EC0014014D /* audio-on.png in Resources */ = {isa = PBXBuildFile; fileRef = A4B76C061A3982EC0014014D /* audio-on.png */; };
@@ -164,6 +182,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A40CA8FE1A72469E00ED071F /* CommonUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonUtility.h; sourceTree = "<group>"; };
+		A40CA8FF1A72469E00ED071F /* CommonUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonUtility.m; sourceTree = "<group>"; };
+		A41384331A6FADAF00B7B10E /* IAPHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IAPHelper.h; sourceTree = "<group>"; };
+		A41384341A6FADAF00B7B10E /* IAPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IAPHelper.m; sourceTree = "<group>"; };
+		A41384351A6FADAF00B7B10E /* myIAPHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myIAPHelper.h; sourceTree = "<group>"; };
+		A41384361A6FADAF00B7B10E /* myIAPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = myIAPHelper.m; sourceTree = "<group>"; };
+		A41D8B971A722A26008F9240 /* itemTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = itemTableViewCell.h; sourceTree = "<group>"; };
+		A41D8B981A722A26008F9240 /* itemTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = itemTableViewCell.m; sourceTree = "<group>"; };
+		A41D8B991A722A26008F9240 /* itemTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = itemTableViewCell.xib; sourceTree = "<group>"; };
+		A44236731A722026008C3051 /* buyCoinsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = buyCoinsViewController.h; sourceTree = "<group>"; };
+		A44236741A722026008C3051 /* buyCoinsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = buyCoinsViewController.m; sourceTree = "<group>"; };
+		A44236751A722026008C3051 /* buyCoinsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = buyCoinsViewController.xib; sourceTree = "<group>"; };
 		A47EFF781A67B8E5000FCAF7 /* 倒带.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "倒带.m4a"; sourceTree = "<group>"; };
 		A47EFF791A67B8E5000FCAF7 /* 倔强.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "倔强.m4a"; sourceTree = "<group>"; };
 		A47EFF7A1A67B8E5000FCAF7 /* 出卖.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "出卖.m4a"; sourceTree = "<group>"; };
@@ -267,19 +297,43 @@
 		A4A0A3C41A5128C0007A0876 /* boardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = boardView.h; sourceTree = "<group>"; };
 		A4A0A3C51A5128C0007A0876 /* boardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = boardView.m; sourceTree = "<group>"; };
 		A4A0A3C71A514835007A0876 /* gameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = gameViewController.xib; sourceTree = "<group>"; };
+		A4A1C4231A7145D1002A2D56 /* GussMuic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GussMuic.png; sourceTree = "<group>"; };
 		A4A375041A47D37F0064AF00 /* mixMusicTest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = mixMusicTest.entitlements; sourceTree = "<group>"; };
+		A4A5A2DA1A74AAA8005634E9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/UMSocialLocalizable.strings; sourceTree = "<group>"; };
+		A4A5A2DC1A74AAA8005634E9 /* UMSocial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocial.h; sourceTree = "<group>"; };
+		A4A5A2DD1A74AAA8005634E9 /* UMSocialAccountManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialAccountManager.h; sourceTree = "<group>"; };
+		A4A5A2DE1A74AAA8005634E9 /* UMSocialBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialBar.h; sourceTree = "<group>"; };
+		A4A5A2DF1A74AAA8005634E9 /* UMSocialConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialConfig.h; sourceTree = "<group>"; };
+		A4A5A2E01A74AAA8005634E9 /* UMSocialControllerService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialControllerService.h; sourceTree = "<group>"; };
+		A4A5A2E11A74AAA8005634E9 /* UMSocialControllerServiceComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialControllerServiceComment.h; sourceTree = "<group>"; };
+		A4A5A2E21A74AAA8005634E9 /* UMSocialData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialData.h; sourceTree = "<group>"; };
+		A4A5A2E31A74AAA8005634E9 /* UMSocialDataService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialDataService.h; sourceTree = "<group>"; };
+		A4A5A2E41A74AAA8005634E9 /* UMSocialSnsData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialSnsData.h; sourceTree = "<group>"; };
+		A4A5A2E51A74AAA8005634E9 /* UMSocialSnsPlatformManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialSnsPlatformManager.h; sourceTree = "<group>"; };
+		A4A5A2E61A74AAA8005634E9 /* UMSocialSnsService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialSnsService.h; sourceTree = "<group>"; };
+		A4A5A2E71A74AAA8005634E9 /* libUMSocial_Sdk_4.2.1.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUMSocial_Sdk_4.2.1.a; sourceTree = "<group>"; };
+		A4A5A2E91A74AAA8005634E9 /* UMSCommentDetailController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UMSCommentDetailController.xib; sourceTree = "<group>"; };
+		A4A5A2EA1A74AAA8005634E9 /* UMSCommentInputController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UMSCommentInputController.xib; sourceTree = "<group>"; };
+		A4A5A2EB1A74AAA8005634E9 /* UMSCommentInputControlleriPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UMSCommentInputControlleriPad.xib; sourceTree = "<group>"; };
+		A4A5A2EC1A74AAA8005634E9 /* UMShareEditViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UMShareEditViewController.xib; sourceTree = "<group>"; };
+		A4A5A2ED1A74AAA8005634E9 /* UMShareEditViewControlleriPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UMShareEditViewControlleriPad.xib; sourceTree = "<group>"; };
+		A4A5A2EE1A74AAA8005634E9 /* UMSLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UMSLoginViewController.xib; sourceTree = "<group>"; };
+		A4A5A2EF1A74AAA8005634E9 /* UMSnsAccountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UMSnsAccountViewController.xib; sourceTree = "<group>"; };
+		A4A5A2F01A74AAA8005634E9 /* UMSShareListController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UMSShareListController.xib; sourceTree = "<group>"; };
+		A4A5A2F11A74AAA8005634E9 /* UMSocialSDKResourcesNew.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = UMSocialSDKResourcesNew.bundle; sourceTree = "<group>"; };
+		A4A5A2F21A74AAA8005634E9 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/UMSocialLocalizable.strings"; sourceTree = "<group>"; };
 		A4A6C1261A6B713600C6095C /* cd1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cd1.png; sourceTree = "<group>"; };
-		A4A6C1271A6B713600C6095C /* cd2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cd2.png; sourceTree = "<group>"; };
-		A4A6C1281A6B713600C6095C /* cd3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cd3.png; sourceTree = "<group>"; };
-		A4A6C1291A6B713600C6095C /* cd4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cd4.png; sourceTree = "<group>"; };
-		A4A6C12A1A6B713600C6095C /* cd5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cd5.png; sourceTree = "<group>"; };
-		A4A6C12B1A6B713600C6095C /* cd6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cd6.png; sourceTree = "<group>"; };
-		A4A6C12C1A6B713600C6095C /* cycle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cycle.png; sourceTree = "<group>"; };
-		A4A6C12D1A6B713600C6095C /* 开始.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "开始.png"; sourceTree = "<group>"; };
-		A4A6C12E1A6B713600C6095C /* 继续.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "继续.png"; sourceTree = "<group>"; };
-		A4A6C12F1A6B713600C6095C /* 重新开始.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "重新开始.png"; sourceTree = "<group>"; };
+		A4A6C1281A6B713600C6095C /* cd2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cd2.png; sourceTree = "<group>"; };
+		A4A6C1291A6B713600C6095C /* cd3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cd3.png; sourceTree = "<group>"; };
+		A4A6C12A1A6B713600C6095C /* cd4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cd4.png; sourceTree = "<group>"; };
+		A4A6C12B1A6B713600C6095C /* cd5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cd5.png; sourceTree = "<group>"; };
 		A4A6C13A1A6B7EF000C6095C /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
-		A4A75D091A53CECF00E87191 /* money.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = money.plist; sourceTree = "<group>"; };
+		A4A6C13E1A6BF66600C6095C /* cycle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cycle.png; sourceTree = "<group>"; };
+		A4A6C13F1A6BF66600C6095C /* 开始.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "开始.png"; sourceTree = "<group>"; };
+		A4A6C1401A6BF66600C6095C /* back6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back6.png; sourceTree = "<group>"; };
+		A4A6C1411A6BF66600C6095C /* 重新开始.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "重新开始.png"; sourceTree = "<group>"; };
+		A4A6C1421A6BF66600C6095C /* back8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back8.png; sourceTree = "<group>"; };
+		A4A6C1431A6BF66600C6095C /* 继续.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "继续.png"; sourceTree = "<group>"; };
 		A4A75D0B1A53DC4800E87191 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		A4A75D0D1A53DC4B00E87191 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		A4AC86011A36CFE700CD19CA /* mixMusicTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mixMusicTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -296,7 +350,6 @@
 		A4AC86201A36CFE700CD19CA /* mixMusicTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = mixMusicTestTests.m; sourceTree = "<group>"; };
 		A4AC863E1A36F47100CD19CA /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		A4AC863F1A36F47100CD19CA /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		A4B76BF91A3976760014014D /* singleMusicView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = singleMusicView.xib; sourceTree = "<group>"; };
 		A4B76C041A3982EC0014014D /* star1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star1.png; sourceTree = "<group>"; };
 		A4B76C051A3982EC0014014D /* audio-off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "audio-off.png"; sourceTree = "<group>"; };
 		A4B76C061A3982EC0014014D /* audio-on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "audio-on.png"; sourceTree = "<group>"; };
@@ -326,6 +379,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4A5A2F41A74AAA8005634E9 /* libUMSocial_Sdk_4.2.1.a in Frameworks */,
 				A4A75D0C1A53DC4800E87191 /* GameKit.framework in Frameworks */,
 				A4A75D0E1A53DC4B00E87191 /* StoreKit.framework in Frameworks */,
 			);
@@ -341,6 +395,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A450C7511A6F97F300E63ED6 /* IAP class */ = {
+			isa = PBXGroup;
+			children = (
+				A41384331A6FADAF00B7B10E /* IAPHelper.h */,
+				A41384341A6FADAF00B7B10E /* IAPHelper.m */,
+				A41D8B971A722A26008F9240 /* itemTableViewCell.h */,
+				A41D8B981A722A26008F9240 /* itemTableViewCell.m */,
+				A41D8B991A722A26008F9240 /* itemTableViewCell.xib */,
+				A41384351A6FADAF00B7B10E /* myIAPHelper.h */,
+				A41384361A6FADAF00B7B10E /* myIAPHelper.m */,
+				A44236731A722026008C3051 /* buyCoinsViewController.h */,
+				A44236741A722026008C3051 /* buyCoinsViewController.m */,
+				A44236751A722026008C3051 /* buyCoinsViewController.xib */,
+			);
+			name = "IAP class";
+			sourceTree = "<group>";
+		};
 		A47EFF771A67B8E5000FCAF7 /* 2 */ = {
 			isa = PBXGroup;
 			children = (
@@ -476,19 +547,66 @@
 			path = 7;
 			sourceTree = "<group>";
 		};
+		A4A5A2D81A74AAA8005634E9 /* UMSocial_Sdk_4.2.1 */ = {
+			isa = PBXGroup;
+			children = (
+				A4A5A2D91A74AAA8005634E9 /* UMSocialLocalizable.strings */,
+				A4A5A2DB1A74AAA8005634E9 /* Header */,
+				A4A5A2E71A74AAA8005634E9 /* libUMSocial_Sdk_4.2.1.a */,
+				A4A5A2E81A74AAA8005634E9 /* SocialSDKXib */,
+				A4A5A2F11A74AAA8005634E9 /* UMSocialSDKResourcesNew.bundle */,
+			);
+			path = UMSocial_Sdk_4.2.1;
+			sourceTree = "<group>";
+		};
+		A4A5A2DB1A74AAA8005634E9 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				A4A5A2DC1A74AAA8005634E9 /* UMSocial.h */,
+				A4A5A2DD1A74AAA8005634E9 /* UMSocialAccountManager.h */,
+				A4A5A2DE1A74AAA8005634E9 /* UMSocialBar.h */,
+				A4A5A2DF1A74AAA8005634E9 /* UMSocialConfig.h */,
+				A4A5A2E01A74AAA8005634E9 /* UMSocialControllerService.h */,
+				A4A5A2E11A74AAA8005634E9 /* UMSocialControllerServiceComment.h */,
+				A4A5A2E21A74AAA8005634E9 /* UMSocialData.h */,
+				A4A5A2E31A74AAA8005634E9 /* UMSocialDataService.h */,
+				A4A5A2E41A74AAA8005634E9 /* UMSocialSnsData.h */,
+				A4A5A2E51A74AAA8005634E9 /* UMSocialSnsPlatformManager.h */,
+				A4A5A2E61A74AAA8005634E9 /* UMSocialSnsService.h */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
+		A4A5A2E81A74AAA8005634E9 /* SocialSDKXib */ = {
+			isa = PBXGroup;
+			children = (
+				A4A5A2E91A74AAA8005634E9 /* UMSCommentDetailController.xib */,
+				A4A5A2EA1A74AAA8005634E9 /* UMSCommentInputController.xib */,
+				A4A5A2EB1A74AAA8005634E9 /* UMSCommentInputControlleriPad.xib */,
+				A4A5A2EC1A74AAA8005634E9 /* UMShareEditViewController.xib */,
+				A4A5A2ED1A74AAA8005634E9 /* UMShareEditViewControlleriPad.xib */,
+				A4A5A2EE1A74AAA8005634E9 /* UMSLoginViewController.xib */,
+				A4A5A2EF1A74AAA8005634E9 /* UMSnsAccountViewController.xib */,
+				A4A5A2F01A74AAA8005634E9 /* UMSShareListController.xib */,
+			);
+			path = SocialSDKXib;
+			sourceTree = "<group>";
+		};
 		A4A6C1251A6B713600C6095C /* PNGs */ = {
 			isa = PBXGroup;
 			children = (
 				A4A6C1261A6B713600C6095C /* cd1.png */,
-				A4A6C1271A6B713600C6095C /* cd2.png */,
-				A4A6C1281A6B713600C6095C /* cd3.png */,
-				A4A6C1291A6B713600C6095C /* cd4.png */,
-				A4A6C12A1A6B713600C6095C /* cd5.png */,
-				A4A6C12B1A6B713600C6095C /* cd6.png */,
-				A4A6C12C1A6B713600C6095C /* cycle.png */,
-				A4A6C12D1A6B713600C6095C /* 开始.png */,
-				A4A6C12E1A6B713600C6095C /* 继续.png */,
-				A4A6C12F1A6B713600C6095C /* 重新开始.png */,
+				A4A1C4231A7145D1002A2D56 /* GussMuic.png */,
+				A4A6C1281A6B713600C6095C /* cd2.png */,
+				A4A6C1291A6B713600C6095C /* cd3.png */,
+				A4A6C12A1A6B713600C6095C /* cd4.png */,
+				A4A6C12B1A6B713600C6095C /* cd5.png */,
+				A4A6C13E1A6BF66600C6095C /* cycle.png */,
+				A4A6C13F1A6BF66600C6095C /* 开始.png */,
+				A4A6C1401A6BF66600C6095C /* back6.png */,
+				A4A6C1411A6BF66600C6095C /* 重新开始.png */,
+				A4A6C1421A6BF66600C6095C /* back8.png */,
+				A4A6C1431A6BF66600C6095C /* 继续.png */,
 				A4A6C13A1A6B7EF000C6095C /* background.png */,
 			);
 			path = PNGs;
@@ -517,22 +635,25 @@
 		A4AC86031A36CFE700CD19CA /* mixMusicTest */ = {
 			isa = PBXGroup;
 			children = (
+				A4A5A2D81A74AAA8005634E9 /* UMSocial_Sdk_4.2.1 */,
+				A40CA8FE1A72469E00ED071F /* CommonUtility.h */,
+				A40CA8FF1A72469E00ED071F /* CommonUtility.m */,
+				A450C7511A6F97F300E63ED6 /* IAP class */,
 				A4A375041A47D37F0064AF00 /* mixMusicTest.entitlements */,
 				A4DDB6E11A4D036F00CFF980 /* AnswerButton.h */,
 				A4DDB6E21A4D036F00CFF980 /* AnswerButton.m */,
 				A4A0A3C41A5128C0007A0876 /* boardView.h */,
 				A4A0A3C51A5128C0007A0876 /* boardView.m */,
 				A4AC86081A36CFE700CD19CA /* AppDelegate.h */,
+				A4AC86091A36CFE700CD19CA /* AppDelegate.m */,
 				A4E47CE61A539FC00039BDF6 /* myAlertView.h */,
 				A4E47CE71A539FC00039BDF6 /* myAlertView.m */,
-				A4AC86091A36CFE700CD19CA /* AppDelegate.m */,
 				A4AC863E1A36F47100CD19CA /* ViewController.h */,
 				A4AC863F1A36F47100CD19CA /* ViewController.m */,
 				A4AC860B1A36CFE700CD19CA /* gameViewController.h */,
 				A4AC860C1A36CFE700CD19CA /* gameViewController.m */,
 				A4AC860E1A36CFE700CD19CA /* Main.storyboard */,
 				A4AC86111A36CFE700CD19CA /* Images.xcassets */,
-				A4B76BF91A3976760014014D /* singleMusicView.xib */,
 				A4A0A3C71A514835007A0876 /* gameViewController.xib */,
 				A4B76C1C1A3997600014014D /* choicesBoardView.xib */,
 				A4AC86041A36CFE700CD19CA /* Supporting Files */,
@@ -546,7 +667,6 @@
 				A4B76C031A3982EC0014014D /* icons */,
 				A4E094FD1A4BE092001AD626 /* sound */,
 				A4E094FB1A4BE07B001AD626 /* gameData.plist */,
-				A4A75D091A53CECF00E87191 /* money.plist */,
 				A4AC86051A36CFE700CD19CA /* Info.plist */,
 				A4AC86061A36CFE700CD19CA /* main.m */,
 			);
@@ -682,6 +802,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = A4AC85F81A36CFE700CD19CA;
 			productRefGroup = A4AC86021A36CFE700CD19CA /* Products */;
@@ -699,8 +820,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A4A6C1341A6B713600C6095C /* cd5.png in Resources */,
-				A4A6C1321A6B713600C6095C /* cd3.png in Resources */,
+				A4A6C1451A6BF66600C6095C /* 开始.png in Resources */,
+				A4A6C1341A6B713600C6095C /* cd4.png in Resources */,
+				A4A6C1321A6B713600C6095C /* cd2.png in Resources */,
 				A47E001F1A67B8E6000FCAF7 /* 不管有多苦.m4a in Resources */,
 				A4A6C1301A6B713600C6095C /* cd1.png in Resources */,
 				A47EFFF41A67B8E6000FCAF7 /* 倍儿爽.m4a in Resources */,
@@ -709,8 +831,10 @@
 				A47E00071A67B8E6000FCAF7 /* 那一天.m4a in Resources */,
 				A47E00271A67B8E6000FCAF7 /* 我从草原来.m4a in Resources */,
 				A47E000C1A67B8E6000FCAF7 /* 因为爱情.m4a in Resources */,
+				A4A6C1481A6BF66600C6095C /* back8.png in Resources */,
 				A47EFFE21A67B8E6000FCAF7 /* 出卖.m4a in Resources */,
 				A47E00431A67B8E6000FCAF7 /* 难以抗拒你容颜.m4a in Resources */,
+				A4A5A2F61A74AAA8005634E9 /* UMSCommentInputController.xib in Resources */,
 				A47EFFFF1A67B8E6000FCAF7 /* 牧马人.m4a in Resources */,
 				A4B76C1A1A3982EC0014014D /* Squarea.png in Resources */,
 				A47E00131A67B8E6000FCAF7 /* 时间煮雨.m4a in Resources */,
@@ -723,14 +847,17 @@
 				A4AC86101A36CFE700CD19CA /* Main.storyboard in Resources */,
 				A47E00001A67B8E6000FCAF7 /* 狼.m4a in Resources */,
 				A4B76C171A3982EC0014014D /* Print-CD-icon.png in Resources */,
+				A4A5A2F31A74AAA8005634E9 /* UMSocialLocalizable.strings in Resources */,
 				A47E00191A67B8E6000FCAF7 /* 类似爱情.m4a in Resources */,
 				A47E00361A67B8E6000FCAF7 /* 分手总要在雨天.m4a in Resources */,
+				A4A6C1461A6BF66600C6095C /* back6.png in Resources */,
 				A47E002B1A67B8E6000FCAF7 /* 新贵妃醉酒.m4a in Resources */,
+				A44236771A722026008C3051 /* buyCoinsViewController.xib in Resources */,
 				A47E001B1A67B8E6000FCAF7 /* 那些花儿.m4a in Resources */,
 				A47EFFF61A67B8E6000FCAF7 /* 在雨中.m4a in Resources */,
 				A4B76C191A3982EC0014014D /* share.png in Resources */,
 				A47EFFF01A67B8E6000FCAF7 /* 红日.m4a in Resources */,
-				A4A6C1351A6B713600C6095C /* cd6.png in Resources */,
+				A4A6C1351A6B713600C6095C /* cd5.png in Resources */,
 				A47E00371A67B8E6000FCAF7 /* 因为爱所以爱.m4a in Resources */,
 				A47E00291A67B8E6000FCAF7 /* 我的歌声里.m4a in Resources */,
 				A47E002E1A67B8E6000FCAF7 /* 终于等到你.m4a in Resources */,
@@ -748,6 +875,9 @@
 				A47EFFEB1A67B8E6000FCAF7 /* 曹操.m4a in Resources */,
 				A47EFFEE1A67B8E6000FCAF7 /* 童话.m4a in Resources */,
 				A4E094FA1A4BDD8D001AD626 /* star2.png in Resources */,
+				A4A5A2F51A74AAA8005634E9 /* UMSCommentDetailController.xib in Resources */,
+				A4A6C1471A6BF66600C6095C /* 重新开始.png in Resources */,
+				A4A6C1491A6BF66600C6095C /* 继续.png in Resources */,
 				A47EFFE91A67B8E6000FCAF7 /* 情书.m4a in Resources */,
 				A47E002A1A67B8E6000FCAF7 /* 我的滑板鞋.m4a in Resources */,
 				A47EFFF71A67B8E6000FCAF7 /* 女人花.m4a in Resources */,
@@ -759,49 +889,50 @@
 				A4B76C161A3982EC0014014D /* music.png in Resources */,
 				A47EFFE01A67B8E6000FCAF7 /* 倒带.m4a in Resources */,
 				A47E00051A67B8E6000FCAF7 /* 谁.m4a in Resources */,
-				A4B76BFA1A3976760014014D /* singleMusicView.xib in Resources */,
 				A47E00201A67B8E6000FCAF7 /* 兄弟抱一下.m4a in Resources */,
 				A47EFFEC1A67B8E6000FCAF7 /* 王妃.m4a in Resources */,
 				A47E00161A67B8E6000FCAF7 /* 爱的供养.m4a in Resources */,
 				A47E000E1A67B8E6000FCAF7 /* 好久不见.m4a in Resources */,
 				A4B76C1B1A3982EC0014014D /* tip.png in Resources */,
-				A4A6C1311A6B713600C6095C /* cd2.png in Resources */,
 				A47EFFE31A67B8E6000FCAF7 /* 十年.m4a in Resources */,
 				A47EFFEA1A67B8E6000FCAF7 /* 晴天.m4a in Resources */,
 				A47E001C1A67B8E6000FCAF7 /* High歌.m4a in Resources */,
-				A4A6C1381A6B713600C6095C /* 继续.png in Resources */,
 				A47E003E1A67B8E6000FCAF7 /* 有没有人告诉你.m4a in Resources */,
 				A47E00121A67B8E6000FCAF7 /* 断桥残雪.m4a in Resources */,
 				A4B76C121A3982EC0014014D /* audio-on.png in Resources */,
+				A4A5A2FC1A74AAA8005634E9 /* UMSShareListController.xib in Resources */,
 				A47E003B1A67B8E6000FCAF7 /* 想把我唱给你听 .m4a in Resources */,
 				A47E00021A67B8E6000FCAF7 /* 红蜻蜓.m4a in Resources */,
 				A47E00041A67B8E6000FCAF7 /* 说爱你.m4a in Resources */,
-				A4A6C1361A6B713600C6095C /* cycle.png in Resources */,
 				A47E00281A67B8E6000FCAF7 /* 我很想爱他 .m4a in Resources */,
 				A47E00231A67B8E6000FCAF7 /* 听妈妈的话.m4a in Resources */,
 				A4B76C1D1A3997600014014D /* choicesBoardView.xib in Resources */,
-				A4A6C1371A6B713600C6095C /* 开始.png in Resources */,
 				A47EFFFA1A67B8E6000FCAF7 /* 就是我.m4a in Resources */,
+				A41D8B9B1A722A26008F9240 /* itemTableViewCell.xib in Resources */,
 				A47E000B1A67B8E6000FCAF7 /* 匆匆那年.m4a in Resources */,
 				A47E000A1A67B8E6000FCAF7 /* 勇敢的心.m4a in Resources */,
 				A47E00261A67B8E6000FCAF7 /* 心中的日月.m4a in Resources */,
-				A4A75D0A1A53CECF00E87191 /* money.plist in Resources */,
 				A4B76C151A3982EC0014014D /* money-128.png in Resources */,
 				A47E00241A67B8E6000FCAF7 /* 如果没有你.m4a in Resources */,
 				A47EFFE71A67B8E6000FCAF7 /* 存在.m4a in Resources */,
 				A47E00211A67B8E6000FCAF7 /* 另一个天堂.m4a in Resources */,
 				A47EFFE61A67B8E6000FCAF7 /* 天下.m4a in Resources */,
 				A47E00381A67B8E6000FCAF7 /* 外婆的澎湖湾.m4a in Resources */,
+				A4A5A2FB1A74AAA8005634E9 /* UMSnsAccountViewController.xib in Resources */,
 				A47EFFF31A67B8E6000FCAF7 /* 逆战.m4a in Resources */,
 				A47E00011A67B8E6000FCAF7 /* 笨小孩.m4a in Resources */,
 				A47E001E1A67B8E6000FCAF7 /* 一生中最爱.m4a in Resources */,
 				A47E00181A67B8E6000FCAF7 /* 生如夏花.m4a in Resources */,
 				A47EFFF21A67B8E6000FCAF7 /* 趁早.m4a in Resources */,
+				A4A6C1441A6BF66600C6095C /* cycle.png in Resources */,
 				A47E002C1A67B8E6000FCAF7 /* 有一点动心.m4a in Resources */,
 				A47EFFFB1A67B8E6000FCAF7 /* 当.m4a in Resources */,
 				A4B76C141A3982EC0014014D /* info.png in Resources */,
+				A4A5A2F91A74AAA8005634E9 /* UMShareEditViewControlleriPad.xib in Resources */,
 				A47E00031A67B8E6000FCAF7 /* 给你们.m4a in Resources */,
 				A47E003C1A67B8E6000FCAF7 /* 我可以抱你吗.m4a in Resources */,
+				A4A5A2FA1A74AAA8005634E9 /* UMSLoginViewController.xib in Resources */,
+				A4A5A2F71A74AAA8005634E9 /* UMSCommentInputControlleriPad.xib in Resources */,
 				A4DDB6E51A4D399A00CFF980 /* circle.png in Resources */,
 				A47E00401A67B8E6000FCAF7 /* 男人哭吧不是罪.m4a in Resources */,
 				A47EFFF11A67B8E6000FCAF7 /* 说谎.m4a in Resources */,
@@ -819,17 +950,19 @@
 				A47E003A1A67B8E6000FCAF7 /* 忠孝东路走九遍.m4a in Resources */,
 				A47E00141A67B8E6000FCAF7 /* 没离开过.m4a in Resources */,
 				A47E00251A67B8E6000FCAF7 /* 布拉格广场.m4a in Resources */,
-				A4A6C1391A6B713600C6095C /* 重新开始.png in Resources */,
 				A47E00151A67B8E6000FCAF7 /* 海阔天空.m4a in Resources */,
 				A47E00081A67B8E6000FCAF7 /* 一无所有.m4a in Resources */,
-				A4A6C1331A6B713600C6095C /* cd4.png in Resources */,
+				A4A6C1331A6B713600C6095C /* cd3.png in Resources */,
 				A47E002D1A67B8E6000FCAF7 /* 突然的自我.m4a in Resources */,
+				A4A5A2FD1A74AAA8005634E9 /* UMSocialSDKResourcesNew.bundle in Resources */,
 				A47E000D1A67B8E6000FCAF7 /* 壁虎漫步.m4a in Resources */,
 				A47E00101A67B8E6000FCAF7 /* 我们的爱.m4a in Resources */,
+				A4A1C4241A7145D1002A2D56 /* GussMuic.png in Resources */,
 				A47E00411A67B8E6000FCAF7 /* 白天不懂夜的黑.m4a in Resources */,
 				A47E00311A67B8E6000FCAF7 /* 一个人的精彩.m4a in Resources */,
 				A4AC86121A36CFE700CD19CA /* Images.xcassets in Resources */,
 				A47E00341A67B8E6000FCAF7 /* 像梦一样自由.m4a in Resources */,
+				A4A5A2F81A74AAA8005634E9 /* UMShareEditViewController.xib in Resources */,
 				A4E47CE51A5391DC0039BDF6 /* mainBackground.png in Resources */,
 				A4B76C181A3982EC0014014D /* refresh.png in Resources */,
 				A47EFFFC1A67B8E6000FCAF7 /* 爱.m4a in Resources */,
@@ -850,12 +983,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A41D8B9A1A722A26008F9240 /* itemTableViewCell.m in Sources */,
+				A41384371A6FADAF00B7B10E /* IAPHelper.m in Sources */,
+				A41384381A6FADAF00B7B10E /* myIAPHelper.m in Sources */,
+				A40CA9001A72469E00ED071F /* CommonUtility.m in Sources */,
 				A4AC860D1A36CFE700CD19CA /* gameViewController.m in Sources */,
 				A4AC860A1A36CFE700CD19CA /* AppDelegate.m in Sources */,
 				A4AC86401A36F47100CD19CA /* ViewController.m in Sources */,
 				A4DDB6E31A4D036F00CFF980 /* AnswerButton.m in Sources */,
 				A4E47CE81A539FC00039BDF6 /* myAlertView.m in Sources */,
 				A4AC86071A36CFE700CD19CA /* main.m in Sources */,
+				A44236761A722026008C3051 /* buyCoinsViewController.m in Sources */,
 				A4A0A3C61A5128C0007A0876 /* boardView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -879,6 +1017,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		A4A5A2D91A74AAA8005634E9 /* UMSocialLocalizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A4A5A2DA1A74AAA8005634E9 /* en */,
+				A4A5A2F21A74AAA8005634E9 /* zh-Hans */,
+			);
+			name = UMSocialLocalizable.strings;
+			sourceTree = "<group>";
+		};
 		A4AC860E1A36CFE700CD19CA /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -979,6 +1126,10 @@
 				INFOPLIST_FILE = mixMusicTest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/mixMusicTest/UMSocial_Sdk_4.2.1",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "0a336c09-8124-47c8-8d17-1d3f44633a58";
 			};
@@ -995,6 +1146,10 @@
 				INFOPLIST_FILE = mixMusicTest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/mixMusicTest/UMSocial_Sdk_4.2.1",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "0ec26c57-1bed-4a41-8916-6c9cb670c520";
 			};
