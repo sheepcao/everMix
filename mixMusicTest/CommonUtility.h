@@ -10,6 +10,7 @@
 #import <UIKit/UIKit.h>
 #import <AudioToolbox/AudioToolbox.h>
 #import <AVFoundation/AVFoundation.h>
+#import "CustomIOS7AlertView.h"
 
 
 @interface CommonUtility : NSObject
@@ -32,4 +33,6 @@
 
 + (void)coinsChange:(int)coinAmount;
 + (int)fetchCoinAmount;
++ (void)dailyRewardWithButton:(UIButton *)button;
+
 @end

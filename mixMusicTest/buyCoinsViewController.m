@@ -14,15 +14,19 @@
     NSArray *_products;
     NSNumberFormatter * _priceFormatter;
     UILabel *currentCoinsLabel;
+    UIButton *_parentCoinsButton;
 }
 @end
 
 @implementation buyCoinsViewController
 
-- (id)initWithCoinLabel:(UILabel *)coinLabel {
+- (id)initWithCoinLabel:(UILabel *)coinLabel andParentController:(UIViewController *)controller adnParentCoinButton:(UIButton *)parentCoinsButton{
     
    	self = [super init];
     if (self != nil) {
+        
+        _parentCoinsButton = parentCoinsButton;
+        self.parentControler = controller;
         
         currentCoinsLabel = coinLabel;
         
@@ -34,37 +38,6 @@
         
     }
     return self;
-//    [super viewDidLoad];
-//    
-//    self.itemsTable = [[UITableView alloc] initWithFrame:CGRectMake(37, 115, 246, 337)];
-//    self.itemsTable.delegate = self;
-//    self.itemsTable.dataSource = self;
-//    
-//
-//    [self.view addSubview:self.itemsTable];
-
-
-    
-    
-//    [self.itemsTable setBackgroundColor:[UIColor colorWithRed:17/255.0f green:42/255.0f blue:75/255.0f alpha:1.0]];
-//    [self.view setBackgroundColor:[UIColor colorWithRed:15/255.0f green:15/255.0f blue:15/255.0f alpha:1.0]];
-   
-//    [self.view setBackgroundColor:[UIColor clearColor]];
-//    [self.view setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0]];
-//    [self.view setBackgroundColor:[[UIColor clearColor] colorWithAlphaComponent:0.3]];
-//    [self.itemsTable setBackgroundColor:[[UIColor colorWithRed:17/255.0f green:42/255.0f blue:75/255.0f] colorWithAlphaComponent:1.0]];
-
-//    [self.view setBackgroundColor:[[UIColor clearColor] colorWithAlphaComponent:0.01]];
-//    [self.itemsTable setBackgroundColor:[[UIColor colorWithRed:17/255.0f green:42/255.0f blue:75/255.0f alpha:1.0] colorWithAlphaComponent:1.0]];
-    
-    // Do any additional setup after loading the view from its nib.
-//    self.refreshControl = [[UIRefreshControl alloc] init];
-//    [self.itemsTable addSubview:self.refreshControl];
-//
-//    [self.refreshControl addTarget:self action:@selector(reload) forControlEvents:UIControlEventValueChanged];
-//    [self reload];
-//    [self.refreshControl beginRefreshing];
-    
 
     
 }
@@ -88,8 +61,17 @@
                 
                 [currentCoinsLabel setText:[NSString stringWithFormat:@"%d",[CommonUtility fetchCoinAmount]]];
                 
+                [_parentCoinsButton setTitle:[NSString stringWithFormat:@"%d",[CommonUtility fetchCoinAmount]] forState:UIControlStateNormal];
+
+            }else if([product.productIdentifier isEqualToString:@"sheepcao.mixedMusic.money3000"])
+            {
+                [CommonUtility coinsChange:5000];//3元买5000coins
                 
+                [currentCoinsLabel setText:[NSString stringWithFormat:@"%d",[CommonUtility fetchCoinAmount]]];
+                
+                [_parentCoinsButton setTitle:[NSString stringWithFormat:@"%d",[CommonUtility fetchCoinAmount]] forState:UIControlStateNormal];
             }
+                
         }
     }];
     
@@ -99,7 +81,7 @@
 
 -(void)reloadwithRefreshControl:(UIRefreshControl *)refreshControl andTableView:(UITableView *)tableview{
     _products = nil;
-//    [self.itemsTable reloadData];
+    self.itemsTable = tableview;
     [[myIAPHelper sharedInstance] requestProductsWithCompletionHandler:^(BOOL success, NSArray *products) {
         if (success) {
             _products = products;
@@ -120,26 +102,58 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSLog(@"1");
-    return _products.count;
+    NSInteger productCount = _products.count + 2;
+    
+    if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"wechatShare"] isEqualToString:@"yes"]) {
+        productCount--;
+    }
+    if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"sinaShare"] isEqualToString:@"yes"]) {
+        productCount--;
+    }
+    
+    return productCount;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"2");
+    
+    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
     if (nil == cell)
     {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
     }
     cell.backgroundColor = [UIColor clearColor];
-    
-    SKProduct * product = (SKProduct *) _products[indexPath.row];
-    cell.textLabel.text = product.localizedTitle;
     [cell.textLabel setTextColor:[UIColor whiteColor]];
 
-    [_priceFormatter setLocale:product.priceLocale];
-    cell.detailTextLabel.text = [_priceFormatter stringFromNumber:product.price];
+    if (indexPath.row < _products.count) {
+        SKProduct * product = (SKProduct *) _products[indexPath.row];
+        cell.textLabel.text = product.localizedTitle;
+    }else if (indexPath.row == _products.count)
+    {
+        if(![[[NSUserDefaults standardUserDefaults] objectForKey:@"wechatShare"] isEqualToString:@"yes"])
+        {
+        cell.textLabel.text = @"分享朋友圈奖励300金币";
+        }else if(![[[NSUserDefaults standardUserDefaults] objectForKey:@"sinaShare"] isEqualToString:@"yes"])
+        {
+            cell.textLabel.text = @"分享新浪微博奖励300金币";
+
+        }
+
+    }else
+    {
+        if(![[[NSUserDefaults standardUserDefaults] objectForKey:@"sinaShare"] isEqualToString:@"yes"])
+        {
+        cell.textLabel.text = @"分享新浪微博奖励300金币";
+        }
+
+    }
+
+
+
+//    [_priceFormatter setLocale:product.priceLocale];
+//    cell.detailTextLabel.text = [_priceFormatter stringFromNumber:product.price];
 
 
     
@@ -157,10 +171,71 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    SKProduct *product = _products[indexPath.row];
-    
-    NSLog(@"Buying %@...", product.productIdentifier);
-    [[myIAPHelper sharedInstance] buyProduct:product];
+    if (indexPath.row < _products.count) {
+        SKProduct *product = _products[indexPath.row];
+        
+        NSLog(@"Buying %@...", product.productIdentifier);
+        [[myIAPHelper sharedInstance] buyProduct:product];
+        
+    }
+    else if(indexPath.row == _products.count)
+    {
+        if(![[[NSUserDefaults standardUserDefaults] objectForKey:@"wechatShare"] isEqualToString:@"yes"])
+        {
+            [[NSUserDefaults standardUserDefaults] setObject:@"yes" forKey:@"wechatShare"];
+            [CommonUtility coinsChange:300];
+            [currentCoinsLabel setText:[NSString stringWithFormat:@"%d",[CommonUtility fetchCoinAmount]]];
+            
+            
+        }else if(![[[NSUserDefaults standardUserDefaults] objectForKey:@"sinaShare"] isEqualToString:@"yes"])
+        {
+            [self shareToSina];
+
+        }
+
+        
+    }else
+    {
+        if(![[[NSUserDefaults standardUserDefaults] objectForKey:@"sinaShare"] isEqualToString:@"yes"])
+        {
+            
+            [self shareToSina];
+            
+        }
+
+    }
+
+}
+
+-(void)shareToSina
+{
+    [UMSocialSnsService presentSnsIconSheetView:self.parentControler
+                                         appKey:@"54c46ea7fd98c5071d000668"
+                                      shareText:@"友盟社会化分享让您快速实现分享等社会化功能，http://umeng.com/social"
+                                     shareImage:[UIImage imageNamed:@"icon.png"]
+                                shareToSnsNames:@[UMShareToSina]
+                                       delegate:(id)self];
+}
+
+-(void)didFinishGetUMSocialDataInViewController:(UMSocialResponseEntity *)response
+{
+    //根据`responseCode`得到发送结果,如果分享成功
+    if(response.responseCode == UMSResponseCodeSuccess)
+    {
+        //得到分享到的微博平台名
+        NSLog(@"share to sns name is %@",[[response.data allKeys] objectAtIndex:0]);
+        if([[[response.data allKeys] objectAtIndex:0] isEqualToString:@"sina"])
+        {
+            [CommonUtility coinsChange:300];
+            [currentCoinsLabel setText:[NSString stringWithFormat:@"%d",[CommonUtility fetchCoinAmount]]];
+            [_parentCoinsButton setTitle:[NSString stringWithFormat:@"%d",[CommonUtility fetchCoinAmount]] forState:UIControlStateNormal];
+            
+            [[NSUserDefaults standardUserDefaults] setObject:@"yes" forKey:@"sinaShare"];
+            [self.itemsTable reloadData];
+
+        }
+        
+    }
 }
 //- (void)buyButtonTapped:(id)sender {
 //

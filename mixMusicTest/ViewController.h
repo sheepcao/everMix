@@ -28,6 +28,7 @@
 - (IBAction)buyCoinsTapped:(id)sender;
 
 @property (strong,nonatomic) NSMutableDictionary *gameData;
+
 @property (strong,nonatomic) buyCoinsViewController *myBuyController;
 @property (strong,nonatomic) UIView *buyCoinsView;
 

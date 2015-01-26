@@ -7,14 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CommonUtility.h"
+#import "gameViewController.h"
 
-@interface buyCoinsViewController : NSObject<UITableViewDataSource,UITableViewDelegate>
+
+@interface buyCoinsViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 //@property (strong, nonatomic) UIView *centerView;
-//@property (strong, nonatomic) UITableView *itemsTable;
+@property (strong, nonatomic) UITableView *itemsTable;
 //
 //@property (nonatomic,strong) UIRefreshControl *refreshControl NS_AVAILABLE_IOS(6_0);
-
--(id)initWithCoinLabel:(UILabel *)coinLabel;
+@property (nonatomic,weak) UIViewController *parentControler;
+-(id)initWithCoinLabel:(UILabel *)coinLabel andParentController:(UIViewController *)controller adnParentCoinButton:(UIButton *)parentCoinsButton;
 -(void)reloadwithRefreshControl:(UIRefreshControl *)refreshControl andTableView:(UITableView *)tableview;
 @end

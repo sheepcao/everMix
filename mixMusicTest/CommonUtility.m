@@ -10,6 +10,7 @@
 #import "CommonUtility.h"
 
 @implementation CommonUtility
+
 @synthesize myAudioPlayer;
 
 +(CommonUtility *)sharedCommonUtility
@@ -150,6 +151,64 @@
     NSString *currentCoinsString = [[NSUserDefaults standardUserDefaults] objectForKey:@"coinsAmount"];
     int currentCoins = [currentCoinsString intValue];
     return currentCoins;
+}
+
++ (void)dailyRewardWithButton:(UIButton *)button
+{
+
+    //eric:set last day
+    
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"MM/DD"];
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSArray *languages = [defaults objectForKey:@"AppleLanguages"];
+    NSString *currentLang = [languages objectAtIndex:0];
+    //set locale
+    NSLocale *locale = [[NSLocale alloc] initWithLocaleIdentifier:currentLang];
+    [dateFormat setLocale:locale];
+    
+    NSString *today = [dateFormat stringFromDate:[NSDate date]];
+    NSLog(@"day is :%@",today);
+    
+    if (![[NSUserDefaults standardUserDefaults] objectForKey:@"lastDailyReword"]) {
+
+        [[CommonUtility sharedCommonUtility] giveReward:today andButton:button];
+    
+    }
+    
+}
+
+-(void)giveReward:(NSString *)day andButton:(UIButton *)getCoins
+{
+      [[NSUserDefaults standardUserDefaults] setObject:day forKey:@"lastDailyReword"];
+    CustomIOS7AlertView *alert = [[CustomIOS7AlertView alloc] init];
+    [alert setButtonTitles:[NSMutableArray arrayWithObjects:nil]];
+    alert.tag = 1;
+    
+    UIView *tmpCustomView = [[UIView alloc] initWithFrame:CGRectMake(0, 0 , 300, 211)];
+    UIImageView *imageInTag = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 300, 211)];
+    
+    [tmpCustomView addSubview:imageInTag];
+    [tmpCustomView sendSubviewToBack:imageInTag];
+    imageInTag.image = [UIImage imageNamed:@"background"];
+    
+    getCoins = [[UIButton alloc] initWithFrame:CGRectMake(tmpCustomView.frame.size.width/2 -35, tmpCustomView.frame.size.height-50, 70, 40)];
+    [getCoins setTitle:@"领取" forState:UIControlStateNormal];
+    [getCoins addTarget:self action:@selector(getCoinsTapped) forControlEvents:UIControlEventTouchUpInside];
+    
+    [tmpCustomView addSubview:getCoins];
+   
+    [alert setContainerView:tmpCustomView];
+    [alert show];
+    
+    
+}
+
+-(void)getCoinsTapped
+{
+    [CommonUtility coinsChange:1000];
+    
 }
 
 @end

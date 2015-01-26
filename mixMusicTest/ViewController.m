@@ -9,13 +9,16 @@
 #import "ViewController.h"
 #import "myAlertView.h"
 @interface ViewController ()
-
+@property (nonatomic,strong)CustomIOS7AlertView *dailyRewardAlert;
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self dailyReward];
+
 
     // Do any additional setup after loading the view.
     [self copyPlistToDocument:@"gameData"];
@@ -423,7 +426,7 @@
     
     UILabel *coinsLabel = (UILabel *)[self.buyCoinsView viewWithTag:2];
     [coinsLabel setText:[NSString stringWithFormat:@"%d",[CommonUtility fetchCoinAmount]]];
-    self.myBuyController = [[buyCoinsViewController alloc] initWithCoinLabel:coinsLabel];
+    self.myBuyController = [[buyCoinsViewController alloc] initWithCoinLabel:coinsLabel andParentController:self adnParentCoinButton:self.coinsShowing];
  
     [self.buyCoinsView setFrame:CGRectMake(0, [UIScreen mainScreen].bounds.size.height, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
     [self.view addSubview:self.buyCoinsView];
@@ -456,5 +459,67 @@
         [self.buyCoinsView setFrame:CGRectMake(0, [UIScreen mainScreen].bounds.size.height, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
         
     } completion:nil];
+}
+
+
+#pragma mark Daily reward
+- (void)dailyReward
+{
+    
+    //eric:set last day
+    
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"MM/DD"];
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSArray *languages = [defaults objectForKey:@"AppleLanguages"];
+    NSString *currentLang = [languages objectAtIndex:0];
+    //set locale
+    NSLocale *locale = [[NSLocale alloc] initWithLocaleIdentifier:currentLang];
+    [dateFormat setLocale:locale];
+    
+    NSString *today = [dateFormat stringFromDate:[NSDate date]];
+    NSLog(@"day is :%@",today);
+    
+    if (![[NSUserDefaults standardUserDefaults] objectForKey:@"lastDailyReword"]) {
+        
+        [self giveReward:today];
+        
+    }
+    
+}
+
+-(void)giveReward:(NSString *)day
+{
+    [[NSUserDefaults standardUserDefaults] setObject:day forKey:@"lastDailyReword"];
+    CustomIOS7AlertView *alert = [[CustomIOS7AlertView alloc] init];
+    [alert setButtonTitles:[NSMutableArray arrayWithObjects:nil]];
+    alert.tag = 1;
+    
+    UIView *tmpCustomView = [[UIView alloc] initWithFrame:CGRectMake(0, 0 , 300, 211)];
+    UIImageView *imageInTag = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 300, 211)];
+    
+    [tmpCustomView addSubview:imageInTag];
+    [tmpCustomView sendSubviewToBack:imageInTag];
+    imageInTag.image = [UIImage imageNamed:@"background"];
+    
+    UIButton *getCoins = [[UIButton alloc] initWithFrame:CGRectMake(tmpCustomView.frame.size.width/2 -35, tmpCustomView.frame.size.height-50, 70, 40)];
+    [getCoins setTitle:@"领取" forState:UIControlStateNormal];
+    [getCoins addTarget:self action:@selector(getCoinsTapped) forControlEvents:UIControlEventTouchUpInside];
+    
+    [tmpCustomView addSubview:getCoins];
+    
+    [alert setContainerView:tmpCustomView];
+    self.dailyRewardAlert = alert;
+    [alert show];
+    
+    
+}
+
+-(void)getCoinsTapped
+{
+    [CommonUtility coinsChange:80];
+    [self.coinsShowing setTitle:[NSString stringWithFormat:@"%d",[CommonUtility fetchCoinAmount]] forState:UIControlStateNormal];
+    [self.dailyRewardAlert close];
 }
 @end

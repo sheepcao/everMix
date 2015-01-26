@@ -11,12 +11,15 @@
 #import "AnswerButton.h"
 #import "boardView.h"
 #import "CommonUtility.h"
+#import "UMSocialSinaHandler.h"
+#import "UMSocialSnsService.h"
+#import  "UMSocialSnsPlatformManager.h"
 
 #define DISK_TAG 100
 #define TIPS_TAG 200
 #define CD_SZIE 80
 
-@protocol prepareSongsDelegate <NSObject>
+@protocol prepareSongsDelegate <NSObject,UMSocialUIDelegate,UMSocialDataDelegate>
 -(NSMutableArray *)configSongs;
 
 @end
