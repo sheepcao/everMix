@@ -155,6 +155,7 @@
 		A4AC86121A36CFE700CD19CA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4AC86111A36CFE700CD19CA /* Images.xcassets */; };
 		A4AC86211A36CFE700CD19CA /* mixMusicTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A4AC86201A36CFE700CD19CA /* mixMusicTestTests.m */; };
 		A4AC86401A36F47100CD19CA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4AC863F1A36F47100CD19CA /* ViewController.m */; };
+		A4AD1AAC1A772F3F0025CC59 /* back123.png in Resources */ = {isa = PBXBuildFile; fileRef = A4AD1AAB1A772F3F0025CC59 /* back123.png */; };
 		A4B76C101A3982EC0014014D /* star1.png in Resources */ = {isa = PBXBuildFile; fileRef = A4B76C041A3982EC0014014D /* star1.png */; };
 		A4B76C111A3982EC0014014D /* audio-off.png in Resources */ = {isa = PBXBuildFile; fileRef = A4B76C051A3982EC0014014D /* audio-off.png */; };
 		A4B76C121A3982EC0014014D /* audio-on.png in Resources */ = {isa = PBXBuildFile; fileRef = A4B76C061A3982EC0014014D /* audio-on.png */; };
@@ -368,6 +369,7 @@
 		A4AC86201A36CFE700CD19CA /* mixMusicTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = mixMusicTestTests.m; sourceTree = "<group>"; };
 		A4AC863E1A36F47100CD19CA /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		A4AC863F1A36F47100CD19CA /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		A4AD1AAB1A772F3F0025CC59 /* back123.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back123.png; sourceTree = "<group>"; };
 		A4B76C041A3982EC0014014D /* star1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star1.png; sourceTree = "<group>"; };
 		A4B76C051A3982EC0014014D /* audio-off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "audio-off.png"; sourceTree = "<group>"; };
 		A4B76C061A3982EC0014014D /* audio-on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "audio-on.png"; sourceTree = "<group>"; };
@@ -675,6 +677,7 @@
 				A4A6C1411A6BF66600C6095C /* 重新开始.png */,
 				A4A6C1421A6BF66600C6095C /* back8.png */,
 				A4A6C1431A6BF66600C6095C /* 继续.png */,
+				A4AD1AAB1A772F3F0025CC59 /* back123.png */,
 				A4A6C13A1A6B7EF000C6095C /* background.png */,
 			);
 			path = PNGs;
@@ -904,6 +907,7 @@
 				A4A6C1321A6B713600C6095C /* cd2.png in Resources */,
 				A47E001F1A67B8E6000FCAF7 /* 不管有多苦.m4a in Resources */,
 				A4A6C1301A6B713600C6095C /* cd1.png in Resources */,
+				A4AD1AAC1A772F3F0025CC59 /* back123.png in Resources */,
 				A47EFFF41A67B8E6000FCAF7 /* 倍儿爽.m4a in Resources */,
 				A47EFFE11A67B8E6000FCAF7 /* 倔强.m4a in Resources */,
 				A47EFFF81A67B8E6000FCAF7 /* 小苹果.m4a in Resources */,

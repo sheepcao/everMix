@@ -37,11 +37,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GussMuic.png" translatesAutoresizingMaskIntoConstraints="NO" id="I4A-bF-7f7">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back123.png" translatesAutoresizingMaskIntoConstraints="NO" id="I4A-bF-7f7">
                                 <rect key="frame" x="0.0" y="-44" width="320" height="612"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qNQ-Ph-nXm">
-                                <rect key="frame" x="50" y="191" width="100" height="100"/>
+                                <rect key="frame" x="50" y="150" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="DLE-T9-P2s"/>
                                     <constraint firstAttribute="height" constant="100" id="y9b-vC-aDK"/>
@@ -54,7 +54,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="InV-ug-iyC">
-                                <rect key="frame" x="242" y="338" width="35" height="35"/>
+                                <rect key="frame" x="242" y="297" width="35" height="35"/>
                                 <state key="normal" image="star1.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -63,7 +63,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iKE-Vm-WMA">
-                                <rect key="frame" x="44" y="486" width="40" height="40"/>
+                                <rect key="frame" x="44" y="407" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="6kX-p2-SjQ"/>
                                     <constraint firstAttribute="height" constant="40" id="GW5-3t-fjI"/>
@@ -73,7 +73,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gaK-c0-OeE">
-                                <rect key="frame" x="108" y="486" width="40" height="40"/>
+                                <rect key="frame" x="108" y="407" width="40" height="40"/>
                                 <state key="normal" image="money-128.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -82,13 +82,13 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0lK-re-drz">
-                                <rect key="frame" x="236" y="486" width="40" height="40"/>
+                                <rect key="frame" x="236" y="407" width="40" height="40"/>
                                 <state key="normal" image="info.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2tZ-su-ce7">
-                                <rect key="frame" x="83" y="338" width="35" height="35"/>
+                                <rect key="frame" x="83" y="297" width="35" height="35"/>
                                 <state key="normal" image="star1.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -97,7 +97,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TCk-0B-kEu">
-                                <rect key="frame" x="124" y="338" width="35" height="35"/>
+                                <rect key="frame" x="124" y="297" width="35" height="35"/>
                                 <state key="normal" image="star1.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -106,7 +106,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CVD-Cc-FRb">
-                                <rect key="frame" x="164" y="338" width="35" height="35"/>
+                                <rect key="frame" x="164" y="297" width="35" height="35"/>
                                 <state key="normal" image="star1.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -115,7 +115,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gPt-ue-OZA">
-                                <rect key="frame" x="203" y="338" width="35" height="35"/>
+                                <rect key="frame" x="203" y="297" width="35" height="35"/>
                                 <state key="normal" image="star1.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -124,13 +124,13 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e8J-Z4-tGE">
-                                <rect key="frame" x="176" y="486" width="40" height="40"/>
+                                <rect key="frame" x="176" y="407" width="40" height="40"/>
                                 <state key="normal" image="music.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oJy-Pu-OcZ">
-                                <rect key="frame" x="170" y="191" width="100" height="100"/>
+                                <rect key="frame" x="170" y="150" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="Ohh-xr-3Aq"/>
                                     <constraint firstAttribute="height" constant="100" id="Yzw-Tg-PB6"/>
@@ -156,18 +156,18 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="e8J-Z4-tGE" firstAttribute="width" secondItem="iKE-Vm-WMA" secondAttribute="width" id="2Fk-Tx-skg"/>
-                            <constraint firstAttribute="centerY" secondItem="qNQ-Ph-nXm" secondAttribute="centerY" constant="43" id="3JG-aD-aR7"/>
+                            <constraint firstAttribute="centerY" secondItem="qNQ-Ph-nXm" secondAttribute="centerY" constant="84" id="3JG-aD-aR7"/>
                             <constraint firstItem="iKE-Vm-WMA" firstAttribute="top" secondItem="0lK-re-drz" secondAttribute="top" id="7P3-Hn-p23"/>
                             <constraint firstItem="oJy-Pu-OcZ" firstAttribute="leading" secondItem="qNQ-Ph-nXm" secondAttribute="trailing" constant="20" id="8kq-oc-2SM"/>
                             <constraint firstItem="e8J-Z4-tGE" firstAttribute="height" secondItem="iKE-Vm-WMA" secondAttribute="height" id="9EB-us-R5g"/>
-                            <constraint firstAttribute="centerY" secondItem="oJy-Pu-OcZ" secondAttribute="centerY" constant="43" id="Aop-Gn-hwC"/>
+                            <constraint firstAttribute="centerY" secondItem="oJy-Pu-OcZ" secondAttribute="centerY" constant="84" id="Aop-Gn-hwC"/>
                             <constraint firstAttribute="centerX" secondItem="oJy-Pu-OcZ" secondAttribute="centerX" constant="-60" id="BZB-HB-cvP"/>
                             <constraint firstAttribute="centerX" secondItem="qNQ-Ph-nXm" secondAttribute="centerX" constant="60" id="DT4-Ek-Yd0"/>
                             <constraint firstItem="gaK-c0-OeE" firstAttribute="top" secondItem="iKE-Vm-WMA" secondAttribute="top" id="GIL-Rf-mSb"/>
                             <constraint firstAttribute="trailingMargin" secondItem="I4A-bF-7f7" secondAttribute="trailing" constant="-16" id="I2E-J4-twM"/>
                             <constraint firstItem="e8J-Z4-tGE" firstAttribute="leading" secondItem="gaK-c0-OeE" secondAttribute="trailing" constant="28" id="MFN-WG-mjj"/>
                             <constraint firstItem="gaK-c0-OeE" firstAttribute="leading" secondItem="iKE-Vm-WMA" secondAttribute="trailing" constant="24" id="NYb-Qt-xBa"/>
-                            <constraint firstItem="xpo-PE-fGQ" firstAttribute="top" secondItem="iKE-Vm-WMA" secondAttribute="bottom" constant="42" id="Nvt-N5-Jj9"/>
+                            <constraint firstItem="xpo-PE-fGQ" firstAttribute="top" secondItem="iKE-Vm-WMA" secondAttribute="bottom" constant="121" id="Nvt-N5-Jj9"/>
                             <constraint firstItem="iKE-Vm-WMA" firstAttribute="leading" secondItem="ZeD-Ew-WKC" secondAttribute="leadingMargin" constant="28" id="RcF-20-Tgf"/>
                             <constraint firstItem="I4A-bF-7f7" firstAttribute="top" secondItem="j9o-P9-UcH" secondAttribute="bottom" constant="-64" id="TnB-GO-8TW"/>
                             <constraint firstItem="gaK-c0-OeE" firstAttribute="height" secondItem="iKE-Vm-WMA" secondAttribute="height" id="W4i-mO-cdy"/>
@@ -200,8 +200,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="GussMuic.png" width="1080" height="1920"/>
         <image name="audio-on.png" width="128" height="128"/>
+        <image name="back123.png" width="1080" height="1920"/>
         <image name="info.png" width="128" height="128"/>
         <image name="money-128.png" width="128" height="128"/>
         <image name="music.png" width="128" height="128"/>
