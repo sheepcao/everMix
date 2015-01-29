@@ -69,6 +69,11 @@
     
 }
 
++ (BOOL)myContainsStringFrom:(NSString*)str for:(NSString*)other {
+    NSRange range = [str rangeOfString:other];
+    return range.length != 0;
+}
+
 #pragma mark favoritesMethod
 + (void)addToFavoratesWith:(int)level and:(NSString *)levelName By:(UIButton *)button
 {

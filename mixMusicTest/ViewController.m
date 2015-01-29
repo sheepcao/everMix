@@ -16,6 +16,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+ 
+    //eric:check font
+//    NSArray *fontFamilies = [UIFont familyNames];
+//    
+//    for (int i=0; i<[fontFamilies count]; i++)
+//    {
+//        NSLog(@"Font: %@ ...", [fontFamilies objectAtIndex:i]);
+//    }
+    
     
     [self dailyReward];
 
@@ -33,6 +42,8 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    [MobClick beginLogPageView:@"homePage"];
+    
     [self.navigationController setNavigationBarHidden:YES];
 
     
@@ -41,6 +52,11 @@
     [self.coinsShowing setTitle:currentCoins forState:UIControlStateNormal];
 
     
+}
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [MobClick endLogPageView:@"homePage"];
 }
 -(void)viewDidLayoutSubviews
 {
@@ -130,6 +146,8 @@
 
 -(void)drawStars:(int)Differentlevel
 {
+
+    
     for (int i = 0; i<5; i++) {
         if (i <= Differentlevel) {
             [(UIButton *)self.starButtons[i] setImage:[UIImage imageNamed:@"star2"] forState:UIControlStateNormal];
@@ -147,6 +165,9 @@
 
 
 - (IBAction)starTapped:(UIButton *)sender {
+    
+    [MobClick event:@"chooseDifficulty"];
+
     
     if ([self.continueGame isHidden]) {
         int starNumber = -1; //init with a invalid value.
@@ -288,6 +309,9 @@
     if (currentMusics && currentMusics.count > 0) // renew game
     {
        
+        [MobClick event:@"restart"];
+
+        
         myAlertView *resetAlert = [[myAlertView alloc] initWithTitle:@"且慢!" message:@"变更难度将重置已猜歌曲的进度,请君三思。" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确认", nil];
         
         resetAlert.chooseWhichButton = sender;
@@ -320,6 +344,21 @@
         [self.navigationController pushViewController:myGameViewController animated:YES];
 
     }
+
+}
+
+- (IBAction)socialShare {
+    [MobClick event:@"shareFromHome"];
+
+}
+
+- (IBAction)commentOnStore {
+    [MobClick event:@"comment"];
+
+}
+
+- (IBAction)aboutUs:(id)sender {
+    [MobClick event:@"aboutUs"];
 
 }
 
@@ -414,9 +453,7 @@
 
 
 - (IBAction)buyCoinsTapped:(id)sender {
-
-//    buyCoinsViewController *myBuyCoinsViewController = [[buyCoinsViewController alloc] initWithNibName:@"buyCoinsViewController" bundle:nil];
-//    [self.navigationController pushViewController:myBuyCoinsViewController animated:YES];
+    [MobClick event:@"bugCoinClick"];
 
     if (!self.buyCoinsView) {
         

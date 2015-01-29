@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		A40CA9001A72469E00ED071F /* CommonUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = A40CA8FF1A72469E00ED071F /* CommonUtility.m */; };
+		A40EFBB51A79F5FF00F7D6D2 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = A40EFBB41A79F5FF00F7D6D2 /* back.png */; };
+		A40EFBB71A7A04DF00F7D6D2 /* star1.png in Resources */ = {isa = PBXBuildFile; fileRef = A40EFBB61A7A04DF00F7D6D2 /* star1.png */; };
+		A40EFBBA1A7A0A9F00F7D6D2 /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A40EFBB81A7A0A9F00F7D6D2 /* libMobClickLibrary.a */; };
+		A40EFBBC1A7A0AC500F7D6D2 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A40EFBBB1A7A0AC500F7D6D2 /* libz.dylib */; };
 		A41384371A6FADAF00B7B10E /* IAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A41384341A6FADAF00B7B10E /* IAPHelper.m */; };
 		A41384381A6FADAF00B7B10E /* myIAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A41384361A6FADAF00B7B10E /* myIAPHelper.m */; };
 		A41D8B9A1A722A26008F9240 /* itemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A41D8B981A722A26008F9240 /* itemTableViewCell.m */; };
@@ -156,7 +160,10 @@
 		A4AC86211A36CFE700CD19CA /* mixMusicTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A4AC86201A36CFE700CD19CA /* mixMusicTestTests.m */; };
 		A4AC86401A36F47100CD19CA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4AC863F1A36F47100CD19CA /* ViewController.m */; };
 		A4AD1AAC1A772F3F0025CC59 /* back123.png in Resources */ = {isa = PBXBuildFile; fileRef = A4AD1AAB1A772F3F0025CC59 /* back123.png */; };
-		A4B76C101A3982EC0014014D /* star1.png in Resources */ = {isa = PBXBuildFile; fileRef = A4B76C041A3982EC0014014D /* star1.png */; };
+		A4B06C971A78ADE9008F9F1A /* stop18.png in Resources */ = {isa = PBXBuildFile; fileRef = A4B06C961A78ADE9008F9F1A /* stop18.png */; };
+		A4B06C991A78AF50008F9F1A /* showAnswer.png in Resources */ = {isa = PBXBuildFile; fileRef = A4B06C981A78AF50008F9F1A /* showAnswer.png */; };
+		A4B06C9D1A78B0FF008F9F1A /* delete.png in Resources */ = {isa = PBXBuildFile; fileRef = A4B06C9C1A78B0FF008F9F1A /* delete.png */; };
+		A4B06C9F1A78B1A7008F9F1A /* basket.png in Resources */ = {isa = PBXBuildFile; fileRef = A4B06C9E1A78B1A7008F9F1A /* basket.png */; };
 		A4B76C111A3982EC0014014D /* audio-off.png in Resources */ = {isa = PBXBuildFile; fileRef = A4B76C051A3982EC0014014D /* audio-off.png */; };
 		A4B76C121A3982EC0014014D /* audio-on.png in Resources */ = {isa = PBXBuildFile; fileRef = A4B76C061A3982EC0014014D /* audio-on.png */; };
 		A4B76C131A3982EC0014014D /* Disk-CD-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A4B76C071A3982EC0014014D /* Disk-CD-icon.png */; };
@@ -192,6 +199,11 @@
 /* Begin PBXFileReference section */
 		A40CA8FE1A72469E00ED071F /* CommonUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonUtility.h; sourceTree = "<group>"; };
 		A40CA8FF1A72469E00ED071F /* CommonUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonUtility.m; sourceTree = "<group>"; };
+		A40EFBB41A79F5FF00F7D6D2 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
+		A40EFBB61A7A04DF00F7D6D2 /* star1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star1.png; sourceTree = "<group>"; };
+		A40EFBB81A7A0A9F00F7D6D2 /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary.a; sourceTree = "<group>"; };
+		A40EFBB91A7A0A9F00F7D6D2 /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
+		A40EFBBB1A7A0AC500F7D6D2 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		A41384331A6FADAF00B7B10E /* IAPHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IAPHelper.h; sourceTree = "<group>"; };
 		A41384341A6FADAF00B7B10E /* IAPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IAPHelper.m; sourceTree = "<group>"; };
 		A41384351A6FADAF00B7B10E /* myIAPHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myIAPHelper.h; sourceTree = "<group>"; };
@@ -370,7 +382,10 @@
 		A4AC863E1A36F47100CD19CA /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		A4AC863F1A36F47100CD19CA /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		A4AD1AAB1A772F3F0025CC59 /* back123.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back123.png; sourceTree = "<group>"; };
-		A4B76C041A3982EC0014014D /* star1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star1.png; sourceTree = "<group>"; };
+		A4B06C961A78ADE9008F9F1A /* stop18.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stop18.png; sourceTree = "<group>"; };
+		A4B06C981A78AF50008F9F1A /* showAnswer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = showAnswer.png; sourceTree = "<group>"; };
+		A4B06C9C1A78B0FF008F9F1A /* delete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = delete.png; sourceTree = "<group>"; };
+		A4B06C9E1A78B1A7008F9F1A /* basket.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = basket.png; sourceTree = "<group>"; };
 		A4B76C051A3982EC0014014D /* audio-off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "audio-off.png"; sourceTree = "<group>"; };
 		A4B76C061A3982EC0014014D /* audio-on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "audio-on.png"; sourceTree = "<group>"; };
 		A4B76C071A3982EC0014014D /* Disk-CD-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Disk-CD-icon.png"; sourceTree = "<group>"; };
@@ -401,6 +416,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A40EFBBC1A7A0AC500F7D6D2 /* libz.dylib in Frameworks */,
+				A40EFBBA1A7A0A9F00F7D6D2 /* libMobClickLibrary.a in Frameworks */,
 				A4A5A30E1A750EF1005634E9 /* libSocialQQ.a in Frameworks */,
 				A4A5A30F1A750EF2005634E9 /* TencentOpenAPI.framework in Frameworks */,
 				A4A5A3121A750EF2005634E9 /* libWeChatSDK.a in Frameworks */,
@@ -577,6 +594,8 @@
 		A4A5A2D81A74AAA8005634E9 /* UMSocial_Sdk_4.2.1 */ = {
 			isa = PBXGroup;
 			children = (
+				A40EFBB81A7A0A9F00F7D6D2 /* libMobClickLibrary.a */,
+				A40EFBB91A7A0A9F00F7D6D2 /* MobClick.h */,
 				A4A5A2D91A74AAA8005634E9 /* UMSocialLocalizable.strings */,
 				A4A5A2FE1A750EF1005634E9 /* UMSocial_Sdk_Extra_Frameworks */,
 				A4A5A2DB1A74AAA8005634E9 /* Header */,
@@ -665,6 +684,11 @@
 		A4A6C1251A6B713600C6095C /* PNGs */ = {
 			isa = PBXGroup;
 			children = (
+				A40EFBB41A79F5FF00F7D6D2 /* back.png */,
+				A4B06C9E1A78B1A7008F9F1A /* basket.png */,
+				A4B06C9C1A78B0FF008F9F1A /* delete.png */,
+				A4B06C981A78AF50008F9F1A /* showAnswer.png */,
+				A4B06C961A78ADE9008F9F1A /* stop18.png */,
 				A4A6C1261A6B713600C6095C /* cd1.png */,
 				A4A1C4231A7145D1002A2D56 /* GussMuic.png */,
 				A4A6C1281A6B713600C6095C /* cd2.png */,
@@ -686,6 +710,7 @@
 		A4AC85F81A36CFE700CD19CA = {
 			isa = PBXGroup;
 			children = (
+				A40EFBBB1A7A0AC500F7D6D2 /* libz.dylib */,
 				A4A75D0D1A53DC4B00E87191 /* StoreKit.framework */,
 				A4A75D0B1A53DC4800E87191 /* GameKit.framework */,
 				A4AC86031A36CFE700CD19CA /* mixMusicTest */,
@@ -725,7 +750,6 @@
 				A4AC860B1A36CFE700CD19CA /* gameViewController.h */,
 				A4AC860C1A36CFE700CD19CA /* gameViewController.m */,
 				A4AC860E1A36CFE700CD19CA /* Main.storyboard */,
-				A4AC86111A36CFE700CD19CA /* Images.xcassets */,
 				A4A0A3C71A514835007A0876 /* gameViewController.xib */,
 				A4B76C1C1A3997600014014D /* choicesBoardView.xib */,
 				A4AC86041A36CFE700CD19CA /* Supporting Files */,
@@ -736,6 +760,7 @@
 		A4AC86041A36CFE700CD19CA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A4AC86111A36CFE700CD19CA /* Images.xcassets */,
 				A4B76C031A3982EC0014014D /* icons */,
 				A4E094FD1A4BE092001AD626 /* sound */,
 				A4E094FB1A4BE07B001AD626 /* gameData.plist */,
@@ -767,7 +792,7 @@
 			children = (
 				A4A6C1251A6B713600C6095C /* PNGs */,
 				A4E47CE41A5391DC0039BDF6 /* mainBackground.png */,
-				A4B76C041A3982EC0014014D /* star1.png */,
+				A40EFBB61A7A04DF00F7D6D2 /* star1.png */,
 				A4E094F91A4BDD8D001AD626 /* star2.png */,
 				A4DDB6E41A4D399A00CFF980 /* circle.png */,
 				A4E094F71A4BDA8F001AD626 /* Square.png */,
@@ -904,11 +929,13 @@
 			files = (
 				A4A6C1451A6BF66600C6095C /* 开始.png in Resources */,
 				A4A6C1341A6B713600C6095C /* cd4.png in Resources */,
+				A40EFBB51A79F5FF00F7D6D2 /* back.png in Resources */,
 				A4A6C1321A6B713600C6095C /* cd2.png in Resources */,
 				A47E001F1A67B8E6000FCAF7 /* 不管有多苦.m4a in Resources */,
 				A4A6C1301A6B713600C6095C /* cd1.png in Resources */,
 				A4AD1AAC1A772F3F0025CC59 /* back123.png in Resources */,
 				A47EFFF41A67B8E6000FCAF7 /* 倍儿爽.m4a in Resources */,
+				A4B06C9F1A78B1A7008F9F1A /* basket.png in Resources */,
 				A47EFFE11A67B8E6000FCAF7 /* 倔强.m4a in Resources */,
 				A47EFFF81A67B8E6000FCAF7 /* 小苹果.m4a in Resources */,
 				A47E00071A67B8E6000FCAF7 /* 那一天.m4a in Resources */,
@@ -922,6 +949,7 @@
 				A4B76C1A1A3982EC0014014D /* Squarea.png in Resources */,
 				A47E00131A67B8E6000FCAF7 /* 时间煮雨.m4a in Resources */,
 				A4B76C131A3982EC0014014D /* Disk-CD-icon.png in Resources */,
+				A4B06C991A78AF50008F9F1A /* showAnswer.png in Resources */,
 				A4E094FC1A4BE07B001AD626 /* gameData.plist in Resources */,
 				A47E00321A67B8E6000FCAF7 /* 一场游戏一场梦.m4a in Resources */,
 				A47EFFE51A67B8E6000FCAF7 /* 大地.m4a in Resources */,
@@ -999,6 +1027,7 @@
 				A47E00241A67B8E6000FCAF7 /* 如果没有你.m4a in Resources */,
 				A47EFFE71A67B8E6000FCAF7 /* 存在.m4a in Resources */,
 				A47E00211A67B8E6000FCAF7 /* 另一个天堂.m4a in Resources */,
+				A40EFBB71A7A04DF00F7D6D2 /* star1.png in Resources */,
 				A47EFFE61A67B8E6000FCAF7 /* 天下.m4a in Resources */,
 				A47E00381A67B8E6000FCAF7 /* 外婆的澎湖湾.m4a in Resources */,
 				A4A5A2FB1A74AAA8005634E9 /* UMSnsAccountViewController.xib in Resources */,
@@ -1025,9 +1054,9 @@
 				A47EFFF91A67B8E6000FCAF7 /* 小酒窝.m4a in Resources */,
 				A4B76C111A3982EC0014014D /* audio-off.png in Resources */,
 				A47E000F1A67B8E6000FCAF7 /* 快乐崇拜.m4a in Resources */,
-				A4B76C101A3982EC0014014D /* star1.png in Resources */,
 				A47E00061A67B8E6000FCAF7 /* 走天涯.m4a in Resources */,
 				A47E003F1A67B8E6000FCAF7 /* 流着泪的你的脸.m4a in Resources */,
+				A4B06C971A78ADE9008F9F1A /* stop18.png in Resources */,
 				A47E001A1A67B8E6000FCAF7 /* 花房姑娘.m4a in Resources */,
 				A47E00391A67B8E6000FCAF7 /* 当爱已成往事.m4a in Resources */,
 				A47E003A1A67B8E6000FCAF7 /* 忠孝东路走九遍.m4a in Resources */,
@@ -1037,6 +1066,7 @@
 				A47E00081A67B8E6000FCAF7 /* 一无所有.m4a in Resources */,
 				A4A6C1331A6B713600C6095C /* cd3.png in Resources */,
 				A47E002D1A67B8E6000FCAF7 /* 突然的自我.m4a in Resources */,
+				A4B06C9D1A78B0FF008F9F1A /* delete.png in Resources */,
 				A4A5A2FD1A74AAA8005634E9 /* UMSocialSDKResourcesNew.bundle in Resources */,
 				A47E000D1A67B8E6000FCAF7 /* 壁虎漫步.m4a in Resources */,
 				A47E00101A67B8E6000FCAF7 /* 我们的爱.m4a in Resources */,

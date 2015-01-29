@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "CommonUtility.h"
+#import "MobClick.h"
+
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

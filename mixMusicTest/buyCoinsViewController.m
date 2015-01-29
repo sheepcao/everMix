@@ -57,6 +57,9 @@
 //            *stop = YES;
             
             if ([product.productIdentifier isEqualToString:@"sheepcao.mixedMusic.money"]) {
+                [MobClick event:@"ClickTier1"];
+
+                
                 [CommonUtility coinsChange:1000];
                 
                 [currentCoinsLabel setText:[NSString stringWithFormat:@"%d",[CommonUtility fetchCoinAmount]]];
@@ -65,6 +68,8 @@
 
             }else if([product.productIdentifier isEqualToString:@"sheepcao.mixedMusic.money3000"])
             {
+                [MobClick event:@"ClickTier2"];
+
                 [CommonUtility coinsChange:5000];//3元买5000coins
                 
                 [currentCoinsLabel setText:[NSString stringWithFormat:@"%d",[CommonUtility fetchCoinAmount]]];
@@ -223,6 +228,11 @@
     if(response.responseCode == UMSResponseCodeSuccess)
     {
         //得到分享到的微博平台名
+        [MobClick event:@"CoinFromSina"];
+       //remember wechat
+        
+        [MobClick event:@"CoinFromWechat"];
+
         NSLog(@"share to sns name is %@",[[response.data allKeys] objectAtIndex:0]);
         if([[[response.data allKeys] objectAtIndex:0] isEqualToString:@"sina"])
         {

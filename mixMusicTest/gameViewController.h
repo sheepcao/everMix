@@ -13,11 +13,16 @@
 #import "CommonUtility.h"
 #import "UMSocialSinaHandler.h"
 #import "UMSocialSnsService.h"
-#import  "UMSocialSnsPlatformManager.h"
+#import "UMSocialSnsPlatformManager.h"
+#import "MobClick.h"
 
 #define DISK_TAG 100
 #define TIPS_TAG 200
 #define CD_SZIE 80
+#define DELETE_PRICE 70
+#define SINGLE_SONG_PRICE 120
+#define SHOW_ANSWER_PRICE 200
+
 
 @protocol prepareSongsDelegate <NSObject,UMSocialUIDelegate,UMSocialDataDelegate>
 -(NSMutableArray *)configSongs;
@@ -59,9 +64,17 @@
 @property (strong, nonatomic) NSMutableArray *diskButtonFrameArray;
 //choiceBoard
 - (IBAction)choicesTaped:(id)sender;
+- (IBAction)deleteSomeWords;
+- (IBAction)playSingleSong;
+- (IBAction)showFullAnswer;
+
+
 
 - (IBAction)shareButton:(UIButton *)sender;
 - (IBAction)refreshMusics:(UIButton *)sender;
+@property (strong, nonatomic) IBOutlet UIButton *deleteButton;
+@property (strong, nonatomic) IBOutlet UIButton *playSingleButton;
+@property (strong, nonatomic) IBOutlet UIButton *showAnswerButton;
 
 
 - (IBAction)playBtn:(id)sender;

@@ -42,10 +42,48 @@ int answerPickedCount;
     [self diskHideToTop];
     [self diskPopUp];
     self.gameDataForSingleLevel = [self readDataFromPlist:@"gameData"] ;
+    
+    NSString *currentDifficulty = [self.gameDataForSingleLevel objectForKey:@"difficulty"];
+    
+    //统计用户游戏难度
+    switch ([currentDifficulty intValue]) {
+        case 0:
+            [MobClick event:@"playDifficulty1"];
+            break;
+        case 1:
+            [MobClick event:@"playDifficulty2"];
+
+            break;
+        case 2:
+            [MobClick event:@"playDifficulty3"];
+
+            break;
+        case 3:
+            [MobClick event:@"playDifficulty4"];
+
+            break;
+        case 4:
+            [MobClick event:@"playDifficulty5"];
+
+            break;
+            
+        default:
+            break;
+    }
+
 
     
     [self.view bringSubviewToFront:self.playConsoleView];
     
+    
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [MobClick beginLogPageView:@"gamePage"];
+    
+
     
 }
 
@@ -122,9 +160,18 @@ int answerPickedCount;
     if(!self.choicesBoardView)
     {
         self.choicesBoardView = [[[NSBundle mainBundle] loadNibNamed:@"choicesBoardView" owner:self options:nil] objectAtIndex:0];
-        [self.choicesBoardView setFrame:CGRectMake(self.downPartView.frame.origin.x,[UIScreen mainScreen].bounds.size.height , self.downPartView.frame.size.width,[UIScreen mainScreen].bounds.size.height)];
+        [self.choicesBoardView setFrame:CGRectMake(self.downPartView.frame.origin.x,[UIScreen mainScreen].bounds.size.height , self.downPartView.frame.size.width,self.downPartView.frame.size.height - 50)];
         self.choicesBoardView.songName = @"";
+        [self.choicesBoardView setupBoard];
         [self.view addSubview:self.choicesBoardView];
+        
+        
+        //下滑回收
+        UISwipeGestureRecognizer *recognizer;
+        recognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeFrom:)];
+        [recognizer setDirection:(UISwipeGestureRecognizerDirectionDown)];
+        
+        [self.choicesBoardView addGestureRecognizer:recognizer];
 
     }
     //only support less than 7 letters.
@@ -153,8 +200,13 @@ int answerPickedCount;
         [answerButton setTitle:songAnswerSingleLetter[i-1] forState:UIControlStateNormal];
     }
     
+    [self.deleteButton setEnabled:YES];
+    [self.playSingleButton setEnabled:YES];
+    [self.showAnswerButton setEnabled:YES];
+
+    
     [UIView animateWithDuration:0.9 delay:0.1 usingSpringWithDamping:0.5 initialSpringVelocity:0.89 options:0 animations:^{
-        [self.choicesBoardView setFrame:CGRectMake(self.downPartView.frame.origin.x,self.downPartView.frame.origin.y, self.downPartView.frame.size.width,[UIScreen mainScreen].bounds.size.height)];
+        [self.choicesBoardView setFrame:CGRectMake(self.downPartView.frame.origin.x,self.downPartView.frame.origin.y, self.downPartView.frame.size.width,self.downPartView.frame.size.height - 50)];
     } completion:nil];
     
     //init this song's answer pick count.
@@ -166,6 +218,21 @@ int answerPickedCount;
 //    NSLog(@"buttonText:%@",sender.titleLabel.text);
 //    NSLog(@"buttonNum:%@",[self.diskButtons[diskNumber] titleLabel].text);
 
+    
+}
+
+
+-(void)handleSwipeFrom:(UISwipeGestureRecognizer *)recognizer{
+    
+    //如果往下滑
+    
+    if(recognizer.direction==UISwipeGestureRecognizerDirectionDown) {
+        
+        //先加载数据，再加载动画特效
+        
+        [self returnChoicesBoard:nil];
+        
+    }
     
 }
 
@@ -181,20 +248,34 @@ int answerPickedCount;
         answerPickedCount --;
     }
     
+    if([sender.titleLabel.textColor isEqual:[UIColor redColor]])
+    {
+            for (UIButton *subview in [self.choicesBoardView subviews]) {
+                if ([subview isKindOfClass:[AnswerButton class]]) {
+                    
+                    [subview setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+                }
+            }
+        
+    }
   
 
     
 }
 
+
+
 - (IBAction)choicesTaped:(UIButton *)sender {
     
     NSMutableArray *decisions = [[NSMutableArray alloc] init];
     
-    for (UIView *subview in [self.choicesBoardView subviews]) {
+    for (UIButton *subview in [self.choicesBoardView subviews]) {
         if ([subview isKindOfClass:[AnswerButton class]]) {
+
             [decisions insertObject:subview atIndex:(subview.tag-100)];
         }
     }
+
     
     for (int i = 0;i<decisions.count;i++) {
         AnswerButton *answer = decisions[i];
@@ -217,19 +298,23 @@ int answerPickedCount;
         }
         if ([songNameGuessed isEqualToString:self.choicesBoardView.songName]) {
             NSLog(@"you got it");
+            [MobClick event:@"rightAnswer"];
+
             [self.diskButtons[self.choicesBoardView.songNumber] setHidden:YES];
             UILabel *songResult = [[UILabel alloc] initWithFrame:[(UIButton *)self.diskButtons[self.choicesBoardView.songNumber] frame] ];
             songResult.text = songNameGuessed;
+            songResult.font = [UIFont fontWithName:@"Oriya Sangam MN" size:18];
+            songResult.numberOfLines = 2;
+            songResult.textAlignment = NSTextAlignmentCenter;
+            
             [self.downPartView addSubview:songResult];
             [self.musicsPlayArray removeObject:songNameGuessed];
             [self returnChoicesBoard:nil];
 
             if (self.musicsPlayArray.count == 0) {
-//                NSMutableArray *currentMusics = [[[NSUserDefaults standardUserDefaults] objectForKey:@"currentMusics"] mutableCopy];
-//                [currentMusics removeAllObjects];
-//                [[NSUserDefaults standardUserDefaults] setObject:currentMusics forKey:@"currentMusics"];
+
                 
-                [self modifyPlist:@"gameData" withValue:[NSMutableArray arrayWithObject:nil] forKey:@"musicPlaying"];
+                [self modifyPlist:@"gameData" withValue:self.musicsPlayArray forKey:@"musicPlaying"];
                 
                 int levelNow = [[self.gameDataForSingleLevel objectForKey:@"currentLevel"] intValue];
                 if (levelNow == 100) {
@@ -252,17 +337,134 @@ int answerPickedCount;
         }else
         {
             NSLog(@"you failed it.");
-            UIAlertView *failAlert = [[UIAlertView alloc] initWithTitle:@"再试一次" message:@"答错啦，大侠重头来过吧" delegate:self cancelButtonTitle:@"返回" otherButtonTitles:@"重新来过", nil];
-            failAlert.tag = 1;
-            [failAlert show];
+            [MobClick event:@"wrongAnswer"];
+
+            for (UIButton *subview in [self.choicesBoardView subviews]) {
+                if ([subview isKindOfClass:[AnswerButton class]]) {
+                    
+                    //1
+                    [UIView transitionWithView:subview duration:0.18 options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
+                        [subview setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+                    } completion:^(BOOL finished) {
+                        
+                        //2
+                        [UIView transitionWithView:subview duration:0.18 options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
+                            [subview setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+                        } completion:^(BOOL finished) {
+                            
+                            //3
+                            [UIView transitionWithView:subview duration:0.18 options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
+                                [subview setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+                            } completion:^(BOOL finished) {
+                                
+                                //4
+                                [UIView transitionWithView:subview duration:0.18 options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
+                                    [subview setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+                                } completion:^(BOOL finished) {
+                                    
+                                    //5
+                                    [UIView transitionWithView:subview duration:0.18 options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
+                                        [subview setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+                                    } completion:^(BOOL finished) {
+                                        
+                                    }];
+                                    
+                                    
+                                }];
+                                
+                                
+                            }];
+                            
+                            
+                        }];
+                        
+                        
+                    }];
+                }
+            }
+//            UIAlertView *failAlert = [[UIAlertView alloc] initWithTitle:@"再试一次" message:@"答错啦，大侠重头来过吧" delegate:self cancelButtonTitle:@"返回" otherButtonTitles:@"重新来过", nil];
+//            failAlert.tag = 1;
+//            [failAlert show];
         }
     }
     
     
 }
 
+-(BOOL)checkCoins:(int)price
+{
+    if ([CommonUtility fetchCoinAmount] < price) {
+       
+        UIAlertView *coinsShort = [[UIAlertView alloc] initWithTitle:@"没钱啦" message:@"金币不够啦,买点继续玩呀。" delegate:self cancelButtonTitle:@"暂不购买" otherButtonTitles:@"去看看", nil];
+        [coinsShort show];
+        
+        return NO;
+    }else
+    {
+        return YES;
+    }
+}
+
+- (IBAction)deleteSomeWords {
+    
+    if ([self checkCoins:DELETE_PRICE])
+    {
+        
+        UIAlertView *deleteWordsAlert = [[UIAlertView alloc] initWithTitle:@"提示" message:[NSString stringWithFormat:@"确认花掉%d个金币去掉5个错误选项?",DELETE_PRICE] delegate:self cancelButtonTitle:@"否" otherButtonTitles:@"是", nil];
+        [deleteWordsAlert show];
+        deleteWordsAlert.tag = 10;
+        
+        
+    }
+}
+
+-(void)stopSingleMusic
+{
+    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(stop10secondMusics) object:nil];
+
+    
+    for (AVAudioPlayer *audio in self.myAudioArray) {
+        if ([audio isPlaying]) {
+            [audio stop];
+            
+        }
+    }
+}
+
+-(void)stop10secondMusics
+{
+    [self.playSingleButton setEnabled:YES];
+    [self stopSingleMusic];
+
+}
+
+- (IBAction)playSingleSong {
+    
+    if ([self checkCoins:SINGLE_SONG_PRICE]){
+        
+        UIAlertView *playSingleAlert = [[UIAlertView alloc] initWithTitle:@"提示" message:[NSString stringWithFormat:@"确认花掉%d个金币进行单曲播放?",SINGLE_SONG_PRICE] delegate:self cancelButtonTitle:@"否" otherButtonTitles:@"是", nil];
+        [playSingleAlert show];
+        playSingleAlert.tag = 11;
+       
+    }
+
+}
+
+- (IBAction)showFullAnswer {
+    
+    if ([self checkCoins:SHOW_ANSWER_PRICE]){
+        
+        UIAlertView *playSingleAlert = [[UIAlertView alloc] initWithTitle:@"提示" message:[NSString stringWithFormat:@"确认花掉%d个金币购买此单曲完整答案?",SHOW_ANSWER_PRICE] delegate:self cancelButtonTitle:@"否" otherButtonTitles:@"是", nil];
+        [playSingleAlert show];
+        playSingleAlert.tag = 12;
+        
+    }
+}
+
 - (IBAction)shareButton:(UIButton *)sender {
-  
+    
+    [MobClick event:@"shareFromGame"];
+
     [UMSocialSnsService presentSnsIconSheetView:self
                         appKey:@"54c46ea7fd98c5071d000668"
                                       shareText:@"友盟社会化分享让您快速实现分享等社会化功能，http://umeng.com/social"
@@ -280,6 +482,8 @@ int answerPickedCount;
     }
 }
 - (IBAction)refreshMusics:(UIButton *)sender {//delete one song
+    [MobClick event:@"bombOne"];
+
     
     if(self.musicsPlayArray.count <= 1)
     {
@@ -338,7 +542,81 @@ int answerPickedCount;
         }
         
         if (alertView.tag == 2) {
+            
+            self.gameDataForSingleLevel = [self readDataFromPlist:@"gameData"] ;
+            NSString *currentDifficulty = [self.gameDataForSingleLevel objectForKey:@"difficulty"];
+            
+            [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%d",[currentDifficulty intValue]+1] forKey:@"difficulty"];
             [self nextLevel];
+        }
+        
+        if (alertView.tag == 10)//删除错误选项
+        {
+            [MobClick event:@"deleteChoice"];
+
+            NSString *songName = self.choicesBoardView.songName;
+            int i = 0;
+            while (i<5) {
+                
+                unsigned int randomNumber = 1+ arc4random()%21;  //1~21
+                UIButton *answerButton = (UIButton *)[self.choicesBoardView viewWithTag:randomNumber];
+                if ([CommonUtility myContainsStringFrom:songName for:answerButton.titleLabel.text] || answerButton.isHidden) {
+                    continue;
+                }else
+                {
+                    [answerButton setHidden:YES];
+                    i++;
+                }
+                
+            }
+            
+            [self.deleteButton setEnabled:NO];
+            [CommonUtility coinsChange:-DELETE_PRICE];
+
+        }
+        
+        if (alertView.tag == 11)//单曲播放
+
+        {
+            [MobClick event:@"playSingleSone"];
+
+            
+            NSString *songName = self.choicesBoardView.songName;
+            
+            [self.myAudioArray removeAllObjects];
+            [self tapSound:songName withType:@"m4a"];
+            [self.playSingleButton setEnabled:NO];
+            [self performSelector:@selector(stop10secondMusics) withObject:nil afterDelay:10.0f];
+            
+            [CommonUtility coinsChange:-SINGLE_SONG_PRICE];
+
+        }
+        
+        if (alertView.tag == 12)//公布答案
+        {
+            [MobClick event:@"showAnswer"];
+
+            NSString *songName = self.choicesBoardView.songName;
+            for (int i = 0; i < [songName length]; i++) {
+               AnswerButton *myAnswerbtn =(AnswerButton *)[self.choicesBoardView viewWithTag:(100+i)];
+                [myAnswerbtn setTitle:[songName substringWithRange:NSMakeRange(i, 1)] forState:UIControlStateNormal];
+                
+            }
+            
+            
+            [self.diskButtons[self.choicesBoardView.songNumber] setHidden:YES];
+            UILabel *songResult = [[UILabel alloc] initWithFrame:[(UIButton *)self.diskButtons[self.choicesBoardView.songNumber] frame] ];
+            songResult.text = songName;
+            songResult.font = [UIFont fontWithName:@"Oriya Sangam MN" size:16];
+            songResult.numberOfLines = 2;
+            [self.downPartView addSubview:songResult];
+            [self.musicsPlayArray removeObject:songName];
+            
+            
+            [self.showAnswerButton setEnabled:NO];
+            
+            [CommonUtility coinsChange:-SHOW_ANSWER_PRICE];
+
         }
     }
 }
@@ -351,6 +629,8 @@ int answerPickedCount;
     } completion:^(BOOL finished){
     
         if (finished) {
+            
+            [self stopSingleMusic];
             for (UIView *subview in [self.choicesBoardView subviews]) {
                 if ([subview isKindOfClass:[AnswerButton class]]) {
                     [subview removeFromSuperview];
@@ -482,52 +762,8 @@ int answerPickedCount;
     }
     
     
-    
-    
 }
 
-
-
-//-(void)drawSingleSongView
-//{
-//    int diff = 5;
-//    
-//    for (int i = 0 ; i<diff; i++) {
-//        
-//        CGFloat viewWidth = [UIScreen mainScreen].bounds.size.width;
-//        CGFloat viewHeight = (self.downPartView.frame.size.height-50)/5;
-//        
-//        UIView *singleMusicView = [[[NSBundle mainBundle] loadNibNamed:@"singleMusicView" owner:self options:nil] objectAtIndex:0];
-//        [singleMusicView setFrame:CGRectMake(0,i*viewHeight , viewWidth,viewHeight )];
-//        
-//        NSInteger wordsCount = [self.musicsArray[i] length];
-//        
-//        if(wordsCount < 7)
-//        {
-//            float firstWord_X = ((282+66)- wordsCount*(35+2))/2;
-//            for (int j = 0; j<wordsCount; j++) {
-//                UIImageView *answerWordBackground = [[UIImageView alloc] initWithFrame:CGRectMake(firstWord_X + j*37, (viewHeight-35)/2, 35, 35)];
-//                [answerWordBackground setImage:[UIImage imageNamed:@"Square"]];
-//                [singleMusicView addSubview:answerWordBackground];
-//                
-//            }
-//        }else //eric: do not longer than 8 words...
-//        {
-//            float firstWord_X = 67;
-//            float wordLength = (282 - 66)/wordsCount;
-//            for (int j = 0; j<wordsCount; j++) {
-//                UIImageView *answerWordBackground = [[UIImageView alloc] initWithFrame:CGRectMake(firstWord_X + j * wordLength, (viewHeight-wordLength)/2, (wordLength-1), (wordLength-1))];
-//                [answerWordBackground setImage:[UIImage imageNamed:@"Square"]];
-//                [singleMusicView addSubview:answerWordBackground];
-//                
-//            }
-//            
-//        }
-//        
-//        [self.downPartView addSubview:singleMusicView];
-//        [self.singleMusicsViewArray insertObject:singleMusicView atIndex:i];
-//    }
-//}
 
 -(void)tapButton
 {
@@ -626,12 +862,13 @@ int answerPickedCount;
 
 
 - (IBAction)playBtn:(id)sender {
-    
-    
+   
+    [MobClick event:@"playTap"];
+
     [self.playBtn setTitle:self.levelTitle forState:UIControlStateNormal];
     if (isplayed) {
         
-        [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(stop10secondMusics) object:nil];
+        [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(stop13secondMusics) object:nil];
 
         [self stopMusics];
         
@@ -640,7 +877,7 @@ int answerPickedCount;
     {
         [self initMusics];
         isplayed = true;
-        [self performSelector:@selector(stop10secondMusics) withObject:nil afterDelay:10.0f];
+        [self performSelector:@selector(stop13secondMusics) withObject:nil afterDelay:13.0f];
     }
 }
 
@@ -657,7 +894,7 @@ int answerPickedCount;
     [self.shareBtn setEnabled:NO];
 
 }
--(void)stop10secondMusics
+-(void)stop13secondMusics
 {
     if (isplayed) {
         [self stopMusics];
@@ -670,19 +907,16 @@ int answerPickedCount;
 -(void)nextLevel
 {
     
-    
+    self.gameDataForSingleLevel = [self readDataFromPlist:@"gameData"] ;
+
     NSString *currentDifficulty = [self.gameDataForSingleLevel objectForKey:@"difficulty"];
 
     int levelNow = [[self.gameDataForSingleLevel objectForKey:@"currentLevel"] intValue];
     [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%d",levelNow+1] forKey:@"currentLevel"];
     
     gameViewController *myGameViewController = [[gameViewController alloc] initWithNibName:@"gameViewController" bundle:nil];
-//    myGameViewController.levelTitle = @"PLAY1234";
+
     
-    
-//    NSMutableArray *currentMusics = [[NSUserDefaults standardUserDefaults] objectForKey:@"currentMusics"];
-    
-    self.gameDataForSingleLevel = [self readDataFromPlist:@"gameData"] ;
     NSMutableArray *currentMusics = [self.gameDataForSingleLevel objectForKey:@"musicPlaying"];
 
     if (currentMusics && currentMusics.count > 0) {
@@ -698,9 +932,7 @@ int answerPickedCount;
         
     }
     
-//    NSMutableArray *passMusics = [self.delegate configSongs];
-//    
-//    myGameViewController.musicsArray = passMusics;
+
     
     myGameViewController.delegate = self.delegate;
     myGameViewController.navigationItem.title = [NSString stringWithFormat:@"%d",(levelNow + 1 - [currentDifficulty intValue]*20)];
@@ -712,6 +944,8 @@ int answerPickedCount;
     [arrayControllerNew addObject:myGameViewController];
     [self.navigationController setViewControllers:arrayControllerNew animated:YES];
     
+    [MobClick event:@"levelPass"];
+
 }
 
 

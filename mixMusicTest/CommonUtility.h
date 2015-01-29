@@ -25,7 +25,7 @@
 + (void)tapSound;
 + (void)tapSound:(NSString *)name withType:(NSString *)type;
 + (BOOL)isSystemVersionLessThan7;
-
++ (BOOL)myContainsStringFrom:(NSString*)str for:(NSString*)other;
 + (BOOL)checkFavoritesWithCurrentLevel:(int)levelNow;
 + (void)addToFavoratesWith:(int)level and:(NSString *)levelName By:(UIButton *)button;
 + (void)removeFavoratesWith:(int)level By:(UIButton *)button;

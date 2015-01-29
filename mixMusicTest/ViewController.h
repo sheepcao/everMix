@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "gameViewController.h"
 #import "buyCoinsViewController.h"
+#import "MobClick.h"
 
 @interface ViewController : UIViewController<prepareSongsDelegate>
 
@@ -21,6 +22,9 @@
 - (IBAction)continueTapped:(UIButton *)sender;
 
 - (IBAction)beginTapped:(UIButton *)sender;
+- (IBAction)socialShare;
+- (IBAction)commentOnStore;
+- (IBAction)aboutUs:(id)sender;
 
 @property (strong, nonatomic) IBOutlet UIButton *bugCoinsBtn;
 @property (strong, nonatomic) IBOutlet UIButton *coinsShowing;

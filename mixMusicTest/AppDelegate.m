@@ -24,6 +24,10 @@
     // Override point for customization after application launch.
     [myIAPHelper sharedInstance];
     
+    [MobClick startWithAppkey:@"54c46ea7fd98c5071d000668" reportPolicy:REALTIME   channelId:nil];
+    NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+    [MobClick setAppVersion:version];
+
     //social share
     [UMSocialData setAppKey:@"54c46ea7fd98c5071d000668"];
 //    [UMSocialWechatHandler setWXAppId:@"wxd930ea5d5a258f4f" appSecret:@"db426a9829e4b49a0dcac7b4162da6b6" url:@"http://www.umeng.com/social"];

@@ -14,10 +14,20 @@
 {
     self = [super init];
     if (self != nil) {
-     self.songName = @"";
+    
+        self.songName = @"";
+        self.hasDeleted = NO;
+        self.hasPlayedSingleSong = NO;
         
     }
     return self;
+}
+
+-(void)setupBoard
+{
+    self.songName = @"";
+    self.hasDeleted = NO;
+    self.hasPlayedSingleSong = NO;
 }
 /*
 // Only override drawRect: if you perform custom drawing.

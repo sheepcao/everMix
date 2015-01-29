@@ -12,5 +12,9 @@
 
 @property (nonatomic,strong) NSString *songName;
 @property int songNumber;
+@property bool hasDeleted;
+@property bool hasPlayedSingleSong;
 
+
+-(void)setupBoard;
 @end
