@@ -26,7 +26,35 @@ int answerPickedCount;
     [super viewDidLoad];
 
     [self.navigationController setNavigationBarHidden:NO];
+    
+    self.coinShow = [UIButton buttonWithType:UIButtonTypeCustom];
+    [self.coinShow setFrame:CGRectMake(self.navigationController.view.frame.size.width - 95, 3, 92, 34)];
+    [self.coinShow setTitleEdgeInsets:UIEdgeInsetsMake(0.0,30.0, 0.0, 0.0)];
+    [self.coinShow setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    self.coinShow.titleLabel.textAlignment = NSTextAlignmentLeft ;
+    
 
+
+    NSString *currentCoins = [NSString stringWithFormat:@"%d",[CommonUtility fetchCoinAmount]];
+    [self.coinShow setTitle:currentCoins forState:UIControlStateNormal];
+    
+
+    UIImageView *coinImage = [[UIImageView alloc] initWithFrame:CGRectMake(0,0, 30, self.coinShow.frame.size.height)];
+    [coinImage setImage:[UIImage imageNamed:@"money-128"]];
+    [self.coinShow addSubview:coinImage];
+    
+    [self.coinShow addTarget:self action:@selector(buyCoinsAction) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithCustomView:self.coinShow];
+    self.navigationItem.rightBarButtonItem = barButton;
+
+
+    
+//    [self.view addSubview:self.coinShow];
+//    [self.view bringSubviewToFront:self.coinShow];
+    
+//    [self.navigationController.view addSubview:self.coinShow];
+    
     self.ignoreArray = [[NSMutableArray alloc] init];
     
     self.diskButtonFrameArray = [[NSMutableArray alloc] init];
@@ -91,12 +119,60 @@ int answerPickedCount;
 {
     [super viewDidDisappear:animated];
     [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(stop10secondMusics) object:nil];
+    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(stop13secondMusics) object:nil];
     [self stopMusics];
     isplayed =false;
 
 
 }
 
+
+-(void)buyCoinsAction
+{
+    [MobClick event:@"bugCoinClick"];
+    
+    if (!self.buyCoinsView) {
+        
+        self.buyCoinsView = [[[NSBundle mainBundle] loadNibNamed:@"buyCoinsViewController" owner:self options:nil] objectAtIndex:0];
+    }
+    
+    
+    UILabel *coinsLabel = (UILabel *)[self.buyCoinsView viewWithTag:2];
+    [coinsLabel setText:[NSString stringWithFormat:@"%d",[CommonUtility fetchCoinAmount]]];
+    self.myBuyController = [[buyCoinsViewController alloc] initWithCoinLabel:coinsLabel andParentController:self adnParentCoinButton:self.coinShow];
+    
+    [self.buyCoinsView setFrame:CGRectMake(0, [UIScreen mainScreen].bounds.size.height, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
+    [self.view addSubview:self.buyCoinsView];
+    
+    UIButton *closeBuyView = (UIButton *)[self.buyCoinsView viewWithTag:1];
+    [closeBuyView addTarget:self action:@selector(closingBuy) forControlEvents:UIControlEventTouchUpInside];
+    
+    
+    
+    self.itemsToBuy = (UITableView *)[self.buyCoinsView viewWithTag:10];
+    self.itemsToBuy.delegate = self.myBuyController;
+    self.itemsToBuy.dataSource = self.myBuyController;
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.itemsToBuy addSubview:self.refreshControl];
+    
+    [self.refreshControl addTarget:self.myBuyController action:@selector(reloadwithRefreshControl:andTableView:) forControlEvents:UIControlEventValueChanged];
+    [self.myBuyController reloadwithRefreshControl:self.refreshControl andTableView:self.itemsToBuy];
+    [self.refreshControl beginRefreshing];
+    
+    [UIView animateWithDuration:0.65 delay:0.05 usingSpringWithDamping:0.8 initialSpringVelocity:0.4 options:0 animations:^{
+        [self.buyCoinsView setFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
+    } completion:nil];
+    
+
+}
+
+-(void)closingBuy
+{
+    [UIView animateWithDuration:0.65 delay:0.05 usingSpringWithDamping:0.8 initialSpringVelocity:0.4 options:0 animations:^{
+        [self.buyCoinsView setFrame:CGRectMake(0, [UIScreen mainScreen].bounds.size.height, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
+        
+    } completion:nil];
+}
 
 -(void)setupButtonsView
 {
@@ -491,37 +567,42 @@ int answerPickedCount;
         [noDeleteAlert show];
         return;
     }
+    
+    if ([self checkCoins:BOMB_SONG_PRICE]){
         
-    
-    int diskNumber = -1;
-    
-    for(int i = (int)(self.diskButtons.count -1) ; i >= 0 ; i-- )
-    {
-        if (![self.diskButtons[i] isHidden]) {
-            diskNumber = i;
-            
-            UILabel *ignoreLabel = [[UILabel alloc] initWithFrame:[self.diskButtons[i] frame]];
-            [ignoreLabel setText:@"无视"];
-            [self. downPartView addSubview:ignoreLabel];
-            [self.diskButtons[i] setHidden:YES];
-            
-            break;
-        }
+        UIAlertView *playSingleAlert = [[UIAlertView alloc] initWithTitle:@"提示" message:[NSString stringWithFormat:@"确认花掉%d个金币去除一首混播歌曲?",BOMB_SONG_PRICE] delegate:self cancelButtonTitle:@"否" otherButtonTitles:@"是", nil];
+        [playSingleAlert show];
+        playSingleAlert.tag = 13;
+        
     }
-    NSString *songName = self.musicsArray[diskNumber];
     
-    [self.musicsArray removeObject:songName];
-    [self.musicsPlayArray removeObject:songName];
-
-//    NSMutableArray *currentMusics = [[[NSUserDefaults standardUserDefaults] objectForKey:@"currentMusics"] mutableCopy];
+//    int diskNumber = -1;
+//    
+//    for(int i = (int)(self.diskButtons.count -1) ; i >= 0 ; i-- )
+//    {
+//        if (![self.diskButtons[i] isHidden]) {
+//            diskNumber = i;
+//            
+//            UILabel *ignoreLabel = [[UILabel alloc] initWithFrame:[self.diskButtons[i] frame]];
+//            [ignoreLabel setText:@"无视"];
+//            [self. downPartView addSubview:ignoreLabel];
+//            [self.diskButtons[i] setHidden:YES];
+//            
+//            break;
+//        }
+//    }
+//    NSString *songName = self.musicsArray[diskNumber];
+//    
+//    [self.musicsArray removeObject:songName];
+//    [self.musicsPlayArray removeObject:songName];
+//
+//
+//    
+//    self.gameDataForSingleLevel = [self readDataFromPlist:@"gameData"] ;
+//    
+//    NSMutableArray *currentMusics = [self.gameDataForSingleLevel objectForKey:@"musicPlaying"];
 //    [currentMusics removeObject:songName];
-//    [[NSUserDefaults standardUserDefaults] setObject:currentMusics forKey:@"currentMusics"];
-    
-    self.gameDataForSingleLevel = [self readDataFromPlist:@"gameData"] ;
-    
-    NSMutableArray *currentMusics = [self.gameDataForSingleLevel objectForKey:@"musicPlaying"];
-    [currentMusics removeObject:songName];
-    [self modifyPlist:@"gameData" withValue:currentMusics forKey:@"musicPlaying"];
+//    [self modifyPlist:@"gameData" withValue:currentMusics forKey:@"musicPlaying"];
     
     
 }
@@ -616,6 +697,40 @@ int answerPickedCount;
             [self.showAnswerButton setEnabled:NO];
             
             [CommonUtility coinsChange:-SHOW_ANSWER_PRICE];
+
+        }
+        
+        if (alertView.tag == 13)//去除一首混播歌曲
+        {
+            int diskNumber = -1;
+            
+            for(int i = (int)(self.diskButtons.count -1) ; i >= 0 ; i-- )
+            {
+                if (![self.diskButtons[i] isHidden]) {
+                    diskNumber = i;
+                    
+                    UILabel *ignoreLabel = [[UILabel alloc] initWithFrame:[self.diskButtons[i] frame]];
+                    [ignoreLabel setText:@"无视"];
+                    [self. downPartView addSubview:ignoreLabel];
+                    [self.diskButtons[i] setHidden:YES];
+                    
+                    break;
+                }
+            }
+            NSString *songName = self.musicsArray[diskNumber];
+            
+            [self.musicsArray removeObject:songName];
+            [self.musicsPlayArray removeObject:songName];
+            
+            
+            
+            self.gameDataForSingleLevel = [self readDataFromPlist:@"gameData"] ;
+            
+            NSMutableArray *currentMusics = [self.gameDataForSingleLevel objectForKey:@"musicPlaying"];
+            [currentMusics removeObject:songName];
+            [self modifyPlist:@"gameData" withValue:currentMusics forKey:@"musicPlaying"];
+            
+            [CommonUtility coinsChange:-BOMB_SONG_PRICE];
 
         }
     }

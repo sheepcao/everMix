@@ -159,6 +159,7 @@
 		A4AC86121A36CFE700CD19CA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4AC86111A36CFE700CD19CA /* Images.xcassets */; };
 		A4AC86211A36CFE700CD19CA /* mixMusicTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A4AC86201A36CFE700CD19CA /* mixMusicTestTests.m */; };
 		A4AC86401A36F47100CD19CA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4AC863F1A36F47100CD19CA /* ViewController.m */; };
+		A4ACD30D1A7B580400C60454 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4ACD30C1A7B580400C60454 /* QuartzCore.framework */; };
 		A4AD1AAC1A772F3F0025CC59 /* back123.png in Resources */ = {isa = PBXBuildFile; fileRef = A4AD1AAB1A772F3F0025CC59 /* back123.png */; };
 		A4B06C971A78ADE9008F9F1A /* stop18.png in Resources */ = {isa = PBXBuildFile; fileRef = A4B06C961A78ADE9008F9F1A /* stop18.png */; };
 		A4B06C991A78AF50008F9F1A /* showAnswer.png in Resources */ = {isa = PBXBuildFile; fileRef = A4B06C981A78AF50008F9F1A /* showAnswer.png */; };
@@ -381,6 +382,7 @@
 		A4AC86201A36CFE700CD19CA /* mixMusicTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = mixMusicTestTests.m; sourceTree = "<group>"; };
 		A4AC863E1A36F47100CD19CA /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		A4AC863F1A36F47100CD19CA /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		A4ACD30C1A7B580400C60454 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		A4AD1AAB1A772F3F0025CC59 /* back123.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back123.png; sourceTree = "<group>"; };
 		A4B06C961A78ADE9008F9F1A /* stop18.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stop18.png; sourceTree = "<group>"; };
 		A4B06C981A78AF50008F9F1A /* showAnswer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = showAnswer.png; sourceTree = "<group>"; };
@@ -416,6 +418,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4ACD30D1A7B580400C60454 /* QuartzCore.framework in Frameworks */,
 				A40EFBBC1A7A0AC500F7D6D2 /* libz.dylib in Frameworks */,
 				A40EFBBA1A7A0A9F00F7D6D2 /* libMobClickLibrary.a in Frameworks */,
 				A4A5A30E1A750EF1005634E9 /* libSocialQQ.a in Frameworks */,
@@ -710,6 +713,7 @@
 		A4AC85F81A36CFE700CD19CA = {
 			isa = PBXGroup;
 			children = (
+				A4ACD30C1A7B580400C60454 /* QuartzCore.framework */,
 				A40EFBBB1A7A0AC500F7D6D2 /* libz.dylib */,
 				A4A75D0D1A53DC4B00E87191 /* StoreKit.framework */,
 				A4A75D0B1A53DC4800E87191 /* GameKit.framework */,
@@ -1280,7 +1284,7 @@
 					"$(PROJECT_DIR)/mixMusicTest/UMSocial_Sdk_4.2.1/UMSocial_Sdk_Extra_Frameworks/Wechat",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "0ec26c57-1bed-4a41-8916-6c9cb670c520";
+				PROVISIONING_PROFILE = "e4371e81-de6f-4aae-956d-d937342c651e";
 			};
 			name = Release;
 		};

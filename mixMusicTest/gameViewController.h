@@ -15,14 +15,16 @@
 #import "UMSocialSnsService.h"
 #import "UMSocialSnsPlatformManager.h"
 #import "MobClick.h"
-
+#import "buyCoinsViewController.h"
 #define DISK_TAG 100
 #define TIPS_TAG 200
 #define CD_SZIE 80
 #define DELETE_PRICE 70
 #define SINGLE_SONG_PRICE 120
 #define SHOW_ANSWER_PRICE 200
+#define BOMB_SONG_PRICE 150
 
+//@class buyCoinsViewController;
 
 @protocol prepareSongsDelegate <NSObject,UMSocialUIDelegate,UMSocialDataDelegate>
 -(NSMutableArray *)configSongs;
@@ -76,6 +78,12 @@
 @property (strong, nonatomic) IBOutlet UIButton *playSingleButton;
 @property (strong, nonatomic) IBOutlet UIButton *showAnswerButton;
 
+@property (strong, nonatomic) UIButton *coinShow;
+
+@property (strong,nonatomic) UIView *buyCoinsView;
+@property (strong,nonatomic) buyCoinsViewController *myBuyController;
+@property (strong,nonatomic) UITableView *itemsToBuy;
+@property (nonatomic,strong) UIRefreshControl *refreshControl NS_AVAILABLE_IOS(6_0);
 
 - (IBAction)playBtn:(id)sender;
 

@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "gameViewController.h"
+#import "MobClick.h"
+#import "CommonUtility.h"
+#import "UMSocialSinaHandler.h"
+#import "UMSocialSnsService.h"
+#import "UMSocialSnsPlatformManager.h"
+//#import "gameViewController.h"
 
 
 @interface buyCoinsViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>

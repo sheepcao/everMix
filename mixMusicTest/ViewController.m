@@ -8,8 +8,13 @@
 
 #import "ViewController.h"
 #import "myAlertView.h"
+#import <QuartzCore/QuartzCore.h>
 @interface ViewController ()
 @property (nonatomic,strong)CustomIOS7AlertView *dailyRewardAlert;
+
+//@property (nonatomic,strong) UILabel *ripple;
+//@property (nonatomic,strong) UILabel *ripple2;
+//@property (nonatomic,strong) UILabel *ripple3;
 @end
 
 @implementation ViewController
@@ -26,6 +31,7 @@
 //    }
     
     
+    
     [self dailyReward];
 
 
@@ -36,6 +42,8 @@
     }
 
     [self.view sendSubviewToBack:self.backgroundImg];
+    
+
     
 }
 
@@ -51,6 +59,7 @@
     
     [self.coinsShowing setTitle:currentCoins forState:UIControlStateNormal];
 
+  
     
 }
 - (void)viewWillDisappear:(BOOL)animated
@@ -82,7 +91,69 @@
         
         
     }
+//    
+//    if (self.ripple) {
+//        [self.ripple removeFromSuperview];
+//    }
+//    if (self.ripple2) {
+//        [self.ripple2 removeFromSuperview];
+//    }
+//    if (self.ripple3) {
+//        [self.ripple3 removeFromSuperview];
+//    }
+//    
+//    self.ripple = [[UILabel alloc] initWithFrame: CGRectMake(self.begainGame.frame.origin.x+10, self.begainGame.frame.origin.y+10, self.begainGame.frame.size.width-20,self.begainGame.frame.size.height-20) ];
+//    [self.ripple setBackgroundColor:[UIColor clearColor]];
+//    [self.ripple.layer setCornerRadius:self.ripple.bounds.size.height /2]; //Assuming square images
+//    
+//    [self.ripple.layer setBorderColor:[UIColor whiteColor].CGColor];
+//    [self.ripple.layer setBorderWidth:1];
+//    [self.view addSubview:self.ripple];
+//    self.ripple.alpha = 0.4;
+//    
+//    [self buttonAnimate:self.ripple andRange:1.5 andBorderWidth:1];
+//    //
+//    self.ripple2 = [[UILabel alloc] initWithFrame: CGRectMake(self.begainGame.frame.origin.x+10, self.begainGame.frame.origin.y+10, self.begainGame.frame.size.width-20,self.begainGame.frame.size.height-20) ];
+//    [self.ripple2 setBackgroundColor:[UIColor clearColor]];
+//    [self.ripple2.layer setCornerRadius:self.ripple2.bounds.size.height /2]; //Assuming square images
+//    
+//    [self.ripple2.layer setBorderColor:[UIColor whiteColor].CGColor];
+//    [self.ripple2.layer setBorderWidth:2.5];
+//    [self.view addSubview:self.ripple2];
+//    self.ripple2.alpha = 0.4;
+//    [self buttonAnimate:self.ripple2 andRange:1.35 andBorderWidth:2.5];
+//    
+//    
+//    self.ripple3 = [[UILabel alloc] initWithFrame: CGRectMake(self.begainGame.frame.origin.x+10, self.begainGame.frame.origin.y+10, self.begainGame.frame.size.width-20,self.begainGame.frame.size.height-20) ];
+//    [self.ripple3 setBackgroundColor:[UIColor clearColor]];
+//    [self.ripple3.layer setCornerRadius:self.ripple3.bounds.size.height /2]; //Assuming square images
+//    
+//    [self.ripple3.layer setBorderColor:[UIColor whiteColor].CGColor];
+//    [self.ripple3.layer setBorderWidth:4];
+//    [self.view addSubview:self.ripple3];
+//    self.ripple3.alpha = 0.4;
+//    [self buttonAnimate:self.ripple3 andRange:1.2 andBorderWidth:4];
+//    
 
+ 
+}
+
+-(void)buttonAnimate:(UIView *)view andRange:(CGFloat)scale andBorderWidth:(CGFloat)borderWith
+{
+    view.transform = CGAffineTransformMakeScale(1.0, 1.0);
+    [view.layer setBorderWidth:borderWith];
+
+    view.alpha = 0.4;
+
+    
+    [UIView animateWithDuration:1.5 animations:^{
+        view.transform = CGAffineTransformMakeScale(scale, scale);
+//        view.layer.borderWidth = 20;
+
+        view.alpha = 0.0;
+    }completion:^(BOOL finished) {
+        [self buttonAnimate:view andRange:scale andBorderWidth:borderWith];
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -218,6 +289,18 @@
     
     [self.begainGame setImage:[UIImage imageNamed:@"开始"] forState:UIControlStateNormal];
     [self.begainGame setFrame:CGRectMake([[UIScreen mainScreen] bounds].size.width/2 - self.continueGame.frame.size.width/2 , self.continueGame.frame.origin.y, self.continueGame.frame.size.width, self.continueGame.frame.size.height)];
+//    
+//    [self.ripple setFrame: CGRectMake(self.begainGame.frame.origin.x+10, self.begainGame.frame.origin.y+10, self.begainGame.frame.size.width-20,self.begainGame.frame.size.height-20) ];
+//
+//    //
+//    [self.ripple2 setFrame: CGRectMake(self.begainGame.frame.origin.x+10, self.begainGame.frame.origin.y+10, self.begainGame.frame.size.width-20,self.begainGame.frame.size.height-20) ];
+//    
+//    [self.ripple3 setFrame: CGRectMake(self.begainGame.frame.origin.x+10, self.begainGame.frame.origin.y+10, self.begainGame.frame.size.width-20,self.begainGame.frame.size.height-20) ];
+//
+//
+//    
+//    
+    
     [self.continueGame setHidden:YES];
     
     
@@ -335,7 +418,6 @@
         
         NSMutableArray *passMusics = [self configSongs];
         myGameViewController.musicsArray = passMusics;
-//        [[NSUserDefaults standardUserDefaults] setObject:passMusics forKey:@"currentMusics"];
         [self modifyPlist:@"gameData" withValue:passMusics forKey:@"musicPlaying"];
 
         myGameViewController.delegate = self;
@@ -349,6 +431,17 @@
 
 - (IBAction)socialShare {
     [MobClick event:@"shareFromHome"];
+    CATransition *animation=[CATransition animation];
+    [animation setDelegate:self];
+    [animation setDuration:1.75];
+    [animation setTimingFunction:UIViewAnimationCurveEaseInOut];
+    [animation setType:@"rippleEffect"];
+    
+    [animation setFillMode:kCAFillModeRemoved];
+    animation.endProgress=1;
+    [animation setRemovedOnCompletion:NO];
+    [self.view.layer addAnimation:animation forKey:nil];
+    
 
 }
 
