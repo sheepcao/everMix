@@ -253,15 +253,14 @@ int answerPickedCount;
     //only support less than 7 letters.
     NSLog(@"center:%f",self.choicesBoardView.center.x);
     CGFloat firstAnswerSquare_X = (self.choicesBoardView.center.x - (40+2) *songName.length/2);//considering the distance between two squares . distance = 2.
-    UIImage *buttonBackImage = [UIImage imageNamed:@"Square"];
+    UIImage *buttonBackImage = [UIImage imageNamed:@"answerBack7"];
     for (int i = 0; i<songName.length; i++) {
          UIButton *answerButton = (UIButton *)[self.choicesBoardView viewWithTag:1];
         
-        AnswerButton *myAnswerBtn = [[AnswerButton alloc] initWithFrame:CGRectMake(firstAnswerSquare_X+1 + i*(2+40), answerButton.frame.origin.y - 75, 40, 40)];
+        AnswerButton *myAnswerBtn = [[AnswerButton alloc] initWithFrame:CGRectMake(firstAnswerSquare_X+1 + i*(2+40), answerButton.frame.origin.y - 75, 38, 38)];
         
         [myAnswerBtn addTarget:self action:@selector(answerTapped:) forControlEvents:UIControlEventTouchUpInside];
-        myAnswerBtn.titleLabel.font = [UIFont systemFontOfSize:21];
-        [myAnswerBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        myAnswerBtn.titleLabel.font = [UIFont fontWithName:@"Helvetica Neue" size:20];        [myAnswerBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         myAnswerBtn.tag = i+100;
         myAnswerBtn.isFromTag = -1;
         [myAnswerBtn setBackgroundImage:buttonBackImage forState:UIControlStateNormal];
@@ -314,7 +313,7 @@ int answerPickedCount;
 
 -(void)answerTapped:(AnswerButton *)sender
 {
-    NSLog(@"tag:%ld",sender.tag);
+//    NSLog(@"tag:%ld",sender.tag);
     
     if  (sender.titleLabel.text && ![sender.titleLabel.text isEqualToString:@" "])
     {
@@ -329,7 +328,7 @@ int answerPickedCount;
             for (UIButton *subview in [self.choicesBoardView subviews]) {
                 if ([subview isKindOfClass:[AnswerButton class]]) {
                     
-                    [subview setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+                    [subview setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
                 }
             }
         
@@ -740,7 +739,7 @@ int answerPickedCount;
 - (IBAction)returnChoicesBoard:(UIButton *)sender {
     
     [UIView animateWithDuration:0.5 delay:0.1 usingSpringWithDamping:0.7 initialSpringVelocity:1.0 options:0 animations:^{
-        [self.choicesBoardView setFrame:CGRectMake(self.downPartView.frame.origin.x,[UIScreen mainScreen].bounds.size.height , self.downPartView.frame.size.width,[UIScreen mainScreen].bounds.size.height)];
+        [self.choicesBoardView setFrame:CGRectMake(self.downPartView.frame.origin.x,[UIScreen mainScreen].bounds.size.height , self.downPartView.frame.size.width,self.downPartView.frame.size.height - 50)];
     } completion:^(BOOL finished){
     
         if (finished) {
@@ -762,12 +761,11 @@ int answerPickedCount;
 #pragma mark disk animation
 
 - (void)spinWithOptions: (UIViewAnimationOptions) options :(UIView *)destRotateView {
-    // this spin completes 360 degrees every 2 seconds
-    [UIView animateWithDuration: 0.01f
+    [UIView animateWithDuration: 0.015f
                           delay: 0.0f
                         options: options
                      animations: ^{
-                         destRotateView.transform = CGAffineTransformRotate(destRotateView.transform, M_PI/32 );
+                         destRotateView.transform = CGAffineTransformRotate(destRotateView.transform, M_PI/128 );
                      }
                      completion: ^(BOOL finished) {
                          if (finished) {
@@ -942,7 +940,8 @@ int answerPickedCount;
     [self.deleteOneBtn setEnabled:YES];
     [self.shareBtn setEnabled:YES];
     
-    [self performSelector:@selector(enableButtons) withObject:nil afterDelay:0.35];
+//    [self performSelector:@selector(enableButtons) withObject:nil afterDelay:0.01];
+    [self enableButtons];
 }
 
 -(void)enableButtons
@@ -955,13 +954,13 @@ int answerPickedCount;
                               delay: 0.0f
                             options: 0
                          animations: ^{
-                             button.transform = CGAffineTransformRotate(button.transform, -(totalRotateTimes%64) *( M_PI/32));
+                             button.transform = CGAffineTransformRotate(button.transform, -((totalRotateTimes)%256 ) *( M_PI/128));
                          }
                          completion:nil];
         
         if (![button isHidden]) {
             [button setEnabled:YES];
-            [button setTitle:[NSString stringWithFormat:@"%lu字歌",[self.musicsArray[i] length]] forState:UIControlStateNormal];
+            [button setTitle:[NSString stringWithFormat:@"%lu字歌",(unsigned long)[self.musicsArray[i] length]] forState:UIControlStateNormal];
 
         }
     }
@@ -978,13 +977,13 @@ int answerPickedCount;
 
 - (IBAction)playBtn:(id)sender {
    
+    
     [MobClick event:@"playTap"];
-
     [self.playBtn setTitle:self.levelTitle forState:UIControlStateNormal];
     if (isplayed) {
         
         [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(stop13secondMusics) object:nil];
-
+        
         [self stopMusics];
         
         isplayed =false;
@@ -994,6 +993,13 @@ int answerPickedCount;
         isplayed = true;
         [self performSelector:@selector(stop13secondMusics) withObject:nil afterDelay:13.0f];
     }
+//    [self performSelector:@selector(PlayStart) withObject:nil afterDelay:0.5f];
+
+
+}
+-(void)PlayStart
+{
+  
 }
 
 -(void)initMusics

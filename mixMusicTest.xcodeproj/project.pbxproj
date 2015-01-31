@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B3D54001A7D410E006F4D50 /* answerBack1.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B3D53FB1A7D410E006F4D50 /* answerBack1.png */; };
+		0B3D54011A7D410E006F4D50 /* answerBack2.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B3D53FC1A7D410E006F4D50 /* answerBack2.png */; };
+		0B3D54021A7D410E006F4D50 /* answerBack3.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B3D53FD1A7D410E006F4D50 /* answerBack3.png */; };
+		0B3D54031A7D410E006F4D50 /* answerBack4.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B3D53FE1A7D410E006F4D50 /* answerBack4.png */; };
+		0B3D54041A7D410E006F4D50 /* answerBoardBack.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B3D53FF1A7D410E006F4D50 /* answerBoardBack.png */; };
+		0B680B631A7D4735003D616B /* answerBack6.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B680B621A7D4735003D616B /* answerBack6.png */; };
+		0B680B671A7D6593003D616B /* answerBack7.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B680B661A7D6593003D616B /* answerBack7.png */; };
+		0B680B691A7D9260003D616B /* 开始.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B680B681A7D9260003D616B /* 开始.png */; };
 		A40CA9001A72469E00ED071F /* CommonUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = A40CA8FF1A72469E00ED071F /* CommonUtility.m */; };
 		A40EFBB51A79F5FF00F7D6D2 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = A40EFBB41A79F5FF00F7D6D2 /* back.png */; };
 		A40EFBB71A7A04DF00F7D6D2 /* star1.png in Resources */ = {isa = PBXBuildFile; fileRef = A40EFBB61A7A04DF00F7D6D2 /* star1.png */; };
@@ -145,8 +153,6 @@
 		A4A6C1351A6B713600C6095C /* cd5.png in Resources */ = {isa = PBXBuildFile; fileRef = A4A6C12B1A6B713600C6095C /* cd5.png */; };
 		A4A6C13B1A6B7EF000C6095C /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = A4A6C13A1A6B7EF000C6095C /* background.png */; };
 		A4A6C1441A6BF66600C6095C /* cycle.png in Resources */ = {isa = PBXBuildFile; fileRef = A4A6C13E1A6BF66600C6095C /* cycle.png */; };
-		A4A6C1451A6BF66600C6095C /* 开始.png in Resources */ = {isa = PBXBuildFile; fileRef = A4A6C13F1A6BF66600C6095C /* 开始.png */; };
-		A4A6C1461A6BF66600C6095C /* back6.png in Resources */ = {isa = PBXBuildFile; fileRef = A4A6C1401A6BF66600C6095C /* back6.png */; };
 		A4A6C1471A6BF66600C6095C /* 重新开始.png in Resources */ = {isa = PBXBuildFile; fileRef = A4A6C1411A6BF66600C6095C /* 重新开始.png */; };
 		A4A6C1481A6BF66600C6095C /* back8.png in Resources */ = {isa = PBXBuildFile; fileRef = A4A6C1421A6BF66600C6095C /* back8.png */; };
 		A4A6C1491A6BF66600C6095C /* 继续.png in Resources */ = {isa = PBXBuildFile; fileRef = A4A6C1431A6BF66600C6095C /* 继续.png */; };
@@ -198,6 +204,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B3D53FB1A7D410E006F4D50 /* answerBack1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = answerBack1.png; sourceTree = "<group>"; };
+		0B3D53FC1A7D410E006F4D50 /* answerBack2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = answerBack2.png; sourceTree = "<group>"; };
+		0B3D53FD1A7D410E006F4D50 /* answerBack3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = answerBack3.png; sourceTree = "<group>"; };
+		0B3D53FE1A7D410E006F4D50 /* answerBack4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = answerBack4.png; sourceTree = "<group>"; };
+		0B3D53FF1A7D410E006F4D50 /* answerBoardBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = answerBoardBack.png; sourceTree = "<group>"; };
+		0B680B621A7D4735003D616B /* answerBack6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = answerBack6.png; sourceTree = "<group>"; };
+		0B680B661A7D6593003D616B /* answerBack7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = answerBack7.png; sourceTree = "<group>"; };
+		0B680B681A7D9260003D616B /* 开始.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "开始.png"; sourceTree = "<group>"; };
 		A40CA8FE1A72469E00ED071F /* CommonUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonUtility.h; sourceTree = "<group>"; };
 		A40CA8FF1A72469E00ED071F /* CommonUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonUtility.m; sourceTree = "<group>"; };
 		A40EFBB41A79F5FF00F7D6D2 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
@@ -361,8 +375,6 @@
 		A4A6C12B1A6B713600C6095C /* cd5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cd5.png; sourceTree = "<group>"; };
 		A4A6C13A1A6B7EF000C6095C /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		A4A6C13E1A6BF66600C6095C /* cycle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cycle.png; sourceTree = "<group>"; };
-		A4A6C13F1A6BF66600C6095C /* 开始.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "开始.png"; sourceTree = "<group>"; };
-		A4A6C1401A6BF66600C6095C /* back6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back6.png; sourceTree = "<group>"; };
 		A4A6C1411A6BF66600C6095C /* 重新开始.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "重新开始.png"; sourceTree = "<group>"; };
 		A4A6C1421A6BF66600C6095C /* back8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back8.png; sourceTree = "<group>"; };
 		A4A6C1431A6BF66600C6095C /* 继续.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "继续.png"; sourceTree = "<group>"; };
@@ -687,6 +699,13 @@
 		A4A6C1251A6B713600C6095C /* PNGs */ = {
 			isa = PBXGroup;
 			children = (
+				0B3D53FB1A7D410E006F4D50 /* answerBack1.png */,
+				0B3D53FC1A7D410E006F4D50 /* answerBack2.png */,
+				0B680B621A7D4735003D616B /* answerBack6.png */,
+				0B680B661A7D6593003D616B /* answerBack7.png */,
+				0B3D53FD1A7D410E006F4D50 /* answerBack3.png */,
+				0B3D53FE1A7D410E006F4D50 /* answerBack4.png */,
+				0B3D53FF1A7D410E006F4D50 /* answerBoardBack.png */,
 				A40EFBB41A79F5FF00F7D6D2 /* back.png */,
 				A4B06C9E1A78B1A7008F9F1A /* basket.png */,
 				A4B06C9C1A78B0FF008F9F1A /* delete.png */,
@@ -699,8 +718,7 @@
 				A4A6C12A1A6B713600C6095C /* cd4.png */,
 				A4A6C12B1A6B713600C6095C /* cd5.png */,
 				A4A6C13E1A6BF66600C6095C /* cycle.png */,
-				A4A6C13F1A6BF66600C6095C /* 开始.png */,
-				A4A6C1401A6BF66600C6095C /* back6.png */,
+				0B680B681A7D9260003D616B /* 开始.png */,
 				A4A6C1411A6BF66600C6095C /* 重新开始.png */,
 				A4A6C1421A6BF66600C6095C /* back8.png */,
 				A4A6C1431A6BF66600C6095C /* 继续.png */,
@@ -931,7 +949,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A4A6C1451A6BF66600C6095C /* 开始.png in Resources */,
 				A4A6C1341A6B713600C6095C /* cd4.png in Resources */,
 				A40EFBB51A79F5FF00F7D6D2 /* back.png in Resources */,
 				A4A6C1321A6B713600C6095C /* cd2.png in Resources */,
@@ -957,15 +974,16 @@
 				A4E094FC1A4BE07B001AD626 /* gameData.plist in Resources */,
 				A47E00321A67B8E6000FCAF7 /* 一场游戏一场梦.m4a in Resources */,
 				A47EFFE51A67B8E6000FCAF7 /* 大地.m4a in Resources */,
+				0B680B671A7D6593003D616B /* answerBack7.png in Resources */,
 				A47EFFF51A67B8E6000FCAF7 /* 喜欢你.m4a in Resources */,
 				A47EFFE41A67B8E6000FCAF7 /* 后来.m4a in Resources */,
 				A4AC86101A36CFE700CD19CA /* Main.storyboard in Resources */,
 				A47E00001A67B8E6000FCAF7 /* 狼.m4a in Resources */,
 				A4B76C171A3982EC0014014D /* Print-CD-icon.png in Resources */,
+				0B3D54031A7D410E006F4D50 /* answerBack4.png in Resources */,
 				A4A5A2F31A74AAA8005634E9 /* UMSocialLocalizable.strings in Resources */,
 				A47E00191A67B8E6000FCAF7 /* 类似爱情.m4a in Resources */,
 				A47E00361A67B8E6000FCAF7 /* 分手总要在雨天.m4a in Resources */,
-				A4A6C1461A6BF66600C6095C /* back6.png in Resources */,
 				A47E002B1A67B8E6000FCAF7 /* 新贵妃醉酒.m4a in Resources */,
 				A44236771A722026008C3051 /* buyCoinsViewController.xib in Resources */,
 				A47E001B1A67B8E6000FCAF7 /* 那些花儿.m4a in Resources */,
@@ -989,6 +1007,7 @@
 				A47E00421A67B8E6000FCAF7 /* 看月亮爬上来.m4a in Resources */,
 				A47EFFEB1A67B8E6000FCAF7 /* 曹操.m4a in Resources */,
 				A47EFFEE1A67B8E6000FCAF7 /* 童话.m4a in Resources */,
+				0B3D54021A7D410E006F4D50 /* answerBack3.png in Resources */,
 				A4E094FA1A4BDD8D001AD626 /* star2.png in Resources */,
 				A4A5A2F51A74AAA8005634E9 /* UMSCommentDetailController.xib in Resources */,
 				A4A6C1471A6BF66600C6095C /* 重新开始.png in Resources */,
@@ -1041,6 +1060,7 @@
 				A47E00181A67B8E6000FCAF7 /* 生如夏花.m4a in Resources */,
 				A47EFFF21A67B8E6000FCAF7 /* 趁早.m4a in Resources */,
 				A4A6C1441A6BF66600C6095C /* cycle.png in Resources */,
+				0B3D54001A7D410E006F4D50 /* answerBack1.png in Resources */,
 				A47E002C1A67B8E6000FCAF7 /* 有一点动心.m4a in Resources */,
 				A47EFFFB1A67B8E6000FCAF7 /* 当.m4a in Resources */,
 				A4B76C141A3982EC0014014D /* info.png in Resources */,
@@ -1049,7 +1069,9 @@
 				A47E003C1A67B8E6000FCAF7 /* 我可以抱你吗.m4a in Resources */,
 				A4A5A2FA1A74AAA8005634E9 /* UMSLoginViewController.xib in Resources */,
 				A4A5A2F71A74AAA8005634E9 /* UMSCommentInputControlleriPad.xib in Resources */,
+				0B680B631A7D4735003D616B /* answerBack6.png in Resources */,
 				A4DDB6E51A4D399A00CFF980 /* circle.png in Resources */,
+				0B680B691A7D9260003D616B /* 开始.png in Resources */,
 				A47E00401A67B8E6000FCAF7 /* 男人哭吧不是罪.m4a in Resources */,
 				A47EFFF11A67B8E6000FCAF7 /* 说谎.m4a in Resources */,
 				A4A6C13B1A6B7EF000C6095C /* background.png in Resources */,
@@ -1071,6 +1093,7 @@
 				A4A6C1331A6B713600C6095C /* cd3.png in Resources */,
 				A47E002D1A67B8E6000FCAF7 /* 突然的自我.m4a in Resources */,
 				A4B06C9D1A78B0FF008F9F1A /* delete.png in Resources */,
+				0B3D54011A7D410E006F4D50 /* answerBack2.png in Resources */,
 				A4A5A2FD1A74AAA8005634E9 /* UMSocialSDKResourcesNew.bundle in Resources */,
 				A47E000D1A67B8E6000FCAF7 /* 壁虎漫步.m4a in Resources */,
 				A47E00101A67B8E6000FCAF7 /* 我们的爱.m4a in Resources */,
@@ -1080,6 +1103,7 @@
 				A4AC86121A36CFE700CD19CA /* Images.xcassets in Resources */,
 				A47E00341A67B8E6000FCAF7 /* 像梦一样自由.m4a in Resources */,
 				A4A5A2F81A74AAA8005634E9 /* UMShareEditViewController.xib in Resources */,
+				0B3D54041A7D410E006F4D50 /* answerBoardBack.png in Resources */,
 				A4E47CE51A5391DC0039BDF6 /* mainBackground.png in Resources */,
 				A4A5A3101A750EF2005634E9 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				A4B76C181A3982EC0014014D /* refresh.png in Resources */,
@@ -1257,7 +1281,7 @@
 					"$(PROJECT_DIR)/mixMusicTest/UMSocial_Sdk_4.2.1/UMSocial_Sdk_Extra_Frameworks/Wechat",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "0a336c09-8124-47c8-8d17-1d3f44633a58";
+				PROVISIONING_PROFILE = "43fe3cd7-fc94-4e0a-a055-faeb94f1b869";
 			};
 			name = Debug;
 		};
@@ -1267,8 +1291,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = mixMusicTest/mixMusicTest.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: CAO GUANGXU (DBBLJY69ER)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: CAO GUANGXU (DBBLJY69ER)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: CAO GUANGXU (JTX9TS223Q)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/mixMusicTest/UMSocial_Sdk_4.2.1/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
@@ -1284,7 +1308,7 @@
 					"$(PROJECT_DIR)/mixMusicTest/UMSocial_Sdk_4.2.1/UMSocial_Sdk_Extra_Frameworks/Wechat",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "e4371e81-de6f-4aae-956d-d937342c651e";
+				PROVISIONING_PROFILE = "43fe3cd7-fc94-4e0a-a055-faeb94f1b869";
 			};
 			name = Release;
 		};
