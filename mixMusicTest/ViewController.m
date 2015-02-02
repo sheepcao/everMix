@@ -9,6 +9,12 @@
 #import "ViewController.h"
 #import "myAlertView.h"
 #import <QuartzCore/QuartzCore.h>
+//#import <CoreVideo/CVOpenGLESTextureCache.h>
+//#import "RippleModel.h"
+//#include <stdlib.h>
+
+
+
 @interface ViewController ()
 @property (nonatomic,strong)CustomIOS7AlertView *dailyRewardAlert;
 
@@ -22,6 +28,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
  
+    
+
     //eric:check font
 //    NSArray *fontFamilies = [UIFont familyNames];
 //    
@@ -43,7 +51,6 @@
 
     [self.view sendSubviewToBack:self.backgroundImg];
     
-
     
 }
 
@@ -73,7 +80,8 @@
     self.gameData = [self readDataFromPlist:@"gameData"] ;
     NSString *currentDifficulty = [self.gameData objectForKey:@"difficulty"];
     
-    [self drawStars:[currentDifficulty intValue]];
+//    [self drawStars:[currentDifficulty intValue]];
+    self.difficultySegment.selectedSegmentIndex = [currentDifficulty intValue];
     
     NSMutableArray *currentMusics = [self.gameData objectForKey:@"musicPlaying"];
     
@@ -215,70 +223,72 @@
     return musicToNextView;
 }
 
--(void)drawStars:(int)Differentlevel
-{
-
-    
-    for (int i = 0; i<5; i++) {
-        if (i <= Differentlevel) {
-            [(UIButton *)self.starButtons[i] setImage:[UIImage imageNamed:@"star2"] forState:UIControlStateNormal];
-        }
-        if (i>Differentlevel) {
-            [(UIButton *)self.starButtons[i] setImage:[UIImage imageNamed:@"star1"] forState:UIControlStateNormal];
-        }
-    }
-    
-    [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%d",Differentlevel] forKey:@"difficulty"];
 
 
-    
-}
-
-
-- (IBAction)starTapped:(UIButton *)sender {
-    
-    [MobClick event:@"chooseDifficulty"];
-
-    
-    if ([self.continueGame isHidden]) {
-        int starNumber = -1; //init with a invalid value.
-        
-        for (int i = 0; i<5; i++) {
-            if(sender == self.starButtons[i])
-            {
-                starNumber = i;
-            }
-            
-        }
-        
-        [self drawStars:starNumber];
-        [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%d",starNumber*20] forKey:@"currentLevel"];
-        
-    }else
-    {
-        myAlertView *resetAlert = [[myAlertView alloc] initWithTitle:@"且慢!" message:@"变更难度将重置已猜歌曲的进度,请君三思。" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确认", nil];
-        
-        resetAlert.chooseWhichButton = sender;
-        resetAlert.tag = 1;
-        
-        [resetAlert show];
-    }
-    
-    
-    
-//    int starNumber = -1; //init with a invalid value.
+//-(void)drawStars:(int)Differentlevel
+//{
+//
 //    
 //    for (int i = 0; i<5; i++) {
-//        if(sender == self.starButtons[i])
-//        {
-//            starNumber = i;
+//        if (i <= Differentlevel) {
+//            [(UIButton *)self.starButtons[i] setImage:[UIImage imageNamed:@"star2"] forState:UIControlStateNormal];
 //        }
-//
+//        if (i>Differentlevel) {
+//            [(UIButton *)self.starButtons[i] setImage:[UIImage imageNamed:@"star1"] forState:UIControlStateNormal];
+//        }
 //    }
 //    
-//    [self drawStars:starNumber];
+//    [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%d",Differentlevel] forKey:@"difficulty"];
+//
+//
+//    
+//}
+//
 
-}
+//- (IBAction)starTapped:(UIButton *)sender {
+//    
+//    [MobClick event:@"chooseDifficulty"];
+//
+//    
+//    if ([self.continueGame isHidden]) {
+//        int starNumber = -1; //init with a invalid value.
+//        
+//        for (int i = 0; i<5; i++) {
+//            if(sender == self.starButtons[i])
+//            {
+//                starNumber = i;
+//            }
+//            
+//        }
+//        
+//        [self drawStars:starNumber];
+//        [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%d",starNumber*20] forKey:@"currentLevel"];
+//        
+//    }else
+//    {
+//        myAlertView *resetAlert = [[myAlertView alloc] initWithTitle:@"且慢!" message:@"变更难度将重置已猜歌曲的进度,请君三思。" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确认", nil];
+//        
+//        resetAlert.chooseWhichButton = sender;
+//        resetAlert.tag = 1;
+//        
+//        [resetAlert show];
+//    }
+//    
+//    
+//    
+////    int starNumber = -1; //init with a invalid value.
+////    
+////    for (int i = 0; i<5; i++) {
+////        if(sender == self.starButtons[i])
+////        {
+////            starNumber = i;
+////        }
+////
+////    }
+////    
+////    [self drawStars:starNumber];
+//
+//}
 
 -(void)resetPlist
 {
@@ -316,31 +326,44 @@
         
         if (alertView.tag == 1) {
             //reset plist
-            
             [self resetPlist];
-            int starNumber = -1; //init with a invalid value.
             
-            for (int i = 0; i<5; i++) {
-                if(alertView.chooseWhichButton == self.starButtons[i])
-                {
-                    starNumber = i;
-                }
-                
-            }
+            [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%d",self.difficultySegment.selectedSegmentIndex] forKey:@"difficulty"];
             
-            [self drawStars:starNumber];
-            [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%d",starNumber*20] forKey:@"currentLevel"];
+            [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%d",self.difficultySegment.selectedSegmentIndex*20+1] forKey:@"currentLevel"];
+            
+//            [self resetPlist];
+//            int starNumber = -1; //init with a invalid value.
+//            self.difficultySegment.selectedSegmentIndex = [currentDifficulty intValue];
+
+            
+//            for (int i = 0; i<5; i++) {
+//                if(alertView.chooseWhichButton == self.starButtons[i])
+//                {
+//                    starNumber = i;
+//                }
+//                
+//            }
+//            
+//            [self drawStars:starNumber];
+//            [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%d",starNumber*20] forKey:@"currentLevel"];
 
         }
         if (alertView.tag == 2) {
             [self resetPlist];
-            [self drawStars:2];
+//            [self drawStars:2];
+            [self.difficultySegment setSelectedSegmentIndex:2];
             [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%d",2*20] forKey:@"currentLevel"];
 
             
         }
 
         
+    }
+    if (buttonIndex == 0) {
+        if (alertView.tag == 1) {
+            self.difficultySegment.selectedSegmentIndex = alertView.lastSegmentIndex;
+        }
     }
   
 }
@@ -431,16 +454,29 @@
 
 - (IBAction)socialShare {
     [MobClick event:@"shareFromHome"];
+    
+    
+
     CATransition *animation=[CATransition animation];
     [animation setDelegate:self];
-    [animation setDuration:1.75];
+    [animation setDuration:1.0];
     [animation setTimingFunction:UIViewAnimationCurveEaseInOut];
     [animation setType:@"rippleEffect"];
     
     [animation setFillMode:kCAFillModeRemoved];
     animation.endProgress=1;
-    [animation setRemovedOnCompletion:NO];
+    [animation setRemovedOnCompletion:YES];
     [self.view.layer addAnimation:animation forKey:nil];
+
+//    [self.view sendSubviewToBack:sub];
+//    UIGraphicsBeginImageContext(self.view.frame.size);
+//
+//    [sub.layer renderInContext:UIGraphicsGetCurrentContext()];
+//    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+//    UIGraphicsEndImageContext();
+//    
+//    [sub setImage:image];
+
     
 
 }
@@ -652,4 +688,30 @@
     [self.coinsShowing setTitle:[NSString stringWithFormat:@"%d",[CommonUtility fetchCoinAmount]] forState:UIControlStateNormal];
     [self.dailyRewardAlert close];
 }
+-(IBAction)segmentAction:(UISegmentedControl *)Seg{
+    NSInteger Index = Seg.selectedSegmentIndex;
+    NSLog(@"Seg.selectedSegmentIndex:%d",Index);
+    
+    [MobClick event:@"chooseDifficulty"];
+    int lastSeg = [[self.gameData objectForKey:@"difficulty"] intValue];
+
+    if ([self.continueGame isHidden]) {
+ 
+        [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%d",Index] forKey:@"difficulty"];
+        
+        [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%d",Index*20+1] forKey:@"currentLevel"];
+    }else
+    {
+        myAlertView *resetAlert = [[myAlertView alloc] initWithTitle:@"且慢!" message:@"变更难度将重置已猜歌曲的进度,请君三思。" delegate:self cancelButtonTitle:nil otherButtonTitles:@"取消",@"确认", nil];
+        
+        resetAlert.lastSegmentIndex = lastSeg;
+        resetAlert.tag = 1;
+        
+        [resetAlert show];
+    }
+    
+}
+
+
 @end
+

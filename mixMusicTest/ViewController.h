@@ -39,4 +39,6 @@
 @property (strong,nonatomic) UITableView *itemsToBuy;
 @property (nonatomic,strong) UIRefreshControl *refreshControl NS_AVAILABLE_IOS(6_0);
 //@property (strong,nonatomic) NSMutableArray *musicToNextView;
+@property (strong, nonatomic) IBOutlet UISegmentedControl *difficultySegment;
+-(IBAction)segmentAction:(UISegmentedControl *)Seg;
 @end

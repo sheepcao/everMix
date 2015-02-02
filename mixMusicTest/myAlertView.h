@@ -11,4 +11,6 @@
 @interface myAlertView : UIAlertView
 
 @property (strong,nonatomic) UIButton *chooseWhichButton;
+@property int lastSegmentIndex;
+
 @end

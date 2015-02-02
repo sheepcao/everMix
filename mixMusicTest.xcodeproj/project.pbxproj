@@ -154,7 +154,6 @@
 		A4A6C13B1A6B7EF000C6095C /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = A4A6C13A1A6B7EF000C6095C /* background.png */; };
 		A4A6C1441A6BF66600C6095C /* cycle.png in Resources */ = {isa = PBXBuildFile; fileRef = A4A6C13E1A6BF66600C6095C /* cycle.png */; };
 		A4A6C1471A6BF66600C6095C /* 重新开始.png in Resources */ = {isa = PBXBuildFile; fileRef = A4A6C1411A6BF66600C6095C /* 重新开始.png */; };
-		A4A6C1481A6BF66600C6095C /* back8.png in Resources */ = {isa = PBXBuildFile; fileRef = A4A6C1421A6BF66600C6095C /* back8.png */; };
 		A4A6C1491A6BF66600C6095C /* 继续.png in Resources */ = {isa = PBXBuildFile; fileRef = A4A6C1431A6BF66600C6095C /* 继续.png */; };
 		A4A75D0C1A53DC4800E87191 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4A75D0B1A53DC4800E87191 /* GameKit.framework */; };
 		A4A75D0E1A53DC4B00E87191 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4A75D0D1A53DC4B00E87191 /* StoreKit.framework */; };
@@ -376,7 +375,6 @@
 		A4A6C13A1A6B7EF000C6095C /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		A4A6C13E1A6BF66600C6095C /* cycle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cycle.png; sourceTree = "<group>"; };
 		A4A6C1411A6BF66600C6095C /* 重新开始.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "重新开始.png"; sourceTree = "<group>"; };
-		A4A6C1421A6BF66600C6095C /* back8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back8.png; sourceTree = "<group>"; };
 		A4A6C1431A6BF66600C6095C /* 继续.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "继续.png"; sourceTree = "<group>"; };
 		A4A75D0B1A53DC4800E87191 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		A4A75D0D1A53DC4B00E87191 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
@@ -720,7 +718,6 @@
 				A4A6C13E1A6BF66600C6095C /* cycle.png */,
 				0B680B681A7D9260003D616B /* 开始.png */,
 				A4A6C1411A6BF66600C6095C /* 重新开始.png */,
-				A4A6C1421A6BF66600C6095C /* back8.png */,
 				A4A6C1431A6BF66600C6095C /* 继续.png */,
 				A4AD1AAB1A772F3F0025CC59 /* back123.png */,
 				A4A6C13A1A6B7EF000C6095C /* background.png */,
@@ -962,7 +959,6 @@
 				A47E00071A67B8E6000FCAF7 /* 那一天.m4a in Resources */,
 				A47E00271A67B8E6000FCAF7 /* 我从草原来.m4a in Resources */,
 				A47E000C1A67B8E6000FCAF7 /* 因为爱情.m4a in Resources */,
-				A4A6C1481A6BF66600C6095C /* back8.png in Resources */,
 				A47EFFE21A67B8E6000FCAF7 /* 出卖.m4a in Resources */,
 				A47E00431A67B8E6000FCAF7 /* 难以抗拒你容颜.m4a in Resources */,
 				A4A5A2F61A74AAA8005634E9 /* UMSCommentInputController.xib in Resources */,
