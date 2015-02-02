@@ -1277,7 +1277,7 @@
 					"$(PROJECT_DIR)/mixMusicTest/UMSocial_Sdk_4.2.1/UMSocial_Sdk_Extra_Frameworks/Wechat",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "43fe3cd7-fc94-4e0a-a055-faeb94f1b869";
+				PROVISIONING_PROFILE = "e4371e81-de6f-4aae-956d-d937342c651e";
 			};
 			name = Debug;
 		};
@@ -1304,7 +1304,7 @@
 					"$(PROJECT_DIR)/mixMusicTest/UMSocial_Sdk_4.2.1/UMSocial_Sdk_Extra_Frameworks/Wechat",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "43fe3cd7-fc94-4e0a-a055-faeb94f1b869";
+				PROVISIONING_PROFILE = "e4371e81-de6f-4aae-956d-d937342c651e";
 			};
 			name = Release;
 		};
