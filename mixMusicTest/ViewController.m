@@ -17,13 +17,16 @@
 
 @interface ViewController ()
 @property (nonatomic,strong)CustomIOS7AlertView *dailyRewardAlert;
+@property (nonatomic,strong)NSArray *difficultyButtons;
 
 //@property (nonatomic,strong) UILabel *ripple;
 //@property (nonatomic,strong) UILabel *ripple2;
 //@property (nonatomic,strong) UILabel *ripple3;
 @end
-
+int difficultyNow;
 @implementation ViewController
+@synthesize timer;
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -51,6 +54,7 @@
 
     [self.view sendSubviewToBack:self.backgroundImg];
     
+    self.difficultyButtons = [NSArray arrayWithObjects:self.difficulty1,self.difficulty2,self.difficulty3,self.difficulty4,self.difficulty5, nil];
     
 }
 
@@ -66,6 +70,21 @@
     
     [self.coinsShowing setTitle:currentCoins forState:UIControlStateNormal];
 
+//    self.difficultySegment.layer.borderWidth = 0;
+//    UIFont *font = [UIFont boldSystemFontOfSize:15.0f];
+//    NSDictionary *attributes = [NSDictionary dictionaryWithObject:font
+//                                                           forKey:NSFontAttributeName];
+//    [self.difficultySegment setTitleTextAttributes:attributes
+//                                    forState:UIControlStateNormal];
+////    [self.difficultySegment setBackgroundImage:[UIImage imageNamed:@"answerBack1"]
+////                                forState:UIControlStateNormal
+////                              barMetrics:UIBarMetricsDefault];
+//    CGRect frame= self.difficultySegment.frame;
+//    [self.difficultySegment setFrame:CGRectMake(frame.origin.x, frame.origin.y, frame.size.width, 35)];
+    
+    timer = [NSTimer scheduledTimerWithTimeInterval:4.0 target:self selector:@selector(buttonFlash) userInfo:nil repeats:YES];
+
+    
   
     
 }
@@ -73,6 +92,16 @@
 {
     [super viewWillDisappear:animated];
     [MobClick endLogPageView:@"homePage"];
+    
+}
+-(void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+    if (timer != nil)
+    {
+        [timer invalidate];
+        timer = nil;
+    }
 }
 -(void)viewDidLayoutSubviews
 {
@@ -81,8 +110,9 @@
     NSString *currentDifficulty = [self.gameData objectForKey:@"difficulty"];
     
 //    [self drawStars:[currentDifficulty intValue]];
-    self.difficultySegment.selectedSegmentIndex = [currentDifficulty intValue];
+//    self.difficultySegment.selectedSegmentIndex = [currentDifficulty intValue];
     
+    [self changeDifficultyTo:currentDifficulty];
     NSMutableArray *currentMusics = [self.gameData objectForKey:@"musicPlaying"];
     
     if (currentMusics && currentMusics.count > 0) {
@@ -144,6 +174,23 @@
 //    
 
  
+}
+
+-(void)changeDifficultyTo:(NSString *)diff
+{
+    difficultyNow = [diff intValue];
+    
+//    UIButton *button = (UIButton *)[self.view viewWithTag:difficultyNow +1];
+    for (UIButton *btn in self.difficultyButtons) {
+        if (btn.tag == difficultyNow +1) {
+            [btn setEnabled:NO];
+        }else
+        {
+            [btn setEnabled:YES];
+
+        }
+    }
+    
 }
 
 -(void)buttonAnimate:(UIView *)view andRange:(CGFloat)scale andBorderWidth:(CGFloat)borderWith
@@ -328,31 +375,15 @@
             //reset plist
             [self resetPlist];
             
-            [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%d",self.difficultySegment.selectedSegmentIndex] forKey:@"difficulty"];
+            [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%d",difficultyNow] forKey:@"difficulty"];
             
-            [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%d",self.difficultySegment.selectedSegmentIndex*20+1] forKey:@"currentLevel"];
-            
-//            [self resetPlist];
-//            int starNumber = -1; //init with a invalid value.
-//            self.difficultySegment.selectedSegmentIndex = [currentDifficulty intValue];
-
-            
-//            for (int i = 0; i<5; i++) {
-//                if(alertView.chooseWhichButton == self.starButtons[i])
-//                {
-//                    starNumber = i;
-//                }
-//                
-//            }
-//            
-//            [self drawStars:starNumber];
-//            [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%d",starNumber*20] forKey:@"currentLevel"];
+            [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%d",difficultyNow*20+1] forKey:@"currentLevel"];
 
         }
         if (alertView.tag == 2) {
             [self resetPlist];
 //            [self drawStars:2];
-            [self.difficultySegment setSelectedSegmentIndex:2];
+            [self changeDifficultyTo:@"1"];
             [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%d",2*20] forKey:@"currentLevel"];
 
             
@@ -362,7 +393,7 @@
     }
     if (buttonIndex == 0) {
         if (alertView.tag == 1) {
-            self.difficultySegment.selectedSegmentIndex = alertView.lastSegmentIndex;
+            [self changeDifficultyTo:[NSString stringWithFormat:@"%d",alertView.lastSegmentIndex]];
         }
     }
   
@@ -651,7 +682,11 @@
         
         [self giveReward:today];
         
+    }else if(![[[NSUserDefaults standardUserDefaults] objectForKey:@"lastDailyReword"] isEqualToString:today])
+    {
+        [self giveReward:today];
     }
+        
     
 }
 
@@ -690,16 +725,16 @@
 }
 -(IBAction)segmentAction:(UISegmentedControl *)Seg{
     NSInteger Index = Seg.selectedSegmentIndex;
-    NSLog(@"Seg.selectedSegmentIndex:%d",Index);
+//    NSLog(@"Seg.selectedSegmentIndex:%d",Index);
     
     [MobClick event:@"chooseDifficulty"];
     int lastSeg = [[self.gameData objectForKey:@"difficulty"] intValue];
 
     if ([self.continueGame isHidden]) {
  
-        [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%d",Index] forKey:@"difficulty"];
+        [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%ld",(long)Index] forKey:@"difficulty"];
         
-        [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%d",Index*20+1] forKey:@"currentLevel"];
+        [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%ld",Index*20+1] forKey:@"currentLevel"];
     }else
     {
         myAlertView *resetAlert = [[myAlertView alloc] initWithTitle:@"且慢!" message:@"变更难度将重置已猜歌曲的进度,请君三思。" delegate:self cancelButtonTitle:nil otherButtonTitles:@"取消",@"确认", nil];
@@ -712,6 +747,64 @@
     
 }
 
+#pragma mark button flash
 
+-(void)buttonFlash
+{
+//    [self shimmerRegisterButton:self.difficultySegment];
+}
+
+-(void)shimmerRegisterButton:(UIView *)registerButtonView {
+    registerButtonView.userInteractionEnabled=YES;
+    
+    
+    UIImageView *sheenImageView = [[UIImageView alloc] initWithFrame:CGRectMake(-100, 0, 86, 35)];
+    [sheenImageView setImage:[UIImage imageNamed:@"glow.png"]];
+    [sheenImageView setAlpha:0.0];
+    [registerButtonView addSubview:sheenImageView];
+    [registerButtonView setNeedsDisplay];
+    [UIView animateWithDuration:1.0 delay:1.0 options:UIViewAnimationOptionCurveLinear animations:^{
+        [sheenImageView setAlpha:1.0];
+        [sheenImageView setFrame:CGRectMake(220, 0, 86, 35)];
+    } completion:^(BOOL finished) {
+        [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
+//            [sheenImageView setFrame:CGRectMake(registerBtn.frame.size.width, 0, 86, 46)];
+            [sheenImageView setAlpha:0.0];
+        } completion:nil];
+    }];
+    
+}
+
+
+
+- (IBAction)difficultyChanged:(UIButton *)sender {
+    
+    NSLog(@"%ld",sender.tag);
+    
+    NSInteger Index = sender.tag - 1 ;
+    [MobClick event:@"chooseDifficulty"];
+    
+    
+    [self changeDifficultyTo:[NSString stringWithFormat:@"%ld",Index]];
+
+    int lastSeg = [[self.gameData objectForKey:@"difficulty"] intValue];
+    
+    if ([self.continueGame isHidden]) {
+        
+        [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%ld",(long)Index] forKey:@"difficulty"];
+        
+        [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%ld",Index*20+1] forKey:@"currentLevel"];
+    }else
+    {
+        myAlertView *resetAlert = [[myAlertView alloc] initWithTitle:@"且慢!" message:@"变更难度将重置已猜歌曲的进度,请君三思。" delegate:self cancelButtonTitle:nil otherButtonTitles:@"取消",@"确认", nil];
+        
+        resetAlert.lastSegmentIndex = lastSeg;
+        resetAlert.tag = 1;
+        
+        [resetAlert show];
+    }
+
+
+}
 @end
 

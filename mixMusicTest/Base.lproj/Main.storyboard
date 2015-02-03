@@ -42,6 +42,103 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back.png" translatesAutoresizingMaskIntoConstraints="NO" id="I4A-bF-7f7">
                                 <rect key="frame" x="0.0" y="-44" width="320" height="612"/>
                             </imageView>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5iX-lt-f4T">
+                                <rect key="frame" x="24" y="220" width="46" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <inset key="titleEdgeInsets" minX="12" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="10"/>
+                                <state key="normal" title="简单">
+                                    <color key="titleColor" red="0.94283188868613144" green="0.93493385036496346" blue="0.93524749087590919" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <state key="disabled" title="简单" backgroundImage="answerBack1.png">
+                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" title="简单">
+                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="difficultyChanged:" destination="BpU-Vf-ayy" eventType="touchUpInside" id="2ee-qq-eU5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ado-ax-RTT">
+                                <rect key="frame" x="82" y="230" width="46" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="较易">
+                                    <color key="titleColor" red="0.94283188870000001" green="0.93493385039999999" blue="0.93524749090000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <state key="disabled" title="较易">
+                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" title="较易">
+                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="difficultyChanged:" destination="BpU-Vf-ayy" eventType="touchUpInside" id="sqO-1L-G3F"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XdL-pv-u50">
+                                <rect key="frame" x="132" y="309" width="46" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="困难">
+                                    <color key="titleColor" red="0.94283188870000001" green="0.93493385039999999" blue="0.93524749090000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <state key="disabled" title="困难">
+                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" title="困难">
+                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="difficultyChanged:" destination="BpU-Vf-ayy" eventType="touchUpInside" id="Kdh-aQ-GRi"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9d7-zO-1cw">
+                                <rect key="frame" x="176" y="211" width="46" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="疯狂">
+                                    <color key="titleColor" red="0.94283188870000001" green="0.93493385039999999" blue="0.93524749090000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <state key="disabled" title="疯狂">
+                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" title="疯狂">
+                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="difficultyChanged:" destination="BpU-Vf-ayy" eventType="touchUpInside" id="8Fb-Xa-mEE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qfk-nQ-IXu">
+                                <rect key="frame" x="252" y="295" width="46" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="变态">
+                                    <color key="titleColor" red="0.94283188870000001" green="0.93493385039999999" blue="0.93524749090000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <state key="disabled" title="变态">
+                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" title="变态">
+                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="difficultyChanged:" destination="BpU-Vf-ayy" eventType="touchUpInside" id="ZJf-zh-75c"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qNQ-Ph-nXm">
                                 <rect key="frame" x="50" y="87" width="100" height="100"/>
                                 <constraints>
@@ -77,9 +174,9 @@
                                     <action selector="buyCoinsTapped:" destination="BpU-Vf-ayy" eventType="touchUpInside" id="1fn-iV-rgw"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0lK-re-drz">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0lK-re-drz">
                                 <rect key="frame" x="236" y="407" width="40" height="40"/>
-                                <state key="normal" image="info.png">
+                                <state key="normal" title="3" image="info.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -102,7 +199,7 @@
                                     <constraint firstAttribute="height" constant="34" id="CPj-MM-SMk"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal">
+                                <state key="normal" title="2">
                                     <color key="titleColor" red="0.049384124087591241" green="0.14510150547445255" blue="0.19896213503649635" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -129,7 +226,7 @@
                                     <constraint firstAttribute="width" secondItem="InV-ug-iyC" secondAttribute="height" multiplier="1:1" id="rQm-ly-b7g"/>
                                     <constraint firstAttribute="width" constant="38" id="rVI-sL-zP5"/>
                                 </constraints>
-                                <state key="normal" image="star1.png">
+                                <state key="normal" title="1" image="star1.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -142,7 +239,7 @@
                                     <constraint firstAttribute="width" constant="38" id="4Hx-9f-6G4"/>
                                     <constraint firstAttribute="width" secondItem="2tZ-su-ce7" secondAttribute="height" multiplier="1:1" id="nzR-zA-kVs"/>
                                 </constraints>
-                                <state key="normal" image="star1.png">
+                                <state key="normal" title="1" image="star1.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -155,7 +252,7 @@
                                     <constraint firstAttribute="width" secondItem="TCk-0B-kEu" secondAttribute="height" multiplier="1:1" id="W9j-EO-CKw"/>
                                     <constraint firstAttribute="width" constant="38" id="gEc-tI-7ri"/>
                                 </constraints>
-                                <state key="normal" image="star1.png">
+                                <state key="normal" title="1" image="star1.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -168,7 +265,7 @@
                                     <constraint firstAttribute="width" secondItem="CVD-Cc-FRb" secondAttribute="height" multiplier="1:1" id="SNL-gp-6Wo"/>
                                     <constraint firstAttribute="width" constant="38" id="WwR-de-ft5"/>
                                 </constraints>
-                                <state key="normal" image="star1.png">
+                                <state key="normal" title="1" image="star1.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -181,7 +278,7 @@
                                     <constraint firstAttribute="width" secondItem="gPt-ue-OZA" secondAttribute="height" multiplier="1:1" id="2bP-XA-fcL"/>
                                     <constraint firstAttribute="width" constant="38" id="sSS-zI-SRw"/>
                                 </constraints>
-                                <state key="normal" image="star1.png">
+                                <state key="normal" title="1" image="star1.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -198,24 +295,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="zuy-wx-RM6">
-                                <rect key="frame" x="27" y="258" width="267" height="29"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="28" id="aIm-RJ-NDz"/>
-                                    <constraint firstAttribute="width" constant="267" id="sWF-iP-5h6"/>
-                                </constraints>
-                                <segments>
-                                    <segment title="从容"/>
-                                    <segment title="冒汗"/>
-                                    <segment title="纠结"/>
-                                    <segment title="疯狂"/>
-                                    <segment title="变态"/>
-                                </segments>
-                                <color key="tintColor" red="0.23121008211678831" green="0.23910812043795621" blue="0.22998403284671534" alpha="1" colorSpace="calibratedRGB"/>
-                                <connections>
-                                    <action selector="segmentAction:" destination="BpU-Vf-ayy" eventType="valueChanged" id="1KO-kY-aA0"/>
-                                </connections>
-                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -226,7 +305,6 @@
                             <constraint firstItem="oJy-Pu-OcZ" firstAttribute="leading" secondItem="qNQ-Ph-nXm" secondAttribute="trailing" constant="20" id="8kq-oc-2SM"/>
                             <constraint firstItem="e8J-Z4-tGE" firstAttribute="height" secondItem="iKE-Vm-WMA" secondAttribute="height" id="9EB-us-R5g"/>
                             <constraint firstAttribute="centerX" secondItem="oJy-Pu-OcZ" secondAttribute="centerX" constant="-60" id="BZB-HB-cvP"/>
-                            <constraint firstItem="zuy-wx-RM6" firstAttribute="top" secondItem="qNQ-Ph-nXm" secondAttribute="bottom" constant="71" id="C0G-xL-ofE"/>
                             <constraint firstAttribute="centerX" secondItem="qNQ-Ph-nXm" secondAttribute="centerX" constant="60" id="DT4-Ek-Yd0"/>
                             <constraint firstItem="InV-ug-iyC" firstAttribute="top" secondItem="oJy-Pu-OcZ" secondAttribute="bottom" constant="89" id="FA0-IW-ejw"/>
                             <constraint firstItem="gaK-c0-OeE" firstAttribute="top" secondItem="iKE-Vm-WMA" secondAttribute="top" id="GIL-Rf-mSb"/>
@@ -238,7 +316,6 @@
                             <constraint firstItem="xpo-PE-fGQ" firstAttribute="top" secondItem="iKE-Vm-WMA" secondAttribute="bottom" constant="121" id="Nvt-N5-Jj9"/>
                             <constraint firstAttribute="centerX" secondItem="2tZ-su-ce7" secondAttribute="centerX" constant="55" id="Q5Q-P7-JW3"/>
                             <constraint firstItem="iKE-Vm-WMA" firstAttribute="leading" secondItem="ZeD-Ew-WKC" secondAttribute="leadingMargin" constant="28" id="RcF-20-Tgf"/>
-                            <constraint firstAttribute="centerX" secondItem="zuy-wx-RM6" secondAttribute="centerX" constant="-0.5" id="S56-w4-gsu"/>
                             <constraint firstItem="CVD-Cc-FRb" firstAttribute="top" secondItem="oJy-Pu-OcZ" secondAttribute="bottom" constant="89" id="Tbg-4e-AuI"/>
                             <constraint firstItem="I4A-bF-7f7" firstAttribute="top" secondItem="j9o-P9-UcH" secondAttribute="bottom" constant="-44" id="TnB-GO-8TW"/>
                             <constraint firstItem="gaK-c0-OeE" firstAttribute="height" secondItem="iKE-Vm-WMA" secondAttribute="height" id="W4i-mO-cdy"/>
@@ -269,7 +346,11 @@
                         <outlet property="bugCoinsBtn" destination="gaK-c0-OeE" id="21v-bu-O0c"/>
                         <outlet property="coinsShowing" destination="5D0-iC-I9D" id="kAO-2p-d1Q"/>
                         <outlet property="continueGame" destination="oJy-Pu-OcZ" id="aF9-Dw-fTr"/>
-                        <outlet property="difficultySegment" destination="zuy-wx-RM6" id="z8b-lt-06W"/>
+                        <outlet property="difficulty1" destination="5iX-lt-f4T" id="34i-Zx-cbu"/>
+                        <outlet property="difficulty2" destination="ado-ax-RTT" id="4rY-Yx-5c6"/>
+                        <outlet property="difficulty3" destination="XdL-pv-u50" id="foe-6v-rKF"/>
+                        <outlet property="difficulty4" destination="9d7-zO-1cw" id="Sxm-Hd-XRQ"/>
+                        <outlet property="difficulty5" destination="qfk-nQ-IXu" id="x6r-rJ-aYt"/>
                         <outletCollection property="starButtons" destination="2tZ-su-ce7" id="vpW-Eu-mqG"/>
                         <outletCollection property="starButtons" destination="TCk-0B-kEu" id="FzO-d5-P5E"/>
                         <outletCollection property="starButtons" destination="CVD-Cc-FRb" id="Ujr-0T-Bhs"/>
@@ -283,6 +364,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="answerBack1.png" width="100" height="100"/>
         <image name="audio-on.png" width="128" height="128"/>
         <image name="back.png" width="1080" height="1920"/>
         <image name="info.png" width="128" height="128"/>
@@ -290,7 +372,7 @@
         <image name="music.png" width="128" height="128"/>
         <image name="star1.png" width="92" height="92"/>
         <image name="开始.png" width="330" height="330"/>
-        <image name="继续.png" width="350" height="350"/>
+        <image name="继续.png" width="330" height="330"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

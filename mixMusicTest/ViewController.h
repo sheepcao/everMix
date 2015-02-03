@@ -18,7 +18,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *begainGame;
 @property (weak, nonatomic) IBOutlet UIButton *continueGame;
 
-- (IBAction)starTapped:(UIButton *)sender;
+//- (IBAction)starTapped:(UIButton *)sender;
 - (IBAction)continueTapped:(UIButton *)sender;
 
 - (IBAction)beginTapped:(UIButton *)sender;
@@ -39,6 +39,18 @@
 @property (strong,nonatomic) UITableView *itemsToBuy;
 @property (nonatomic,strong) UIRefreshControl *refreshControl NS_AVAILABLE_IOS(6_0);
 //@property (strong,nonatomic) NSMutableArray *musicToNextView;
-@property (strong, nonatomic) IBOutlet UISegmentedControl *difficultySegment;
--(IBAction)segmentAction:(UISegmentedControl *)Seg;
+//@property (strong, nonatomic) IBOutlet UISegmentedControl *difficultySegment;
+//-(IBAction)segmentAction:(UISegmentedControl *)Seg;
+
+@property (nonatomic,strong) NSTimer *timer;
+
+@property (strong, nonatomic) IBOutlet UIButton *difficulty1;
+@property (strong, nonatomic) IBOutlet UIButton *difficulty2;
+@property (strong, nonatomic) IBOutlet UIButton *difficulty3;
+@property (strong, nonatomic) IBOutlet UIButton *difficulty4;
+@property (strong, nonatomic) IBOutlet UIButton *difficulty5;
+
+
+- (IBAction)difficultyChanged:(UIButton *)sender;
+
 @end

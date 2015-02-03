@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <deployment defaultVersion="1792" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="gameViewController">
@@ -21,7 +20,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="back.png" translatesAutoresizingMaskIntoConstraints="NO" id="cTZ-3e-AHo">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back.png" translatesAutoresizingMaskIntoConstraints="NO" id="cTZ-3e-AHo">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mxj-Ad-wKo" userLabel="downPartView">
@@ -32,15 +31,15 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EJw-dq-Ooh" userLabel="playConsoleView">
-                    <rect key="frame" x="0.0" y="64" width="320" height="117"/>
+                    <rect key="frame" x="0.0" y="44" width="320" height="137"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EA8-fi-MW9">
-                            <rect key="frame" x="106" y="4" width="100" height="100"/>
+                            <rect key="frame" x="106" y="14" width="100" height="100"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="100" id="2qO-Lf-ESO"/>
                                 <constraint firstAttribute="height" constant="100" id="PpO-K3-qGY"/>
                             </constraints>
-                            <state key="normal" title="PLAY" image="Print-CD-icon.png">
+                            <state key="normal" image="开始.png">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
@@ -69,27 +68,31 @@
                     <color key="backgroundColor" red="0.96986199819999996" green="0.97653398719999995" blue="0.95686017339999996" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="centerX" secondItem="EA8-fi-MW9" secondAttribute="centerX" constant="4" id="G2Y-JQ-Jty"/>
-                        <constraint firstAttribute="height" constant="117" id="f81-zi-Jx6"/>
                         <constraint firstAttribute="centerY" secondItem="EA8-fi-MW9" secondAttribute="centerY" constant="4.5" id="ogW-zv-hCD"/>
                     </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="EJw-dq-Ooh" firstAttribute="leading" secondItem="4Wa-kH-Ij8" secondAttribute="leadingMargin" constant="-8" id="4di-2A-iHf"/>
-                <constraint firstItem="mxj-Ad-wKo" firstAttribute="leading" secondItem="4Wa-kH-Ij8" secondAttribute="leadingMargin" constant="-8" id="9wU-li-zco"/>
-                <constraint firstItem="EJw-dq-Ooh" firstAttribute="top" secondItem="4Wa-kH-Ij8" secondAttribute="top" constant="64" id="Sbb-d2-lgd"/>
-                <constraint firstAttribute="trailingMargin" secondItem="mxj-Ad-wKo" secondAttribute="trailing" constant="-8" id="Wsd-y0-JMs"/>
+                <constraint firstAttribute="trailing" secondItem="EJw-dq-Ooh" secondAttribute="trailing" id="5FX-W4-wjN"/>
+                <constraint firstItem="cTZ-3e-AHo" firstAttribute="leading" secondItem="4Wa-kH-Ij8" secondAttribute="leading" id="CIE-sg-5rg"/>
+                <constraint firstItem="mxj-Ad-wKo" firstAttribute="leading" secondItem="4Wa-kH-Ij8" secondAttribute="leading" id="F3f-OW-x6u"/>
+                <constraint firstAttribute="trailing" secondItem="mxj-Ad-wKo" secondAttribute="trailing" id="Hw1-lK-o1Y"/>
+                <constraint firstItem="EJw-dq-Ooh" firstAttribute="top" secondItem="4Wa-kH-Ij8" secondAttribute="top" constant="44" id="Sbb-d2-lgd"/>
+                <constraint firstAttribute="bottom" secondItem="cTZ-3e-AHo" secondAttribute="bottom" id="bE8-m6-ENN"/>
+                <constraint firstAttribute="bottom" secondItem="mxj-Ad-wKo" secondAttribute="bottom" id="c5R-ba-I6u"/>
                 <constraint firstItem="mxj-Ad-wKo" firstAttribute="top" secondItem="EJw-dq-Ooh" secondAttribute="bottom" id="d94-Mm-WY3"/>
-                <constraint firstAttribute="trailingMargin" secondItem="EJw-dq-Ooh" secondAttribute="trailing" constant="-8" id="eET-AA-hSQ"/>
+                <constraint firstItem="cTZ-3e-AHo" firstAttribute="top" secondItem="4Wa-kH-Ij8" secondAttribute="top" id="fMH-NP-uPZ"/>
+                <constraint firstAttribute="trailing" secondItem="cTZ-3e-AHo" secondAttribute="trailing" id="xQx-Ce-ZBB"/>
+                <constraint firstItem="EJw-dq-Ooh" firstAttribute="leading" secondItem="4Wa-kH-Ij8" secondAttribute="leading" id="xqU-d8-R5O"/>
             </constraints>
         </view>
     </objects>
     <resources>
-        <image name="Print-CD-icon.png" width="512" height="512"/>
         <image name="back.png" width="1080" height="1920"/>
         <image name="refresh.png" width="128" height="128"/>
         <image name="share.png" width="128" height="128"/>
+        <image name="开始.png" width="330" height="330"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

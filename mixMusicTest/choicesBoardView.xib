@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="gameViewController">
@@ -17,7 +18,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="338"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="answerBoardBack.png" translatesAutoresizingMaskIntoConstraints="NO" id="d7C-ia-rhi">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="answerBoard11.png" translatesAutoresizingMaskIntoConstraints="NO" id="d7C-ia-rhi">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="338"/>
                 </imageView>
                 <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jlw-m7-4a4">
@@ -27,9 +28,9 @@
                         <constraint firstAttribute="height" constant="40" id="rET-xL-KXY"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
-                    <state key="normal" title="爱" backgroundImage="answerBack6.png">
-                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <color key="titleShadowColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="爱" backgroundImage="answerBack10.png">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
                         <action selector="choicesTaped:" destination="-1" eventType="touchUpInside" id="Dzr-nx-bWn"/>
@@ -38,9 +39,9 @@
                 <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CBW-rJ-qcz">
                     <rect key="frame" x="55" y="197" width="40" height="40"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
-                    <state key="normal" title="爱" backgroundImage="answerBack6.png">
-                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <color key="titleShadowColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="爱" backgroundImage="answerBack10.png">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
                         <action selector="choicesTaped:" destination="-1" eventType="touchUpInside" id="Dua-At-SuL"/>
@@ -49,9 +50,9 @@
                 <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZKo-n7-VYS">
                     <rect key="frame" x="97" y="197" width="40" height="40"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
-                    <state key="normal" title="爱" backgroundImage="answerBack6.png">
-                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <color key="titleShadowColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="爱" backgroundImage="answerBack10.png">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
                         <action selector="choicesTaped:" destination="-1" eventType="touchUpInside" id="7LT-y2-cKJ"/>
@@ -60,9 +61,9 @@
                 <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Si5-06-zFK">
                     <rect key="frame" x="140" y="197" width="40" height="40"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
-                    <state key="normal" title="爱" backgroundImage="answerBack6.png">
-                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <color key="titleShadowColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="爱" backgroundImage="answerBack10.png">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
                         <action selector="choicesTaped:" destination="-1" eventType="touchUpInside" id="PY1-R9-MR9"/>
@@ -71,9 +72,9 @@
                 <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zaF-D3-6v2">
                     <rect key="frame" x="182" y="197" width="40" height="40"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
-                    <state key="normal" title="爱" backgroundImage="answerBack6.png">
-                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <color key="titleShadowColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="爱" backgroundImage="answerBack10.png">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
                         <action selector="choicesTaped:" destination="-1" eventType="touchUpInside" id="AWc-ic-g9v"/>
@@ -82,9 +83,9 @@
                 <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Er-xI-UMb">
                     <rect key="frame" x="224" y="197" width="40" height="40"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
-                    <state key="normal" title="爱" backgroundImage="answerBack6.png">
-                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <color key="titleShadowColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="爱" backgroundImage="answerBack10.png">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
                         <action selector="choicesTaped:" destination="-1" eventType="touchUpInside" id="uyI-N8-irM"/>
@@ -93,9 +94,9 @@
                 <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OOF-Px-U39">
                     <rect key="frame" x="267" y="197" width="40" height="40"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
-                    <state key="normal" title="爱" backgroundImage="answerBack6.png">
-                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <color key="titleShadowColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="爱" backgroundImage="answerBack10.png">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
                         <action selector="choicesTaped:" destination="-1" eventType="touchUpInside" id="xhn-V9-Xz2"/>
@@ -108,9 +109,9 @@
                         <constraint firstAttribute="height" constant="40" id="kUZ-BM-YaJ"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
-                    <state key="normal" title="爱" backgroundImage="answerBack6.png">
-                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <color key="titleShadowColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="爱" backgroundImage="answerBack10.png">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
                         <action selector="choicesTaped:" destination="-1" eventType="touchUpInside" id="KcB-Jg-2SE"/>
@@ -119,9 +120,9 @@
                 <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wWC-27-fWf">
                     <rect key="frame" x="55" y="245" width="40" height="40"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
-                    <state key="normal" title="爱" backgroundImage="answerBack6.png">
-                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <color key="titleShadowColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="爱" backgroundImage="answerBack10.png">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
                         <action selector="choicesTaped:" destination="-1" eventType="touchUpInside" id="dgH-i3-UT1"/>
@@ -130,9 +131,9 @@
                 <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Xz-gw-d8m">
                     <rect key="frame" x="97" y="245" width="40" height="40"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
-                    <state key="normal" title="爱" backgroundImage="answerBack6.png">
-                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <color key="titleShadowColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="爱" backgroundImage="answerBack10.png">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
                         <action selector="choicesTaped:" destination="-1" eventType="touchUpInside" id="i1p-oe-9iQ"/>
@@ -145,9 +146,9 @@
                         <constraint firstAttribute="width" constant="40" id="lBT-WM-ISY"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
-                    <state key="normal" title="爱" backgroundImage="answerBack6.png">
-                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <color key="titleShadowColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="爱" backgroundImage="answerBack10.png">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
                         <action selector="choicesTaped:" destination="-1" eventType="touchUpInside" id="e87-AH-p6i"/>
@@ -160,9 +161,9 @@
                         <constraint firstAttribute="height" constant="40" id="rs5-ya-UMk"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
-                    <state key="normal" title="爱" backgroundImage="answerBack6.png">
-                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <color key="titleShadowColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="爱" backgroundImage="answerBack10.png">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
                         <action selector="choicesTaped:" destination="-1" eventType="touchUpInside" id="gMm-QA-xKD"/>
@@ -171,9 +172,9 @@
                 <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mij-Jx-zHh">
                     <rect key="frame" x="224" y="245" width="40" height="40"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
-                    <state key="normal" title="爱" backgroundImage="answerBack6.png">
-                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <color key="titleShadowColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="爱" backgroundImage="answerBack10.png">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
                         <action selector="choicesTaped:" destination="-1" eventType="touchUpInside" id="Ttj-85-sIx"/>
@@ -182,9 +183,9 @@
                 <button opaque="NO" tag="14" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="26X-0l-Mqj">
                     <rect key="frame" x="267" y="245" width="40" height="40"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
-                    <state key="normal" title="爱" backgroundImage="answerBack6.png">
-                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <color key="titleShadowColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="爱" backgroundImage="answerBack10.png">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
                         <action selector="choicesTaped:" destination="-1" eventType="touchUpInside" id="RPP-Pb-puE"/>
@@ -197,9 +198,9 @@
                         <constraint firstAttribute="width" constant="40" id="oJm-Gm-hPo"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
-                    <state key="normal" title="爱" backgroundImage="answerBack6.png">
-                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <color key="titleShadowColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="爱" backgroundImage="answerBack10.png">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
                         <action selector="choicesTaped:" destination="-1" eventType="touchUpInside" id="5f7-4j-nTb"/>
@@ -208,9 +209,9 @@
                 <button opaque="NO" tag="16" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CwL-x2-h0L">
                     <rect key="frame" x="55" y="293" width="40" height="40"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
-                    <state key="normal" title="爱" backgroundImage="answerBack6.png">
-                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <color key="titleShadowColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="爱" backgroundImage="answerBack10.png">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
                         <action selector="choicesTaped:" destination="-1" eventType="touchUpInside" id="fsK-EW-faV"/>
@@ -219,9 +220,9 @@
                 <button opaque="NO" tag="17" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NW8-e6-QhY">
                     <rect key="frame" x="97" y="293" width="40" height="40"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
-                    <state key="normal" title="爱" backgroundImage="answerBack6.png">
-                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <color key="titleShadowColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="爱" backgroundImage="answerBack10.png">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
                         <action selector="choicesTaped:" destination="-1" eventType="touchUpInside" id="sx3-oi-XeO"/>
@@ -230,9 +231,9 @@
                 <button opaque="NO" tag="18" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uN0-1i-MpA">
                     <rect key="frame" x="140" y="293" width="40" height="40"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
-                    <state key="normal" title="爱" backgroundImage="answerBack6.png">
-                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <color key="titleShadowColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="爱" backgroundImage="answerBack10.png">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
                         <action selector="choicesTaped:" destination="-1" eventType="touchUpInside" id="S3P-M3-cWv"/>
@@ -241,9 +242,9 @@
                 <button opaque="NO" tag="19" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Dr-cV-Avx">
                     <rect key="frame" x="182" y="293" width="40" height="40"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
-                    <state key="normal" title="爱" backgroundImage="answerBack6.png">
-                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <color key="titleShadowColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="爱" backgroundImage="answerBack10.png">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
                         <action selector="choicesTaped:" destination="-1" eventType="touchUpInside" id="hZQ-6F-41D"/>
@@ -252,9 +253,9 @@
                 <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d9R-WH-BIR">
                     <rect key="frame" x="224" y="293" width="40" height="40"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
-                    <state key="normal" title="爱" backgroundImage="answerBack6.png">
-                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <color key="titleShadowColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="爱" backgroundImage="answerBack10.png">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
                         <action selector="choicesTaped:" destination="-1" eventType="touchUpInside" id="itB-2P-VLf"/>
@@ -267,19 +268,19 @@
                         <constraint firstAttribute="width" constant="40" id="viR-OW-Eyh"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
-                    <state key="normal" title="爱" backgroundImage="answerBack6.png">
-                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <color key="titleShadowColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="爱" backgroundImage="answerBack10.png">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
                         <action selector="choicesTaped:" destination="-1" eventType="touchUpInside" id="tNI-ar-7TK"/>
                     </connections>
                 </button>
                 <button opaque="NO" tag="200" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mQo-1E-YD5">
-                    <rect key="frame" x="48" y="36" width="52" height="52"/>
+                    <rect key="frame" x="44" y="36" width="50" height="50"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="52" id="Asl-j6-cBy"/>
-                        <constraint firstAttribute="height" constant="52" id="LPN-zy-lKl"/>
+                        <constraint firstAttribute="width" constant="50" id="Asl-j6-cBy"/>
+                        <constraint firstAttribute="height" constant="50" id="LPN-zy-lKl"/>
                     </constraints>
                     <state key="normal" image="basket.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -289,33 +290,18 @@
                     </connections>
                 </button>
                 <button opaque="NO" tag="200" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ru-04-XYn">
-                    <rect key="frame" x="143" y="44" width="40" height="40"/>
+                    <rect key="frame" x="140" y="36" width="50" height="50"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="40" id="mte-bO-jF8"/>
-                        <constraint firstAttribute="width" constant="40" id="wj6-yo-7wm"/>
+                        <constraint firstAttribute="height" constant="50" id="mte-bO-jF8"/>
+                        <constraint firstAttribute="width" constant="50" id="wj6-yo-7wm"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                    <state key="normal" image="stop18.png">
+                    <state key="normal" image="play1.png">
                         <color key="titleColor" red="0.0078431377000000007" green="0.10588235999999999" blue="0.25098040999999999" alpha="1" colorSpace="deviceRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
                         <action selector="playSingleSong" destination="-1" eventType="touchUpInside" id="2By-gb-5Tk"/>
-                    </connections>
-                </button>
-                <button opaque="NO" tag="200" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cz6-6G-IWG">
-                    <rect key="frame" x="236" y="45" width="37" height="37"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="37" id="CQj-7M-ukr"/>
-                        <constraint firstAttribute="height" constant="37" id="eE3-IQ-ZFI"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                    <state key="normal" image="showAnswer.png">
-                        <color key="titleColor" red="0.0078431377000000007" green="0.10588235999999999" blue="0.25098040999999999" alpha="1" colorSpace="deviceRGB"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="showFullAnswer" destination="-1" eventType="touchUpInside" id="iIR-ss-uyE"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5uk-2d-add">
@@ -333,6 +319,21 @@
                         <action selector="returnChoicesBoard:" destination="-1" eventType="touchUpInside" id="3CZ-23-HQu"/>
                     </connections>
                 </button>
+                <button opaque="NO" tag="200" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cz6-6G-IWG">
+                    <rect key="frame" x="236" y="36" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="CQj-7M-ukr"/>
+                        <constraint firstAttribute="height" constant="50" id="eE3-IQ-ZFI"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <state key="normal" image="showAnswer.png">
+                        <color key="titleColor" red="0.0078431377000000007" green="0.10588235999999999" blue="0.25098040999999999" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="showFullAnswer" destination="-1" eventType="touchUpInside" id="iIR-ss-uyE"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="0.76910355839416056" green="0.89270643248175185" blue="0.89746806569343063" alpha="1" colorSpace="calibratedRGB"/>
             <gestureRecognizers/>
@@ -341,9 +342,9 @@
                 <constraint firstItem="d9R-WH-BIR" firstAttribute="width" secondItem="7Dr-cV-Avx" secondAttribute="width" id="27N-Zh-JYb"/>
                 <constraint firstItem="ZKo-n7-VYS" firstAttribute="width" secondItem="CBW-rJ-qcz" secondAttribute="width" id="399-NA-sr7"/>
                 <constraint firstItem="1Er-xI-UMb" firstAttribute="height" secondItem="zaF-D3-6v2" secondAttribute="height" id="3BX-ix-Sc7"/>
-                <constraint firstItem="Cz6-6G-IWG" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="45" id="3d4-Em-mtW"/>
+                <constraint firstItem="Cz6-6G-IWG" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="36" id="3d4-Em-mtW"/>
                 <constraint firstItem="CwL-x2-h0L" firstAttribute="top" secondItem="wWC-27-fWf" secondAttribute="bottom" constant="8" id="3gI-pB-Fyv"/>
-                <constraint firstItem="Cz6-6G-IWG" firstAttribute="leading" secondItem="6ru-04-XYn" secondAttribute="trailing" constant="53" id="4PG-pI-8i3"/>
+                <constraint firstItem="Cz6-6G-IWG" firstAttribute="leading" secondItem="6ru-04-XYn" secondAttribute="trailing" constant="46" id="4PG-pI-8i3"/>
                 <constraint firstAttribute="centerX" secondItem="Nzd-ar-Yto" secondAttribute="centerX" constant="-127" id="56T-fd-6sL"/>
                 <constraint firstItem="OOF-Px-U39" firstAttribute="width" secondItem="1Er-xI-UMb" secondAttribute="width" id="581-dG-Gd2"/>
                 <constraint firstAttribute="bottom" secondItem="d7C-ia-rhi" secondAttribute="bottom" id="5bt-uc-zrM"/>
@@ -365,7 +366,7 @@
                 <constraint firstItem="uN0-1i-MpA" firstAttribute="width" secondItem="7Dr-cV-Avx" secondAttribute="width" id="Fte-6m-b9a"/>
                 <constraint firstItem="zaF-D3-6v2" firstAttribute="width" secondItem="Si5-06-zFK" secondAttribute="width" id="GI4-x6-ib9"/>
                 <constraint firstAttribute="centerX" secondItem="CwL-x2-h0L" secondAttribute="centerX" constant="85" id="HH3-ke-hvi"/>
-                <constraint firstAttribute="centerX" secondItem="6ru-04-XYn" secondAttribute="centerX" constant="-3" id="K5T-w1-na1"/>
+                <constraint firstAttribute="centerX" secondItem="6ru-04-XYn" secondAttribute="centerX" constant="-5" id="K5T-w1-na1"/>
                 <constraint firstItem="jlw-m7-4a4" firstAttribute="width" secondItem="CBW-rJ-qcz" secondAttribute="width" id="KV5-BR-lXl"/>
                 <constraint firstItem="CwL-x2-h0L" firstAttribute="centerY" secondItem="Gxt-U0-oeZ" secondAttribute="centerY" id="KbS-wt-KAN"/>
                 <constraint firstItem="uN0-1i-MpA" firstAttribute="centerY" secondItem="7Dr-cV-Avx" secondAttribute="centerY" id="LTq-Eq-axf"/>
@@ -382,7 +383,7 @@
                 <constraint firstAttribute="centerX" secondItem="JOF-Gt-wRf" secondAttribute="centerX" id="Rpe-3V-wcW"/>
                 <constraint firstItem="wWC-27-fWf" firstAttribute="top" secondItem="CBW-rJ-qcz" secondAttribute="bottom" constant="8" id="Rvn-u4-brZ"/>
                 <constraint firstAttribute="centerX" secondItem="5OT-in-4OR" secondAttribute="centerX" constant="-42" id="TZM-vO-Noo"/>
-                <constraint firstItem="6ru-04-XYn" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="44" id="UIy-Pi-sUA"/>
+                <constraint firstItem="6ru-04-XYn" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="36" id="UIy-Pi-sUA"/>
                 <constraint firstItem="26X-0l-Mqj" firstAttribute="top" secondItem="OOF-Px-U39" secondAttribute="bottom" constant="8" id="URj-uL-akw"/>
                 <constraint firstItem="mQo-1E-YD5" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="36" id="Vm8-IS-72Z"/>
                 <constraint firstAttribute="centerX" secondItem="ZKo-n7-VYS" secondAttribute="centerX" constant="43" id="WeT-MZ-ghu"/>
@@ -397,7 +398,7 @@
                 <constraint firstItem="26X-0l-Mqj" firstAttribute="height" secondItem="Mij-Jx-zHh" secondAttribute="height" id="dtV-oJ-dTe"/>
                 <constraint firstItem="d9R-WH-BIR" firstAttribute="centerY" secondItem="7Dr-cV-Avx" secondAttribute="centerY" id="fah-bJ-Sah"/>
                 <constraint firstItem="26X-0l-Mqj" firstAttribute="width" secondItem="Mij-Jx-zHh" secondAttribute="width" id="gTr-1g-7An"/>
-                <constraint firstItem="6ru-04-XYn" firstAttribute="leading" secondItem="mQo-1E-YD5" secondAttribute="trailing" constant="43" id="hqq-Q1-vTy"/>
+                <constraint firstItem="6ru-04-XYn" firstAttribute="leading" secondItem="mQo-1E-YD5" secondAttribute="trailing" constant="46" id="hqq-Q1-vTy"/>
                 <constraint firstItem="NW8-e6-QhY" firstAttribute="width" secondItem="CwL-x2-h0L" secondAttribute="width" id="i9t-BS-IdW"/>
                 <constraint firstItem="Gxt-U0-oeZ" firstAttribute="top" secondItem="7Ca-0z-p1M" secondAttribute="bottom" constant="8" id="jPM-wB-nfI"/>
                 <constraint firstItem="Gxt-U0-oeZ" firstAttribute="height" secondItem="CwL-x2-h0L" secondAttribute="height" id="jqU-6x-j9p"/>
@@ -431,11 +432,11 @@
         </view>
     </objects>
     <resources>
-        <image name="answerBack6.png" width="100" height="100"/>
-        <image name="answerBoardBack.png" width="320" height="320"/>
-        <image name="basket.png" width="512" height="512"/>
-        <image name="showAnswer.png" width="512" height="512"/>
-        <image name="stop18.png" width="512" height="512"/>
+        <image name="answerBack10.png" width="300" height="300"/>
+        <image name="answerBoard11.png" width="1082" height="1152"/>
+        <image name="basket.png" width="800" height="800"/>
+        <image name="play1.png" width="800" height="800"/>
+        <image name="showAnswer.png" width="800" height="800"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

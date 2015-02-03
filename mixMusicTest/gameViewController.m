@@ -115,6 +115,12 @@ int answerPickedCount;
     
 }
 
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+
+}
+
 -(void)viewDidDisappear:(BOOL)animated
 {
     [super viewDidDisappear:animated];
@@ -939,8 +945,9 @@ int answerPickedCount;
     [self stopSpin];
     [self.deleteOneBtn setEnabled:YES];
     [self.shareBtn setEnabled:YES];
+    [self.playBtn setImage:[UIImage imageNamed:@"开始"] forState:UIControlStateNormal];
+
     
-//    [self performSelector:@selector(enableButtons) withObject:nil afterDelay:0.01];
     [self enableButtons];
 }
 
@@ -991,16 +998,14 @@ int answerPickedCount;
     {
         [self initMusics];
         isplayed = true;
+        
         [self performSelector:@selector(stop13secondMusics) withObject:nil afterDelay:13.0f];
     }
 //    [self performSelector:@selector(PlayStart) withObject:nil afterDelay:0.5f];
 
 
 }
--(void)PlayStart
-{
-  
-}
+
 
 -(void)initMusics
 {
@@ -1010,7 +1015,7 @@ int answerPickedCount;
         [self tapSound:self.musicsPlayArray[i] withType:@"m4a"];
     }
     [self startSpin];
-    
+    [self.playBtn setImage:[UIImage imageNamed:@"停止"] forState:UIControlStateNormal];
     [self.deleteOneBtn setEnabled:NO];
     [self.shareBtn setEnabled:NO];
 
