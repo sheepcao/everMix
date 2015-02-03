@@ -16,6 +16,9 @@
 #import "UMSocialSnsPlatformManager.h"
 #import "MobClick.h"
 #import "buyCoinsViewController.h"
+//AD...
+#import "DMAdView.h"
+
 #define DISK_TAG 100
 #define TIPS_TAG 200
 #define CD_SZIE 80
@@ -32,7 +35,10 @@
 @end
 
 
-@interface gameViewController : UIViewController
+@interface gameViewController : UIViewController<DMAdViewDelegate>
+{
+    DMAdView *_dmAdView;
+}
 
 @property (nonatomic,weak) id<prepareSongsDelegate> delegate;
 

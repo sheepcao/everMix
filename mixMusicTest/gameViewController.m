@@ -20,8 +20,6 @@ int totalRotateTimes;
 int answerPickedCount;
 @implementation gameViewController
 
-
-
 - (void)viewDidLoad {
     [super viewDidLoad];
 
@@ -99,7 +97,16 @@ int answerPickedCount;
             break;
     }
 
-
+//AD...
+    
+    _dmAdView = [[DMAdView alloc] initWithPublisherId:@"56OJxqiIuN5cJKR8fX" placementId:@"16TLej7oApZ2kNUO7NRnvYss" autorefresh:YES];
+    // 设置广告视图的位置
+    _dmAdView.frame = CGRectMake(0, 20, FLEXIBLE_SIZE.width,FLEXIBLE_SIZE.height);
+    _dmAdView.delegate = self;
+    [_dmAdView setKeywords:@"音乐"];
+    _dmAdView.rootViewController = self; // 设置 RootViewController
+    [self.view addSubview:_dmAdView]; // 将广告视图添加到⽗视图中
+    [_dmAdView loadAd];
     
     [self.view bringSubviewToFront:self.playConsoleView];
     
@@ -1101,5 +1108,65 @@ int answerPickedCount;
         }
     }
 }
+
+#pragma mark AD..
+- (void)viewDidUnload {
+    [super viewDidUnload];
+    [_dmAdView removeFromSuperview]; // 将⼲⼴广告试图从⽗父视图中移除
+}
+    //针对 Banner 的横竖屏⾃自适应⽅方法 //method For multible orientation
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+duration:(NSTimeInterval)duration
+{
+   [_dmAdView orientationChanged];
+}
+
+- (void)dealloc
+{
+   
+    _dmAdView.delegate = nil;
+    
+    _dmAdView.rootViewController = nil;
+}
+
+
+#pragma mark DMAdView delegate
+
+// 成功加载广告后，回调该方法
+// This method will be used after load successfully
+- (void)dmAdViewSuccessToLoadAd:(DMAdView *)adView
+{
+    NSLog(@"[Domob Sample] success to load ad.");
+}
+
+// 加载广告失败后，回调该方法
+// This method will be used after load failed
+- (void)dmAdViewFailToLoadAd:(DMAdView *)adView withError:(NSError *)error
+{
+    
+    NSLog(@"[Domob Sample] fail to load ad. %@", error);
+}
+
+// 当将要呈现出 Modal View 时，回调该方法。如打开内置浏览器
+// When will be showing a Modal View, this method will be called. Such as open built-in browser
+- (void)dmWillPresentModalViewFromAd:(DMAdView *)adView
+{
+    NSLog(@"[Domob Sample] will present modal view.");
+}
+
+// 当呈现的 Modal View 被关闭后，回调该方法。如内置浏览器被关闭。
+// When presented Modal View is closed, this method will be called. Such as built-in browser is closed
+- (void)dmDidDismissModalViewFromAd:(DMAdView *)adView
+{
+    NSLog(@"[Domob Sample] did dismiss modal view.");
+}
+
+// 当因用户的操作（如点击下载类广告，需要跳转到Store），需要离开当前应用时，回调该方法
+// When the result of the user's actions (such as clicking download class advertising, you need to jump to the Store), need to leave the current application, this method will be called
+- (void)dmApplicationWillEnterBackgroundFromAd:(DMAdView *)adView
+{
+    NSLog(@"[Domob Sample] will enter background.");
+}
+
 
 @end

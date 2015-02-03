@@ -19,11 +19,10 @@
 @property (nonatomic,strong)CustomIOS7AlertView *dailyRewardAlert;
 @property (nonatomic,strong)NSArray *difficultyButtons;
 
-//@property (nonatomic,strong) UILabel *ripple;
-//@property (nonatomic,strong) UILabel *ripple2;
-//@property (nonatomic,strong) UILabel *ripple3;
+
 @end
 int difficultyNow;
+
 @implementation ViewController
 @synthesize timer;
 
