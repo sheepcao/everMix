@@ -23,6 +23,8 @@ int answerPickedCount;
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"topbar"] forBarMetrics: UIBarMetricsDefault];
+
     [self.navigationController setNavigationBarHidden:NO];
     
     self.coinShow = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -100,12 +102,12 @@ int answerPickedCount;
 //AD...
     
     _dmAdView = [[DMAdView alloc] initWithPublisherId:@"56OJxqiIuN5cJKR8fX" placementId:@"16TLej7oApZ2kNUO7NRnvYss" autorefresh:YES];
-    // 设置广告视图的位置
-    _dmAdView.frame = CGRectMake(0, 20, FLEXIBLE_SIZE.width,FLEXIBLE_SIZE.height);
+    _dmAdView.frame = CGRectMake(0, [UIScreen mainScreen].bounds.size.height - FLEXIBLE_SIZE.height-44, FLEXIBLE_SIZE.width,FLEXIBLE_SIZE.height);
     _dmAdView.delegate = self;
     [_dmAdView setKeywords:@"音乐"];
     _dmAdView.rootViewController = self; // 设置 RootViewController
     [self.view addSubview:_dmAdView]; // 将广告视图添加到⽗视图中
+
     [_dmAdView loadAd];
     
     [self.view bringSubviewToFront:self.playConsoleView];
@@ -125,6 +127,7 @@ int answerPickedCount;
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    // 设置广告视图的位置
 
 }
 

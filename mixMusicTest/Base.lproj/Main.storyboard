@@ -14,7 +14,7 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wGZ-Pq-rJ6">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" backIndicatorImage="topbar.png" id="wGZ-Pq-rJ6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -296,6 +296,7 @@
         <image name="pointYellow.png" width="130" height="130"/>
         <image name="reviewBtn.png" width="130" height="130"/>
         <image name="shareBtn.png" width="114" height="114"/>
+        <image name="topbar.png" width="1080" height="96"/>
         <image name="开始.png" width="420" height="420"/>
         <image name="继续.png" width="420" height="420"/>
     </resources>

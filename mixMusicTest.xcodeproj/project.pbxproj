@@ -144,12 +144,12 @@
 		A4A0C24E1A8108430032DF0B /* mainBack.png in Resources */ = {isa = PBXBuildFile; fileRef = A4A0C2461A8108430032DF0B /* mainBack.png */; };
 		A4A0C24F1A8108430032DF0B /* reviewBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = A4A0C2471A8108430032DF0B /* reviewBtn.png */; };
 		A4A0C2501A8108430032DF0B /* shareBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = A4A0C2481A8108430032DF0B /* shareBtn.png */; };
-		A4A0C2511A8108430032DF0B /* topbar.png in Resources */ = {isa = PBXBuildFile; fileRef = A4A0C2491A8108430032DF0B /* topbar.png */; };
 		A4A0C2521A8108430032DF0B /* 开始.png in Resources */ = {isa = PBXBuildFile; fileRef = A4A0C24A1A8108430032DF0B /* 开始.png */; };
 		A4A0C2531A8108430032DF0B /* 继续.png in Resources */ = {isa = PBXBuildFile; fileRef = A4A0C24B1A8108430032DF0B /* 继续.png */; };
 		A4A0C2541A8108430032DF0B /* 重新开始.png in Resources */ = {isa = PBXBuildFile; fileRef = A4A0C24C1A8108430032DF0B /* 重新开始.png */; };
 		A4A0C2561A8109DE0032DF0B /* point.png in Resources */ = {isa = PBXBuildFile; fileRef = A4A0C2551A8109DE0032DF0B /* point.png */; };
 		A4A0C2581A810C810032DF0B /* pointYellow.png in Resources */ = {isa = PBXBuildFile; fileRef = A4A0C2571A810C810032DF0B /* pointYellow.png */; };
+		A4A0C25C1A811B290032DF0B /* topbar.png in Resources */ = {isa = PBXBuildFile; fileRef = A4A0C25B1A811B290032DF0B /* topbar.png */; };
 		A4A5A2F31A74AAA8005634E9 /* UMSocialLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A4A5A2D91A74AAA8005634E9 /* UMSocialLocalizable.strings */; };
 		A4A5A2F41A74AAA8005634E9 /* libUMSocial_Sdk_4.2.1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A4A5A2E71A74AAA8005634E9 /* libUMSocial_Sdk_4.2.1.a */; };
 		A4A5A2F51A74AAA8005634E9 /* UMSCommentDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4A5A2E91A74AAA8005634E9 /* UMSCommentDetailController.xib */; };
@@ -359,12 +359,12 @@
 		A4A0C2461A8108430032DF0B /* mainBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mainBack.png; sourceTree = "<group>"; };
 		A4A0C2471A8108430032DF0B /* reviewBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reviewBtn.png; sourceTree = "<group>"; };
 		A4A0C2481A8108430032DF0B /* shareBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shareBtn.png; sourceTree = "<group>"; };
-		A4A0C2491A8108430032DF0B /* topbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = topbar.png; sourceTree = "<group>"; };
 		A4A0C24A1A8108430032DF0B /* 开始.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "开始.png"; sourceTree = "<group>"; };
 		A4A0C24B1A8108430032DF0B /* 继续.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "继续.png"; sourceTree = "<group>"; };
 		A4A0C24C1A8108430032DF0B /* 重新开始.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "重新开始.png"; sourceTree = "<group>"; };
 		A4A0C2551A8109DE0032DF0B /* point.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = point.png; sourceTree = "<group>"; };
 		A4A0C2571A810C810032DF0B /* pointYellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pointYellow.png; sourceTree = "<group>"; };
+		A4A0C25B1A811B290032DF0B /* topbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = topbar.png; sourceTree = "<group>"; };
 		A4A375041A47D37F0064AF00 /* mixMusicTest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = mixMusicTest.entitlements; sourceTree = "<group>"; };
 		A4A5A2DA1A74AAA8005634E9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/UMSocialLocalizable.strings; sourceTree = "<group>"; };
 		A4A5A2DC1A74AAA8005634E9 /* UMSocial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocial.h; sourceTree = "<group>"; };
@@ -778,7 +778,7 @@
 				A4A0C2461A8108430032DF0B /* mainBack.png */,
 				A4A0C2471A8108430032DF0B /* reviewBtn.png */,
 				A4A0C2481A8108430032DF0B /* shareBtn.png */,
-				A4A0C2491A8108430032DF0B /* topbar.png */,
+				A4A0C25B1A811B290032DF0B /* topbar.png */,
 				A4A0C24A1A8108430032DF0B /* 开始.png */,
 				A4A0C24B1A8108430032DF0B /* 继续.png */,
 				A4A0C24C1A8108430032DF0B /* 重新开始.png */,
@@ -1073,6 +1073,7 @@
 				A47EFFF71A67B8E6000FCAF7 /* 女人花.m4a in Resources */,
 				A4A0A3C81A514835007A0876 /* gameViewController.xib in Resources */,
 				A47E00171A67B8E6000FCAF7 /* 爱的海洋.m4a in Resources */,
+				A4A0C25C1A811B290032DF0B /* topbar.png in Resources */,
 				A47EFFFD1A67B8E6000FCAF7 /* 爱情路.m4a in Resources */,
 				A47E00331A67B8E6000FCAF7 /* 今天你要嫁给我.m4a in Resources */,
 				A47E00351A67B8E6000FCAF7 /* 像风一样自由.m4a in Resources */,
@@ -1112,7 +1113,6 @@
 				A47EFFF31A67B8E6000FCAF7 /* 逆战.m4a in Resources */,
 				A47E00011A67B8E6000FCAF7 /* 笨小孩.m4a in Resources */,
 				A47E001E1A67B8E6000FCAF7 /* 一生中最爱.m4a in Resources */,
-				A4A0C2511A8108430032DF0B /* topbar.png in Resources */,
 				A47E00181A67B8E6000FCAF7 /* 生如夏花.m4a in Resources */,
 				A47EFFF21A67B8E6000FCAF7 /* 趁早.m4a in Resources */,
 				A4A6C1441A6BF66600C6095C /* cycle.png in Resources */,
