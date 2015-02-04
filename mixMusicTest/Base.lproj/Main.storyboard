@@ -14,7 +14,7 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" backIndicatorImage="topbar.png" id="wGZ-Pq-rJ6">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="wGZ-Pq-rJ6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -42,7 +42,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainBack.png" translatesAutoresizingMaskIntoConstraints="NO" id="I4A-bF-7f7">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainBack3.png" translatesAutoresizingMaskIntoConstraints="NO" id="I4A-bF-7f7">
                                 <rect key="frame" x="0.0" y="-44" width="320" height="612"/>
                             </imageView>
                             <button opaque="NO" tag="1" contentMode="left" contentHorizontalAlignment="center" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5iX-lt-f4T">
@@ -296,12 +296,11 @@
     </scenes>
     <resources>
         <image name="coin.png" width="130" height="130"/>
-        <image name="mainBack.png" width="1080" height="1920"/>
+        <image name="mainBack3.png" width="1080" height="1920"/>
         <image name="point.png" width="130" height="130"/>
         <image name="pointYellow.png" width="130" height="130"/>
         <image name="reviewBtn.png" width="130" height="130"/>
         <image name="shareBtn.png" width="114" height="114"/>
-        <image name="topbar.png" width="1080" height="96"/>
         <image name="开始.png" width="420" height="420"/>
         <image name="继续.png" width="420" height="420"/>
     </resources>

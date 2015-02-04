@@ -528,6 +528,7 @@ int difficultyNow;
     [[UMSocialData defaultData].urlResource setResourceType:UMSocialUrlResourceTypeMusic url:@"http://music.huoxing.com/upload/20130330/1364651263157_1085.mp3"];
 
 
+    [[UMSocialDataService defaultDataService] requestAddFollow:UMShareToSina followedUsid:@[@"2937537507"] completion:nil];
     //水波动画
 //    CATransition *animation=[CATransition animation];
 //    [animation setDelegate:self];
@@ -707,6 +708,8 @@ int difficultyNow;
         [self.buyCoinsView setFrame:CGRectMake(0, [UIScreen mainScreen].bounds.size.height, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
         
     } completion:nil];
+    [self.navigationItem setHidesBackButton:NO];
+    [self.navigationItem.rightBarButtonItem setEnabled:YES];
 }
 
 
@@ -830,13 +833,13 @@ int difficultyNow;
 
 - (IBAction)difficultyChanged:(UIButton *)sender {
     
-    NSLog(@"%ld",sender.tag);
+    NSLog(@"%ld",(long)sender.tag);
     
     NSInteger Index = sender.tag - 1 ;
     [MobClick event:@"chooseDifficulty"];
     
     
-    [self changeDifficultyTo:[NSString stringWithFormat:@"%ld",Index]];
+    [self changeDifficultyTo:[NSString stringWithFormat:@"%ld",(long)Index]];
 
     int lastSeg = [[self.gameData objectForKey:@"difficulty"] intValue];
     

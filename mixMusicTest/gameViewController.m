@@ -153,7 +153,10 @@ int answerPickedCount;
 
 -(void)buyCoinsAction
 {
+    
     [MobClick event:@"bugCoinClick"];
+    [self.navigationItem.rightBarButtonItem setEnabled:NO];
+
     
     if (!self.buyCoinsView) {
         
@@ -185,7 +188,12 @@ int answerPickedCount;
     
     [UIView animateWithDuration:0.65 delay:0.05 usingSpringWithDamping:0.8 initialSpringVelocity:0.4 options:0 animations:^{
         [self.buyCoinsView setFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
-    } completion:nil];
+    } completion:^(BOOL finished){
+
+            [self.navigationItem setHidesBackButton:YES];
+
+    
+    }];
     
 
 }
@@ -196,6 +204,10 @@ int answerPickedCount;
         [self.buyCoinsView setFrame:CGRectMake(0, [UIScreen mainScreen].bounds.size.height, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
         
     } completion:nil];
+    
+    [self.navigationItem.rightBarButtonItem setEnabled:YES];
+    [self.navigationItem setHidesBackButton:NO];
+
 }
 
 -(void)setupButtonsView
@@ -277,7 +289,7 @@ int answerPickedCount;
     //only support less than 7 letters.
     NSLog(@"center:%f",self.choicesBoardView.center.x);
     CGFloat firstAnswerSquare_X = (self.choicesBoardView.center.x - (40+2) *songName.length/2);//considering the distance between two squares . distance = 2.
-    UIImage *buttonBackImage = [UIImage imageNamed:@"answerBack7"];
+    UIImage *buttonBackImage = [UIImage imageNamed:@"answerBack"];
     for (int i = 0; i<songName.length; i++) {
          UIButton *answerButton = (UIButton *)[self.choicesBoardView viewWithTag:1];
         
@@ -405,6 +417,12 @@ int answerPickedCount;
             songResult.font = [UIFont fontWithName:@"Oriya Sangam MN" size:18];
             songResult.numberOfLines = 2;
             songResult.textAlignment = NSTextAlignmentCenter;
+            [songResult setTextColor:[UIColor whiteColor]];
+            
+             UIImageView *checkMark = [[UIImageView alloc] initWithFrame:[(UIButton *)self.diskButtons[self.choicesBoardView.songNumber] frame] ];
+            [checkMark setImage:[UIImage imageNamed:@"checkRed"]];
+           
+            [self.downPartView addSubview:checkMark];
             
             [self.downPartView addSubview:songResult];
             [self.musicsPlayArray removeObject:songNameGuessed];
@@ -489,6 +507,8 @@ int answerPickedCount;
     
     
 }
+
+
 
 -(BOOL)checkCoins:(int)price
 {
@@ -942,7 +962,7 @@ int answerPickedCount;
     [self stopSpin];
     [self.deleteOneBtn setEnabled:YES];
     [self.shareBtn setEnabled:YES];
-    [self.playBtn setImage:[UIImage imageNamed:@"播放"] forState:UIControlStateNormal];
+    [self.playBtn setImage:[UIImage imageNamed:@"开始"] forState:UIControlStateNormal];
 
     
     [self enableButtons];

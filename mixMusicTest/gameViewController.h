@@ -29,7 +29,7 @@
 
 //@class buyCoinsViewController;
 
-@protocol prepareSongsDelegate <NSObject,UMSocialUIDelegate,UMSocialDataDelegate>
+@protocol prepareSongsDelegate <NSObject,UMSocialUIDelegate>
 -(NSMutableArray *)configSongs;
 
 @end
