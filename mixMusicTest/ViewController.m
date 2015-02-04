@@ -81,9 +81,9 @@ int difficultyNow;
 //    CGRect frame= self.difficultySegment.frame;
 //    [self.difficultySegment setFrame:CGRectMake(frame.origin.x, frame.origin.y, frame.size.width, 35)];
     
-    timer = [NSTimer scheduledTimerWithTimeInterval:4.0 target:self selector:@selector(buttonFlash) userInfo:nil repeats:YES];
+//    timer = [NSTimer scheduledTimerWithTimeInterval:4.0 target:self selector:@selector(buttonFlash) userInfo:nil repeats:YES];
 
-    
+    [self.versionLabel setText:[NSString stringWithFormat:@"Version: %@",VERSIONNUMBER]];
   
     
 }
@@ -376,14 +376,14 @@ int difficultyNow;
             
             [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%d",difficultyNow] forKey:@"difficulty"];
             
-            [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%d",difficultyNow*20+1] forKey:@"currentLevel"];
+            [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%d",difficultyNow*20] forKey:@"currentLevel"];
 
         }
         if (alertView.tag == 2) {
             [self resetPlist];
 //            [self drawStars:2];
             [self changeDifficultyTo:@"1"];
-            [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%d",2*20] forKey:@"currentLevel"];
+            [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%d",20] forKey:@"currentLevel"];
 
             
         }
@@ -485,18 +485,28 @@ int difficultyNow;
 - (IBAction)socialShare {
     [MobClick event:@"shareFromHome"];
     
+    [UMSocialSnsService presentSnsIconSheetView:self
+                                         appKey:@"54c46ea7fd98c5071d000668"
+                                      shareText:@"谁的耳力还有富裕快来帮帮忙！"
+                                     shareImage:[UIImage imageNamed:@"icon.png"]
+                                shareToSnsNames:@[UMShareToSina]
+                                       delegate:(id)self];
     
+    // music url
+    [[UMSocialData defaultData].urlResource setResourceType:UMSocialUrlResourceTypeMusic url:@"http://music.huoxing.com/upload/20130330/1364651263157_1085.mp3"];
 
-    CATransition *animation=[CATransition animation];
-    [animation setDelegate:self];
-    [animation setDuration:1.0];
-    [animation setTimingFunction:UIViewAnimationCurveEaseInOut];
-    [animation setType:@"rippleEffect"];
-    
-    [animation setFillMode:kCAFillModeRemoved];
-    animation.endProgress=1;
-    [animation setRemovedOnCompletion:YES];
-    [self.view.layer addAnimation:animation forKey:nil];
+
+    //水波动画
+//    CATransition *animation=[CATransition animation];
+//    [animation setDelegate:self];
+//    [animation setDuration:1.0];
+//    [animation setTimingFunction:UIViewAnimationCurveEaseInOut];
+//    [animation setType:@"rippleEffect"];
+//    
+//    [animation setFillMode:kCAFillModeRemoved];
+//    animation.endProgress=1;
+//    [animation setRemovedOnCompletion:YES];
+//    [self.view.layer addAnimation:animation forKey:nil];
 
 //    [self.view sendSubviewToBack:sub];
 //    UIGraphicsBeginImageContext(self.view.frame.size);
@@ -509,6 +519,16 @@ int difficultyNow;
 
     
 
+}
+
+-(void)didFinishGetUMSocialDataInViewController:(UMSocialResponseEntity *)response
+{
+    //根据`responseCode`得到发送结果,如果分享成功
+    if(response.responseCode == UMSResponseCodeSuccess)
+    {
+        //得到分享到的微博平台名
+        NSLog(@"share to sns name is %@",[[response.data allKeys] objectAtIndex:0]);
+    }
 }
 
 - (IBAction)commentOnStore {
@@ -722,29 +742,29 @@ int difficultyNow;
     [self.coinsShowing setTitle:[NSString stringWithFormat:@"%d",[CommonUtility fetchCoinAmount]] forState:UIControlStateNormal];
     [self.dailyRewardAlert close];
 }
--(IBAction)segmentAction:(UISegmentedControl *)Seg{
-    NSInteger Index = Seg.selectedSegmentIndex;
-//    NSLog(@"Seg.selectedSegmentIndex:%d",Index);
-    
-    [MobClick event:@"chooseDifficulty"];
-    int lastSeg = [[self.gameData objectForKey:@"difficulty"] intValue];
-
-    if ([self.continueGame isHidden]) {
- 
-        [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%ld",(long)Index] forKey:@"difficulty"];
-        
-        [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%ld",Index*20+1] forKey:@"currentLevel"];
-    }else
-    {
-        myAlertView *resetAlert = [[myAlertView alloc] initWithTitle:@"且慢!" message:@"变更难度将重置已猜歌曲的进度,请君三思。" delegate:self cancelButtonTitle:nil otherButtonTitles:@"取消",@"确认", nil];
-        
-        resetAlert.lastSegmentIndex = lastSeg;
-        resetAlert.tag = 1;
-        
-        [resetAlert show];
-    }
-    
-}
+//-(IBAction)segmentAction:(UISegmentedControl *)Seg{
+//    NSInteger Index = Seg.selectedSegmentIndex;
+////    NSLog(@"Seg.selectedSegmentIndex:%d",Index);
+//    
+//    [MobClick event:@"chooseDifficulty"];
+//    int lastSeg = [[self.gameData objectForKey:@"difficulty"] intValue];
+//
+//    if ([self.continueGame isHidden]) {
+// 
+//        [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%ld",(long)Index] forKey:@"difficulty"];
+//        
+//        [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%ld",Index*20] forKey:@"currentLevel"];
+//    }else
+//    {
+//        myAlertView *resetAlert = [[myAlertView alloc] initWithTitle:@"且慢!" message:@"变更难度将重置已猜歌曲的进度,请君三思。" delegate:self cancelButtonTitle:nil otherButtonTitles:@"取消",@"确认", nil];
+//        
+//        resetAlert.lastSegmentIndex = lastSeg;
+//        resetAlert.tag = 1;
+//        
+//        [resetAlert show];
+//    }
+//    
+//}
 
 #pragma mark button flash
 
@@ -792,7 +812,7 @@ int difficultyNow;
         
         [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%ld",(long)Index] forKey:@"difficulty"];
         
-        [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%ld",Index*20+1] forKey:@"currentLevel"];
+        [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%ld",Index*20] forKey:@"currentLevel"];
     }else
     {
         myAlertView *resetAlert = [[myAlertView alloc] initWithTitle:@"且慢!" message:@"变更难度将重置已猜歌曲的进度,请君三思。" delegate:self cancelButtonTitle:nil otherButtonTitles:@"取消",@"确认", nil];

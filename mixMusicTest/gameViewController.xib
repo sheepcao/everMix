@@ -20,44 +20,45 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainBack.png" translatesAutoresizingMaskIntoConstraints="NO" id="cTZ-3e-AHo">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gameBack.png" translatesAutoresizingMaskIntoConstraints="NO" id="cTZ-3e-AHo">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                 </imageView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mxj-Ad-wKo" userLabel="downPartView">
-                    <rect key="frame" x="0.0" y="181" width="320" height="387"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="387" id="Xa0-4F-jcT"/>
-                    </constraints>
-                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EJw-dq-Ooh" userLabel="playConsoleView">
-                    <rect key="frame" x="0.0" y="44" width="320" height="137"/>
+                    <rect key="frame" x="15" y="50" width="290" height="104"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EA8-fi-MW9">
-                            <rect key="frame" x="106" y="14" width="100" height="100"/>
+                            <rect key="frame" x="105" y="12" width="80" height="80"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="100" id="2qO-Lf-ESO"/>
-                                <constraint firstAttribute="height" constant="100" id="PpO-K3-qGY"/>
+                                <constraint firstAttribute="width" constant="80" id="2qO-Lf-ESO"/>
+                                <constraint firstAttribute="height" constant="80" id="PpO-K3-qGY"/>
                             </constraints>
-                            <state key="normal" image="开始.png">
+                            <state key="normal" image="播放.png">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
                                 <action selector="playBtn:" destination="-1" eventType="touchUpInside" id="Qep-KP-VuW"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Zy-EO-vTo">
-                            <rect key="frame" x="24" y="35" width="40" height="40"/>
-                            <state key="normal" title="Button" image="share.png">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Zy-EO-vTo">
+                            <rect key="frame" x="21" y="35" width="34" height="34"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="34" id="DZh-oj-AWd"/>
+                                <constraint firstAttribute="height" constant="34" id="u44-Xg-rAI"/>
+                            </constraints>
+                            <state key="normal" title="Button" image="shareBtn.png">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
                                 <action selector="shareButton:" destination="-1" eventType="touchUpInside" id="wu5-iE-7ni"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3vv-bk-gam">
-                            <rect key="frame" x="249" y="35" width="40" height="40"/>
-                            <state key="normal" title="Button" image="refresh.png">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3vv-bk-gam">
+                            <rect key="frame" x="235" y="31.5" width="28" height="38"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="38" id="trD-vM-fKf"/>
+                                <constraint firstAttribute="width" constant="28" id="xTg-yl-7UY"/>
+                            </constraints>
+                            <state key="normal" title="Button" image="bomb.png">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
@@ -65,34 +66,45 @@
                             </connections>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" red="0.96986199819999996" green="0.97653398719999995" blue="0.95686017339999996" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.21259124087591241" green="0.20500684306569297" blue="0.17204607664233576" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="centerX" secondItem="EA8-fi-MW9" secondAttribute="centerX" constant="4" id="G2Y-JQ-Jty"/>
-                        <constraint firstAttribute="centerY" secondItem="EA8-fi-MW9" secondAttribute="centerY" constant="4.5" id="ogW-zv-hCD"/>
+                        <constraint firstItem="3vv-bk-gam" firstAttribute="leading" secondItem="EA8-fi-MW9" secondAttribute="trailing" constant="50" id="7NX-80-dop"/>
+                        <constraint firstAttribute="centerY" secondItem="3vv-bk-gam" secondAttribute="centerY" constant="1.5" id="JIr-3y-jZT"/>
+                        <constraint firstAttribute="centerY" secondItem="EA8-fi-MW9" secondAttribute="centerY" id="QIr-fP-Kkt"/>
+                        <constraint firstAttribute="centerX" secondItem="EA8-fi-MW9" secondAttribute="centerX" id="TtV-63-YWt"/>
+                        <constraint firstAttribute="height" constant="104" id="ZYw-NU-w4N"/>
+                        <constraint firstAttribute="width" constant="290" id="brt-Wz-brF"/>
+                        <constraint firstItem="6Zy-EO-vTo" firstAttribute="centerY" secondItem="EA8-fi-MW9" secondAttribute="centerY" id="eaZ-uH-OoN"/>
+                        <constraint firstItem="EA8-fi-MW9" firstAttribute="leading" secondItem="6Zy-EO-vTo" secondAttribute="trailing" constant="50" id="umt-RF-qrz"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mxj-Ad-wKo" userLabel="downPartView">
+                    <rect key="frame" x="0.0" y="181" width="320" height="387"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="387" id="Xa0-4F-jcT"/>
                     </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="EJw-dq-Ooh" secondAttribute="trailing" id="5FX-W4-wjN"/>
                 <constraint firstItem="cTZ-3e-AHo" firstAttribute="leading" secondItem="4Wa-kH-Ij8" secondAttribute="leading" id="CIE-sg-5rg"/>
+                <constraint firstAttribute="centerX" secondItem="EJw-dq-Ooh" secondAttribute="centerX" id="Duk-dP-8ja"/>
                 <constraint firstItem="mxj-Ad-wKo" firstAttribute="leading" secondItem="4Wa-kH-Ij8" secondAttribute="leading" id="F3f-OW-x6u"/>
                 <constraint firstAttribute="trailing" secondItem="mxj-Ad-wKo" secondAttribute="trailing" id="Hw1-lK-o1Y"/>
-                <constraint firstItem="EJw-dq-Ooh" firstAttribute="top" secondItem="4Wa-kH-Ij8" secondAttribute="top" constant="44" id="Sbb-d2-lgd"/>
+                <constraint firstItem="EJw-dq-Ooh" firstAttribute="top" secondItem="4Wa-kH-Ij8" secondAttribute="top" constant="50" id="Sbb-d2-lgd"/>
                 <constraint firstAttribute="bottom" secondItem="cTZ-3e-AHo" secondAttribute="bottom" id="bE8-m6-ENN"/>
                 <constraint firstAttribute="bottom" secondItem="mxj-Ad-wKo" secondAttribute="bottom" id="c5R-ba-I6u"/>
-                <constraint firstItem="mxj-Ad-wKo" firstAttribute="top" secondItem="EJw-dq-Ooh" secondAttribute="bottom" id="d94-Mm-WY3"/>
                 <constraint firstItem="cTZ-3e-AHo" firstAttribute="top" secondItem="4Wa-kH-Ij8" secondAttribute="top" id="fMH-NP-uPZ"/>
                 <constraint firstAttribute="trailing" secondItem="cTZ-3e-AHo" secondAttribute="trailing" id="xQx-Ce-ZBB"/>
-                <constraint firstItem="EJw-dq-Ooh" firstAttribute="leading" secondItem="4Wa-kH-Ij8" secondAttribute="leading" id="xqU-d8-R5O"/>
             </constraints>
         </view>
     </objects>
     <resources>
-        <image name="mainBack.png" width="1080" height="1920"/>
-        <image name="refresh.png" width="128" height="128"/>
-        <image name="share.png" width="128" height="128"/>
-        <image name="开始.png" width="420" height="420"/>
+        <image name="bomb.png" width="716" height="976"/>
+        <image name="gameBack.png" width="1080" height="1920"/>
+        <image name="shareBtn.png" width="114" height="114"/>
+        <image name="播放.png" width="330" height="330"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

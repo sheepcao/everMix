@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0B680B671A7D6593003D616B /* answerBack7.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B680B661A7D6593003D616B /* answerBack7.png */; };
-		0B680B691A7D9260003D616B /* 播放.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B680B681A7D9260003D616B /* 播放.png */; };
 		A40CA9001A72469E00ED071F /* CommonUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = A40CA8FF1A72469E00ED071F /* CommonUtility.m */; };
 		A40EFBBA1A7A0A9F00F7D6D2 /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A40EFBB81A7A0A9F00F7D6D2 /* libMobClickLibrary.a */; };
 		A40EFBBC1A7A0AC500F7D6D2 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A40EFBBB1A7A0AC500F7D6D2 /* libz.dylib */; };
@@ -18,7 +17,6 @@
 		A41D8B9B1A722A26008F9240 /* itemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A41D8B991A722A26008F9240 /* itemTableViewCell.xib */; };
 		A44236761A722026008C3051 /* buyCoinsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A44236741A722026008C3051 /* buyCoinsViewController.m */; };
 		A44236771A722026008C3051 /* buyCoinsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A44236751A722026008C3051 /* buyCoinsViewController.xib */; };
-		A45AECC81A83126E00DD26B3 /* glow.png in Resources */ = {isa = PBXBuildFile; fileRef = A45AECC71A83126E00DD26B3 /* glow.png */; };
 		A45C2E611A80CBD200CC73F6 /* DomobAdSDKBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A45C2E5F1A80CBD200CC73F6 /* DomobAdSDKBundle.bundle */; };
 		A45C2E621A80CBD200CC73F6 /* libDomobAdSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A45C2E601A80CBD200CC73F6 /* libDomobAdSDK.a */; };
 		A45C2E641A80CBF900CC73F6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A45C2E631A80CBF900CC73F6 /* Foundation.framework */; };
@@ -187,15 +185,19 @@
 		A4B76C181A3982EC0014014D /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = A4B76C0C1A3982EC0014014D /* refresh.png */; };
 		A4B76C191A3982EC0014014D /* share.png in Resources */ = {isa = PBXBuildFile; fileRef = A4B76C0D1A3982EC0014014D /* share.png */; };
 		A4B76C1D1A3997600014014D /* choicesBoardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4B76C1C1A3997600014014D /* choicesBoardView.xib */; };
+		A4B9F7DD1A81AFA300076531 /* bomb.png in Resources */ = {isa = PBXBuildFile; fileRef = A4B9F7DA1A81AFA300076531 /* bomb.png */; };
+		A4B9F7DE1A81AFA300076531 /* circle.png in Resources */ = {isa = PBXBuildFile; fileRef = A4B9F7DB1A81AFA300076531 /* circle.png */; };
+		A4B9F7DF1A81AFA300076531 /* gameBack.png in Resources */ = {isa = PBXBuildFile; fileRef = A4B9F7DC1A81AFA300076531 /* gameBack.png */; };
+		A4B9F7E21A81B00400076531 /* 停止.png in Resources */ = {isa = PBXBuildFile; fileRef = A4B9F7E01A81B00400076531 /* 停止.png */; };
+		A4B9F7E31A81B00400076531 /* 播放.png in Resources */ = {isa = PBXBuildFile; fileRef = A4B9F7E11A81B00400076531 /* 播放.png */; };
 		A4D050181A7612CA000D0A77 /* CustomIOS7AlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D050171A7612CA000D0A77 /* CustomIOS7AlertView.m */; };
 		A4D9F47F1A80585E00D90F2F /* answerBoard11.png in Resources */ = {isa = PBXBuildFile; fileRef = A4D9F47E1A80585E00D90F2F /* answerBoard11.png */; };
 		A4D9F4851A80586E00D90F2F /* play1.png in Resources */ = {isa = PBXBuildFile; fileRef = A4D9F4811A80586E00D90F2F /* play1.png */; };
 		A4D9F4871A80586E00D90F2F /* answerBack10.png in Resources */ = {isa = PBXBuildFile; fileRef = A4D9F4831A80586E00D90F2F /* answerBack10.png */; };
 		A4D9F48A1A8058AF00D90F2F /* basket.png in Resources */ = {isa = PBXBuildFile; fileRef = A4D9F4881A8058AF00D90F2F /* basket.png */; };
 		A4D9F48B1A8058AF00D90F2F /* showAnswer.png in Resources */ = {isa = PBXBuildFile; fileRef = A4D9F4891A8058AF00D90F2F /* showAnswer.png */; };
-		A4D9F48D1A8062CC00D90F2F /* 停止.png in Resources */ = {isa = PBXBuildFile; fileRef = A4D9F48C1A8062CC00D90F2F /* 停止.png */; };
 		A4DDB6E31A4D036F00CFF980 /* AnswerButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DDB6E21A4D036F00CFF980 /* AnswerButton.m */; };
-		A4DDB6E51A4D399A00CFF980 /* circle.png in Resources */ = {isa = PBXBuildFile; fileRef = A4DDB6E41A4D399A00CFF980 /* circle.png */; };
+		A4DDB6E51A4D399A00CFF980 /* circle1.png in Resources */ = {isa = PBXBuildFile; fileRef = A4DDB6E41A4D399A00CFF980 /* circle1.png */; };
 		A4E094FC1A4BE07B001AD626 /* gameData.plist in Resources */ = {isa = PBXBuildFile; fileRef = A4E094FB1A4BE07B001AD626 /* gameData.plist */; };
 		A4E47CE81A539FC00039BDF6 /* myAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = A4E47CE71A539FC00039BDF6 /* myAlertView.m */; };
 /* End PBXBuildFile section */
@@ -212,7 +214,6 @@
 
 /* Begin PBXFileReference section */
 		0B680B661A7D6593003D616B /* answerBack7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = answerBack7.png; sourceTree = "<group>"; };
-		0B680B681A7D9260003D616B /* 播放.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "播放.png"; sourceTree = "<group>"; };
 		A40CA8FE1A72469E00ED071F /* CommonUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonUtility.h; sourceTree = "<group>"; };
 		A40CA8FF1A72469E00ED071F /* CommonUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonUtility.m; sourceTree = "<group>"; };
 		A40EFBB81A7A0A9F00F7D6D2 /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary.a; sourceTree = "<group>"; };
@@ -228,7 +229,6 @@
 		A44236731A722026008C3051 /* buyCoinsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = buyCoinsViewController.h; sourceTree = "<group>"; };
 		A44236741A722026008C3051 /* buyCoinsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = buyCoinsViewController.m; sourceTree = "<group>"; };
 		A44236751A722026008C3051 /* buyCoinsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = buyCoinsViewController.xib; sourceTree = "<group>"; };
-		A45AECC71A83126E00DD26B3 /* glow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glow.png; sourceTree = "<group>"; };
 		A45C2E5A1A80CBD200CC73F6 /* DMAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMAdView.h; sourceTree = "<group>"; };
 		A45C2E5B1A80CBD200CC73F6 /* DMInterstitialAdController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMInterstitialAdController.h; sourceTree = "<group>"; };
 		A45C2E5C1A80CBD200CC73F6 /* DMSplashAdController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMSplashAdController.h; sourceTree = "<group>"; };
@@ -427,6 +427,11 @@
 		A4B76C0C1A3982EC0014014D /* refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refresh.png; sourceTree = "<group>"; };
 		A4B76C0D1A3982EC0014014D /* share.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share.png; sourceTree = "<group>"; };
 		A4B76C1C1A3997600014014D /* choicesBoardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = choicesBoardView.xib; sourceTree = "<group>"; };
+		A4B9F7DA1A81AFA300076531 /* bomb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bomb.png; sourceTree = "<group>"; };
+		A4B9F7DB1A81AFA300076531 /* circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = circle.png; sourceTree = "<group>"; };
+		A4B9F7DC1A81AFA300076531 /* gameBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gameBack.png; sourceTree = "<group>"; };
+		A4B9F7E01A81B00400076531 /* 停止.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "停止.png"; sourceTree = "<group>"; };
+		A4B9F7E11A81B00400076531 /* 播放.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "播放.png"; sourceTree = "<group>"; };
 		A4D050161A7612CA000D0A77 /* CustomIOS7AlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomIOS7AlertView.h; sourceTree = "<group>"; };
 		A4D050171A7612CA000D0A77 /* CustomIOS7AlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomIOS7AlertView.m; sourceTree = "<group>"; };
 		A4D9F47E1A80585E00D90F2F /* answerBoard11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = answerBoard11.png; sourceTree = "<group>"; };
@@ -434,10 +439,9 @@
 		A4D9F4831A80586E00D90F2F /* answerBack10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = answerBack10.png; sourceTree = "<group>"; };
 		A4D9F4881A8058AF00D90F2F /* basket.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = basket.png; sourceTree = "<group>"; };
 		A4D9F4891A8058AF00D90F2F /* showAnswer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = showAnswer.png; sourceTree = "<group>"; };
-		A4D9F48C1A8062CC00D90F2F /* 停止.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "停止.png"; sourceTree = "<group>"; };
 		A4DDB6E11A4D036F00CFF980 /* AnswerButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnswerButton.h; sourceTree = "<group>"; };
 		A4DDB6E21A4D036F00CFF980 /* AnswerButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnswerButton.m; sourceTree = "<group>"; };
-		A4DDB6E41A4D399A00CFF980 /* circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = circle.png; sourceTree = "<group>"; };
+		A4DDB6E41A4D399A00CFF980 /* circle1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = circle1.png; sourceTree = "<group>"; };
 		A4E094FB1A4BE07B001AD626 /* gameData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = gameData.plist; sourceTree = "<group>"; };
 		A4E47CE61A539FC00039BDF6 /* myAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myAlertView.h; sourceTree = "<group>"; };
 		A4E47CE71A539FC00039BDF6 /* myAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = myAlertView.m; sourceTree = "<group>"; };
@@ -756,7 +760,6 @@
 		A4A6C1251A6B713600C6095C /* PNGs */ = {
 			isa = PBXGroup;
 			children = (
-				A45AECC71A83126E00DD26B3 /* glow.png */,
 				0B680B661A7D6593003D616B /* answerBack7.png */,
 				A4D9F4881A8058AF00D90F2F /* basket.png */,
 				A4D9F4891A8058AF00D90F2F /* showAnswer.png */,
@@ -768,8 +771,8 @@
 				A4A6C12A1A6B713600C6095C /* cd4.png */,
 				A4A6C12B1A6B713600C6095C /* cd5.png */,
 				A4A6C13E1A6BF66600C6095C /* cycle.png */,
-				0B680B681A7D9260003D616B /* 播放.png */,
-				A4D9F48C1A8062CC00D90F2F /* 停止.png */,
+				A4B9F7E01A81B00400076531 /* 停止.png */,
+				A4B9F7E11A81B00400076531 /* 播放.png */,
 				A4D9F47E1A80585E00D90F2F /* answerBoard11.png */,
 				A4A6C13A1A6B7EF000C6095C /* background.png */,
 				A4A0C2551A8109DE0032DF0B /* point.png */,
@@ -782,6 +785,9 @@
 				A4A0C24A1A8108430032DF0B /* 开始.png */,
 				A4A0C24B1A8108430032DF0B /* 继续.png */,
 				A4A0C24C1A8108430032DF0B /* 重新开始.png */,
+				A4B9F7DA1A81AFA300076531 /* bomb.png */,
+				A4B9F7DB1A81AFA300076531 /* circle.png */,
+				A4B9F7DC1A81AFA300076531 /* gameBack.png */,
 			);
 			path = PNGs;
 			sourceTree = "<group>";
@@ -889,7 +895,7 @@
 			isa = PBXGroup;
 			children = (
 				A4A6C1251A6B713600C6095C /* PNGs */,
-				A4DDB6E41A4D399A00CFF980 /* circle.png */,
+				A4DDB6E41A4D399A00CFF980 /* circle1.png */,
 				A4B76C0C1A3982EC0014014D /* refresh.png */,
 				A4B76C0D1A3982EC0014014D /* share.png */,
 			);
@@ -1014,7 +1020,6 @@
 			files = (
 				A4A6C1341A6B713600C6095C /* cd4.png in Resources */,
 				A4A0C24E1A8108430032DF0B /* mainBack.png in Resources */,
-				A4D9F48D1A8062CC00D90F2F /* 停止.png in Resources */,
 				A4A6C1321A6B713600C6095C /* cd2.png in Resources */,
 				A47E001F1A67B8E6000FCAF7 /* 不管有多苦.m4a in Resources */,
 				A4A6C1301A6B713600C6095C /* cd1.png in Resources */,
@@ -1027,6 +1032,7 @@
 				A47EFFE21A67B8E6000FCAF7 /* 出卖.m4a in Resources */,
 				A47E00431A67B8E6000FCAF7 /* 难以抗拒你容颜.m4a in Resources */,
 				A4A5A2F61A74AAA8005634E9 /* UMSCommentInputController.xib in Resources */,
+				A4B9F7DE1A81AFA300076531 /* circle.png in Resources */,
 				A47EFFFF1A67B8E6000FCAF7 /* 牧马人.m4a in Resources */,
 				A4A0C2501A8108430032DF0B /* shareBtn.png in Resources */,
 				A47E00131A67B8E6000FCAF7 /* 时间煮雨.m4a in Resources */,
@@ -1084,6 +1090,7 @@
 				A47E00161A67B8E6000FCAF7 /* 爱的供养.m4a in Resources */,
 				A47E000E1A67B8E6000FCAF7 /* 好久不见.m4a in Resources */,
 				A4A0C2521A8108430032DF0B /* 开始.png in Resources */,
+				A4B9F7DF1A81AFA300076531 /* gameBack.png in Resources */,
 				A47EFFE31A67B8E6000FCAF7 /* 十年.m4a in Resources */,
 				A47EFFEA1A67B8E6000FCAF7 /* 晴天.m4a in Resources */,
 				A4D9F4871A80586E00D90F2F /* answerBack10.png in Resources */,
@@ -1118,16 +1125,16 @@
 				A4A6C1441A6BF66600C6095C /* cycle.png in Resources */,
 				A47E002C1A67B8E6000FCAF7 /* 有一点动心.m4a in Resources */,
 				A47EFFFB1A67B8E6000FCAF7 /* 当.m4a in Resources */,
+				A4B9F7DD1A81AFA300076531 /* bomb.png in Resources */,
 				A4A5A2F91A74AAA8005634E9 /* UMShareEditViewControlleriPad.xib in Resources */,
 				A47E00031A67B8E6000FCAF7 /* 给你们.m4a in Resources */,
+				A4B9F7E31A81B00400076531 /* 播放.png in Resources */,
 				A45C2E611A80CBD200CC73F6 /* DomobAdSDKBundle.bundle in Resources */,
-				A45AECC81A83126E00DD26B3 /* glow.png in Resources */,
 				A47E003C1A67B8E6000FCAF7 /* 我可以抱你吗.m4a in Resources */,
 				A4A5A2FA1A74AAA8005634E9 /* UMSLoginViewController.xib in Resources */,
 				A4A5A2F71A74AAA8005634E9 /* UMSCommentInputControlleriPad.xib in Resources */,
-				A4DDB6E51A4D399A00CFF980 /* circle.png in Resources */,
+				A4DDB6E51A4D399A00CFF980 /* circle1.png in Resources */,
 				A4D9F4851A80586E00D90F2F /* play1.png in Resources */,
-				0B680B691A7D9260003D616B /* 播放.png in Resources */,
 				A47E00401A67B8E6000FCAF7 /* 男人哭吧不是罪.m4a in Resources */,
 				A47EFFF11A67B8E6000FCAF7 /* 说谎.m4a in Resources */,
 				A4A6C13B1A6B7EF000C6095C /* background.png in Resources */,
@@ -1160,6 +1167,7 @@
 				A4A5A3101A750EF2005634E9 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				A4B76C181A3982EC0014014D /* refresh.png in Resources */,
 				A47EFFFC1A67B8E6000FCAF7 /* 爱.m4a in Resources */,
+				A4B9F7E21A81B00400076531 /* 停止.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

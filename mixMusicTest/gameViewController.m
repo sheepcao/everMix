@@ -27,33 +27,37 @@ int answerPickedCount;
 
     [self.navigationController setNavigationBarHidden:NO];
     
-    self.coinShow = [UIButton buttonWithType:UIButtonTypeCustom];
-    [self.coinShow setFrame:CGRectMake(self.navigationController.view.frame.size.width - 95, 3, 92, 34)];
-    [self.coinShow setTitleEdgeInsets:UIEdgeInsetsMake(0.0,30.0, 0.0, 0.0)];
-    [self.coinShow setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    self.coinShow.titleLabel.textAlignment = NSTextAlignmentLeft ;
+    UIView *buttonView = [[UIView alloc] initWithFrame:CGRectMake(0, 3, 75, 34)];
     
-
+    
+    self.coinShow = [UIButton buttonWithType:UIButtonTypeCustom];
+    [self.coinShow setFrame:CGRectMake(21, 0, 60, 34)];
+    [self.coinShow setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    self.coinShow.titleLabel.font =[UIFont fontWithName:@"Helvetica Neue" size:15];
+    self.coinShow.titleLabel.textAlignment = NSTextAlignmentRight ;
+    
 
     NSString *currentCoins = [NSString stringWithFormat:@"%d",[CommonUtility fetchCoinAmount]];
     [self.coinShow setTitle:currentCoins forState:UIControlStateNormal];
+//    [self.coinShow setTitle:@"50000" forState:UIControlStateNormal];
+
     
 
-    UIImageView *coinImage = [[UIImageView alloc] initWithFrame:CGRectMake(0,0, 30, self.coinShow.frame.size.height)];
-    [coinImage setImage:[UIImage imageNamed:@"money-128"]];
-    [self.coinShow addSubview:coinImage];
+    UIImageView *coinImage = [[UIImageView alloc] initWithFrame:CGRectMake(13,8, 17, 22)];
+    [coinImage setImage:[UIImage imageNamed:@"coin"]];
+//    [self.coinShow addSubview:coinImage];
     
     [self.coinShow addTarget:self action:@selector(buyCoinsAction) forControlEvents:UIControlEventTouchUpInside];
     
-    UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithCustomView:self.coinShow];
+    [buttonView addSubview:coinImage];
+    [buttonView addSubview:self.coinShow];
+    
+    UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithCustomView:buttonView];
     self.navigationItem.rightBarButtonItem = barButton;
+    
 
 
     
-//    [self.view addSubview:self.coinShow];
-//    [self.view bringSubviewToFront:self.coinShow];
-    
-//    [self.navigationController.view addSubview:self.coinShow];
     
     self.ignoreArray = [[NSMutableArray alloc] init];
     
@@ -192,10 +196,10 @@ int answerPickedCount;
 
 -(void)setupButtonsView
 {
-    CGFloat distance = 33;
+    CGFloat distance = 30;
     
-    UIButton *cd1Btn = [[UIButton alloc] initWithFrame:CGRectMake(50, distance, CD_SZIE, CD_SZIE)];
-    UIButton *cd2Btn = [[UIButton alloc] initWithFrame:CGRectMake(190, distance, CD_SZIE, CD_SZIE)];
+    UIButton *cd1Btn = [[UIButton alloc] initWithFrame:CGRectMake(50, distance+3, CD_SZIE, CD_SZIE)];
+    UIButton *cd2Btn = [[UIButton alloc] initWithFrame:CGRectMake(190, distance+3, CD_SZIE, CD_SZIE)];
     UIButton *cd3Btn = [[UIButton alloc] initWithFrame:CGRectMake(50, 2*distance+CD_SZIE, CD_SZIE, CD_SZIE)];
     UIButton *cd4Btn = [[UIButton alloc] initWithFrame:CGRectMake(190, 2*distance+CD_SZIE, CD_SZIE, CD_SZIE)];
     UIButton *cd5Btn = [[UIButton alloc] initWithFrame:CGRectMake(50, 3*distance+2*CD_SZIE, CD_SZIE, CD_SZIE)];
@@ -217,7 +221,7 @@ int answerPickedCount;
     for (int i = 0; i<self.diskButtons.count; i++) {
         UIButton *button = self.diskButtons[i];
         [button setBackgroundImage:[UIImage imageNamed:@"cycle"] forState:UIControlStateNormal];
-        [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     }
     
     [self.downPartView addSubview:cd1Btn];
@@ -558,10 +562,14 @@ int answerPickedCount;
 
     [UMSocialSnsService presentSnsIconSheetView:self
                         appKey:@"54c46ea7fd98c5071d000668"
-                                      shareText:@"友盟社会化分享让您快速实现分享等社会化功能，http://umeng.com/social"
+                                      shareText:@"谁的耳力还有富裕快来帮帮忙！"
                                      shareImage:[UIImage imageNamed:@"icon.png"]
                                 shareToSnsNames:@[UMShareToSina]
                                        delegate:(id)self];
+    
+    // music url
+    [[UMSocialData defaultData].urlResource setResourceType:UMSocialUrlResourceTypeMusic url:@"http://music.huoxing.com/upload/20130330/1364651263157_1085.mp3"];
+
 }
 -(void)didFinishGetUMSocialDataInViewController:(UMSocialResponseEntity *)response
 {
@@ -590,35 +598,6 @@ int answerPickedCount;
         playSingleAlert.tag = 13;
         
     }
-    
-//    int diskNumber = -1;
-//    
-//    for(int i = (int)(self.diskButtons.count -1) ; i >= 0 ; i-- )
-//    {
-//        if (![self.diskButtons[i] isHidden]) {
-//            diskNumber = i;
-//            
-//            UILabel *ignoreLabel = [[UILabel alloc] initWithFrame:[self.diskButtons[i] frame]];
-//            [ignoreLabel setText:@"无视"];
-//            [self. downPartView addSubview:ignoreLabel];
-//            [self.diskButtons[i] setHidden:YES];
-//            
-//            break;
-//        }
-//    }
-//    NSString *songName = self.musicsArray[diskNumber];
-//    
-//    [self.musicsArray removeObject:songName];
-//    [self.musicsPlayArray removeObject:songName];
-//
-//
-//    
-//    self.gameDataForSingleLevel = [self readDataFromPlist:@"gameData"] ;
-//    
-//    NSMutableArray *currentMusics = [self.gameDataForSingleLevel objectForKey:@"musicPlaying"];
-//    [currentMusics removeObject:songName];
-//    [self modifyPlist:@"gameData" withValue:currentMusics forKey:@"musicPlaying"];
-    
     
 }
 
@@ -726,6 +705,8 @@ int answerPickedCount;
                     
                     UILabel *ignoreLabel = [[UILabel alloc] initWithFrame:[self.diskButtons[i] frame]];
                     [ignoreLabel setText:@"无视"];
+                    [ignoreLabel setTextColor:[UIColor whiteColor]];
+                    ignoreLabel.textAlignment = NSTextAlignmentCenter;
                     [self. downPartView addSubview:ignoreLabel];
                     [self.diskButtons[i] setHidden:YES];
                     
@@ -839,6 +820,8 @@ int answerPickedCount;
         
         UILabel *ignoreLabel = [[UILabel alloc] initWithFrame:[self.diskButtons[i] frame]];
         [ignoreLabel setText:@"无视"];
+        ignoreLabel.textAlignment = NSTextAlignmentCenter;
+        [ignoreLabel setTextColor:[UIColor whiteColor]];
         [self.ignoreArray insertObject:ignoreLabel atIndex:i];
         [self. downPartView addSubview:ignoreLabel];
         [ignoreLabel setHidden:YES];
@@ -955,7 +938,7 @@ int answerPickedCount;
     [self stopSpin];
     [self.deleteOneBtn setEnabled:YES];
     [self.shareBtn setEnabled:YES];
-    [self.playBtn setImage:[UIImage imageNamed:@"开始"] forState:UIControlStateNormal];
+    [self.playBtn setImage:[UIImage imageNamed:@"播放"] forState:UIControlStateNormal];
 
     
     [self enableButtons];

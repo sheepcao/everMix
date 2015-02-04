@@ -17,6 +17,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" backIndicatorImage="topbar.png" id="wGZ-Pq-rJ6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="BpU-Vf-ayy" kind="relationship" relationship="rootViewController" id="UpI-wB-dWV"/>
@@ -282,6 +286,7 @@
                         <outlet property="difficulty3" destination="XdL-pv-u50" id="foe-6v-rKF"/>
                         <outlet property="difficulty4" destination="9d7-zO-1cw" id="Sxm-Hd-XRQ"/>
                         <outlet property="difficulty5" destination="qfk-nQ-IXu" id="x6r-rJ-aYt"/>
+                        <outlet property="versionLabel" destination="tMe-vf-byg" id="pKz-el-45c"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1rk-KA-T0l" userLabel="First Responder" sceneMemberID="firstResponder"/>

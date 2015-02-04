@@ -11,6 +11,9 @@
 #import "buyCoinsViewController.h"
 #import "MobClick.h"
 
+
+#define VERSIONNUMBER   [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
+
 @interface ViewController : UIViewController<prepareSongsDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundImg;
@@ -52,5 +55,6 @@
 
 
 - (IBAction)difficultyChanged:(UIButton *)sender;
+@property (strong, nonatomic) IBOutlet UILabel *versionLabel;
 
 @end
