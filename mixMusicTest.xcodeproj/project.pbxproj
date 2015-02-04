@@ -432,6 +432,7 @@
 		A4B9F7DC1A81AFA300076531 /* gameBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gameBack.png; sourceTree = "<group>"; };
 		A4B9F7E01A81B00400076531 /* 停止.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "停止.png"; sourceTree = "<group>"; };
 		A4B9F7E11A81B00400076531 /* 播放.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "播放.png"; sourceTree = "<group>"; };
+		A4B9F7E41A820A9D00076531 /* globalVar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = globalVar.h; sourceTree = "<group>"; };
 		A4D050161A7612CA000D0A77 /* CustomIOS7AlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomIOS7AlertView.h; sourceTree = "<group>"; };
 		A4D050171A7612CA000D0A77 /* CustomIOS7AlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomIOS7AlertView.m; sourceTree = "<group>"; };
 		A4D9F47E1A80585E00D90F2F /* answerBoard11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = answerBoard11.png; sourceTree = "<group>"; };
@@ -843,6 +844,7 @@
 				A4A375041A47D37F0064AF00 /* mixMusicTest.entitlements */,
 				A4DDB6E11A4D036F00CFF980 /* AnswerButton.h */,
 				A4DDB6E21A4D036F00CFF980 /* AnswerButton.m */,
+				A4B9F7E41A820A9D00076531 /* globalVar.h */,
 				A4A0A3C41A5128C0007A0876 /* boardView.h */,
 				A4A0A3C51A5128C0007A0876 /* boardView.m */,
 				A4AC86081A36CFE700CD19CA /* AppDelegate.h */,

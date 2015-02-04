@@ -9,11 +9,13 @@
 #import "ViewController.h"
 #import "myAlertView.h"
 #import <QuartzCore/QuartzCore.h>
+#import "globalVar.h"
 //#import <CoreVideo/CVOpenGLESTextureCache.h>
 //#import "RippleModel.h"
 //#include <stdlib.h>
 
-
+#define DMPUBLISHERID        @"56OJxqiIuN5cJKR8fX"
+#define DMPLCAEMENTID_INTER @"16TLej7oApZ2kNUOza5fBhvz"
 
 @interface ViewController ()
 @property (nonatomic,strong)CustomIOS7AlertView *dailyRewardAlert;
@@ -55,6 +57,20 @@ int difficultyNow;
     
     self.difficultyButtons = [NSArray arrayWithObjects:self.difficulty1,self.difficulty2,self.difficulty3,self.difficulty4,self.difficulty5, nil];
     
+    
+    timer = [NSTimer scheduledTimerWithTimeInterval:13.0 target:self selector:@selector(bigADshow) userInfo:nil repeats:NO];
+
+    //big AD...
+    // 初始化插屏⼲⼴广告,此处使⽤用的是测试ID,请登陆多盟官⺴⽹网(www.domob.cn)获取新的ID _dmInterstitial = [[DMInterstitialAdController alloc]
+    _dmInterstitial = [[DMInterstitialAdController alloc] initWithPublisherId:DMPUBLISHERID
+                                                                  placementId:DMPLCAEMENTID_INTER
+                                                           rootViewController:self];
+    _dmInterstitial.delegate = self;
+    // load advertisement
+    [_dmInterstitial loadAd];
+    
+    backFromGame = NO;
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -81,12 +97,28 @@ int difficultyNow;
 //    CGRect frame= self.difficultySegment.frame;
 //    [self.difficultySegment setFrame:CGRectMake(frame.origin.x, frame.origin.y, frame.size.width, 35)];
     
-//    timer = [NSTimer scheduledTimerWithTimeInterval:4.0 target:self selector:@selector(buttonFlash) userInfo:nil repeats:YES];
 
     [self.versionLabel setText:[NSString stringWithFormat:@"Version: %@",VERSIONNUMBER]];
   
     
 }
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    if (backFromGame) {
+        if (timer != nil)
+        {
+            [timer invalidate];
+            
+            timer = nil;
+            
+        }
+        [self bigADshow];
+      
+    }
+}
+
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
@@ -825,5 +857,112 @@ int difficultyNow;
 
 
 }
+
+#pragma mark big advertisement
+
+-(void)dealloc
+{
+    _dmInterstitial.delegate = nil; // please set delegete = nil first
+}
+- (void)bigADshow
+{
+    // 在需要呈现插屏广告前，先通过isReady方法检查广告是否就绪
+    // before present advertisement view please check if isReady
+    NSLog(@"bigADshow!!");
+    if (_dmInterstitial.isReady)
+    {
+       
+        [_dmInterstitial present];
+        
+
+        
+    }
+    else
+    {
+        // 如果还没有ready，可以再调用loadAd
+        // if !ready load again
+       
+        [_dmInterstitial loadAd];
+        if (timer != nil)
+        {
+            
+            
+            [timer invalidate];
+            
+            
+            timer = nil;
+            
+            
+        }
+        
+        
+        
+        timer = [NSTimer scheduledTimerWithTimeInterval:10.0 target:self selector:@selector(bigADshow) userInfo:nil repeats:NO];
+    }
+}
+
+- (void)dmInterstitialSuccessToLoadAd:(DMInterstitialAdController *)dmInterstitial
+{
+    NSLog(@"[Domob Interstitial] success to load ad.");
+}
+
+// 当插屏广告加载失败后，回调该方法
+// This method will be used after failed
+- (void)dmInterstitialFailToLoadAd:(DMInterstitialAdController *)dmInterstitial withError:(NSError *)err
+{
+    NSLog(@"[Domob Interstitial] fail to load ad. %@", err);
+}
+
+// 当插屏广告要被呈现出来前，回调该方法
+// This method will be used before being presented
+- (void)dmInterstitialWillPresentScreen:(DMInterstitialAdController *)dmInterstitial
+{
+    NSLog(@"[Domob Interstitial] will present.");
+}
+
+// 当插屏广告被关闭后，回调该方法
+// This method will be used after Interstitial view  has been closed
+- (void)dmInterstitialDidDismissScreen:(DMInterstitialAdController *)dmInterstitial
+{
+    NSLog(@"[Domob Interstitial] did dismiss.");
+    if (timer != nil)
+    {
+        [timer invalidate];
+        timer = nil;
+        
+    }
+    
+    
+    
+    timer = [NSTimer scheduledTimerWithTimeInterval:45.0 target:self selector:@selector(bigADshow) userInfo:nil repeats:NO];
+    
+    // 插屏广告关闭后，加载一条新广告用于下次呈现
+    //prepair for the next advertisement view
+    [_dmInterstitial loadAd];
+}
+
+// 当将要呈现出 Modal View 时，回调该方法。如打开内置浏览器。
+// When will be showing a Modal View, call this method. Such as open built-in browser
+- (void)dmInterstitialWillPresentModalView:(DMInterstitialAdController *)dmInterstitial
+{
+    NSLog(@"[Domob Interstitial] will present modal view.");
+}
+
+// 当呈现的 Modal View 被关闭后，回调该方法。如内置浏览器被关闭。
+// When presented Modal View is closed, this method will be called. Such as built-in browser is closed
+- (void)dmInterstitialDidDismissModalView:(DMInterstitialAdController *)dmInterstitial
+{
+    NSLog(@"[Domob Interstitial] did dismiss modal view.");
+}
+
+// 当因用户的操作（如点击下载类广告，需要跳转到Store），需要离开当前应用时，回调该方法
+// When the result of the user's actions (such as clicking download class advertising, you need to jump to the Store), need to leave the current application, this method will be called
+- (void)dmInterstitialApplicationWillEnterBackground:(DMInterstitialAdController *)dmInterstitial
+{
+    NSLog(@"[Domob Interstitial] will enter background.");
+}
+
+
+
 @end
 

@@ -10,11 +10,15 @@
 #import "gameViewController.h"
 #import "buyCoinsViewController.h"
 #import "MobClick.h"
+#import "DMInterstitialAdController.h"
 
 
 #define VERSIONNUMBER   [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
 
-@interface ViewController : UIViewController<prepareSongsDelegate>
+@interface ViewController : UIViewController<prepareSongsDelegate,DMInterstitialAdControllerDelegate>
+{
+    DMInterstitialAdController *_dmInterstitial;
+}
 
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundImg;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *starButtons;

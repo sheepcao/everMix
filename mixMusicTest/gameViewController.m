@@ -7,6 +7,8 @@
 //
 
 #import "gameViewController.h"
+#import "globalVar.h"
+
 
 @interface gameViewController ()<UIAlertViewDelegate>
 
@@ -116,7 +118,9 @@ int answerPickedCount;
     
     [self.view bringSubviewToFront:self.playConsoleView];
     
-    
+    //control big AD when main page appears.
+    backFromGame = YES;
+
 }
 
 -(void)viewWillAppear:(BOOL)animated
