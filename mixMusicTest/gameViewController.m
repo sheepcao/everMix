@@ -288,15 +288,15 @@ int answerPickedCount;
     }
     //only support less than 7 letters.
     NSLog(@"center:%f",self.choicesBoardView.center.x);
-    CGFloat firstAnswerSquare_X = (self.choicesBoardView.center.x - (40+2) *songName.length/2);//considering the distance between two squares . distance = 2.
+    CGFloat firstAnswerSquare_X = (self.choicesBoardView.center.x - (33+4) *songName.length/2 - self.choicesBoardView.frame.origin.x);//considering the distance between two squares . distance = 2.
     UIImage *buttonBackImage = [UIImage imageNamed:@"answerBack"];
     for (int i = 0; i<songName.length; i++) {
          UIButton *answerButton = (UIButton *)[self.choicesBoardView viewWithTag:1];
         
-        AnswerButton *myAnswerBtn = [[AnswerButton alloc] initWithFrame:CGRectMake(firstAnswerSquare_X+1 + i*(2+40), answerButton.frame.origin.y - 75, 38, 38)];
+        AnswerButton *myAnswerBtn = [[AnswerButton alloc] initWithFrame:CGRectMake(firstAnswerSquare_X+1 + i*(4+33), answerButton.frame.origin.y - 75, 33, 33)];
         
         [myAnswerBtn addTarget:self action:@selector(answerTapped:) forControlEvents:UIControlEventTouchUpInside];
-        myAnswerBtn.titleLabel.font = [UIFont fontWithName:@"Helvetica Neue" size:20];        [myAnswerBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        myAnswerBtn.titleLabel.font = [UIFont fontWithName:@"Helvetica Neue" size:20];        [myAnswerBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         myAnswerBtn.tag = i+100;
         myAnswerBtn.isFromTag = -1;
         [myAnswerBtn setBackgroundImage:buttonBackImage forState:UIControlStateNormal];
@@ -364,7 +364,7 @@ int answerPickedCount;
             for (UIButton *subview in [self.choicesBoardView subviews]) {
                 if ([subview isKindOfClass:[AnswerButton class]]) {
                     
-                    [subview setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+                    [subview setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
                 }
             }
         
@@ -671,6 +671,7 @@ int answerPickedCount;
             
             [self.deleteButton setEnabled:NO];
             [CommonUtility coinsChange:-DELETE_PRICE];
+            [self.coinShow setTitle:[NSString stringWithFormat:@"%d",[CommonUtility fetchCoinAmount]] forState:UIControlStateNormal];
 
         }
         
@@ -688,7 +689,7 @@ int answerPickedCount;
             [self performSelector:@selector(stop10secondMusics) withObject:nil afterDelay:10.0f];
             
             [CommonUtility coinsChange:-SINGLE_SONG_PRICE];
-
+            [self.coinShow setTitle:[NSString stringWithFormat:@"%d",[CommonUtility fetchCoinAmount]] forState:UIControlStateNormal];
         }
         
         if (alertView.tag == 12)//公布答案
@@ -715,7 +716,7 @@ int answerPickedCount;
             [self.showAnswerButton setEnabled:NO];
             
             [CommonUtility coinsChange:-SHOW_ANSWER_PRICE];
-
+            [self.coinShow setTitle:[NSString stringWithFormat:@"%d",[CommonUtility fetchCoinAmount]] forState:UIControlStateNormal];
         }
         
         if (alertView.tag == 13)//去除一首混播歌曲
@@ -751,7 +752,7 @@ int answerPickedCount;
             [self modifyPlist:@"gameData" withValue:currentMusics forKey:@"musicPlaying"];
             
             [CommonUtility coinsChange:-BOMB_SONG_PRICE];
-
+            [self.coinShow setTitle:[NSString stringWithFormat:@"%d",[CommonUtility fetchCoinAmount]] forState:UIControlStateNormal];
         }
     }
 }
@@ -761,18 +762,14 @@ int answerPickedCount;
     
     [UIView animateWithDuration:0.5 delay:0.1 usingSpringWithDamping:0.7 initialSpringVelocity:1.0 options:0 animations:^{
         [self.choicesBoardView setFrame:CGRectMake(self.downPartView.frame.origin.x,[UIScreen mainScreen].bounds.size.height , self.downPartView.frame.size.width,self.downPartView.frame.size.height - 50)];
-    } completion:^(BOOL finished){
-    
-        if (finished) {
-            
-            [self stopSingleMusic];
-            for (UIView *subview in [self.choicesBoardView subviews]) {
-                if ([subview isKindOfClass:[AnswerButton class]]) {
-                    [subview removeFromSuperview];
-                }
-            }
+    } completion:nil];
+    [self stopSingleMusic];
+    for (UIView *subview in [self.choicesBoardView subviews]) {
+        if ([subview isKindOfClass:[AnswerButton class]]) {
+            [subview removeFromSuperview];
         }
-    }];
+    }
+
     
 
     

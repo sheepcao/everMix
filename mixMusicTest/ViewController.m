@@ -10,6 +10,7 @@
 #import "myAlertView.h"
 #import <QuartzCore/QuartzCore.h>
 #import "globalVar.h"
+#import "fallAnimation.h"
 //#import <CoreVideo/CVOpenGLESTextureCache.h>
 //#import "RippleModel.h"
 //#include <stdlib.h>
@@ -18,9 +19,18 @@
 #define DMPLCAEMENTID_INTER @"16TLej7oApZ2kNUOza5fBhvz"
 
 @interface ViewController ()
+{
+    bool first;
+}
 @property (nonatomic,strong)CustomIOS7AlertView *dailyRewardAlert;
 @property (nonatomic,strong)NSArray *difficultyButtons;
 
+@property (nonatomic, strong) CADisplayLink *displayLink;
+
+@property (nonatomic, strong) UIImageView *musicNote;
+@property (nonatomic, strong) UIImageView *musicNote2;
+@property CGFloat topCon;
+@property CGFloat frameBottom;
 
 @end
 int difficultyNow;
@@ -70,6 +80,8 @@ int difficultyNow;
     [_dmInterstitial loadAd];
     
     backFromGame = NO;
+    first = YES;
+    [self dropDown];
     
 }
 
@@ -100,6 +112,7 @@ int difficultyNow;
 
     [self.versionLabel setText:[NSString stringWithFormat:@"Version: %@",VERSIONNUMBER]];
   
+    
     
 }
 
@@ -847,7 +860,7 @@ int difficultyNow;
         
         [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%ld",(long)Index] forKey:@"difficulty"];
         
-        [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%ld",Index*20] forKey:@"currentLevel"];
+        [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%d",Index*20] forKey:@"currentLevel"];
     }else
     {
         myAlertView *resetAlert = [[myAlertView alloc] initWithTitle:@"且慢!" message:@"变更难度将重置已猜歌曲的进度,请君三思。" delegate:self cancelButtonTitle:nil otherButtonTitles:@"取消",@"确认", nil];
@@ -966,6 +979,85 @@ int difficultyNow;
 }
 
 
+#pragma mark music note animation
+-(void)dropDown
+{
+    self.musicNote = [[UIImageView alloc] initWithFrame:CGRectMake(30, 70, 25, 25)];
+    [self.musicNote setImage:[UIImage imageNamed:@"note1"]];
+    self.musicNote.alpha = 0;
+    [self.view addSubview:self.musicNote];
+    [self.view sendSubviewToBack:self.musicNote];
+    
+    self.musicNote2 = [[UIImageView alloc] initWithFrame:CGRectMake(180, 70, 50, 50)];
+    [self.musicNote2 setImage:[UIImage imageNamed:@"note1"]];
+    self.musicNote2.alpha = 0;
+    [self.view addSubview:self.musicNote2];
+    [self.view sendSubviewToBack:self.musicNote2];
+    
+    [self.view sendSubviewToBack:self.backgroundImg];
+    
+    fallAnimation *myFall1 = [[fallAnimation alloc] initWithView:self.musicNote];
+    
+    myFall1.frameBottom = self.musicNote.frame.size.height + self.musicNote.frame.origin.y;
+    
+    [myFall1 startDisplayLink];
+    
+    fallAnimation *myFall2 = [[fallAnimation alloc] initWithView:self.musicNote2];
+    
+    myFall2.frameBottom = self.musicNote2.frame.size.height + self.musicNote.frame.origin.y;
+    
+    [myFall2 startDisplayLink];
+    
+    
+//    [self performSelector:@selector(startDisplayLink) withObject:nil afterDelay:0.02];
 
+}
+//- (void)startDisplayLink {
+//    self.topCon = 0;
+//    self.frameBottom = 30;
+//    self.musicNote.alpha = 0;
+//    first = YES;
+//    self.displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(handleDisplayLink:)];
+//    [self.displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+//  
+//
+//}
+//
+//- (void)stopDisplayLink {
+//    [self.displayLink invalidate];
+//    self.displayLink = nil;
+//    [self performSelector:@selector(startDisplayLink) withObject:nil afterDelay:0.2];
+//
+//}
+//
+//- (void)handleDisplayLink:(CADisplayLink *)displayLink{
+////    static BOOL first = YES;
+//    static double startTime = 0;
+//  
+//    if (first) {
+//        startTime = displayLink.timestamp;
+//    }
+//    first = NO;
+//    double T = (double)displayLink.timestamp - startTime;
+//
+////    NSLog(@"TTTTT:%f",T);
+//    self.topCon = ((30 * T * T)/2);
+////    NSLog(@"topCon:%f",self.topCon);
+//    if (self.topCon + self.frameBottom > 320) {
+//        [self stopDisplayLink];
+//    }else if (self.topCon + self.frameBottom < 320 && self.topCon + self.frameBottom > 30)
+//    {
+//        self.musicNote.alpha = 0.4 - (self.topCon + self.frameBottom-30)/500;
+//        CGRect aframe = CGRectMake(self.musicNote.frame.origin.x, self.topCon+self.frameBottom, self.musicNote.frame.size.width, self.musicNote.frame.size.height) ;
+//        aframe.origin.y += self.topCon;
+//        [self.musicNote setFrame:aframe];
+//    }else
+//    {
+//        self.musicNote.alpha =0.4 *(self.topCon + self.frameBottom)/30;
+//        CGRect aframe = CGRectMake(self.musicNote.frame.origin.x, self.topCon+self.frameBottom, self.musicNote.frame.size.width, self.musicNote.frame.size.height) ;
+//        aframe.origin.y += self.topCon;
+//        [self.musicNote setFrame:aframe];
+//    }
+//}
 @end
 

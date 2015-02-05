@@ -70,7 +70,7 @@
             {
                 [MobClick event:@"ClickTier2"];
 
-                [CommonUtility coinsChange:5000];//3元买5000coins
+                [CommonUtility coinsChange:4000];//3元买4000coins
                 
                 [currentCoinsLabel setText:[NSString stringWithFormat:@"%d",[CommonUtility fetchCoinAmount]]];
                 
@@ -107,7 +107,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSInteger productCount = _products.count + 2;
+    NSInteger productCount = _products.count + 3;
     
     if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"wechatShare"] isEqualToString:@"yes"]) {
         productCount--;
@@ -146,13 +146,21 @@
 
         }
 
-    }else
+    }else if (indexPath.row == _products.count + 1)
     {
         if(![[[NSUserDefaults standardUserDefaults] objectForKey:@"sinaShare"] isEqualToString:@"yes"])
         {
         cell.textLabel.text = @"分享新浪微博奖励300金币";
         }
 
+    }
+    else if ([CommonUtility fetchCoinAmount] < 400 && indexPath.row == _products.count + 2)
+    {
+        if(![[[NSUserDefaults standardUserDefaults] objectForKey:@"reviewed"] isEqualToString:@"yes"])
+        {
+            cell.textLabel.text = @"好评一下，奖励300金币";
+        }
+        
     }
 
 
@@ -199,7 +207,7 @@
         }
 
         
-    }else
+    }else if(indexPath.row == _products.count + 1)
     {
         if(![[[NSUserDefaults standardUserDefaults] objectForKey:@"sinaShare"] isEqualToString:@"yes"])
         {
@@ -208,8 +216,39 @@
             
         }
 
+    }else if ([CommonUtility fetchCoinAmount] < 400 )
+    {
+        if(![[[NSUserDefaults standardUserDefaults] objectForKey:@"reviewed"] isEqualToString:@"yes"])
+        {
+        [self reviewUS];
+        }
     }
 
+}
+
+-(void)reviewUS
+{
+    
+    [CommonUtility coinsChange:300];
+    [currentCoinsLabel setText:[NSString stringWithFormat:@"%d",[CommonUtility fetchCoinAmount]]];
+    [_parentCoinsButton setTitle:[NSString stringWithFormat:@"%d",[CommonUtility fetchCoinAmount]] forState:UIControlStateNormal];
+    
+    [[NSUserDefaults standardUserDefaults] setObject:@"yes" forKey:@"reviewed"];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"itms-apps://itunes.apple.com/cn/app/daysinline/id844914780?mt=8"]];
+        
+//        if([[self currentLanguage] compare:@"zh-Hans" options:NSCaseInsensitiveSearch]==NSOrderedSame || [[self currentLanguage] compare:@"zh-Hant" options:NSCaseInsensitiveSearch]==NSOrderedSame)
+//        {
+//            NSLog(@"current Language == Chinese");
+//            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"itms-apps://itunes.apple.com/cn/app/daysinline/id844914780?mt=8"]];
+//            
+//            
+//        }else{
+//            NSLog(@"current Language == English");
+//            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"itms-apps://itunes.apple.com/us/app/daysinline/id844914780?mt=8"]];
+//            
+//        }
+//        
+    
 }
 
 -(void)shareToSina
