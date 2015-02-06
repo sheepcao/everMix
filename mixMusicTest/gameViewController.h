@@ -26,6 +26,8 @@
 #define SINGLE_SONG_PRICE 200
 #define SHOW_ANSWER_PRICE 350
 #define BOMB_SONG_PRICE 300
+#define LEVEL_PASS_COIN 10
+
 
 //@class buyCoinsViewController;
 
@@ -35,7 +37,9 @@
 @end
 
 
-@interface gameViewController : UIViewController<DMAdViewDelegate>
+
+
+@interface gameViewController : UIViewController<DMAdViewDelegate,closeBuyViewDelegate>
 {
     DMAdView *_dmAdView;
 }
@@ -48,6 +52,7 @@
 
 @property (nonatomic, strong) AVAudioPlayer *myAudioPlayer;
 @property (nonatomic, strong) NSMutableArray *myAudioArray;
+@property (weak, nonatomic) IBOutlet UIImageView *imgBack;
 
 @property (weak, nonatomic) IBOutlet UIButton *playBtn;
 @property int diffculty;
@@ -68,6 +73,14 @@
 @property (weak, nonatomic) IBOutlet UIView *playConsoleView;
 @property (weak, nonatomic) IBOutlet UIView *downPartView;
 @property (strong, nonatomic) boardView *choicesBoardView;
+
+@property (strong, nonatomic) IBOutlet UIView *levelPassView;
+@property (weak, nonatomic) IBOutlet UIView *levelPassMessage;
+@property (weak, nonatomic) IBOutlet UIView *difficultyPass;
+
+- (IBAction)levelPassTap;
+- (IBAction)difficultyPassTap:(id)sender;
+
 
 @property (strong, nonatomic) NSMutableArray *diskButtonFrameArray;
 //choiceBoard
@@ -99,6 +112,6 @@
 - (IBAction)returnChoicesBoard:(UIButton *)sender;
 
 - (void)spinWithOptions: (UIViewAnimationOptions) options :(UIView *)destRotateView ;
-
+-(void)closingBuy;
 @end
 

@@ -14,14 +14,17 @@
     bool first;
 }
 
-@property (nonatomic, strong) UIView *animatingView;
+@property (nonatomic, strong) UIImageView *animatingView;
 @property (nonatomic, strong) UIImageView *musicNote;
 @property CGFloat topCon;
 @property CGFloat frameBottom;
+@property CGFloat olderFrameBottom;
+@property int speed;
 @property (nonatomic, strong) CADisplayLink *displayLink;
 
 
 
 -(id)initWithView:(UIView *)animatingView;
 - (void)startDisplayLink ;
+- (void)startDisplayOnGame;
 @end

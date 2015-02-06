@@ -15,7 +15,7 @@
 
 #define VERSIONNUMBER   [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
 
-@interface ViewController : UIViewController<prepareSongsDelegate,DMInterstitialAdControllerDelegate>
+@interface ViewController : UIViewController<prepareSongsDelegate,DMInterstitialAdControllerDelegate,closeBuyViewDelegate>
 {
     DMInterstitialAdController *_dmInterstitial;
 }
@@ -61,4 +61,5 @@
 - (IBAction)difficultyChanged:(UIButton *)sender;
 @property (strong, nonatomic) IBOutlet UILabel *versionLabel;
 
+-(void)closingBuy;
 @end

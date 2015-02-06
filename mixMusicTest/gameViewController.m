@@ -8,12 +8,23 @@
 
 #import "gameViewController.h"
 #import "globalVar.h"
+#import "fallAnimation.h"
 
 
 @interface gameViewController ()<UIAlertViewDelegate>
 
 @property (nonatomic ,strong) NSMutableArray *ignoreArray;
+@property (nonatomic, strong) UIImageView *musicNote1;
+@property (nonatomic, strong) UIImageView *musicNote2;
+@property (nonatomic, strong) UIImageView *musicNote3;
+@property (nonatomic, strong) UIImageView *musicNote4;
+@property (nonatomic, strong) UIImageView *musicNote5;
+@property (nonatomic, strong) UIImageView *musicNote6;
+@property (nonatomic, strong) UIImageView *musicNote7;
+@property (nonatomic, strong) UIImageView *musicNote8;
+@property (nonatomic, strong) NSArray *musicNotes;
 
+@property (nonatomic, strong) NSMutableArray *musicsArrayForShare;
 @end
 
 bool isplayed;
@@ -24,6 +35,22 @@ int answerPickedCount;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
+    self.musicNote1 = [[UIImageView alloc] init];
+    self.musicNote2 = [[UIImageView alloc] init];
+    self.musicNote3 = [[UIImageView alloc] init];
+    self.musicNote4 = [[UIImageView alloc] init];
+    self.musicNote5 = [[UIImageView alloc] init];
+    self.musicNote6 = [[UIImageView alloc] init];
+    self.musicNote7 = [[UIImageView alloc] init];
+    self.musicNote8 = [[UIImageView alloc] init];
+    
+    
+    
+    self.musicNotes = [NSArray arrayWithObjects:self.musicNote1,self.musicNote2,self.musicNote3,self.musicNote4,self.musicNote5,self.musicNote6,self.musicNote7,self.musicNote8, nil];
+    
+    [self dropDown];
 
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"topbar"] forBarMetrics: UIBarMetricsDefault];
 
@@ -64,6 +91,8 @@ int answerPickedCount;
     self.ignoreArray = [[NSMutableArray alloc] init];
     
     self.diskButtonFrameArray = [[NSMutableArray alloc] init];
+    
+    self.musicsArrayForShare = [NSMutableArray arrayWithArray:self.musicsArray];
     
     self.musicsPlayArray = [NSMutableArray arrayWithArray:self.musicsArray];
     self.myAudioArray = [NSMutableArray new];
@@ -171,6 +200,8 @@ int answerPickedCount;
     [self.buyCoinsView setFrame:CGRectMake(0, [UIScreen mainScreen].bounds.size.height, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
     [self.view addSubview:self.buyCoinsView];
     
+    self.myBuyController.closeDelegate =self;
+
     UIButton *closeBuyView = (UIButton *)[self.buyCoinsView viewWithTag:1];
     [closeBuyView addTarget:self action:@selector(closingBuy) forControlEvents:UIControlEventTouchUpInside];
     
@@ -194,6 +225,8 @@ int answerPickedCount;
 
     
     }];
+    
+    [self.itemsToBuy reloadData];
     
 
 }
@@ -429,26 +462,79 @@ int answerPickedCount;
             [self returnChoicesBoard:nil];
 
             if (self.musicsPlayArray.count == 0) {
-
                 
-                [self modifyPlist:@"gameData" withValue:self.musicsPlayArray forKey:@"musicPlaying"];
-                
-                int levelNow = [[self.gameDataForSingleLevel objectForKey:@"currentLevel"] intValue];
-                if (levelNow == 100) {
-                    
-                    UIAlertView *finishLevelAlert = [[UIAlertView alloc] initWithTitle:@"赞" message:@"玩爆关啦！我们会尽快更新曲库，请大大持续关注！" delegate:self cancelButtonTitle:@"耐心期待" otherButtonTitles:nil, nil];
-                    [finishLevelAlert show];
-                    
-                }else if (levelNow % 20 == 0) {
-                    UIAlertView *finishLevelAlert = [[UIAlertView alloc] initWithTitle:@"恭喜" message:@"该难度已被你玩爆，下面来点更刺激的！" delegate:self cancelButtonTitle:nil otherButtonTitles:@"勇往直前", nil];
-                    finishLevelAlert.tag = 2;
-                    [finishLevelAlert show];
-                }else
-                {
-                     [self nextLevel];
-                }
-                
-               
+//                //load levelPassView
+//                if(!self.levelPassView)
+//                {
+//                    self.levelPassView = [[[NSBundle mainBundle] loadNibNamed:@"levelPassView" owner:self options:nil] objectAtIndex:0];
+//                    
+//                    CGRect aframe = self.levelPassView.frame;
+//                    aframe.origin.y = -[UIScreen mainScreen].bounds.size.height;
+//                    [self.levelPassView setFrame:aframe];
+//                    
+//                    [self.view addSubview:self.levelPassView];
+//                    
+//                }
+//
+//                
+//                [self modifyPlist:@"gameData" withValue:self.musicsPlayArray forKey:@"musicPlaying"];
+//                
+//                int levelNow = [[self.gameDataForSingleLevel objectForKey:@"currentLevel"] intValue];
+//                if (levelNow == 100) {
+//                    
+//                    UIAlertView *finishLevelAlert = [[UIAlertView alloc] initWithTitle:@"赞" message:@"玩爆关啦！我们会尽快更新曲库，请大大持续关注！" delegate:self cancelButtonTitle:@"耐心期待" otherButtonTitles:nil, nil];
+//                    [finishLevelAlert show];
+//                    
+//                }else if (levelNow % 20 == 0) {
+////                    UIAlertView *finishLevelAlert = [[UIAlertView alloc] initWithTitle:@"恭喜" message:@"该难度已被你玩爆，下面来点更刺激的！" delegate:self cancelButtonTitle:nil otherButtonTitles:@"勇往直前", nil];
+////                    finishLevelAlert.tag = 2;
+////                    [finishLevelAlert show];
+//                    
+//                    [self.levelPassMessage setHidden:YES];
+//                    [self.difficultyPass setHidden:NO];
+//                    
+//                    [UIView animateWithDuration:0.75 delay:0.15 usingSpringWithDamping:0.6 initialSpringVelocity:0.4 options:0 animations:^{
+//                        CGRect aframe = self.levelPassView.frame;
+//                        aframe.origin.y = 0;
+//                        [self.levelPassView setFrame:aframe];
+//                        
+//                        
+//                    } completion:nil];
+//                    
+//
+//                    
+//                    [UIView animateWithDuration:0.75 delay:0.15 usingSpringWithDamping:0.6 initialSpringVelocity:0.4 options:0 animations:^{
+//                        CGRect aframe = self.levelPassView.frame;
+//                        aframe.origin.y = 0;
+//                        [self.levelPassView setFrame:aframe];
+//                        
+//                        
+//                    } completion:nil];
+//                    
+//
+//                }else
+//                {
+//                    [self.difficultyPass setHidden:YES];
+//                    [self.levelPassMessage setHidden:NO];
+//
+//                    [UIView animateWithDuration:0.75 delay:0.15 usingSpringWithDamping:0.6 initialSpringVelocity:0.4 options:0 animations:^{
+//                        CGRect aframe = self.levelPassView.frame;
+//                        aframe.origin.y = 0;
+//                        [self.levelPassView setFrame:aframe];
+//                        
+//                        
+//                    } completion:nil];
+//                    
+////                    UIButton *nextLevelBtn = (UIButton *)[self.levelPassMessage viewWithTag:11];
+//                    
+//                    
+////                     [self nextLevel];
+//                }
+//                
+//               
+            
+                [self goOnNext];
+            
             }
             
         }else
@@ -509,12 +595,98 @@ int answerPickedCount;
 }
 
 
+-(void)goOnNext
+{
+    //load levelPassView
+    if(!self.levelPassView)
+    {
+        self.levelPassView = [[[NSBundle mainBundle] loadNibNamed:@"levelPassView" owner:self options:nil] objectAtIndex:0];
+        
+        CGRect aframe = self.levelPassView.frame;
+        aframe.origin.y = -[UIScreen mainScreen].bounds.size.height;
+        [self.levelPassView setFrame:aframe];
+        
+        [self.view addSubview:self.levelPassView];
+        
+    }
+    
+    
+    [self modifyPlist:@"gameData" withValue:self.musicsPlayArray forKey:@"musicPlaying"];
+    
+    int levelNow = [[self.gameDataForSingleLevel objectForKey:@"currentLevel"] intValue];
+    
+//change
+    self.gameDataForSingleLevel = [self readDataFromPlist:@"gameData"] ;
+    NSString *currentDifficulty = [self.gameDataForSingleLevel objectForKey:@"difficulty"];
+    int coinReward = LEVEL_PASS_COIN*([currentDifficulty intValue]+1);
+    [CommonUtility coinsChange:coinReward];
+    [self.coinShow setTitle:[NSString stringWithFormat:@"%d",[CommonUtility fetchCoinAmount]] forState:UIControlStateNormal];
+    
+    if (levelNow == 100) {
+        
+        UIAlertView *finishLevelAlert = [[UIAlertView alloc] initWithTitle:@"赞" message:@"玩爆关啦！我们会尽快更新曲库，请大大持续关注！" delegate:self cancelButtonTitle:@"耐心期待" otherButtonTitles:nil, nil];
+        [finishLevelAlert show];
+        
+    }else if (levelNow % 20 == 0) {
+        //                    UIAlertView *finishLevelAlert = [[UIAlertView alloc] initWithTitle:@"恭喜" message:@"该难度已被你玩爆，下面来点更刺激的！" delegate:self cancelButtonTitle:nil otherButtonTitles:@"勇往直前", nil];
+        //                    finishLevelAlert.tag = 2;
+        //                    [finishLevelAlert show];
+        
+        [self.levelPassMessage setHidden:YES];
+        [self.difficultyPass setHidden:NO];
+        
+        [UIView animateWithDuration:0.75 delay:0.15 usingSpringWithDamping:0.6 initialSpringVelocity:0.4 options:0 animations:^{
+            CGRect aframe = self.levelPassView.frame;
+            aframe.origin.y = 0;
+            [self.levelPassView setFrame:aframe];
+            
+            
+        } completion:nil];
+        
+        
+        
+        [UIView animateWithDuration:0.75 delay:0.15 usingSpringWithDamping:0.6 initialSpringVelocity:0.4 options:0 animations:^{
+            CGRect aframe = self.levelPassView.frame;
+            aframe.origin.y = 0;
+            [self.levelPassView setFrame:aframe];
+            
+            
+        } completion:nil];
+        
+        
+    }else
+    {
+        [self.difficultyPass setHidden:YES];
+        [self.levelPassMessage setHidden:NO];
+        
+        UILabel *coinAmount = (UILabel *)[self.levelPassMessage viewWithTag:1];
+        [coinAmount setText:[NSString stringWithFormat:@"%d",coinReward]];
+        
+        [UIView animateWithDuration:0.75 delay:0.15 usingSpringWithDamping:0.6 initialSpringVelocity:0.4 options:0 animations:^{
+            CGRect aframe = self.levelPassView.frame;
+            aframe.origin.y = 0;
+            [self.levelPassView setFrame:aframe];
+            
+            
+        } completion:nil];
+        
+        //                    UIButton *nextLevelBtn = (UIButton *)[self.levelPassMessage viewWithTag:11];
+        
+        
+        //                     [self nextLevel];
+    }
+
+
+    
+    
+}
 
 -(BOOL)checkCoins:(int)price
 {
     if ([CommonUtility fetchCoinAmount] < price) {
        
         UIAlertView *coinsShort = [[UIAlertView alloc] initWithTitle:@"没钱啦" message:@"金币不够啦,买点继续玩呀。" delegate:self cancelButtonTitle:@"暂不购买" otherButtonTitles:@"去看看", nil];
+        coinsShort.tag = 3;
         [coinsShort show];
         
         return NO;
@@ -580,19 +752,53 @@ int answerPickedCount;
     }
 }
 
+-(NSString *)jointURL
+{
+    NSInteger songsCount = self.musicsArrayForShare.count;
+    NSString *musicsURL = @"http://baidu.com";
+    switch (songsCount) {
+        case 1:
+            musicsURL = [NSString stringWithFormat:@"http://cgx.nwpu.info/index.php?name[]=%@.m4a",self.musicsArrayForShare[0]];
+            break;
+        case 2:
+            musicsURL = [NSString stringWithFormat:@"http://cgx.nwpu.info/index.php?name[]=%@.m4a&name[]=%@.m4a",self.musicsArrayForShare[0],self.musicsArrayForShare[1]];
+            break;
+        case 3:
+            musicsURL = [NSString stringWithFormat:@"http://cgx.nwpu.info/index.php?name[]=%@.m4a&name[]=%@.m4a&name[]=%@.m4a",self.musicsArrayForShare[0],self.musicsArrayForShare[1],self.musicsArrayForShare[2]];
+            break;
+        case 4:
+            musicsURL = [NSString stringWithFormat:@"http://cgx.nwpu.info/index.php?name[]=%@.m4a&name[]=%@.m4a&name[]=%@.m4a&name[]=%@.m4a",self.musicsArrayForShare[0],self.musicsArrayForShare[1],self.musicsArrayForShare[2],self.musicsArrayForShare[3]];
+            break;
+        case 5:
+            musicsURL = [NSString stringWithFormat:@"http://cgx.nwpu.info/index.php?name[]=%@.m4a&name[]=%@.m4a&name[]=%@.m4a&name[]=%@.m4a&name[]=%@.m4a",self.musicsArrayForShare[0],self.musicsArrayForShare[1],self.musicsArrayForShare[2],self.musicsArrayForShare[3],self.musicsArrayForShare[4]];
+            break;
+            
+        default:
+            break;
+    }
+    
+    return musicsURL;
+}
+
 - (IBAction)shareButton:(UIButton *)sender {
     
     [MobClick event:@"shareFromGame"];
 
     [UMSocialSnsService presentSnsIconSheetView:self
                         appKey:@"54c46ea7fd98c5071d000668"
-                                      shareText:@"谁的耳力还有富裕快来帮帮忙！"
-                                     shareImage:[UIImage imageNamed:@"icon.png"]
-                                shareToSnsNames:@[UMShareToSina]
+                                      shareText:@"谁的耳力还有富裕,快来帮帮忙！"
+                                     shareImage:[UIImage imageNamed:@"iconNew.png"]
+                                shareToSnsNames:@[UMShareToSina,UMShareToWechatSession,UMShareToWechatTimeline,UMShareToWechatFavorite,UMShareToQQ,UMShareToQzone]
                                        delegate:(id)self];
     
+    NSString *musicsURL = [self jointURL];
     // music url
-    [[UMSocialData defaultData].urlResource setResourceType:UMSocialUrlResourceTypeMusic url:@"http://music.huoxing.com/upload/20130330/1364651263157_1085.mp3"];
+    [[UMSocialData defaultData].urlResource setResourceType:UMSocialUrlResourceTypeMusic url:musicsURL];
+    
+    [UMSocialData defaultData].extConfig.wechatTimelineData.url = musicsURL;
+    [UMSocialData defaultData].extConfig.wechatSessionData.url = musicsURL;
+    [UMSocialData defaultData].extConfig.qqData.url = musicsURL;
+    [UMSocialData defaultData].extConfig.qzoneData.url = musicsURL;
 
 }
 -(void)didFinishGetUMSocialDataInViewController:(UMSocialResponseEntity *)response
@@ -647,6 +853,9 @@ int answerPickedCount;
             
             [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%d",[currentDifficulty intValue]+1] forKey:@"difficulty"];
             [self nextLevel];
+        }
+        if (alertView.tag == 3) {
+            [self buyCoinsAction];
         }
         
         if (alertView.tag == 10)//删除错误选项
@@ -707,8 +916,11 @@ int answerPickedCount;
             [self.diskButtons[self.choicesBoardView.songNumber] setHidden:YES];
             UILabel *songResult = [[UILabel alloc] initWithFrame:[(UIButton *)self.diskButtons[self.choicesBoardView.songNumber] frame] ];
             songResult.text = songName;
-            songResult.font = [UIFont fontWithName:@"Oriya Sangam MN" size:16];
+            songResult.font = [UIFont fontWithName:@"Oriya Sangam MN" size:18];
             songResult.numberOfLines = 2;
+            songResult.textAlignment = NSTextAlignmentCenter;
+            [songResult setTextColor:[UIColor whiteColor]];
+            
             [self.downPartView addSubview:songResult];
             [self.musicsPlayArray removeObject:songName];
             
@@ -768,6 +980,9 @@ int answerPickedCount;
         if ([subview isKindOfClass:[AnswerButton class]]) {
             [subview removeFromSuperview];
         }
+    }
+    if (self.musicsPlayArray.count == 0) {
+        [self goOnNext];
     }
 
     
@@ -1150,7 +1365,7 @@ duration:(NSTimeInterval)duration
 // This method will be used after load failed
 - (void)dmAdViewFailToLoadAd:(DMAdView *)adView withError:(NSError *)error
 {
-    
+
     NSLog(@"[Domob Sample] fail to load ad. %@", error);
 }
 
@@ -1175,5 +1390,70 @@ duration:(NSTimeInterval)duration
     NSLog(@"[Domob Sample] will enter background.");
 }
 
+-(void)dropDown
+{
+    
+    
+    for (int i = 0; i<8; i++) {
+        
+        double size = [self randomSize];
+        CGRect aframe = CGRectMake([self randomXfrom:40*i toEnd:40+40*i], -50, size, size);
+        [self setupAnimationNote:self.musicNotes[i] imageName:[NSString stringWithFormat:@"note%d",i] ImageFrame:aframe];
+        
+    }
+    
+    [self.view sendSubviewToBack:self.imgBack];
+    
+}
+-(double)randomXfrom:(int)startX toEnd:(int)endX
+{
+    unsigned int randomNumber = startX + arc4random()%(endX - startX);
+    return (double)randomNumber;
+    
+}
+-(double)randomY
+{
+    unsigned int randomNumber = 20 + arc4random()%120;
+    return (double)randomNumber;
+    
+}
+-(double)randomSize
+{
+    unsigned int randomNumber = 20 + arc4random()%30;
+    return (double)randomNumber;
+    
+}
+-(int)randomSpeed
+{
+    unsigned int randomNumber = 20 + arc4random()%100;
+    return randomNumber;
+}
 
+-(void)setupAnimationNote:(UIImageView *)NoteImageView imageName:(NSString *)ImgName ImageFrame:(CGRect)imgFrame
+{
+    NoteImageView = [[UIImageView alloc] initWithFrame:imgFrame];
+    [NoteImageView setImage:[UIImage imageNamed:ImgName]];
+    NoteImageView.alpha = 0;
+    [self.view addSubview:NoteImageView];
+    [self.view sendSubviewToBack:NoteImageView];
+    
+    fallAnimation *myFall = [[fallAnimation alloc] initWithView:NoteImageView];
+    
+    [myFall startDisplayOnGame];
+//    [myFall performSelector:@selector(startDisplayOnGame) withObject:nil afterDelay:0.05];
+    
+}
+- (IBAction)levelPassTap {
+    
+    [self nextLevel];
+}
+
+- (IBAction)difficultyPassTap:(id)sender {
+    
+    self.gameDataForSingleLevel = [self readDataFromPlist:@"gameData"] ;
+    NSString *currentDifficulty = [self.gameDataForSingleLevel objectForKey:@"difficulty"];
+    
+    [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%d",[currentDifficulty intValue]+1] forKey:@"difficulty"];
+    [self nextLevel];
+}
 @end

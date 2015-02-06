@@ -27,8 +27,15 @@
 
 @property (nonatomic, strong) CADisplayLink *displayLink;
 
-@property (nonatomic, strong) UIImageView *musicNote;
+@property (nonatomic, strong) UIImageView *musicNote1;
 @property (nonatomic, strong) UIImageView *musicNote2;
+@property (nonatomic, strong) UIImageView *musicNote3;
+@property (nonatomic, strong) UIImageView *musicNote4;
+@property (nonatomic, strong) UIImageView *musicNote5;
+@property (nonatomic, strong) UIImageView *musicNote6;
+@property (nonatomic, strong) UIImageView *musicNote7;
+@property (nonatomic, strong) UIImageView *musicNote8;
+@property (nonatomic, strong) NSArray *musicNotes;
 @property CGFloat topCon;
 @property CGFloat frameBottom;
 
@@ -51,8 +58,19 @@ int difficultyNow;
 //    {
 //        NSLog(@"Font: %@ ...", [fontFamilies objectAtIndex:i]);
 //    }
+
+    self.musicNote1 = [[UIImageView alloc] init];
+    self.musicNote2 = [[UIImageView alloc] init];
+    self.musicNote3 = [[UIImageView alloc] init];
+    self.musicNote4 = [[UIImageView alloc] init];
+    self.musicNote5 = [[UIImageView alloc] init];
+    self.musicNote6 = [[UIImageView alloc] init];
+    self.musicNote7 = [[UIImageView alloc] init];
+    self.musicNote8 = [[UIImageView alloc] init];
+
+
     
-    
+    self.musicNotes = [NSArray arrayWithObjects:self.musicNote1,self.musicNote2,self.musicNote3,self.musicNote4,self.musicNote5,self.musicNote6,self.musicNote7,self.musicNote8, nil];
     
     [self dailyReward];
 
@@ -532,36 +550,20 @@ int difficultyNow;
     
     [UMSocialSnsService presentSnsIconSheetView:self
                                          appKey:@"54c46ea7fd98c5071d000668"
-                                      shareText:@"谁的耳力还有富裕快来帮帮忙！"
-                                     shareImage:[UIImage imageNamed:@"icon.png"]
-                                shareToSnsNames:@[UMShareToSina]
+                                      shareText:@"我在玩魔音大师，还挺挑战的，朋友们也来试试!"
+                                     shareImage:[UIImage imageNamed:@"iconNew.png"]
+                                shareToSnsNames:@[UMShareToSina,UMShareToWechatSession,UMShareToWechatTimeline,UMShareToWechatFavorite,UMShareToQQ,UMShareToQzone]
                                        delegate:(id)self];
     
     // music url
-    [[UMSocialData defaultData].urlResource setResourceType:UMSocialUrlResourceTypeMusic url:@"http://music.huoxing.com/upload/20130330/1364651263157_1085.mp3"];
+    [[UMSocialData defaultData].urlResource setResourceType:UMSocialUrlResourceTypeMusic url:@"http://baidu.com"];
+
+    [UMSocialData defaultData].extConfig.wechatTimelineData.url = @"http://baidu.com";
+    [UMSocialData defaultData].extConfig.wechatSessionData.url = @"http://baidu.com";
+    [UMSocialData defaultData].extConfig.qqData.url = @"http://baidu.com";
+    [UMSocialData defaultData].extConfig.qzoneData.url = @"http://baidu.com";
 
 
-    [[UMSocialDataService defaultDataService] requestAddFollow:UMShareToSina followedUsid:@[@"2937537507"] completion:nil];
-    //水波动画
-//    CATransition *animation=[CATransition animation];
-//    [animation setDelegate:self];
-//    [animation setDuration:1.0];
-//    [animation setTimingFunction:UIViewAnimationCurveEaseInOut];
-//    [animation setType:@"rippleEffect"];
-//    
-//    [animation setFillMode:kCAFillModeRemoved];
-//    animation.endProgress=1;
-//    [animation setRemovedOnCompletion:YES];
-//    [self.view.layer addAnimation:animation forKey:nil];
-
-//    [self.view sendSubviewToBack:sub];
-//    UIGraphicsBeginImageContext(self.view.frame.size);
-//
-//    [sub.layer renderInContext:UIGraphicsGetCurrentContext()];
-//    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-//    UIGraphicsEndImageContext();
-//    
-//    [sub setImage:image];
 
     
 
@@ -577,8 +579,11 @@ int difficultyNow;
     }
 }
 
+
 - (IBAction)commentOnStore {
     [MobClick event:@"comment"];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:REVIEW_URL]];
+
 
 }
 
@@ -693,6 +698,8 @@ int difficultyNow;
     [self.buyCoinsView setFrame:CGRectMake(0, [UIScreen mainScreen].bounds.size.height, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
     [self.view addSubview:self.buyCoinsView];
     
+    self.myBuyController.closeDelegate =self;
+    
     UIButton *closeBuyView = (UIButton *)[self.buyCoinsView viewWithTag:1];
     [closeBuyView addTarget:self action:@selector(closingBuy) forControlEvents:UIControlEventTouchUpInside];
     
@@ -712,6 +719,10 @@ int difficultyNow;
     [UIView animateWithDuration:0.65 delay:0.05 usingSpringWithDamping:0.8 initialSpringVelocity:0.4 options:0 animations:^{
         [self.buyCoinsView setFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
     } completion:nil];
+    
+    [self.itemsToBuy reloadData];
+    
+    
     
 }
 
@@ -926,6 +937,8 @@ int difficultyNow;
 // This method will be used after failed
 - (void)dmInterstitialFailToLoadAd:(DMInterstitialAdController *)dmInterstitial withError:(NSError *)err
 {
+
+    
     NSLog(@"[Domob Interstitial] fail to load ad. %@", err);
 }
 
@@ -982,82 +995,62 @@ int difficultyNow;
 #pragma mark music note animation
 -(void)dropDown
 {
-    self.musicNote = [[UIImageView alloc] initWithFrame:CGRectMake(30, 70, 25, 25)];
-    [self.musicNote setImage:[UIImage imageNamed:@"note1"]];
-    self.musicNote.alpha = 0;
-    [self.view addSubview:self.musicNote];
-    [self.view sendSubviewToBack:self.musicNote];
+
     
-    self.musicNote2 = [[UIImageView alloc] initWithFrame:CGRectMake(180, 70, 50, 50)];
-    [self.musicNote2 setImage:[UIImage imageNamed:@"note1"]];
-    self.musicNote2.alpha = 0;
-    [self.view addSubview:self.musicNote2];
-    [self.view sendSubviewToBack:self.musicNote2];
-    
+    for (int i = 0; i<8; i++) {
+        
+        double size = [self randomSize];
+        CGRect aframe = CGRectMake([self randomXfrom:40*i toEnd:40+40*i], -50, size, size);
+        [self setupAnimationNote:self.musicNotes[i] imageName:[NSString stringWithFormat:@"note%d",i] ImageFrame:aframe];
+        
+    }
+
     [self.view sendSubviewToBack:self.backgroundImg];
-    
-    fallAnimation *myFall1 = [[fallAnimation alloc] initWithView:self.musicNote];
-    
-    myFall1.frameBottom = self.musicNote.frame.size.height + self.musicNote.frame.origin.y;
-    
-    [myFall1 startDisplayLink];
-    
-    fallAnimation *myFall2 = [[fallAnimation alloc] initWithView:self.musicNote2];
-    
-    myFall2.frameBottom = self.musicNote2.frame.size.height + self.musicNote.frame.origin.y;
-    
-    [myFall2 startDisplayLink];
+
     
     
-//    [self performSelector:@selector(startDisplayLink) withObject:nil afterDelay:0.02];
 
 }
-//- (void)startDisplayLink {
-//    self.topCon = 0;
-//    self.frameBottom = 30;
-//    self.musicNote.alpha = 0;
-//    first = YES;
-//    self.displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(handleDisplayLink:)];
-//    [self.displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
-//  
-//
-//}
-//
-//- (void)stopDisplayLink {
-//    [self.displayLink invalidate];
-//    self.displayLink = nil;
-//    [self performSelector:@selector(startDisplayLink) withObject:nil afterDelay:0.2];
-//
-//}
-//
-//- (void)handleDisplayLink:(CADisplayLink *)displayLink{
-////    static BOOL first = YES;
-//    static double startTime = 0;
-//  
-//    if (first) {
-//        startTime = displayLink.timestamp;
-//    }
-//    first = NO;
-//    double T = (double)displayLink.timestamp - startTime;
-//
-////    NSLog(@"TTTTT:%f",T);
-//    self.topCon = ((30 * T * T)/2);
-////    NSLog(@"topCon:%f",self.topCon);
-//    if (self.topCon + self.frameBottom > 320) {
-//        [self stopDisplayLink];
-//    }else if (self.topCon + self.frameBottom < 320 && self.topCon + self.frameBottom > 30)
-//    {
-//        self.musicNote.alpha = 0.4 - (self.topCon + self.frameBottom-30)/500;
-//        CGRect aframe = CGRectMake(self.musicNote.frame.origin.x, self.topCon+self.frameBottom, self.musicNote.frame.size.width, self.musicNote.frame.size.height) ;
-//        aframe.origin.y += self.topCon;
-//        [self.musicNote setFrame:aframe];
-//    }else
-//    {
-//        self.musicNote.alpha =0.4 *(self.topCon + self.frameBottom)/30;
-//        CGRect aframe = CGRectMake(self.musicNote.frame.origin.x, self.topCon+self.frameBottom, self.musicNote.frame.size.width, self.musicNote.frame.size.height) ;
-//        aframe.origin.y += self.topCon;
-//        [self.musicNote setFrame:aframe];
-//    }
-//}
+
+-(double)randomXfrom:(int)startX toEnd:(int)endX
+{
+    unsigned int randomNumber = startX + arc4random()%(endX - startX);
+    return (double)randomNumber;
+
+}
+-(double)randomY
+{
+    unsigned int randomNumber = 20 + arc4random()%120;
+    return (double)randomNumber;
+    
+}
+-(double)randomSize
+{
+    unsigned int randomNumber = 20 + arc4random()%30;
+    return (double)randomNumber;
+    
+}
+-(int)randomSpeed
+{
+    unsigned int randomNumber = 20 + arc4random()%100;
+    return randomNumber;
+}
+
+-(void)setupAnimationNote:(UIImageView *)NoteImageView imageName:(NSString *)ImgName ImageFrame:(CGRect)imgFrame
+{
+    NoteImageView = [[UIImageView alloc] initWithFrame:imgFrame];
+    [NoteImageView setImage:[UIImage imageNamed:ImgName]];
+    NoteImageView.alpha = 0;
+    [self.view addSubview:NoteImageView];
+    [self.view sendSubviewToBack:NoteImageView];
+    
+    fallAnimation *myFall = [[fallAnimation alloc] initWithView:NoteImageView];
+    
+
+    [myFall startDisplayLink];
+//    [myFall performSelector:@selector(startDisplayLink) withObject:nil afterDelay:0.05];
+    
+}
+
 @end
 

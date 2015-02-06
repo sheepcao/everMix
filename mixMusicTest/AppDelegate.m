@@ -11,6 +11,7 @@
 #import "UMSocial.h"
 #import "UMSocialWechatHandler.h"
 #import "UMSocialSinaHandler.h"
+#import "UMSocialQQHandler.h"
 
 
 @interface AppDelegate ()
@@ -33,8 +34,10 @@
 //    [UMSocialWechatHandler setWXAppId:@"wxd930ea5d5a258f4f" appSecret:@"db426a9829e4b49a0dcac7b4162da6b6" url:@"http://www.umeng.com/social"];
 
     [UMSocialSinaHandler openSSOWithRedirectURL:@"http://sns.whalecloud.com/sina2/callback"];
+    [UMSocialWechatHandler setWXAppId:@"wx5673ebdfec5ae053" appSecret:@"13005a276297cd8031d95a206494fef5" url:nil];
 
-    
+    [UMSocialQQHandler setQQWithAppId:@"1104216238" appKey:@"2a2fBc4MyEPqyIdc" url:nil];
+
 
 
 

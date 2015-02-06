@@ -25,6 +25,7 @@
    	self = [super init];
     if (self != nil) {
         
+        
         _parentCoinsButton = parentCoinsButton;
         self.parentControler = controller;
         
@@ -115,6 +116,9 @@
     if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"sinaShare"] isEqualToString:@"yes"]) {
         productCount--;
     }
+    if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"reviewed"] isEqualToString:@"yes"]) {
+        productCount--;
+    }
     
     return productCount;
 }
@@ -195,9 +199,7 @@
     {
         if(![[[NSUserDefaults standardUserDefaults] objectForKey:@"wechatShare"] isEqualToString:@"yes"])
         {
-            [[NSUserDefaults standardUserDefaults] setObject:@"yes" forKey:@"wechatShare"];
-            [CommonUtility coinsChange:300];
-            [currentCoinsLabel setText:[NSString stringWithFormat:@"%d",[CommonUtility fetchCoinAmount]]];
+            [self shareToWechat];
             
             
         }else if(![[[NSUserDefaults standardUserDefaults] objectForKey:@"sinaShare"] isEqualToString:@"yes"])
@@ -223,7 +225,9 @@
         [self reviewUS];
         }
     }
-
+    
+    [self.closeDelegate closingBuy];
+    
 }
 
 -(void)reviewUS
@@ -234,31 +238,45 @@
     [_parentCoinsButton setTitle:[NSString stringWithFormat:@"%d",[CommonUtility fetchCoinAmount]] forState:UIControlStateNormal];
     
     [[NSUserDefaults standardUserDefaults] setObject:@"yes" forKey:@"reviewed"];
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"itms-apps://itunes.apple.com/cn/app/daysinline/id844914780?mt=8"]];
-        
-//        if([[self currentLanguage] compare:@"zh-Hans" options:NSCaseInsensitiveSearch]==NSOrderedSame || [[self currentLanguage] compare:@"zh-Hant" options:NSCaseInsensitiveSearch]==NSOrderedSame)
-//        {
-//            NSLog(@"current Language == Chinese");
-//            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"itms-apps://itunes.apple.com/cn/app/daysinline/id844914780?mt=8"]];
-//            
-//            
-//        }else{
-//            NSLog(@"current Language == English");
-//            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"itms-apps://itunes.apple.com/us/app/daysinline/id844914780?mt=8"]];
-//            
-//        }
-//        
     
+    [self.itemsTable reloadData];
+    
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:REVIEW_URL]];
+        
+
+    
+}
+
+-(void)shareToWechat
+{
+    [UMSocialSnsService presentSnsIconSheetView:self.parentControler
+                                         appKey:@"54c46ea7fd98c5071d000668"
+                                      shareText:@"我在玩魔音大师，还挺挑战的，朋友们也来试试!"
+                                     shareImage:[UIImage imageNamed:@"iconNew.png"]
+                                shareToSnsNames:@[UMShareToWechatTimeline]
+                                       delegate:(id)self];
+    
+    // music url
+    [[UMSocialData defaultData].urlResource setResourceType:UMSocialUrlResourceTypeMusic url:@"http://baidu.com"];
+    
+    [UMSocialData defaultData].extConfig.wechatTimelineData.url = @"http://baidu.com";
+    [UMSocialData defaultData].extConfig.wechatSessionData.url = @"http://baidu.com";
 }
 
 -(void)shareToSina
 {
     [UMSocialSnsService presentSnsIconSheetView:self.parentControler
                                          appKey:@"54c46ea7fd98c5071d000668"
-                                      shareText:@"友盟社会化分享让您快速实现分享等社会化功能，http://umeng.com/social"
-                                     shareImage:[UIImage imageNamed:@"icon.png"]
+                                      shareText:@"我在玩魔音大师，还挺挑战的，朋友们也来试试!"
+                                     shareImage:[UIImage imageNamed:@"iconNew.png"]
                                 shareToSnsNames:@[UMShareToSina]
                                        delegate:(id)self];
+    
+    // music url
+    [[UMSocialData defaultData].urlResource setResourceType:UMSocialUrlResourceTypeMusic url:@"http://baidu.com"];
+    
+    [UMSocialData defaultData].extConfig.wechatTimelineData.url = @"http://baidu.com";
+    [UMSocialData defaultData].extConfig.wechatSessionData.url = @"http://baidu.com";
 }
 
 -(void)didFinishGetUMSocialDataInViewController:(UMSocialResponseEntity *)response
@@ -267,35 +285,32 @@
     if(response.responseCode == UMSResponseCodeSuccess)
     {
         //得到分享到的微博平台名
-        [MobClick event:@"CoinFromSina"];
-       //remember wechat
         
-        [MobClick event:@"CoinFromWechat"];
 
         NSLog(@"share to sns name is %@",[[response.data allKeys] objectAtIndex:0]);
+        
+        [CommonUtility coinsChange:300];
+        [currentCoinsLabel setText:[NSString stringWithFormat:@"%d",[CommonUtility fetchCoinAmount]]];
+        [_parentCoinsButton setTitle:[NSString stringWithFormat:@"%d",[CommonUtility fetchCoinAmount]] forState:UIControlStateNormal];
         if([[[response.data allKeys] objectAtIndex:0] isEqualToString:@"sina"])
         {
-            [CommonUtility coinsChange:300];
-            [currentCoinsLabel setText:[NSString stringWithFormat:@"%d",[CommonUtility fetchCoinAmount]]];
-            [_parentCoinsButton setTitle:[NSString stringWithFormat:@"%d",[CommonUtility fetchCoinAmount]] forState:UIControlStateNormal];
-            
+            [MobClick event:@"CoinFromSina"];
+
             [[NSUserDefaults standardUserDefaults] setObject:@"yes" forKey:@"sinaShare"];
-            [self.itemsTable reloadData];
+
+        }else if ([[[response.data allKeys] objectAtIndex:0] isEqualToString:@"wxtimeline"])
+        {
+            [MobClick event:@"CoinFromWechat"];
+
+            [[NSUserDefaults standardUserDefaults] setObject:@"yes" forKey:@"wechatShare"];
 
         }
+        [self.itemsTable reloadData];
+
         
     }
 }
-//- (void)buyButtonTapped:(id)sender {
-//
-//    
-//    UIButton *buyButton = (UIButton *)sender;
-//    SKProduct *product = _products[buyButton.tag];
-//    
-//    NSLog(@"Buying %@...", product.productIdentifier);
-//    [[myIAPHelper sharedInstance] buyProduct:product];
-//    
-//}
+
 
 @end
 

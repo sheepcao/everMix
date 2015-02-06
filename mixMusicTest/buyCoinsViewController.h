@@ -12,11 +12,14 @@
 #import "UMSocialSinaHandler.h"
 #import "UMSocialSnsService.h"
 #import "UMSocialSnsPlatformManager.h"
-//#import "gameViewController.h"
+#import "globalVar.h"
 
 
 @interface buyCoinsViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 //@property (strong, nonatomic) UIView *centerView;
+
+@property (weak,nonatomic) id<closeBuyViewDelegate> closeDelegate;
+
 @property (strong, nonatomic) UITableView *itemsTable;
 //
 //@property (nonatomic,strong) UIRefreshControl *refreshControl NS_AVAILABLE_IOS(6_0);
