@@ -452,11 +452,14 @@ int answerPickedCount;
             songResult.textAlignment = NSTextAlignmentCenter;
             [songResult setTextColor:[UIColor whiteColor]];
             
-             UIImageView *checkMark = [[UIImageView alloc] initWithFrame:[(UIButton *)self.diskButtons[self.choicesBoardView.songNumber] frame] ];
-            [checkMark setImage:[UIImage imageNamed:@"checkRed"]];
+            UIImageView *rightBackImg = [[UIImageView alloc] initWithFrame:songResult.frame];
+            [rightBackImg setImage:[UIImage imageNamed:@"rightBack"]];
+            [self.downPartView addSubview:rightBackImg];
+
+            UIImageView *checkMark = [[UIImageView alloc] initWithFrame:CGRectMake(songResult.frame.size.width -15, songResult.frame.size.height-20, 20, 20)  ];
+            [checkMark setImage:[UIImage imageNamed:@"checkMark"]];
            
-            [self.downPartView addSubview:checkMark];
-            
+            [songResult addSubview:checkMark];
             [self.downPartView addSubview:songResult];
             [self.musicsPlayArray removeObject:songNameGuessed];
             [self returnChoicesBoard:nil];
@@ -922,6 +925,15 @@ int answerPickedCount;
             songResult.numberOfLines = 2;
             songResult.textAlignment = NSTextAlignmentCenter;
             [songResult setTextColor:[UIColor whiteColor]];
+            
+            UIImageView *rightBackImg = [[UIImageView alloc] initWithFrame:songResult.frame];
+            [rightBackImg setImage:[UIImage imageNamed:@"rightBack"]];
+            [self.downPartView addSubview:rightBackImg];
+            
+            UIImageView *checkMark = [[UIImageView alloc] initWithFrame:CGRectMake(songResult.frame.size.width -15, songResult.frame.size.height-20, 20, 20)  ];
+            [checkMark setImage:[UIImage imageNamed:@"checkMark"]];
+            
+            [songResult addSubview:checkMark];
             
             [self.downPartView addSubview:songResult];
             [self.musicsPlayArray removeObject:songName];
