@@ -41,6 +41,8 @@
 
 
 
+    [NSThread sleepForTimeInterval:1.0];
+
     return YES;
 }
 

@@ -634,6 +634,8 @@ int answerPickedCount;
         
         [self.levelPassMessage setHidden:YES];
         [self.difficultyPass setHidden:NO];
+        UILabel *coinAmount = (UILabel *)[self.difficultyPass viewWithTag:1];
+        [coinAmount setText:[NSString stringWithFormat:@"%d",coinReward]];
         
         [UIView animateWithDuration:0.75 delay:0.15 usingSpringWithDamping:0.6 initialSpringVelocity:0.4 options:0 animations:^{
             CGRect aframe = self.levelPassView.frame;
@@ -645,13 +647,13 @@ int answerPickedCount;
         
         
         
-        [UIView animateWithDuration:0.75 delay:0.15 usingSpringWithDamping:0.6 initialSpringVelocity:0.4 options:0 animations:^{
-            CGRect aframe = self.levelPassView.frame;
-            aframe.origin.y = 0;
-            [self.levelPassView setFrame:aframe];
-            
-            
-        } completion:nil];
+//        [UIView animateWithDuration:0.75 delay:0.15 usingSpringWithDamping:0.6 initialSpringVelocity:0.4 options:0 animations:^{
+//            CGRect aframe = self.levelPassView.frame;
+//            aframe.origin.y = 0;
+//            [self.levelPassView setFrame:aframe];
+//            
+//            
+//        } completion:nil];
         
         
     }else
