@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="buyCoinsViewController"/>
@@ -13,10 +12,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ItY-fs-GUP">
-                    <rect key="frame" x="0.0" y="100" width="320" height="368"/>
+                    <rect key="frame" x="0.0" y="100" width="320" height="388"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="infoBack.png" translatesAutoresizingMaskIntoConstraints="NO" id="pWt-JJ-MaH">
-                            <rect key="frame" x="14" y="27" width="292" height="341"/>
+                            <rect key="frame" x="14" y="27" width="292" height="361"/>
                         </imageView>
                         <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kpd-4T-MlY">
                             <rect key="frame" x="283" y="9" width="37" height="37"/>
@@ -60,11 +59,8 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <tableView clipsSubviews="YES" tag="10" contentMode="scaleToFill" style="plain" separatorStyle="none" rowHeight="48" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="XXn-zR-f4N">
-                            <rect key="frame" x="45" y="117" width="230" height="238"/>
+                            <rect key="frame" x="45" y="117" width="230" height="258"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            <constraints>
-                                <constraint firstAttribute="width" secondItem="XXn-zR-f4N" secondAttribute="height" multiplier="115:119" id="iqm-B0-U7E"/>
-                            </constraints>
                             <color key="separatorColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <color key="sectionIndexColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </tableView>
@@ -74,6 +70,7 @@
                         <constraint firstItem="jmq-6a-CUR" firstAttribute="centerX" secondItem="OGw-ZD-reC" secondAttribute="centerX" constant="-75.5" id="3Wt-Vd-gHJ"/>
                         <constraint firstItem="XXn-zR-f4N" firstAttribute="bottom" secondItem="pWt-JJ-MaH" secondAttribute="bottom" constant="-13" id="D3H-EI-hhc"/>
                         <constraint firstItem="pWt-JJ-MaH" firstAttribute="centerX" secondItem="OGw-ZD-reC" secondAttribute="centerX" id="EaM-hB-gBB"/>
+                        <constraint firstItem="XXn-zR-f4N" firstAttribute="leading" secondItem="pWt-JJ-MaH" secondAttribute="leading" constant="31" id="ILx-qS-pv7"/>
                         <constraint firstItem="XXn-zR-f4N" firstAttribute="centerX" secondItem="pWt-JJ-MaH" secondAttribute="centerX" id="K8u-62-gLY"/>
                         <constraint firstItem="jEE-Ij-HQV" firstAttribute="centerX" secondItem="OGw-ZD-reC" secondAttribute="centerX" constant="85" id="MnB-ML-nkK"/>
                         <constraint firstItem="pWt-JJ-MaH" firstAttribute="top" secondItem="ItY-fs-GUP" secondAttribute="top" constant="27" id="Qq0-jD-c9Z"/>
@@ -93,7 +90,7 @@
                 <constraint firstAttribute="trailing" secondItem="ItY-fs-GUP" secondAttribute="trailing" id="3d6-n6-TvQ"/>
                 <constraint firstItem="ItY-fs-GUP" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="100" id="O8b-ek-3QC"/>
                 <constraint firstItem="ItY-fs-GUP" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="hn5-4M-g1r"/>
-                <constraint firstAttribute="bottom" secondItem="ItY-fs-GUP" secondAttribute="bottom" constant="100" id="ikw-6V-BMz"/>
+                <constraint firstAttribute="bottom" secondItem="ItY-fs-GUP" secondAttribute="bottom" constant="80" id="ikw-6V-BMz"/>
             </constraints>
             <point key="canvasLocation" x="43" y="160"/>
         </view>

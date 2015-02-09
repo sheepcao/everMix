@@ -45,103 +45,6 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainBack10.png" translatesAutoresizingMaskIntoConstraints="NO" id="I4A-bF-7f7">
                                 <rect key="frame" x="0.0" y="-44" width="320" height="612"/>
                             </imageView>
-                            <button opaque="NO" tag="1" contentMode="left" contentHorizontalAlignment="center" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5iX-lt-f4T">
-                                <rect key="frame" x="7" y="338" width="63" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="63" id="Bvv-0V-AuM"/>
-                                    <constraint firstAttribute="height" constant="30" id="Stv-Pk-php"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="50" maxY="0.0"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="10" maxX="52" maxY="9"/>
-                                <state key="normal" title="简单" image="point.png">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
-                                </state>
-                                <state key="disabled" title="简单" image="pointYellow.png">
-                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="selected" title="简单">
-                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="difficultyChanged:" destination="BpU-Vf-ayy" eventType="touchUpInside" id="2ee-qq-eU5"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XdL-pv-u50">
-                                <rect key="frame" x="139" y="387" width="63" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="63" id="aKU-wS-E6f"/>
-                                    <constraint firstAttribute="height" constant="30" id="zvL-ex-xgo"/>
-                                </constraints>
-                                <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="50" maxY="0.0"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="10" maxX="52" maxY="9"/>
-                                <state key="normal" title="困难" image="point.png">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
-                                </state>
-                                <state key="disabled" title="困难" image="pointYellow.png">
-                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="selected" title="困难">
-                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="difficultyChanged:" destination="BpU-Vf-ayy" eventType="touchUpInside" id="Kdh-aQ-GRi"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9d7-zO-1cw">
-                                <rect key="frame" x="183" y="295" width="63" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="6hy-el-Igh"/>
-                                    <constraint firstAttribute="width" constant="63" id="b3z-ZK-o4X"/>
-                                </constraints>
-                                <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="50" maxY="0.0"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="10" maxX="52" maxY="9"/>
-                                <state key="normal" title="疯狂" image="point.png">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
-                                </state>
-                                <state key="disabled" title="疯狂" image="pointYellow.png">
-                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="selected" title="疯狂">
-                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="difficultyChanged:" destination="BpU-Vf-ayy" eventType="touchUpInside" id="8Fb-Xa-mEE"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qfk-nQ-IXu">
-                                <rect key="frame" x="256" y="331" width="63" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Cl7-d5-GGt"/>
-                                    <constraint firstAttribute="width" constant="63" id="dVo-p2-ru7"/>
-                                </constraints>
-                                <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="50" maxY="0.0"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="10" maxX="52" maxY="9"/>
-                                <state key="normal" title="变态" image="point.png">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
-                                </state>
-                                <state key="disabled" title="变态" image="pointYellow.png">
-                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="selected" title="变态">
-                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="difficultyChanged:" destination="BpU-Vf-ayy" eventType="touchUpInside" id="ZJf-zh-75c"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Version:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tMe-vf-byg">
                                 <rect key="frame" x="100" y="534" width="120" height="26"/>
                                 <constraints>
@@ -217,30 +120,6 @@
                                     <action selector="continueTapped:" destination="BpU-Vf-ayy" eventType="touchUpInside" id="chz-8Y-QrN"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ado-ax-RTT">
-                                <rect key="frame" x="78" y="317" width="63" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="63" id="4Fp-eG-o1F"/>
-                                    <constraint firstAttribute="height" constant="30" id="5Y1-WS-YCQ"/>
-                                </constraints>
-                                <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="50" maxY="0.0"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="10" maxX="52" maxY="9"/>
-                                <state key="normal" title="较易" image="point.png">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
-                                </state>
-                                <state key="disabled" title="较易" image="pointYellow.png">
-                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="selected" title="较易">
-                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="difficultyChanged:" destination="BpU-Vf-ayy" eventType="touchUpInside" id="sqO-1L-G3F"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="toy-Eu-PZh">
                                 <rect key="frame" x="260" y="478" width="40" height="40"/>
                                 <constraints>
@@ -257,32 +136,22 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerY" secondItem="ado-ax-RTT" secondAttribute="centerY" constant="-48" id="0Te-kS-L6c"/>
-                            <constraint firstAttribute="centerY" secondItem="5iX-lt-f4T" secondAttribute="centerY" constant="-69" id="1Rq-ax-Ufb"/>
-                            <constraint firstAttribute="centerX" secondItem="5iX-lt-f4T" secondAttribute="centerX" constant="121.5" id="3pq-1d-YkJ"/>
                             <constraint firstItem="oJy-Pu-OcZ" firstAttribute="leading" secondItem="qNQ-Ph-nXm" secondAttribute="trailing" constant="20" id="8kq-oc-2SM"/>
                             <constraint firstItem="xpo-PE-fGQ" firstAttribute="top" secondItem="tMe-vf-byg" secondAttribute="bottom" constant="8" id="Arh-2p-krX"/>
                             <constraint firstItem="xpo-PE-fGQ" firstAttribute="top" secondItem="gaK-c0-OeE" secondAttribute="bottom" constant="48" id="Auo-pC-Nkz"/>
                             <constraint firstAttribute="centerX" secondItem="oJy-Pu-OcZ" secondAttribute="centerX" constant="-60" id="BZB-HB-cvP"/>
-                            <constraint firstAttribute="centerY" secondItem="XdL-pv-u50" secondAttribute="centerY" constant="-118" id="D4S-FF-wQS"/>
                             <constraint firstAttribute="centerX" secondItem="qNQ-Ph-nXm" secondAttribute="centerX" constant="60" id="DT4-Ek-Yd0"/>
                             <constraint firstAttribute="trailingMargin" secondItem="I4A-bF-7f7" secondAttribute="trailing" constant="-16" id="I2E-J4-twM"/>
                             <constraint firstItem="xpo-PE-fGQ" firstAttribute="top" secondItem="iKE-Vm-WMA" secondAttribute="bottom" constant="50" id="Nvt-N5-Jj9"/>
-                            <constraint firstAttribute="centerX" secondItem="9d7-zO-1cw" secondAttribute="centerX" constant="-54.5" id="OGf-IH-18p"/>
                             <constraint firstAttribute="centerX" secondItem="e8J-Z4-tGE" secondAttribute="centerX" constant="-45" id="QOX-sB-FKd"/>
-                            <constraint firstAttribute="centerX" secondItem="ado-ax-RTT" secondAttribute="centerX" constant="50.5" id="TTv-YZ-NMM"/>
                             <constraint firstItem="I4A-bF-7f7" firstAttribute="top" secondItem="j9o-P9-UcH" secondAttribute="bottom" constant="-44" id="TnB-GO-8TW"/>
-                            <constraint firstAttribute="centerX" secondItem="qfk-nQ-IXu" secondAttribute="centerX" constant="-127.5" id="V9I-pI-cDW"/>
-                            <constraint firstAttribute="centerY" secondItem="9d7-zO-1cw" secondAttribute="centerY" constant="-26" id="ViF-Qn-FBk"/>
                             <constraint firstItem="qNQ-Ph-nXm" firstAttribute="top" secondItem="j9o-P9-UcH" secondAttribute="bottom" constant="87" id="aui-Zb-Qbo"/>
-                            <constraint firstAttribute="centerX" secondItem="XdL-pv-u50" secondAttribute="centerX" constant="-10.5" id="dOV-c9-OOt"/>
                             <constraint firstAttribute="centerX" secondItem="iKE-Vm-WMA" secondAttribute="centerX" constant="112" id="js1-nw-KZF"/>
                             <constraint firstAttribute="centerX" secondItem="tMe-vf-byg" secondAttribute="centerX" id="lD8-oE-x3W"/>
                             <constraint firstAttribute="centerX" secondItem="toy-Eu-PZh" secondAttribute="centerX" constant="-120" id="mN1-vX-7bB"/>
                             <constraint firstAttribute="centerX" secondItem="gaK-c0-OeE" secondAttribute="centerX" constant="34" id="mri-9i-9fX"/>
                             <constraint firstItem="oJy-Pu-OcZ" firstAttribute="top" secondItem="j9o-P9-UcH" secondAttribute="bottom" constant="87" id="nYK-av-Akr"/>
                             <constraint firstItem="I4A-bF-7f7" firstAttribute="leading" secondItem="ZeD-Ew-WKC" secondAttribute="leadingMargin" constant="-16" id="oHP-tv-vyx"/>
-                            <constraint firstAttribute="centerY" secondItem="qfk-nQ-IXu" secondAttribute="centerY" constant="-62" id="okh-bN-MBQ"/>
                             <constraint firstItem="xpo-PE-fGQ" firstAttribute="top" secondItem="I4A-bF-7f7" secondAttribute="bottom" id="sP0-5h-mUC"/>
                             <constraint firstItem="xpo-PE-fGQ" firstAttribute="top" secondItem="toy-Eu-PZh" secondAttribute="bottom" constant="50" id="uTx-ef-m3t"/>
                             <constraint firstItem="xpo-PE-fGQ" firstAttribute="top" secondItem="e8J-Z4-tGE" secondAttribute="bottom" constant="52" id="urg-p4-sIi"/>
@@ -296,11 +165,6 @@
                         <outlet property="begainGame" destination="qNQ-Ph-nXm" id="dHf-ZX-0KJ"/>
                         <outlet property="bugCoinsBtn" destination="gaK-c0-OeE" id="21v-bu-O0c"/>
                         <outlet property="continueGame" destination="oJy-Pu-OcZ" id="aF9-Dw-fTr"/>
-                        <outlet property="difficulty1" destination="5iX-lt-f4T" id="34i-Zx-cbu"/>
-                        <outlet property="difficulty2" destination="ado-ax-RTT" id="4rY-Yx-5c6"/>
-                        <outlet property="difficulty3" destination="XdL-pv-u50" id="foe-6v-rKF"/>
-                        <outlet property="difficulty4" destination="9d7-zO-1cw" id="Sxm-Hd-XRQ"/>
-                        <outlet property="difficulty5" destination="qfk-nQ-IXu" id="x6r-rJ-aYt"/>
                         <outlet property="versionLabel" destination="tMe-vf-byg" id="pKz-el-45c"/>
                     </connections>
                 </viewController>
@@ -313,8 +177,6 @@
         <image name="coin.png" width="130" height="130"/>
         <image name="infoBtn.png" width="300" height="300"/>
         <image name="mainBack10.png" width="1080" height="1920"/>
-        <image name="point.png" width="130" height="130"/>
-        <image name="pointYellow.png" width="130" height="130"/>
         <image name="reviewBtn.png" width="130" height="130"/>
         <image name="shareBtn.png" width="114" height="114"/>
         <image name="开始.png" width="420" height="420"/>

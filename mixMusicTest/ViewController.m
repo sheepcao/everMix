@@ -23,6 +23,7 @@
 @interface ViewController ()<MFMailComposeViewControllerDelegate>
 {
     bool first;
+    
 }
 @property (nonatomic,strong)CustomIOS7AlertView *dailyRewardAlert;
 @property (nonatomic,strong)NSArray *difficultyButtons;
@@ -84,24 +85,34 @@ int difficultyNow;
     }
 
     [self.view sendSubviewToBack:self.backgroundImg];
-    
+    [self setupDifficultyBtns];
+
     self.difficultyButtons = [NSArray arrayWithObjects:self.difficulty1,self.difficulty2,self.difficulty3,self.difficulty4,self.difficulty5, nil];
     
     
-    timer = [NSTimer scheduledTimerWithTimeInterval:13.0 target:self selector:@selector(bigADshow) userInfo:nil repeats:NO];
+    timer = [NSTimer scheduledTimerWithTimeInterval:10.0 target:self selector:@selector(bigADshow) userInfo:nil repeats:NO];
 
     //big AD...
+    
+    self.interstitialView = [[BaiduMobAdInterstitial alloc] init];
+    self.interstitialView.delegate = self;
+    self.interstitialView.interstitialType = BaiduMobAdViewTypeInterstitialGame;
+    [self.interstitialView load];
     // 初始化插屏⼲⼴广告,此处使⽤用的是测试ID,请登陆多盟官⺴⽹网(www.domob.cn)获取新的ID _dmInterstitial = [[DMInterstitialAdController alloc]
-    _dmInterstitial = [[DMInterstitialAdController alloc] initWithPublisherId:DMPUBLISHERID
-                                                                  placementId:DMPLCAEMENTID_INTER
-                                                           rootViewController:self];
-    _dmInterstitial.delegate = self;
-    // load advertisement
-    [_dmInterstitial loadAd];
+//    _dmInterstitial = [[DMInterstitialAdController alloc] initWithPublisherId:DMPUBLISHERID
+//                                                                  placementId:DMPLCAEMENTID_INTER
+//                                                           rootViewController:self];
+//    _dmInterstitial.delegate = self;
+//    // load advertisement
+//    [_dmInterstitial loadAd];
     
     backFromGame = NO;
     first = YES;
     [self dropDown];
+    
+
+    
+
     
 }
 
@@ -150,6 +161,7 @@ int difficultyNow;
         [self bigADshow];
       
     }
+    
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -167,9 +179,174 @@ int difficultyNow;
         timer = nil;
     }
 }
+-(void)setupDifficultyBtns
+{
+    
+    self.difficulty1 = [[UIButton alloc] init];
+    [self.difficulty1 setTitle:@"简单" forState:UIControlStateNormal];
+    self.difficulty1.tag = 1;
+    
+    self.difficulty2 = [[UIButton alloc] init];
+    [self.difficulty2 setTitle:@"较易" forState:UIControlStateNormal];
+    self.difficulty2.tag = 2;
+
+    
+    self.difficulty3 = [[UIButton alloc] init];
+    [self.difficulty3 setTitle:@"困难" forState:UIControlStateNormal];
+    self.difficulty3.tag = 3;
+
+    
+    self.difficulty4 = [[UIButton alloc] init];
+    [self.difficulty4 setTitle:@"疯狂" forState:UIControlStateNormal];
+    self.difficulty4.tag = 4;
+
+    
+    self.difficulty5 = [[UIButton alloc] init];
+    [self.difficulty5 setTitle:@"变态" forState:UIControlStateNormal];
+    self.difficulty5.tag = 5;
+
+    
+    
+    [self setupPointFor:self.difficulty1];
+    [self setupPointFor:self.difficulty2];
+    [self setupPointFor:self.difficulty3];
+    [self setupPointFor:self.difficulty4];
+    [self setupPointFor:self.difficulty5];
+    
+    CGRect kframe = CGRectMake(25, 327, 63, 30);
+    [self.difficulty1 setFrame:kframe];
+    
+    CGRect mframe = CGRectMake(98, 300, 63, 30);
+    [self.difficulty2 setFrame:mframe];
+    
+    CGRect nframe = CGRectMake(141, 365, 63, 30);
+    [self.difficulty3 setFrame:nframe];
+    
+    CGRect oframe = CGRectMake(191, 273, 63, 30);
+    [self.difficulty4 setFrame:oframe];
+    
+    CGRect pframe = CGRectMake(257, 308, 63, 30);
+    [self.difficulty5 setFrame:pframe];
+    
+    if(IS_IPHONE_5)
+    {
+      
+        
+    }else if (IS_IPHONE_6)
+    {
+        CGRect kframe = self.difficulty1.frame;
+        kframe.origin.x += 20;
+        kframe.origin.y += 56;
+        
+        [self.difficulty1 setFrame:kframe];
+        
+        CGRect aframe = self.difficulty2.frame;
+        aframe.origin.x += 18;
+        aframe.origin.y += 56;
+        
+        [self.difficulty2 setFrame:aframe];
+        
+        CGRect bframe = self.difficulty3.frame;
+        bframe.origin.x += 25;
+        bframe.origin.y += 65;
+    
+        [self.difficulty3 setFrame:bframe];
+        
+        CGRect cframe = self.difficulty4.frame;
+        cframe.origin.x += 32;
+        cframe.origin.y += 55;
+        [self.difficulty4 setFrame:cframe];
+        
+        CGRect dframe = self.difficulty5.frame;
+        dframe.origin.x += 55;
+        dframe.origin.y += 62;
+        
+        [self.difficulty5 setFrame:dframe];
+        
+    }else if (IS_IPHONE_6P)
+    {
+        CGRect kframe = self.difficulty1.frame;
+        kframe.origin.x += 28;
+        kframe.origin.y += 100;
+        
+        [self.difficulty1 setFrame:kframe];
+        
+        CGRect aframe = self.difficulty2.frame;
+        aframe.origin.x += 31;
+        aframe.origin.y += 98;
+        
+        [self.difficulty2 setFrame:aframe];
+        
+        CGRect bframe = self.difficulty3.frame;
+        bframe.origin.x += 45;
+        bframe.origin.y += 115;
+        
+        [self.difficulty3 setFrame:bframe];
+        
+        CGRect cframe = self.difficulty4.frame;
+        cframe.origin.x += 55;
+        cframe.origin.y += 94;
+        [self.difficulty4 setFrame:cframe];
+        
+        CGRect dframe = self.difficulty5.frame;
+        dframe.origin.x += 85;
+        dframe.origin.y += 105;
+        
+        [self.difficulty5 setFrame:dframe];
+    }else if(IS_IPHONE_4_OR_LESS)
+    {
+        CGRect kframe = self.difficulty1.frame;
+        kframe.origin.y -=66;
+        [self.difficulty1 setFrame:kframe];
+        
+        CGRect aframe = self.difficulty2.frame;
+        aframe.origin.y -= 53;
+        
+        [self.difficulty2 setFrame:aframe];
+        
+        CGRect bframe = self.difficulty3.frame;
+        bframe.origin.y -= 63;
+        [self.difficulty3 setFrame:bframe];
+        
+        CGRect cframe = self.difficulty4.frame;
+        cframe.origin.y -= 47;
+        [self.difficulty4 setFrame:cframe];
+        
+        CGRect dframe = self.difficulty5.frame;
+        dframe.origin.y -= 50;
+        
+        [self.difficulty5 setFrame:dframe];
+        
+    }
+    [self.view addSubview:self.difficulty1];
+    [self.view addSubview:self.difficulty2];
+    [self.view addSubview:self.difficulty3];
+    [self.view addSubview:self.difficulty4];
+    [self.view addSubview:self.difficulty5];
+    
+    
+    
+    NSLog(@"1:%@\n2:%@\n3:%@\n4:%@\n5:%@\n",self.difficulty1,self.difficulty2,self.difficulty3,self.difficulty4,self.difficulty5);
+    
+
+}
+-(void)setupPointFor:(UIButton *)button
+{
+    [button setImage:[UIImage imageNamed:@"point"] forState:UIControlStateNormal];
+    [button setImage:[UIImage imageNamed:@"pointYellow"] forState:UIControlStateDisabled];
+    [button addTarget:self action:@selector(difficultyChanged:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [button setTitleEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 50)];
+    [button setImageEdgeInsets:UIEdgeInsetsMake(10, 0, 9, 52)];
+    [button setContentHorizontalAlignment:UIControlContentHorizontalAlignmentCenter];
+    [button setContentVerticalAlignment:UIControlContentVerticalAlignmentFill];
+}
 -(void)viewDidLayoutSubviews
 {
     [super viewDidLayoutSubviews];
+    
+    
+    
     self.gameData = [self readDataFromPlist:@"gameData"] ;
     NSString *currentDifficulty = [self.gameData objectForKey:@"difficulty"];
     
@@ -558,12 +735,12 @@ int difficultyNow;
                                        delegate:(id)self];
     
     // music url
-    [[UMSocialData defaultData].urlResource setResourceType:UMSocialUrlResourceTypeMusic url:@"http://baidu.com"];
+    [[UMSocialData defaultData].urlResource setResourceType:UMSocialUrlResourceTypeMusic url:@"http://itunes.apple.com/cn/app/mo-yin-da-shi-feng-kuang-cai-ge/id954971485?ls=1&mt=8"];
 
-    [UMSocialData defaultData].extConfig.wechatTimelineData.url = @"http://baidu.com";
-    [UMSocialData defaultData].extConfig.wechatSessionData.url = @"http://baidu.com";
-    [UMSocialData defaultData].extConfig.qqData.url = @"http://baidu.com";
-    [UMSocialData defaultData].extConfig.qzoneData.url = @"http://baidu.com";
+    [UMSocialData defaultData].extConfig.wechatTimelineData.url = @"http://itunes.apple.com/cn/app/mo-yin-da-shi-feng-kuang-cai-ge/id954971485?ls=1&mt=8";
+    [UMSocialData defaultData].extConfig.wechatSessionData.url = @"http://itunes.apple.com/cn/app/mo-yin-da-shi-feng-kuang-cai-ge/id954971485?ls=1&mt=8";
+    [UMSocialData defaultData].extConfig.qqData.url = @"http://itunes.apple.com/cn/app/mo-yin-da-shi-feng-kuang-cai-ge/id954971485?ls=1&mt=8";
+    [UMSocialData defaultData].extConfig.qzoneData.url = @"http://itunes.apple.com/cn/app/mo-yin-da-shi-feng-kuang-cai-ge/id954971485?ls=1&mt=8";
 
 
 
@@ -710,6 +887,8 @@ int difficultyNow;
     
     
     self.itemsToBuy = (UITableView *)[self.buyCoinsView viewWithTag:10];
+
+    
     self.itemsToBuy.delegate = self.myBuyController;
     self.itemsToBuy.dataSource = self.myBuyController;
     self.refreshControl = [[UIRefreshControl alloc] init];
@@ -722,6 +901,7 @@ int difficultyNow;
     [UIView animateWithDuration:0.45 delay:0.05 usingSpringWithDamping:1.0 initialSpringVelocity:0.4 options:0 animations:^{
         [self.buyCoinsView setFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
     } completion:nil];
+
     
     [self.itemsToBuy reloadData];
     
@@ -751,7 +931,35 @@ int difficultyNow;
     
     [UIView animateWithDuration:0.45 delay:0.05 usingSpringWithDamping:1 initialSpringVelocity:0.99 options:0 animations:^{
         [self.infoView setFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
-    } completion:nil];
+    } completion:^(BOOL finished)
+     {
+         if (finished) {
+         
+         }
+     }];
+    
+    if (IS_IPHONE_4_OR_LESS) {
+     
+        
+        [self performSelector:@selector(sizeForIPhone4) withObject:nil afterDelay:0.2];
+    }
+  
+    
+    
+}
+
+-(void)sizeForIPhone4
+{
+    
+    UIView *rectview = [self.infoView viewWithTag:333];
+    CGRect aframe = rectview.frame;
+    aframe.size.height += 78;
+    [rectview setFrame:aframe];
+    
+    UIView *wordView = [self.infoView viewWithTag:555];
+    CGRect bframe = wordView.frame;
+    bframe.origin.y += 80;
+    [wordView setFrame:bframe];
 }
 - (IBAction)closeInfoBtn {
     
@@ -984,7 +1192,7 @@ int difficultyNow;
 
 
 
-- (IBAction)difficultyChanged:(UIButton *)sender {
+- (void)difficultyChanged:(UIButton *)sender {
     
     NSLog(@"%ld",(long)sender.tag);
     
@@ -1015,20 +1223,30 @@ int difficultyNow;
 }
 
 #pragma mark big advertisement
-
--(void)dealloc
+//
+//-(void)dealloc
+//{
+//    _dmInterstitial.delegate = nil; // please set delegete = nil first
+//}
+- (NSString *)publisherId
 {
-    _dmInterstitial.delegate = nil; // please set delegete = nil first
+    return  @"b33a25dc"; //@"your_own_app_id";
+}
+
+- (NSString*) appSpec
+{
+    //注意：该计费名为测试用途，不会产生计费，请测试广告展示无误以后，替换为您的应用计费名，然后提交AppStore.
+    return @"b33a25dc";
 }
 - (void)bigADshow
 {
     // 在需要呈现插屏广告前，先通过isReady方法检查广告是否就绪
     // before present advertisement view please check if isReady
     NSLog(@"bigADshow!!");
-    if (_dmInterstitial.isReady)
+    if (self.interstitialView.isReady)
     {
        
-        [_dmInterstitial present];
+        [self.interstitialView presentFromRootViewController:self];
         
 
         
@@ -1038,7 +1256,7 @@ int difficultyNow;
         // 如果还没有ready，可以再调用loadAd
         // if !ready load again
        
-        [_dmInterstitial loadAd];
+        [self.interstitialView load];
         if (timer != nil)
         {
             
@@ -1057,68 +1275,149 @@ int difficultyNow;
     }
 }
 
-- (void)dmInterstitialSuccessToLoadAd:(DMInterstitialAdController *)dmInterstitial
-{
-    NSLog(@"[Domob Interstitial] success to load ad.");
-}
 
-// 当插屏广告加载失败后，回调该方法
-// This method will be used after failed
-- (void)dmInterstitialFailToLoadAd:(DMInterstitialAdController *)dmInterstitial withError:(NSError *)err
+-(void) willDisplayAd:(BaiduMobAdView*) adview
 {
-
     
-    NSLog(@"[Domob Interstitial] fail to load ad. %@", err);
+    NSLog(@"delegate: will display ad");
+    
 }
 
-// 当插屏广告要被呈现出来前，回调该方法
-// This method will be used before being presented
-- (void)dmInterstitialWillPresentScreen:(DMInterstitialAdController *)dmInterstitial
+-(void) failedDisplayAd:(BaiduMobFailReason) reason;
 {
-    NSLog(@"[Domob Interstitial] will present.");
+    NSLog(@"delegate: failedDisplayAd %d", reason);
+}
+-(NSArray*) keywords{
+    NSArray* keywords = [NSArray arrayWithObjects:@"猜歌",@"混音",@"音乐",@"歌曲",@"听觉",@"耳力",@"song",@"歌手",@"唱歌", nil];
+    return keywords;
 }
 
-// 当插屏广告被关闭后，回调该方法
-// This method will be used after Interstitial view  has been closed
-- (void)dmInterstitialDidDismissScreen:(DMInterstitialAdController *)dmInterstitial
+-(NSArray*) userHobbies{
+    NSArray* hobbies = [NSArray arrayWithObjects:@"唱歌",@"音乐", nil];
+    return hobbies;
+}
+/**
+ *  广告预加载成功
+ */
+- (void)interstitialSuccessToLoadAd:(BaiduMobAdInterstitial *)interstitial
 {
-    NSLog(@"[Domob Interstitial] did dismiss.");
+    NSLog(@"[ Interstitial] success to load ad.");
+}
+
+/**
+ *  广告预加载失败
+ */
+- (void)interstitialFailToLoadAd:(BaiduMobAdInterstitial *)interstitial
+{
+    NSLog(@"［Interstitial] fail to load ad");
+
+}
+
+/**
+ *  广告即将展示
+ */
+- (void)interstitialWillPresentScreen:(BaiduMobAdInterstitial *)interstitial
+{
+}
+
+/**
+ *  广告展示成功
+ */
+- (void)interstitialSuccessPresentScreen:(BaiduMobAdInterstitial *)interstitial
+{
+}
+
+/**
+ *  广告展示失败
+ */
+- (void)interstitialFailPresentScreen:(BaiduMobAdInterstitial *)interstitial withError:(BaiduMobFailReason) reason
+{
+}
+
+/**
+ *  广告展示结束
+ */
+- (void)interstitialDidDismissScreen:(BaiduMobAdInterstitial *)interstitial
+{
     if (timer != nil)
-    {
-        [timer invalidate];
-        timer = nil;
+            {
+                [timer invalidate];
+                timer = nil;
         
-    }
-    
-    
-    
-    timer = [NSTimer scheduledTimerWithTimeInterval:45.0 target:self selector:@selector(bigADshow) userInfo:nil repeats:NO];
-    
-    // 插屏广告关闭后，加载一条新广告用于下次呈现
-    //prepair for the next advertisement view
-    [_dmInterstitial loadAd];
+            }
+        
+        
+        
+            timer = [NSTimer scheduledTimerWithTimeInterval:45.0 target:self selector:@selector(bigADshow) userInfo:nil repeats:NO];
+        
+           // 插屏广告关闭后，加载一条新广告用于下次呈现
+            //prepair for the next advertisement view
+            [self.interstitialView load];
 }
 
-// 当将要呈现出 Modal View 时，回调该方法。如打开内置浏览器。
-// When will be showing a Modal View, call this method. Such as open built-in browser
-- (void)dmInterstitialWillPresentModalView:(DMInterstitialAdController *)dmInterstitial
-{
-    NSLog(@"[Domob Interstitial] will present modal view.");
-}
-
-// 当呈现的 Modal View 被关闭后，回调该方法。如内置浏览器被关闭。
-// When presented Modal View is closed, this method will be called. Such as built-in browser is closed
-- (void)dmInterstitialDidDismissModalView:(DMInterstitialAdController *)dmInterstitial
-{
-    NSLog(@"[Domob Interstitial] did dismiss modal view.");
-}
-
-// 当因用户的操作（如点击下载类广告，需要跳转到Store），需要离开当前应用时，回调该方法
-// When the result of the user's actions (such as clicking download class advertising, you need to jump to the Store), need to leave the current application, this method will be called
-- (void)dmInterstitialApplicationWillEnterBackground:(DMInterstitialAdController *)dmInterstitial
-{
-    NSLog(@"[Domob Interstitial] will enter background.");
-}
+//
+//- (void)dmInterstitialSuccessToLoadAd:(DMInterstitialAdController *)dmInterstitial
+//{
+//    NSLog(@"[Domob Interstitial] success to load ad.");
+//}
+//
+//// 当插屏广告加载失败后，回调该方法
+//// This method will be used after failed
+//- (void)dmInterstitialFailToLoadAd:(DMInterstitialAdController *)dmInterstitial withError:(NSError *)err
+//{
+//
+//    
+//    NSLog(@"[Domob Interstitial] fail to load ad. %@", err);
+//}
+//
+//// 当插屏广告要被呈现出来前，回调该方法
+//// This method will be used before being presented
+//- (void)dmInterstitialWillPresentScreen:(DMInterstitialAdController *)dmInterstitial
+//{
+//    NSLog(@"[Domob Interstitial] will present.");
+//}
+//
+//// 当插屏广告被关闭后，回调该方法
+//// This method will be used after Interstitial view  has been closed
+//- (void)dmInterstitialDidDismissScreen:(DMInterstitialAdController *)dmInterstitial
+//{
+//    NSLog(@"[Domob Interstitial] did dismiss.");
+//    if (timer != nil)
+//    {
+//        [timer invalidate];
+//        timer = nil;
+//        
+//    }
+//    
+//    
+//    
+//    timer = [NSTimer scheduledTimerWithTimeInterval:45.0 target:self selector:@selector(bigADshow) userInfo:nil repeats:NO];
+//    
+//    // 插屏广告关闭后，加载一条新广告用于下次呈现
+//    //prepair for the next advertisement view
+//    [_dmInterstitial loadAd];
+//}
+//
+//// 当将要呈现出 Modal View 时，回调该方法。如打开内置浏览器。
+//// When will be showing a Modal View, call this method. Such as open built-in browser
+//- (void)dmInterstitialWillPresentModalView:(DMInterstitialAdController *)dmInterstitial
+//{
+//    NSLog(@"[Domob Interstitial] will present modal view.");
+//}
+//
+//// 当呈现的 Modal View 被关闭后，回调该方法。如内置浏览器被关闭。
+//// When presented Modal View is closed, this method will be called. Such as built-in browser is closed
+//- (void)dmInterstitialDidDismissModalView:(DMInterstitialAdController *)dmInterstitial
+//{
+//    NSLog(@"[Domob Interstitial] did dismiss modal view.");
+//}
+//
+//// 当因用户的操作（如点击下载类广告，需要跳转到Store），需要离开当前应用时，回调该方法
+//// When the result of the user's actions (such as clicking download class advertising, you need to jump to the Store), need to leave the current application, this method will be called
+//- (void)dmInterstitialApplicationWillEnterBackground:(DMInterstitialAdController *)dmInterstitial
+//{
+//    NSLog(@"[Domob Interstitial] will enter background.");
+//}
 
 
 #pragma mark music note animation

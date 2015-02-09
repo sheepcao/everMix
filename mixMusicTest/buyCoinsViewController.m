@@ -116,17 +116,15 @@
     if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"sinaShare"] isEqualToString:@"yes"]) {
         productCount--;
     }
-    if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"reviewed"] isEqualToString:@"yes"]) {
+    if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"reviewed"] isEqualToString:@"yes"] ||[CommonUtility fetchCoinAmount] > 400) {
         productCount--;
     }
-    
     return productCount;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"2");
-    
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
     if (nil == cell)
@@ -163,9 +161,12 @@
     }
     else if ([CommonUtility fetchCoinAmount] < 400 && indexPath.row == _products.count + 2)
     {
+        NSLog(@"review!!!");
+        
         if(![[[NSUserDefaults standardUserDefaults] objectForKey:@"reviewed"] isEqualToString:@"yes"])
         {
             cell.textLabel.text = @"好评一下，奖励300金币";
+            
         }
         
     }
@@ -260,10 +261,10 @@
                                        delegate:(id)self];
     
     // music url
-    [[UMSocialData defaultData].urlResource setResourceType:UMSocialUrlResourceTypeMusic url:@"http://baidu.com"];
+    [[UMSocialData defaultData].urlResource setResourceType:UMSocialUrlResourceTypeMusic url:@"http://itunes.apple.com/cn/app/mo-yin-da-shi-feng-kuang-cai-ge/id954971485?ls=1&mt=8"];
     
-    [UMSocialData defaultData].extConfig.wechatTimelineData.url = @"http://baidu.com";
-    [UMSocialData defaultData].extConfig.wechatSessionData.url = @"http://baidu.com";
+    [UMSocialData defaultData].extConfig.wechatTimelineData.url = @"http://itunes.apple.com/cn/app/mo-yin-da-shi-feng-kuang-cai-ge/id954971485?ls=1&mt=8";
+    [UMSocialData defaultData].extConfig.wechatSessionData.url = @"http://itunes.apple.com/cn/app/mo-yin-da-shi-feng-kuang-cai-ge/id954971485?ls=1&mt=8";
 }
 
 -(void)shareToSina
@@ -276,10 +277,10 @@
                                        delegate:(id)self];
     
     // music url
-    [[UMSocialData defaultData].urlResource setResourceType:UMSocialUrlResourceTypeMusic url:@"http://baidu.com"];
+    [[UMSocialData defaultData].urlResource setResourceType:UMSocialUrlResourceTypeMusic url:@"http://itunes.apple.com/cn/app/mo-yin-da-shi-feng-kuang-cai-ge/id954971485?ls=1&mt=8"];
     
-    [UMSocialData defaultData].extConfig.wechatTimelineData.url = @"http://baidu.com";
-    [UMSocialData defaultData].extConfig.wechatSessionData.url = @"http://baidu.com";
+    [UMSocialData defaultData].extConfig.wechatTimelineData.url = @"http://itunes.apple.com/cn/app/mo-yin-da-shi-feng-kuang-cai-ge/id954971485?ls=1&mt=8";
+    [UMSocialData defaultData].extConfig.wechatSessionData.url = @"http://itunes.apple.com/cn/app/mo-yin-da-shi-feng-kuang-cai-ge/id954971485?ls=1&mt=8";
 }
 
 -(void)didFinishGetUMSocialDataInViewController:(UMSocialResponseEntity *)response

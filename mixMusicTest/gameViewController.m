@@ -9,6 +9,9 @@
 #import "gameViewController.h"
 #import "globalVar.h"
 #import "fallAnimation.h"
+#import "BaiduMobAdView.h"
+
+#define kAdViewPortraitRect CGRectMake(0, [[UIScreen mainScreen] bounds].size.height-48-44,[[UIScreen mainScreen] bounds].size.width,48)
 
 
 @interface gameViewController ()<UIAlertViewDelegate>
@@ -136,14 +139,26 @@ int answerPickedCount;
 
 //AD...
     
-    _dmAdView = [[DMAdView alloc] initWithPublisherId:@"56OJxqiIuN5cJKR8fX" placementId:@"16TLej7oApZ2kNUO7NRnvYss" autorefresh:YES];
-    _dmAdView.frame = CGRectMake(0, [UIScreen mainScreen].bounds.size.height - FLEXIBLE_SIZE.height-44, FLEXIBLE_SIZE.width,FLEXIBLE_SIZE.height);
-    _dmAdView.delegate = self;
-    [_dmAdView setKeywords:@"音乐"];
-    _dmAdView.rootViewController = self; // 设置 RootViewController
-    [self.view addSubview:_dmAdView]; // 将广告视图添加到⽗视图中
+ 
+    //使用嵌入广告的方法实例。
+    sharedAdView = [[BaiduMobAdView alloc] init];
+    //sharedAdView.AdUnitTag = @"myAdPlaceId1";
+    //此处为广告位id，可以不进行设置，如需设置，在百度移动联盟上设置广告位id，然后将得到的id填写到此处。
+    sharedAdView.AdType = BaiduMobAdViewTypeBanner;
+    sharedAdView.frame = kAdViewPortraitRect;
+    sharedAdView.delegate = self;
+    [self.view addSubview:sharedAdView];
+    [sharedAdView start];
 
-    [_dmAdView loadAd];
+    
+//    _dmAdView = [[DMAdView alloc] initWithPublisherId:@"56OJxqiIuN5cJKR8fX" placementId:@"16TLej7oApZ2kNUO7NRnvYss" autorefresh:YES];
+//    _dmAdView.frame = CGRectMake(0, [UIScreen mainScreen].bounds.size.height - FLEXIBLE_SIZE.height-44, FLEXIBLE_SIZE.width,FLEXIBLE_SIZE.height);
+//    _dmAdView.delegate = self;
+//    [_dmAdView setKeywords:@"音乐"];
+//    _dmAdView.rootViewController = self; // 设置 RootViewController
+//    [self.view addSubview:_dmAdView]; // 将广告视图添加到⽗视图中
+//
+//    [_dmAdView loadAd];
     
     [self.view bringSubviewToFront:self.playConsoleView];
     
@@ -289,11 +304,19 @@ int answerPickedCount;
         distance = 30;
         
         cd1Btn = [[UIButton alloc] initWithFrame:CGRectMake(70, distance-12, CD_SZIE+10, CD_SZIE+10)];
-        cd2Btn = [[UIButton alloc] initWithFrame:CGRectMake(266, distance-12, CD_SZIE+10, CD_SZIE+10)];
+        cd2Btn = [[UIButton alloc] initWithFrame:CGRectMake(256, distance-12, CD_SZIE+10, CD_SZIE+10)];
         cd3Btn = [[UIButton alloc] initWithFrame:CGRectMake(70, 2*distance-13+CD_SZIE, CD_SZIE+10, CD_SZIE+10)];
         cd4Btn = [[UIButton alloc] initWithFrame:CGRectMake(256, 2*distance-13+CD_SZIE, CD_SZIE+10, CD_SZIE+10)];
         cd5Btn = [[UIButton alloc] initWithFrame:CGRectMake(70, 3*distance-13+2*CD_SZIE, CD_SZIE+10, CD_SZIE+10)];
+    }else if(IS_IPHONE_4_OR_LESS)
+    {
+        cd1Btn = [[UIButton alloc] initWithFrame:CGRectMake(60, distance+55, CD_SZIE-10, CD_SZIE-10)];
+        cd2Btn = [[UIButton alloc] initWithFrame:CGRectMake(190, distance+55, CD_SZIE-10, CD_SZIE-10)];
+        cd3Btn = [[UIButton alloc] initWithFrame:CGRectMake(60, 2*distance+CD_SZIE+35, CD_SZIE-10, CD_SZIE-10)];
+        cd4Btn = [[UIButton alloc] initWithFrame:CGRectMake(190, 2*distance+CD_SZIE+35, CD_SZIE-10, CD_SZIE-10)];
+        cd5Btn = [[UIButton alloc] initWithFrame:CGRectMake(60, 3*distance+2*CD_SZIE+15, CD_SZIE-10, CD_SZIE-10)];
     }
+        
     
     [cd1Btn addTarget:self action:@selector(diskTap:) forControlEvents:UIControlEventTouchUpInside];
     [cd2Btn addTarget:self action:@selector(diskTap:) forControlEvents:UIControlEventTouchUpInside];
@@ -1388,63 +1411,112 @@ int answerPickedCount;
 }
 
 #pragma mark AD..
-- (void)viewDidUnload {
-    [super viewDidUnload];
-    [_dmAdView removeFromSuperview]; // 将⼲⼴广告试图从⽗父视图中移除
-}
-    //针对 Banner 的横竖屏⾃自适应⽅方法 //method For multible orientation
-- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
-duration:(NSTimeInterval)duration
+- (NSString *)publisherId
 {
-   [_dmAdView orientationChanged];
+    return  @"b33a25dc"; //@"your_own_app_id";
 }
 
-- (void)dealloc
+- (NSString*) appSpec
 {
-   
-    _dmAdView.delegate = nil;
-    
-    _dmAdView.rootViewController = nil;
+    //注意：该计费名为测试用途，不会产生计费，请测试广告展示无误以后，替换为您的应用计费名，然后提交AppStore.
+    return @"b33a25dc";
 }
+//-(BOOL) enableLocation
+//{
+//    //启用location会有一次alert提示
+//    return YES;
+//}
+-(void) willDisplayAd:(BaiduMobAdView*) adview
+{
+    //在广告即将展示时，产生一个动画，把广告条加载到视图中
+    sharedAdView.hidden = NO;
+    CGRect f = sharedAdView.frame;
+    f.origin.x = -SCREEN_WIDTH;
+    sharedAdView.frame = f;
+    [UIView beginAnimations:nil context:nil];
+    f.origin.x = 0;
+    sharedAdView.frame = f;
+    [UIView commitAnimations];
+    NSLog(@"delegate: will display ad");
+    
+}
+
+-(void) failedDisplayAd:(BaiduMobFailReason) reason;
+{
+    NSLog(@"delegate: failedDisplayAd %d", reason);
+}
+
+//人群属性接口
+/**
+ *  - 关键词数组
+ */
+-(NSArray*) keywords{
+    NSArray* keywords = [NSArray arrayWithObjects:@"猜歌",@"混音",@"音乐",@"歌曲",@"听觉",@"耳力",@"song",@"歌手",@"唱歌", nil];
+    return keywords;
+}
+
+-(NSArray*) userHobbies{
+    NSArray* hobbies = [NSArray arrayWithObjects:@"唱歌",@"音乐", nil];
+    return hobbies;
+}
+
+//- (void)viewDidUnload {
+//    [super viewDidUnload];
+//    [_dmAdView removeFromSuperview]; // 将⼲⼴广告试图从⽗父视图中移除
+//}
+//    //针对 Banner 的横竖屏⾃自适应⽅方法 //method For multible orientation
+//- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+//duration:(NSTimeInterval)duration
+//{
+//   [_dmAdView orientationChanged];
+//}
+//
+//- (void)dealloc
+//{
+//   
+//    _dmAdView.delegate = nil;
+//    
+//    _dmAdView.rootViewController = nil;
+//}
 
 
 #pragma mark DMAdView delegate
 
 // 成功加载广告后，回调该方法
-// This method will be used after load successfully
-- (void)dmAdViewSuccessToLoadAd:(DMAdView *)adView
-{
-    NSLog(@"[Domob Sample] success to load ad.");
-}
-
-// 加载广告失败后，回调该方法
-// This method will be used after load failed
-- (void)dmAdViewFailToLoadAd:(DMAdView *)adView withError:(NSError *)error
-{
-
-    NSLog(@"[Domob Sample] fail to load ad. %@", error);
-}
-
-// 当将要呈现出 Modal View 时，回调该方法。如打开内置浏览器
-// When will be showing a Modal View, this method will be called. Such as open built-in browser
-- (void)dmWillPresentModalViewFromAd:(DMAdView *)adView
-{
-    NSLog(@"[Domob Sample] will present modal view.");
-}
-
-// 当呈现的 Modal View 被关闭后，回调该方法。如内置浏览器被关闭。
-// When presented Modal View is closed, this method will be called. Such as built-in browser is closed
-- (void)dmDidDismissModalViewFromAd:(DMAdView *)adView
-{
-    NSLog(@"[Domob Sample] did dismiss modal view.");
-}
-
-// 当因用户的操作（如点击下载类广告，需要跳转到Store），需要离开当前应用时，回调该方法
-// When the result of the user's actions (such as clicking download class advertising, you need to jump to the Store), need to leave the current application, this method will be called
-- (void)dmApplicationWillEnterBackgroundFromAd:(DMAdView *)adView
-{
-    NSLog(@"[Domob Sample] will enter background.");
-}
+//// This method will be used after load successfully
+//- (void)dmAdViewSuccessToLoadAd:(DMAdView *)adView
+//{
+//    NSLog(@"[Domob Sample] success to load ad.");
+//}
+//
+//// 加载广告失败后，回调该方法
+//// This method will be used after load failed
+//- (void)dmAdViewFailToLoadAd:(DMAdView *)adView withError:(NSError *)error
+//{
+//
+//    NSLog(@"[Domob Sample] fail to load ad. %@", error);
+//}
+//
+//// 当将要呈现出 Modal View 时，回调该方法。如打开内置浏览器
+//// When will be showing a Modal View, this method will be called. Such as open built-in browser
+//- (void)dmWillPresentModalViewFromAd:(DMAdView *)adView
+//{
+//    NSLog(@"[Domob Sample] will present modal view.");
+//}
+//
+//// 当呈现的 Modal View 被关闭后，回调该方法。如内置浏览器被关闭。
+//// When presented Modal View is closed, this method will be called. Such as built-in browser is closed
+//- (void)dmDidDismissModalViewFromAd:(DMAdView *)adView
+//{
+//    NSLog(@"[Domob Sample] did dismiss modal view.");
+//}
+//
+//// 当因用户的操作（如点击下载类广告，需要跳转到Store），需要离开当前应用时，回调该方法
+//// When the result of the user's actions (such as clicking download class advertising, you need to jump to the Store), need to leave the current application, this method will be called
+//- (void)dmApplicationWillEnterBackgroundFromAd:(DMAdView *)adView
+//{
+//    NSLog(@"[Domob Sample] will enter background.");
+//}
 
 -(void)dropDown
 {

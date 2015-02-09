@@ -16,8 +16,10 @@
 #import "UMSocialSnsPlatformManager.h"
 #import "MobClick.h"
 #import "buyCoinsViewController.h"
+#import "BaiduMobAdDelegateProtocol.h"
+
 //AD...
-#import "DMAdView.h"
+//#import "DMAdView.h"
 
 #define DISK_TAG 100
 #define TIPS_TAG 200
@@ -39,9 +41,12 @@
 
 
 
-@interface gameViewController : UIViewController<DMAdViewDelegate,closeBuyViewDelegate>
+@interface gameViewController : UIViewController<closeBuyViewDelegate,BaiduMobAdViewDelegate>
 {
-    DMAdView *_dmAdView;
+//    DMAdView *_dmAdView;
+  
+    BaiduMobAdView* sharedAdView;
+
 }
 
 @property (nonatomic,weak) id<prepareSongsDelegate> delegate;
