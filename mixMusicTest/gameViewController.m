@@ -210,6 +210,7 @@ int answerPickedCount;
 
 -(void)buyCoinsAction
 {
+    [CommonUtility tapSound:@"comprar_coins" withType:@"mp3"];
     
     [MobClick event:@"bugCoinClick"];
     [self.navigationItem.rightBarButtonItem setEnabled:NO];
@@ -261,6 +262,8 @@ int answerPickedCount;
 
 -(void)closingBuy
 {
+    [CommonUtility tapSound:@"Window_Disappear" withType:@"mp3"];
+
     [UIView animateWithDuration:0.65 delay:0.05 usingSpringWithDamping:0.8 initialSpringVelocity:0.4 options:0 animations:^{
         [self.buyCoinsView setFrame:CGRectMake(0, [UIScreen mainScreen].bounds.size.height, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
         
@@ -348,7 +351,8 @@ int answerPickedCount;
 }
 
 - (void)diskTap:(UIButton *)sender {
-//    sender.tag = 1;
+
+    [CommonUtility tapSound:@"click" withType:@"mp3"];
     
     NSDictionary *allAnswers = [self.gameDataForSingleLevel objectForKey:@"choices"];
 
@@ -449,6 +453,8 @@ int answerPickedCount;
 {
 //    NSLog(@"tag:%ld",sender.tag);
     
+
+    [CommonUtility tapSound:@"Letter_Remove" withType:@"mp3"];
     if  (sender.titleLabel.text && ![sender.titleLabel.text isEqualToString:@" "])
     {
         [sender setTitle:@" " forState:UIControlStateNormal];
@@ -476,6 +482,7 @@ int answerPickedCount;
 
 - (IBAction)choicesTaped:(UIButton *)sender {
     
+    
     NSMutableArray *decisions = [[NSMutableArray alloc] init];
     
     for (UIButton *subview in [self.choicesBoardView subviews]) {
@@ -489,8 +496,11 @@ int answerPickedCount;
     for (int i = 0;i<decisions.count;i++) {
         AnswerButton *answer = decisions[i];
         if (!answer.titleLabel.text || [answer.titleLabel.text isEqualToString:@" "]) {
-                
+            
+            [CommonUtility tapSound:@"Letter_Add" withType:@"mp3"];
+
             [answer setTitle:sender.titleLabel.text forState:UIControlStateNormal];
+            
             answer.isFromTag =(int)sender.tag;
             answerPickedCount ++;
             
@@ -506,6 +516,7 @@ int answerPickedCount;
             songNameGuessed = [songNameGuessed stringByAppendingString:answer.titleLabel.text];
         }
         if ([songNameGuessed isEqualToString:self.choicesBoardView.songName]) {
+
             NSLog(@"you got it");
             [MobClick event:@"rightAnswer"];
 
@@ -531,83 +542,18 @@ int answerPickedCount;
 
             if (self.musicsPlayArray.count == 0) {
                 
-//                //load levelPassView
-//                if(!self.levelPassView)
-//                {
-//                    self.levelPassView = [[[NSBundle mainBundle] loadNibNamed:@"levelPassView" owner:self options:nil] objectAtIndex:0];
-//                    
-//                    CGRect aframe = self.levelPassView.frame;
-//                    aframe.origin.y = -[UIScreen mainScreen].bounds.size.height;
-//                    [self.levelPassView setFrame:aframe];
-//                    
-//                    [self.view addSubview:self.levelPassView];
-//                    
-//                }
-//
-//                
-//                [self modifyPlist:@"gameData" withValue:self.musicsPlayArray forKey:@"musicPlaying"];
-//                
-//                int levelNow = [[self.gameDataForSingleLevel objectForKey:@"currentLevel"] intValue];
-//                if (levelNow == 100) {
-//                    
-//                    UIAlertView *finishLevelAlert = [[UIAlertView alloc] initWithTitle:@"赞" message:@"玩爆关啦！我们会尽快更新曲库，请大大持续关注！" delegate:self cancelButtonTitle:@"耐心期待" otherButtonTitles:nil, nil];
-//                    [finishLevelAlert show];
-//                    
-//                }else if (levelNow % 20 == 0) {
-////                    UIAlertView *finishLevelAlert = [[UIAlertView alloc] initWithTitle:@"恭喜" message:@"该难度已被你玩爆，下面来点更刺激的！" delegate:self cancelButtonTitle:nil otherButtonTitles:@"勇往直前", nil];
-////                    finishLevelAlert.tag = 2;
-////                    [finishLevelAlert show];
-//                    
-//                    [self.levelPassMessage setHidden:YES];
-//                    [self.difficultyPass setHidden:NO];
-//                    
-//                    [UIView animateWithDuration:0.75 delay:0.15 usingSpringWithDamping:0.6 initialSpringVelocity:0.4 options:0 animations:^{
-//                        CGRect aframe = self.levelPassView.frame;
-//                        aframe.origin.y = 0;
-//                        [self.levelPassView setFrame:aframe];
-//                        
-//                        
-//                    } completion:nil];
-//                    
-//
-//                    
-//                    [UIView animateWithDuration:0.75 delay:0.15 usingSpringWithDamping:0.6 initialSpringVelocity:0.4 options:0 animations:^{
-//                        CGRect aframe = self.levelPassView.frame;
-//                        aframe.origin.y = 0;
-//                        [self.levelPassView setFrame:aframe];
-//                        
-//                        
-//                    } completion:nil];
-//                    
-//
-//                }else
-//                {
-//                    [self.difficultyPass setHidden:YES];
-//                    [self.levelPassMessage setHidden:NO];
-//
-//                    [UIView animateWithDuration:0.75 delay:0.15 usingSpringWithDamping:0.6 initialSpringVelocity:0.4 options:0 animations:^{
-//                        CGRect aframe = self.levelPassView.frame;
-//                        aframe.origin.y = 0;
-//                        [self.levelPassView setFrame:aframe];
-//                        
-//                        
-//                    } completion:nil];
-//                    
-////                    UIButton *nextLevelBtn = (UIButton *)[self.levelPassMessage viewWithTag:11];
-//                    
-//                    
-////                     [self nextLevel];
-//                }
-//                
-//               
-            
                 [self goOnNext];
             
+            }else
+            {
+                [CommonUtility tapSound:@"Correct" withType:@"mp3"];
+
             }
             
         }else
         {
             NSLog(@"you failed it.");
+            [CommonUtility tapSound:@"Incorrect" withType:@"mp3"];
             [MobClick event:@"wrongAnswer"];
 
             for (UIButton *subview in [self.choicesBoardView subviews]) {
@@ -666,6 +612,8 @@ int answerPickedCount;
 -(void)goOnNext
 {
     //load levelPassView
+    
+    [CommonUtility tapSound:@"s_levelup" withType:@"mp3"];
     if(!self.levelPassView)
     {
         self.levelPassView = [[[NSBundle mainBundle] loadNibNamed:@"levelPassView" owner:self options:nil] objectAtIndex:0];
@@ -768,6 +716,8 @@ int answerPickedCount;
 
 - (IBAction)deleteSomeWords {
     
+    [CommonUtility tapSound:@"click" withType:@"mp3"];
+    
     if ([self checkCoins:DELETE_PRICE])
     {
         
@@ -801,6 +751,8 @@ int answerPickedCount;
 
 - (IBAction)playSingleSong {
     
+    [CommonUtility tapSound:@"click" withType:@"mp3"];
+    
     if ([self checkCoins:SINGLE_SONG_PRICE]){
         
         UIAlertView *playSingleAlert = [[UIAlertView alloc] initWithTitle:@"提示" message:[NSString stringWithFormat:@"确认花掉%d个金币进行单曲播放?",SINGLE_SONG_PRICE] delegate:self cancelButtonTitle:@"否" otherButtonTitles:@"是", nil];
@@ -812,6 +764,8 @@ int answerPickedCount;
 }
 
 - (IBAction)showFullAnswer {
+    
+    [CommonUtility tapSound:@"click" withType:@"mp3"];
     
     if ([self checkCoins:SHOW_ANSWER_PRICE]){
         
@@ -852,13 +806,15 @@ int answerPickedCount;
 
 - (IBAction)shareButton:(UIButton *)sender {
     
+    [CommonUtility tapSound:@"click" withType:@"mp3"];
+    
     [MobClick event:@"shareFromGame"];
 
     [UMSocialSnsService presentSnsIconSheetView:self
                         appKey:@"54c46ea7fd98c5071d000668"
                                       shareText:@"谁的耳力还有富裕,快来帮帮忙！"
                                      shareImage:[UIImage imageNamed:@"iconNew.png"]
-                                shareToSnsNames:@[UMShareToSina,UMShareToWechatSession,UMShareToWechatTimeline,UMShareToWechatFavorite,UMShareToQQ,UMShareToQzone]
+                                shareToSnsNames:@[UMShareToSina,UMShareToWechatSession,UMShareToWechatTimeline,UMShareToWechatFavorite]
                                        delegate:(id)self];
     
     NSString *musicsURL = [self jointURL];
@@ -883,6 +839,7 @@ int answerPickedCount;
 - (IBAction)refreshMusics:(UIButton *)sender {//delete one song
     [MobClick event:@"bombOne"];
 
+    [CommonUtility tapSound:@"click" withType:@"mp3"];
     
     if(self.musicsPlayArray.count <= 1)
     {
@@ -931,6 +888,7 @@ int answerPickedCount;
         if (alertView.tag == 10)//删除错误选项
         {
             [MobClick event:@"deleteChoice"];
+            [CommonUtility tapSound:@"s_remove" withType:@"mp3"];
 
             NSString *songName = self.choicesBoardView.songName;
             int i = 0;
@@ -974,6 +932,7 @@ int answerPickedCount;
         if (alertView.tag == 12)//公布答案
         {
             [MobClick event:@"showAnswer"];
+            [CommonUtility tapSound:@"SolveQuestion" withType:@"mp3"];
 
             NSString *songName = self.choicesBoardView.songName;
             for (int i = 0; i < [songName length]; i++) {
@@ -1012,6 +971,8 @@ int answerPickedCount;
         
         if (alertView.tag == 13)//去除一首混播歌曲
         {
+            
+            [CommonUtility tapSound:@"s_remove" withType:@"mp3"];
             int diskNumber = -1;
             
             for(int i = (int)(self.diskButtons.count -1) ; i >= 0 ; i-- )
@@ -1050,6 +1011,8 @@ int answerPickedCount;
 
 
 - (IBAction)returnChoicesBoard:(UIButton *)sender {
+    [CommonUtility tapSound:@"Window_Disappear" withType:@"mp3"];
+
     
     [UIView animateWithDuration:0.5 delay:0.1 usingSpringWithDamping:0.7 initialSpringVelocity:1.0 options:0 animations:^{
         [self.choicesBoardView setFrame:CGRectMake(self.downPartView.frame.origin.x,[UIScreen mainScreen].bounds.size.height , self.downPartView.frame.size.width,self.downPartView.frame.size.height - 50)];
@@ -1061,10 +1024,10 @@ int answerPickedCount;
         }
     }
     if (self.musicsPlayArray.count == 0) {
-        [self goOnNext];
+        
+        [self performSelector:@selector(goOnNext) withObject:nil afterDelay:0.35];
+//        [self goOnNext];
     }
-
-    
 
     
 }
@@ -1340,6 +1303,8 @@ int answerPickedCount;
 
 -(void)nextLevel
 {
+    
+    [CommonUtility tapSound:@"SolveQuestion" withType:@"mp3"];
     
     self.gameDataForSingleLevel = [self readDataFromPlist:@"gameData"] ;
 

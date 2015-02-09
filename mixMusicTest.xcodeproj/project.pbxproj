@@ -26,6 +26,22 @@
 		A45C2E6C1A80CC2B00CC73F6 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A45C2E6B1A80CC2B00CC73F6 /* CoreLocation.framework */; };
 		A45C2E6E1A80CC3B00CC73F6 /* PassKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A45C2E6D1A80CC3B00CC73F6 /* PassKit.framework */; };
 		A45C2E701A80CC4200CC73F6 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A45C2E6F1A80CC4200CC73F6 /* AdSupport.framework */; };
+		A466A1391A890412005BD67C /* Incorrect.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A466A1321A890412005BD67C /* Incorrect.mp3 */; };
+		A466A13A1A890412005BD67C /* Letter_Add.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A466A1331A890412005BD67C /* Letter_Add.mp3 */; };
+		A466A13B1A890412005BD67C /* Letter_Remove.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A466A1341A890412005BD67C /* Letter_Remove.mp3 */; };
+		A466A13C1A890412005BD67C /* Window_Appear.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A466A1351A890412005BD67C /* Window_Appear.mp3 */; };
+		A466A13D1A890412005BD67C /* Window_Disappear.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A466A1361A890412005BD67C /* Window_Disappear.mp3 */; };
+		A466A13E1A890412005BD67C /* s_levelup.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A466A1371A890412005BD67C /* s_levelup.mp3 */; };
+		A466A1411A890500005BD67C /* SolveQuestion.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A466A1401A890500005BD67C /* SolveQuestion.mp3 */; };
+		A466A1431A8905B2005BD67C /* alert.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A466A1421A8905B2005BD67C /* alert.mp3 */; };
+		A466A1451A890662005BD67C /* new_game.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A466A1441A890662005BD67C /* new_game.mp3 */; };
+		A466A1471A890679005BD67C /* difficulty.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A466A1461A890679005BD67C /* difficulty.mp3 */; };
+		A466A1491A8906EE005BD67C /* go.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A466A1481A8906EE005BD67C /* go.mp3 */; };
+		A466A14B1A890780005BD67C /* s_remove.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A466A14A1A890780005BD67C /* s_remove.mp3 */; };
+		A466A14E1A8908D9005BD67C /* click.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A466A14C1A8908D9005BD67C /* click.mp3 */; };
+		A466A14F1A8908D9005BD67C /* newGame.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A466A14D1A8908D9005BD67C /* newGame.mp3 */; };
+		A466A1511A890BAD005BD67C /* comprar_coins.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A466A1501A890BAD005BD67C /* comprar_coins.mp3 */; };
+		A466A1531A89110C005BD67C /* Correct.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A466A1521A89110C005BD67C /* Correct.mp3 */; };
 		A47E00001A67B8E6000FCAF7 /* 狼.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A47EFF991A67B8E6000FCAF7 /* 狼.m4a */; };
 		A47E00011A67B8E6000FCAF7 /* 笨小孩.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A47EFF9A1A67B8E6000FCAF7 /* 笨小孩.m4a */; };
 		A47E00021A67B8E6000FCAF7 /* 红蜻蜓.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A47EFF9B1A67B8E6000FCAF7 /* 红蜻蜓.m4a */; };
@@ -209,7 +225,6 @@
 		A4ADB5FE1A83B5C200D991F8 /* note6.png in Resources */ = {isa = PBXBuildFile; fileRef = A4ADB5F41A83B5C200D991F8 /* note6.png */; };
 		A4ADB5FF1A83B5C200D991F8 /* note7.png in Resources */ = {isa = PBXBuildFile; fileRef = A4ADB5F51A83B5C200D991F8 /* note7.png */; };
 		A4ADB6001A83B5C200D991F8 /* note8.png in Resources */ = {isa = PBXBuildFile; fileRef = A4ADB5F61A83B5C200D991F8 /* note8.png */; };
-		A4AE4B201A88F56600234AA1 /* libGDTMobSDK_v3.3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A4AE4B1F1A88F56600234AA1 /* libGDTMobSDK_v3.3.a */; };
 		A4B268A91A8377570037DA16 /* fallAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = A4B268A81A8377570037DA16 /* fallAnimation.m */; };
 		A4B76C1D1A3997600014014D /* choicesBoardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4B76C1C1A3997600014014D /* choicesBoardView.xib */; };
 		A4B9F7DF1A81AFA300076531 /* gameBack.png in Resources */ = {isa = PBXBuildFile; fileRef = A4B9F7DC1A81AFA300076531 /* gameBack.png */; };
@@ -290,6 +305,22 @@
 		A45C2E6B1A80CC2B00CC73F6 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		A45C2E6D1A80CC3B00CC73F6 /* PassKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PassKit.framework; path = System/Library/Frameworks/PassKit.framework; sourceTree = SDKROOT; };
 		A45C2E6F1A80CC4200CC73F6 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		A466A1321A890412005BD67C /* Incorrect.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Incorrect.mp3; sourceTree = "<group>"; };
+		A466A1331A890412005BD67C /* Letter_Add.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Letter_Add.mp3; sourceTree = "<group>"; };
+		A466A1341A890412005BD67C /* Letter_Remove.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Letter_Remove.mp3; sourceTree = "<group>"; };
+		A466A1351A890412005BD67C /* Window_Appear.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Window_Appear.mp3; sourceTree = "<group>"; };
+		A466A1361A890412005BD67C /* Window_Disappear.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Window_Disappear.mp3; sourceTree = "<group>"; };
+		A466A1371A890412005BD67C /* s_levelup.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = s_levelup.mp3; sourceTree = "<group>"; };
+		A466A1401A890500005BD67C /* SolveQuestion.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = SolveQuestion.mp3; sourceTree = "<group>"; };
+		A466A1421A8905B2005BD67C /* alert.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = alert.mp3; sourceTree = "<group>"; };
+		A466A1441A890662005BD67C /* new_game.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = new_game.mp3; sourceTree = "<group>"; };
+		A466A1461A890679005BD67C /* difficulty.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = difficulty.mp3; sourceTree = "<group>"; };
+		A466A1481A8906EE005BD67C /* go.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = go.mp3; sourceTree = "<group>"; };
+		A466A14A1A890780005BD67C /* s_remove.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = s_remove.mp3; sourceTree = "<group>"; };
+		A466A14C1A8908D9005BD67C /* click.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = click.mp3; sourceTree = "<group>"; };
+		A466A14D1A8908D9005BD67C /* newGame.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = newGame.mp3; sourceTree = "<group>"; };
+		A466A1501A890BAD005BD67C /* comprar_coins.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = comprar_coins.mp3; sourceTree = "<group>"; };
+		A466A1521A89110C005BD67C /* Correct.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Correct.mp3; sourceTree = "<group>"; };
 		A47EFF781A67B8E5000FCAF7 /* 倒带.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "倒带.m4a"; sourceTree = "<group>"; };
 		A47EFF791A67B8E5000FCAF7 /* 倔强.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "倔强.m4a"; sourceTree = "<group>"; };
 		A47EFF7A1A67B8E5000FCAF7 /* 出卖.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "出卖.m4a"; sourceTree = "<group>"; };
@@ -526,10 +557,6 @@
 		A4ADB5F41A83B5C200D991F8 /* note6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = note6.png; sourceTree = "<group>"; };
 		A4ADB5F51A83B5C200D991F8 /* note7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = note7.png; sourceTree = "<group>"; };
 		A4ADB5F61A83B5C200D991F8 /* note8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = note8.png; sourceTree = "<group>"; };
-		A4AE4B1C1A88F56600234AA1 /* GDTMobBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTMobBannerView.h; sourceTree = "<group>"; };
-		A4AE4B1D1A88F56600234AA1 /* GDTMobInterstitial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTMobInterstitial.h; sourceTree = "<group>"; };
-		A4AE4B1E1A88F56600234AA1 /* GDTNativeAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTNativeAd.h; sourceTree = "<group>"; };
-		A4AE4B1F1A88F56600234AA1 /* libGDTMobSDK_v3.3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGDTMobSDK_v3.3.a; sourceTree = "<group>"; };
 		A4B268A71A8377570037DA16 /* fallAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fallAnimation.h; sourceTree = "<group>"; };
 		A4B268A81A8377570037DA16 /* fallAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = fallAnimation.m; sourceTree = "<group>"; };
 		A4B76C1C1A3997600014014D /* choicesBoardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = choicesBoardView.xib; sourceTree = "<group>"; };
@@ -603,7 +630,6 @@
 				A40EFBBC1A7A0AC500F7D6D2 /* libz.dylib in Frameworks */,
 				A4ABE9EA1A8889120012E956 /* libBaiduMobAdSdk64bit.a in Frameworks */,
 				A45C2E701A80CC4200CC73F6 /* AdSupport.framework in Frameworks */,
-				A4AE4B201A88F56600234AA1 /* libGDTMobSDK_v3.3.a in Frameworks */,
 				A45C2E6E1A80CC3B00CC73F6 /* PassKit.framework in Frameworks */,
 				A4A75D0E1A53DC4B00E87191 /* StoreKit.framework in Frameworks */,
 				A45C2E6C1A80CC2B00CC73F6 /* CoreLocation.framework in Frameworks */,
@@ -647,6 +673,30 @@
 				A44236751A722026008C3051 /* buyCoinsViewController.xib */,
 			);
 			name = "IAP class";
+			sourceTree = "<group>";
+		};
+		A466A1311A8903FE005BD67C /* effect */ = {
+			isa = PBXGroup;
+			children = (
+				A466A1501A890BAD005BD67C /* comprar_coins.mp3 */,
+				A466A1481A8906EE005BD67C /* go.mp3 */,
+				A466A14C1A8908D9005BD67C /* click.mp3 */,
+				A466A14D1A8908D9005BD67C /* newGame.mp3 */,
+				A466A14A1A890780005BD67C /* s_remove.mp3 */,
+				A466A1461A890679005BD67C /* difficulty.mp3 */,
+				A466A1421A8905B2005BD67C /* alert.mp3 */,
+				A466A1441A890662005BD67C /* new_game.mp3 */,
+				A466A1521A89110C005BD67C /* Correct.mp3 */,
+				A466A1321A890412005BD67C /* Incorrect.mp3 */,
+				A466A1331A890412005BD67C /* Letter_Add.mp3 */,
+				A466A1341A890412005BD67C /* Letter_Remove.mp3 */,
+				A466A1351A890412005BD67C /* Window_Appear.mp3 */,
+				A466A1361A890412005BD67C /* Window_Disappear.mp3 */,
+				A466A1371A890412005BD67C /* s_levelup.mp3 */,
+				A466A1401A890500005BD67C /* SolveQuestion.mp3 */,
+			);
+			name = effect;
+			path = icons/PNGs;
 			sourceTree = "<group>";
 		};
 		A47EFF771A67B8E5000FCAF7 /* 2 */ = {
@@ -1064,7 +1114,6 @@
 		A4AC86031A36CFE700CD19CA /* mixMusicTest */ = {
 			isa = PBXGroup;
 			children = (
-				A4AE4B1B1A88F56600234AA1 /* libsTencentAD */,
 				A4ABE9B21A8889120012E956 /* ios_api */,
 				A4A5A2D81A74AAA8005634E9 /* UMSocial_Sdk_4.2.1 */,
 				A40CA8FE1A72469E00ED071F /* CommonUtility.h */,
@@ -1125,18 +1174,6 @@
 				A4AC861F1A36CFE700CD19CA /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		A4AE4B1B1A88F56600234AA1 /* libsTencentAD */ = {
-			isa = PBXGroup;
-			children = (
-				A4AE4B1C1A88F56600234AA1 /* GDTMobBannerView.h */,
-				A4AE4B1D1A88F56600234AA1 /* GDTMobInterstitial.h */,
-				A4AE4B1E1A88F56600234AA1 /* GDTNativeAd.h */,
-				A4AE4B1F1A88F56600234AA1 /* libGDTMobSDK_v3.3.a */,
-			);
-			name = libsTencentAD;
-			path = ios_api/libsTencentAD;
 			sourceTree = "<group>";
 		};
 		A4B268A61A8351D30037DA16 /* frameworks */ = {
@@ -1213,6 +1250,7 @@
 		A4E094FD1A4BE092001AD626 /* sound */ = {
 			isa = PBXGroup;
 			children = (
+				A466A1311A8903FE005BD67C /* effect */,
 				A47EFF771A67B8E5000FCAF7 /* 2 */,
 				A47EFF8C1A67B8E6000FCAF7 /* 3 */,
 				A47EFFA11A67B8E6000FCAF7 /* 4 */,
@@ -1336,6 +1374,7 @@
 				A47E00431A67B8E6000FCAF7 /* 难以抗拒你容颜.m4a in Resources */,
 				A4E0A3081A865FBF00AFF6D5 /* nextBack.png in Resources */,
 				A4A5A2F61A74AAA8005634E9 /* UMSCommentInputController.xib in Resources */,
+				A466A1391A890412005BD67C /* Incorrect.mp3 in Resources */,
 				A4DAF7421A87ACB800D9A94F /* Button_Close.png in Resources */,
 				A4DAF7481A87B46400D9A94F /* buyCellView.xib in Resources */,
 				A47EFFFF1A67B8E6000FCAF7 /* 牧马人.m4a in Resources */,
@@ -1352,6 +1391,7 @@
 				A47EFFE41A67B8E6000FCAF7 /* 后来.m4a in Resources */,
 				A4DAF73A1A87951500D9A94F /* infoBack.png in Resources */,
 				A4AC86101A36CFE700CD19CA /* Main.storyboard in Resources */,
+				A466A13A1A890412005BD67C /* Letter_Add.mp3 in Resources */,
 				A47E00001A67B8E6000FCAF7 /* 狼.m4a in Resources */,
 				A4CAD7611A8288BE00CF40D2 /* playSingleBtn.png in Resources */,
 				A4A5A2F31A74AAA8005634E9 /* UMSocialLocalizable.strings in Resources */,
@@ -1371,8 +1411,11 @@
 				A47EFFEF1A67B8E6000FCAF7 /* 素颜.m4a in Resources */,
 				A47E00221A67B8E6000FCAF7 /* 可惜不是你.m4a in Resources */,
 				A4E0A2FB1A86574E00AFF6D5 /* answerBoard.png in Resources */,
+				A466A13C1A890412005BD67C /* Window_Appear.mp3 in Resources */,
+				A466A1491A8906EE005BD67C /* go.mp3 in Resources */,
 				A47E002F1A67B8E6000FCAF7 /* 至少还有你.m4a in Resources */,
 				A47EFFE81A67B8E6000FCAF7 /* 安静.m4a in Resources */,
+				A466A14E1A8908D9005BD67C /* click.mp3 in Resources */,
 				A47EFFFE1A67B8E6000FCAF7 /* 爱相随.m4a in Resources */,
 				A4A0C2531A8108430032DF0B /* 继续.png in Resources */,
 				A47E00091A67B8E6000FCAF7 /* 为爱疯狂.m4a in Resources */,
@@ -1395,9 +1438,11 @@
 				A4CAD75D1A8288BE00CF40D2 /* deleteOneBtn.png in Resources */,
 				A47EFFFD1A67B8E6000FCAF7 /* 爱情路.m4a in Resources */,
 				A47E00331A67B8E6000FCAF7 /* 今天你要嫁给我.m4a in Resources */,
+				A466A1471A890679005BD67C /* difficulty.mp3 in Resources */,
 				A47E00351A67B8E6000FCAF7 /* 像风一样自由.m4a in Resources */,
 				A47EFFE01A67B8E6000FCAF7 /* 倒带.m4a in Resources */,
 				A4BAEF641A8464E800757BA6 /* levelPassView.xib in Resources */,
+				A466A14F1A8908D9005BD67C /* newGame.mp3 in Resources */,
 				A47E00051A67B8E6000FCAF7 /* 谁.m4a in Resources */,
 				A47E00201A67B8E6000FCAF7 /* 兄弟抱一下.m4a in Resources */,
 				A47EFFEC1A67B8E6000FCAF7 /* 王妃.m4a in Resources */,
@@ -1420,17 +1465,21 @@
 				A4A0C24F1A8108430032DF0B /* reviewBtn.png in Resources */,
 				A4E0A30A1A865FBF00AFF6D5 /* nextCoin.png in Resources */,
 				A47E003B1A67B8E6000FCAF7 /* 想把我唱给你听 .m4a in Resources */,
+				A466A1411A890500005BD67C /* SolveQuestion.mp3 in Resources */,
 				A47E00021A67B8E6000FCAF7 /* 红蜻蜓.m4a in Resources */,
 				A47E00041A67B8E6000FCAF7 /* 说爱你.m4a in Resources */,
 				A47E00281A67B8E6000FCAF7 /* 我很想爱他 .m4a in Resources */,
+				A466A13D1A890412005BD67C /* Window_Disappear.mp3 in Resources */,
 				A47E00231A67B8E6000FCAF7 /* 听妈妈的话.m4a in Resources */,
 				A4B76C1D1A3997600014014D /* choicesBoardView.xib in Resources */,
 				A47EFFFA1A67B8E6000FCAF7 /* 就是我.m4a in Resources */,
+				A466A1431A8905B2005BD67C /* alert.mp3 in Resources */,
 				A41D8B9B1A722A26008F9240 /* itemTableViewCell.xib in Resources */,
 				A47E000B1A67B8E6000FCAF7 /* 匆匆那年.m4a in Resources */,
 				A47E000A1A67B8E6000FCAF7 /* 勇敢的心.m4a in Resources */,
 				A4A0C2561A8109DE0032DF0B /* point.png in Resources */,
 				A47E00261A67B8E6000FCAF7 /* 心中的日月.m4a in Resources */,
+				A466A1531A89110C005BD67C /* Correct.mp3 in Resources */,
 				A4DAF7521A87BD6300D9A94F /* gameViewController.xib in Resources */,
 				A47E00241A67B8E6000FCAF7 /* 如果没有你.m4a in Resources */,
 				A4DAF73E1A8799B900D9A94F /* Newsfeed-RSS-icon.png in Resources */,
@@ -1438,6 +1487,7 @@
 				A47EFFE71A67B8E6000FCAF7 /* 存在.m4a in Resources */,
 				A4CAD7631A8288BE00CF40D2 /* showAnswerBtn.png in Resources */,
 				A47E00211A67B8E6000FCAF7 /* 另一个天堂.m4a in Resources */,
+				A466A1451A890662005BD67C /* new_game.mp3 in Resources */,
 				A47EFFE61A67B8E6000FCAF7 /* 天下.m4a in Resources */,
 				A4ADB5FF1A83B5C200D991F8 /* note7.png in Resources */,
 				A4ABE9E91A8889120012E956 /* baidumobadsdk.bundle in Resources */,
@@ -1462,15 +1512,18 @@
 				A4CAD75F1A8288BE00CF40D2 /* mainBack2.png in Resources */,
 				A4A6C13B1A6B7EF000C6095C /* background.png in Resources */,
 				A47EFFED1A67B8E6000FCAF7 /* 离歌.m4a in Resources */,
+				A466A13B1A890412005BD67C /* Letter_Remove.mp3 in Resources */,
 				A47E00111A67B8E6000FCAF7 /* 我怀念的.m4a in Resources */,
 				A47EFFF91A67B8E6000FCAF7 /* 小酒窝.m4a in Resources */,
 				A4CAD75B1A8288BE00CF40D2 /* choiceBack.png in Resources */,
 				A47E000F1A67B8E6000FCAF7 /* 快乐崇拜.m4a in Resources */,
+				A466A13E1A890412005BD67C /* s_levelup.mp3 in Resources */,
 				A4CAD7641A8288BE00CF40D2 /* 停止.png in Resources */,
 				A47E00061A67B8E6000FCAF7 /* 走天涯.m4a in Resources */,
 				A4E0A30B1A865FBF00AFF6D5 /* rightBack.png in Resources */,
 				A47E003F1A67B8E6000FCAF7 /* 流着泪的你的脸.m4a in Resources */,
 				A47E001A1A67B8E6000FCAF7 /* 花房姑娘.m4a in Resources */,
+				A466A14B1A890780005BD67C /* s_remove.mp3 in Resources */,
 				A47E00391A67B8E6000FCAF7 /* 当爱已成往事.m4a in Resources */,
 				A47E003A1A67B8E6000FCAF7 /* 忠孝东路走九遍.m4a in Resources */,
 				A4DAF7371A87208300D9A94F /* UMS_sina_icon.png in Resources */,
@@ -1492,6 +1545,7 @@
 				A4AC86121A36CFE700CD19CA /* Images.xcassets in Resources */,
 				A47E00341A67B8E6000FCAF7 /* 像梦一样自由.m4a in Resources */,
 				A4DAF74F1A87BD4700D9A94F /* bomb.png in Resources */,
+				A466A1511A890BAD005BD67C /* comprar_coins.mp3 in Resources */,
 				A4A5A2F81A74AAA8005634E9 /* UMShareEditViewController.xib in Resources */,
 				A4A5A3101A750EF2005634E9 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				A47EFFFC1A67B8E6000FCAF7 /* 爱.m4a in Resources */,

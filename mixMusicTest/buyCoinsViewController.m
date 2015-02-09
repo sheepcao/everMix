@@ -192,6 +192,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [CommonUtility tapSound:@"click" withType:@"mp3"];
+    
     if (indexPath.row < _products.count) {
         SKProduct *product = _products[indexPath.row];
         
@@ -211,6 +213,8 @@
             [self shareToSina];
 
         }
+        [self.closeDelegate closingBuy];
+
 
         
     }else if(indexPath.row == _products.count + 1)
@@ -221,6 +225,8 @@
             [self shareToSina];
             
         }
+        [self.closeDelegate closingBuy];
+
 
     }else if ([CommonUtility fetchCoinAmount] < 400 )
     {
@@ -228,9 +234,10 @@
         {
         [self reviewUS];
         }
+        [self.closeDelegate closingBuy];
+
     }
     
-    [self.closeDelegate closingBuy];
     
 }
 

@@ -642,6 +642,9 @@ int difficultyNow;
 
 
 - (IBAction)continueTapped:(UIButton *)sender {
+    
+    [CommonUtility tapSound:@"newGame" withType:@"mp3"];
+
     self.gameData = [self readDataFromPlist:@"gameData"] ;
 
     NSString *currentLevel = [self.gameData objectForKey:@"currentLevel"];
@@ -678,6 +681,7 @@ int difficultyNow;
 
 - (IBAction)beginTapped:(UIButton *)sender {
     
+    [CommonUtility tapSound:@"newGame" withType:@"mp3"];
 
 //    NSMutableArray *currentMusics = [[NSUserDefaults standardUserDefaults] objectForKey:@"currentMusics"];
     self.gameData = [self readDataFromPlist:@"gameData"] ;
@@ -725,13 +729,15 @@ int difficultyNow;
 }
 
 - (IBAction)socialShare {
+    
+    [CommonUtility tapSound:@"click" withType:@"mp3"];
     [MobClick event:@"shareFromHome"];
     
     [UMSocialSnsService presentSnsIconSheetView:self
                                          appKey:@"54c46ea7fd98c5071d000668"
                                       shareText:@"我在玩魔音大师，还挺挑战的，朋友们也来试试!"
                                      shareImage:[UIImage imageNamed:@"iconNew.png"]
-                                shareToSnsNames:@[UMShareToSina,UMShareToWechatSession,UMShareToWechatTimeline,UMShareToWechatFavorite,UMShareToQQ,UMShareToQzone]
+                                shareToSnsNames:@[UMShareToSina,UMShareToWechatSession,UMShareToWechatTimeline,UMShareToWechatFavorite]
                                        delegate:(id)self];
     
     // music url
@@ -760,6 +766,8 @@ int difficultyNow;
 
 
 - (IBAction)commentOnStore {
+    [CommonUtility tapSound:@"click" withType:@"mp3"];
+
     [MobClick event:@"comment"];
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:REVIEW_URL]];
 
@@ -862,6 +870,8 @@ int difficultyNow;
 
 
 - (IBAction)buyCoinsTapped:(id)sender {
+    [CommonUtility tapSound:@"click" withType:@"mp3"];
+
     [MobClick event:@"bugCoinClick"];
 
     if (!self.buyCoinsView) {
@@ -911,6 +921,7 @@ int difficultyNow;
 
 -(void)closingBuy
 {
+    [CommonUtility tapSound:@"Window_Disappear" withType:@"mp3"];
     [UIView animateWithDuration:0.45 delay:0.05 usingSpringWithDamping:1.0 initialSpringVelocity:0.4 options:0 animations:^{
         [self.buyCoinsView setFrame:CGRectMake(0, [UIScreen mainScreen].bounds.size.height, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
         
@@ -920,6 +931,8 @@ int difficultyNow;
 }
 
 - (IBAction)infoTap {
+    [CommonUtility tapSound:@"click" withType:@"mp3"];
+
     
     if (!self.infoView) {
         
@@ -962,6 +975,9 @@ int difficultyNow;
     [wordView setFrame:bframe];
 }
 - (IBAction)closeInfoBtn {
+    
+    [CommonUtility tapSound:@"Window_Disappear" withType:@"mp3"];
+
     
     [UIView animateWithDuration:0.45 delay:0.05 usingSpringWithDamping:1 initialSpringVelocity:0.4 options:0 animations:^{
         [self.infoView setFrame:CGRectMake(0, [UIScreen mainScreen].bounds.size.height, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
@@ -1193,6 +1209,8 @@ int difficultyNow;
 
 
 - (void)difficultyChanged:(UIButton *)sender {
+    
+    [CommonUtility tapSound:@"difficulty" withType:@"mp3"];
     
     NSLog(@"%ld",(long)sender.tag);
     
