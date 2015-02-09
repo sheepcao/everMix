@@ -131,10 +131,13 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
     if (nil == cell)
     {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
+//        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
+        cell = [[[NSBundle mainBundle]loadNibNamed:@"buyCellView" owner:self options:nil] lastObject];//加载nib文件
+
     }
     cell.backgroundColor = [UIColor clearColor];
     [cell.textLabel setTextColor:[UIColor whiteColor]];
+    cell.textLabel.font = [UIFont systemFontOfSize:17];
 
     if (indexPath.row < _products.count) {
         SKProduct * product = (SKProduct *) _products[indexPath.row];

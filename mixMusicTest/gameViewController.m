@@ -165,6 +165,19 @@ int answerPickedCount;
 {
     [super viewDidAppear:animated];
     // 设置广告视图的位置
+    
+
+//    if(IS_IPHONE_6)
+//    {
+//        CGRect aframe = self.shareBtn.frame;
+//        CGRect bframe = self.deleteOneBtn.frame;
+//        
+//        aframe.origin.x+=10;
+//        bframe.origin.x-=10;
+//        
+////    _dmAdView.frame = CGRectMake(0, [UIScreen mainScreen].bounds.size.height - FLEXIBLE_SIZE.height-44, SCREEN_WIDTH,FLEXIBLE_SIZE.height);
+//
+//    }
 
 }
 
@@ -246,12 +259,41 @@ int answerPickedCount;
 -(void)setupButtonsView
 {
     CGFloat distance = 30;
+    UIButton *cd1Btn;
+    UIButton *cd2Btn;
+    UIButton *cd3Btn;
+    UIButton *cd4Btn;
+    UIButton *cd5Btn;
     
-    UIButton *cd1Btn = [[UIButton alloc] initWithFrame:CGRectMake(50, distance+3, CD_SZIE, CD_SZIE)];
-    UIButton *cd2Btn = [[UIButton alloc] initWithFrame:CGRectMake(190, distance+3, CD_SZIE, CD_SZIE)];
-    UIButton *cd3Btn = [[UIButton alloc] initWithFrame:CGRectMake(50, 2*distance+CD_SZIE, CD_SZIE, CD_SZIE)];
-    UIButton *cd4Btn = [[UIButton alloc] initWithFrame:CGRectMake(190, 2*distance+CD_SZIE, CD_SZIE, CD_SZIE)];
-    UIButton *cd5Btn = [[UIButton alloc] initWithFrame:CGRectMake(50, 3*distance+2*CD_SZIE, CD_SZIE, CD_SZIE)];
+    if(IS_IPHONE_5)
+    {
+    
+    cd1Btn = [[UIButton alloc] initWithFrame:CGRectMake(50, distance+3, CD_SZIE, CD_SZIE)];
+    cd2Btn = [[UIButton alloc] initWithFrame:CGRectMake(190, distance+3, CD_SZIE, CD_SZIE)];
+    cd3Btn = [[UIButton alloc] initWithFrame:CGRectMake(50, 2*distance+CD_SZIE, CD_SZIE, CD_SZIE)];
+    cd4Btn = [[UIButton alloc] initWithFrame:CGRectMake(190, 2*distance+CD_SZIE, CD_SZIE, CD_SZIE)];
+    cd5Btn = [[UIButton alloc] initWithFrame:CGRectMake(50, 3*distance+2*CD_SZIE, CD_SZIE, CD_SZIE)];
+        
+    }else if(IS_IPHONE_6 )
+    {
+        distance = 30;
+
+        cd1Btn = [[UIButton alloc] initWithFrame:CGRectMake(60, distance-12, CD_SZIE+6, CD_SZIE+6)];
+        cd2Btn = [[UIButton alloc] initWithFrame:CGRectMake(226, distance-12, CD_SZIE+6, CD_SZIE+6)];
+        cd3Btn = [[UIButton alloc] initWithFrame:CGRectMake(60, 2*distance-13+CD_SZIE, CD_SZIE+6, CD_SZIE+6)];
+        cd4Btn = [[UIButton alloc] initWithFrame:CGRectMake(226, 2*distance-13+CD_SZIE, CD_SZIE+6, CD_SZIE+6)];
+        cd5Btn = [[UIButton alloc] initWithFrame:CGRectMake(60, 3*distance-13+2*CD_SZIE, CD_SZIE+6, CD_SZIE+6)];
+    }
+    else if(IS_IPHONE_6P)
+    {
+        distance = 30;
+        
+        cd1Btn = [[UIButton alloc] initWithFrame:CGRectMake(70, distance-12, CD_SZIE+10, CD_SZIE+10)];
+        cd2Btn = [[UIButton alloc] initWithFrame:CGRectMake(266, distance-12, CD_SZIE+10, CD_SZIE+10)];
+        cd3Btn = [[UIButton alloc] initWithFrame:CGRectMake(70, 2*distance-13+CD_SZIE, CD_SZIE+10, CD_SZIE+10)];
+        cd4Btn = [[UIButton alloc] initWithFrame:CGRectMake(256, 2*distance-13+CD_SZIE, CD_SZIE+10, CD_SZIE+10)];
+        cd5Btn = [[UIButton alloc] initWithFrame:CGRectMake(70, 3*distance-13+2*CD_SZIE, CD_SZIE+10, CD_SZIE+10)];
+    }
     
     [cd1Btn addTarget:self action:@selector(diskTap:) forControlEvents:UIControlEventTouchUpInside];
     [cd2Btn addTarget:self action:@selector(diskTap:) forControlEvents:UIControlEventTouchUpInside];

@@ -62,4 +62,12 @@
 @property (strong, nonatomic) IBOutlet UILabel *versionLabel;
 
 -(void)closingBuy;
+
+- (IBAction)infoTap;
+
+//info view
+@property (strong, nonatomic) IBOutlet UIView *infoView;
+- (IBAction)closeInfoBtn;
+- (IBAction)feedBack;
+
 @end

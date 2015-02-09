@@ -11,6 +11,8 @@
 #import <QuartzCore/QuartzCore.h>
 #import "globalVar.h"
 #import "fallAnimation.h"
+#import <MessageUI/MessageUI.h>
+
 //#import <CoreVideo/CVOpenGLESTextureCache.h>
 //#import "RippleModel.h"
 //#include <stdlib.h>
@@ -18,7 +20,7 @@
 #define DMPUBLISHERID        @"56OJxqiIuN5cJKR8fX"
 #define DMPLCAEMENTID_INTER @"16TLej7oApZ2kNUOza5fBhvz"
 
-@interface ViewController ()
+@interface ViewController ()<MFMailComposeViewControllerDelegate>
 {
     bool first;
 }
@@ -688,6 +690,8 @@ int difficultyNow;
     if (!self.buyCoinsView) {
         
         self.buyCoinsView = [[[NSBundle mainBundle] loadNibNamed:@"buyCoinsViewController" owner:self options:nil] objectAtIndex:0];
+        [self.view addSubview:self.buyCoinsView];
+
     }
 
     
@@ -696,7 +700,6 @@ int difficultyNow;
     self.myBuyController = [[buyCoinsViewController alloc] initWithCoinLabel:coinsLabel andParentController:self adnParentCoinButton:self.coinsShowing];
  
     [self.buyCoinsView setFrame:CGRectMake(0, [UIScreen mainScreen].bounds.size.height, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
-    [self.view addSubview:self.buyCoinsView];
     
     self.myBuyController.closeDelegate =self;
     
@@ -716,7 +719,7 @@ int difficultyNow;
     [self.myBuyController reloadwithRefreshControl:self.refreshControl andTableView:self.itemsToBuy];
     [self.refreshControl beginRefreshing];
     
-    [UIView animateWithDuration:0.65 delay:0.05 usingSpringWithDamping:0.8 initialSpringVelocity:0.4 options:0 animations:^{
+    [UIView animateWithDuration:0.45 delay:0.05 usingSpringWithDamping:1.0 initialSpringVelocity:0.4 options:0 animations:^{
         [self.buyCoinsView setFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
     } completion:nil];
     
@@ -728,12 +731,138 @@ int difficultyNow;
 
 -(void)closingBuy
 {
-    [UIView animateWithDuration:0.65 delay:0.05 usingSpringWithDamping:0.8 initialSpringVelocity:0.4 options:0 animations:^{
+    [UIView animateWithDuration:0.45 delay:0.05 usingSpringWithDamping:1.0 initialSpringVelocity:0.4 options:0 animations:^{
         [self.buyCoinsView setFrame:CGRectMake(0, [UIScreen mainScreen].bounds.size.height, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
         
     } completion:nil];
     [self.navigationItem setHidesBackButton:NO];
     [self.navigationItem.rightBarButtonItem setEnabled:YES];
+}
+
+- (IBAction)infoTap {
+    
+    if (!self.infoView) {
+        
+        self.infoView = [[[NSBundle mainBundle] loadNibNamed:@"infoView" owner:self options:nil] objectAtIndex:0];
+        [self.view addSubview:self.infoView];
+
+    }
+    [self.infoView setFrame:CGRectMake(0, [UIScreen mainScreen].bounds.size.height, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
+    
+    [UIView animateWithDuration:0.45 delay:0.05 usingSpringWithDamping:1 initialSpringVelocity:0.99 options:0 animations:^{
+        [self.infoView setFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
+    } completion:nil];
+}
+- (IBAction)closeInfoBtn {
+    
+    [UIView animateWithDuration:0.45 delay:0.05 usingSpringWithDamping:1 initialSpringVelocity:0.4 options:0 animations:^{
+        [self.infoView setFrame:CGRectMake(0, [UIScreen mainScreen].bounds.size.height, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
+        
+    } completion:nil];
+}
+
+- (IBAction)feedBack {
+    
+    MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
+    [picker.view setFrame:CGRectMake(0,20 , 320, self.view.frame.size.height-20)];
+    picker.mailComposeDelegate = self;
+    
+    
+    
+    // Set up recipients
+    NSArray *toRecipients = [NSArray arrayWithObject:@"sheepcao1986@163.com"];
+    
+    
+    [picker setToRecipients:toRecipients];
+    //
+    //    // Attach an image to the email
+    //    NSString *path = [[NSBundle mainBundle] pathForResource:@"" ofType:@"png"];
+    //    NSData *myData = [NSData dataWithContentsOfFile:path];
+    //    [picker addAttachmentData:myData mimeType:@"image/png" fileName:@""];
+    
+    // Fill out the email body text
+    NSString *emailBody= @"";
+    if ([CommonUtility isSystemLangChinese]) {
+        [picker setSubject:@"意见反馈-魔音大师"];
+//        emailBody = @"亲爱的BabyMatch用户，\n只要拍下宝宝的绘画作品投稿，您宝宝的大作就有机会成为新的游戏关卡！只需三步哦！\n1、宝宝绘画——围绕着某一个特定主题宝宝进行绘画，可以画在纸上或者平板电脑上\n2、家长拍照——用像素较高的手机或相机拍下您宝宝的绘画作品，如果在平板上绘画直接截屏或保存图片\n3、签名发送——邮件标题或正文写清宝宝名字，宝宝年龄，以及绘画主题，我们会把这些信息清晰的附在图片之中。\n\n我们将会选出适合猜图、图片清晰的作品作为新游戏的素材！\n宝宝也可以是APP设计师！快快投稿吧！\n\n投稿标题示例：\n张小宝，5岁，小鸟在唱歌\n(注：手机用户直接双击邮件正文选择添加图片。)";
+    }else
+    {
+        
+        [picker setSubject:@"Feed back - mixMusic Guess"];
+//        emailBody = @"Dear user,\nJust take a photo of your baby’s painting, and your sweetheart’s masterpiece will likely become the material of our new game level.Only three steps are needed. Simple and easy!\nStep 1: baby draw – your baby can draw whatever he/she like on certain theme, either on a piece of paper or iPad.\nStep 2: parents shoot – please take a photo of your baby’s painting if it’s been drawn on a piece of paper, or just screenshot and save the painting on the iPad.\nStep 3: Sign & Send – please write your baby’s name, age and painting theme in the title of subscription email so that we can make a footnote on your baby’s work.\n\nThen we’ll carefully select suitable and clear paintings, and use them in our new materials of game levels.\nEvery baby is a genius in designing!\n\nExample for subscription email title:\nDaniel Cooper, 5 years old, a singing bird \n(PS: mobile users can add a picture directly by double-click the email message body.)";
+    }
+    
+    [picker setMessageBody:emailBody isHTML:NO];
+    [self presentViewController:picker animated:YES completion:nil];
+}
+- (void)alertWithTitle: (NSString *)_title_ msg: (NSString *)msg
+
+{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:_title_
+                          
+                                                    message:msg
+                          
+                                                   delegate:nil
+                                          cancelButtonTitle:@"OK"
+                          
+                                          otherButtonTitles:nil];
+    
+    [alert show];
+}
+- (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error
+
+{
+    
+    NSString *title = @"Mail";
+    
+    NSString *msg;
+    
+    switch (result)
+    
+    {
+            
+        case MFMailComposeResultCancelled:
+            
+            msg = @"Mail canceled";//@"邮件发送取消";
+            
+            break;
+            
+        case MFMailComposeResultSaved:
+            
+            msg = @"Mail saved";//@"邮件保存成功";
+            
+            [self alertWithTitle:title msg:msg];
+            
+            break;
+            
+        case MFMailComposeResultSent:
+            
+            msg = @"Mail sent";//@"邮件发送成功";
+            
+            [self alertWithTitle:title msg:msg];
+            
+            break;
+            
+        case MFMailComposeResultFailed:
+            
+            msg = @"Mail failed";//@"邮件发送失败";
+            
+            [self alertWithTitle:title msg:msg];
+            
+            break;
+            
+        default:
+            
+            msg = @"Mail not sent";
+            
+            [self alertWithTitle:title msg:msg];
+            
+            break;
+            
+    }
+    
+    [self  dismissViewControllerAnimated:YES completion:nil];
+    
 }
 
 
@@ -1051,6 +1180,7 @@ int difficultyNow;
 //    [myFall performSelector:@selector(startDisplayLink) withObject:nil afterDelay:0.05];
     
 }
+
 
 @end
 
