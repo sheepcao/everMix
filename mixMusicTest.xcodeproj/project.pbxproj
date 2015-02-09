@@ -209,6 +209,7 @@
 		A4ADB5FE1A83B5C200D991F8 /* note6.png in Resources */ = {isa = PBXBuildFile; fileRef = A4ADB5F41A83B5C200D991F8 /* note6.png */; };
 		A4ADB5FF1A83B5C200D991F8 /* note7.png in Resources */ = {isa = PBXBuildFile; fileRef = A4ADB5F51A83B5C200D991F8 /* note7.png */; };
 		A4ADB6001A83B5C200D991F8 /* note8.png in Resources */ = {isa = PBXBuildFile; fileRef = A4ADB5F61A83B5C200D991F8 /* note8.png */; };
+		A4AE4B201A88F56600234AA1 /* libGDTMobSDK_v3.3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A4AE4B1F1A88F56600234AA1 /* libGDTMobSDK_v3.3.a */; };
 		A4B268A91A8377570037DA16 /* fallAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = A4B268A81A8377570037DA16 /* fallAnimation.m */; };
 		A4B76C1D1A3997600014014D /* choicesBoardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4B76C1C1A3997600014014D /* choicesBoardView.xib */; };
 		A4B9F7DF1A81AFA300076531 /* gameBack.png in Resources */ = {isa = PBXBuildFile; fileRef = A4B9F7DC1A81AFA300076531 /* gameBack.png */; };
@@ -525,6 +526,10 @@
 		A4ADB5F41A83B5C200D991F8 /* note6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = note6.png; sourceTree = "<group>"; };
 		A4ADB5F51A83B5C200D991F8 /* note7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = note7.png; sourceTree = "<group>"; };
 		A4ADB5F61A83B5C200D991F8 /* note8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = note8.png; sourceTree = "<group>"; };
+		A4AE4B1C1A88F56600234AA1 /* GDTMobBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTMobBannerView.h; sourceTree = "<group>"; };
+		A4AE4B1D1A88F56600234AA1 /* GDTMobInterstitial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTMobInterstitial.h; sourceTree = "<group>"; };
+		A4AE4B1E1A88F56600234AA1 /* GDTNativeAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTNativeAd.h; sourceTree = "<group>"; };
+		A4AE4B1F1A88F56600234AA1 /* libGDTMobSDK_v3.3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGDTMobSDK_v3.3.a; sourceTree = "<group>"; };
 		A4B268A71A8377570037DA16 /* fallAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fallAnimation.h; sourceTree = "<group>"; };
 		A4B268A81A8377570037DA16 /* fallAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = fallAnimation.m; sourceTree = "<group>"; };
 		A4B76C1C1A3997600014014D /* choicesBoardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = choicesBoardView.xib; sourceTree = "<group>"; };
@@ -598,6 +603,7 @@
 				A40EFBBC1A7A0AC500F7D6D2 /* libz.dylib in Frameworks */,
 				A4ABE9EA1A8889120012E956 /* libBaiduMobAdSdk64bit.a in Frameworks */,
 				A45C2E701A80CC4200CC73F6 /* AdSupport.framework in Frameworks */,
+				A4AE4B201A88F56600234AA1 /* libGDTMobSDK_v3.3.a in Frameworks */,
 				A45C2E6E1A80CC3B00CC73F6 /* PassKit.framework in Frameworks */,
 				A4A75D0E1A53DC4B00E87191 /* StoreKit.framework in Frameworks */,
 				A45C2E6C1A80CC2B00CC73F6 /* CoreLocation.framework in Frameworks */,
@@ -1058,6 +1064,7 @@
 		A4AC86031A36CFE700CD19CA /* mixMusicTest */ = {
 			isa = PBXGroup;
 			children = (
+				A4AE4B1B1A88F56600234AA1 /* libsTencentAD */,
 				A4ABE9B21A8889120012E956 /* ios_api */,
 				A4A5A2D81A74AAA8005634E9 /* UMSocial_Sdk_4.2.1 */,
 				A40CA8FE1A72469E00ED071F /* CommonUtility.h */,
@@ -1118,6 +1125,18 @@
 				A4AC861F1A36CFE700CD19CA /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A4AE4B1B1A88F56600234AA1 /* libsTencentAD */ = {
+			isa = PBXGroup;
+			children = (
+				A4AE4B1C1A88F56600234AA1 /* GDTMobBannerView.h */,
+				A4AE4B1D1A88F56600234AA1 /* GDTMobInterstitial.h */,
+				A4AE4B1E1A88F56600234AA1 /* GDTNativeAd.h */,
+				A4AE4B1F1A88F56600234AA1 /* libGDTMobSDK_v3.3.a */,
+			);
+			name = libsTencentAD;
+			path = ios_api/libsTencentAD;
 			sourceTree = "<group>";
 		};
 		A4B268A61A8351D30037DA16 /* frameworks */ = {
@@ -1672,6 +1691,7 @@
 					"$(PROJECT_DIR)/mixMusicTest/UMSocial_Sdk_4.2.1/UMSocial_Sdk_Extra_Frameworks/Wechat",
 					"$(PROJECT_DIR)/mixMusicTest",
 					"$(PROJECT_DIR)/mixMusicTest/ios_api",
+					"$(PROJECT_DIR)/mixMusicTest/ios_api/libsTencentAD",
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
@@ -1715,6 +1735,7 @@
 					"$(PROJECT_DIR)/mixMusicTest/UMSocial_Sdk_4.2.1/UMSocial_Sdk_Extra_Frameworks/Wechat",
 					"$(PROJECT_DIR)/mixMusicTest",
 					"$(PROJECT_DIR)/mixMusicTest/ios_api",
+					"$(PROJECT_DIR)/mixMusicTest/ios_api/libsTencentAD",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
