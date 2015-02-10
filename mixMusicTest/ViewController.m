@@ -111,8 +111,9 @@ int difficultyNow;
     [self dropDown];
     
 
+//    [[NSUserDefaults standardUserDefaults] setObject:@"launch" forKey:@"mainPageFrom"];
     
-    NSLog(@"view:%@",self.view);
+
     
 }
 
@@ -390,25 +391,32 @@ int difficultyNow;
     
     self.gameData = [self readDataFromPlist:@"gameData"] ;
     NSString *currentDifficulty = [self.gameData objectForKey:@"difficulty"];
-    
+    NSString *currentLevel = [self.gameData objectForKey:@"currentLevel"];
+
 //    [self drawStars:[currentDifficulty intValue]];
 //    self.difficultySegment.selectedSegmentIndex = [currentDifficulty intValue];
     
     [self changeDifficultyTo:currentDifficulty];
     NSMutableArray *currentMusics = [self.gameData objectForKey:@"musicPlaying"];
     
-    if (currentMusics && currentMusics.count > 0) {
+    if ((currentMusics && currentMusics.count > 0) || [currentLevel intValue] %20 != 0 || [currentLevel intValue] == 100) {
         
         [self.begainGame setImage:[UIImage imageNamed:@"重新开始"] forState:UIControlStateNormal];
         [self.begainGame setFrame:CGRectMake([[UIScreen mainScreen] bounds].size.width - self.continueGame.frame.origin.x - self.continueGame.frame.size.width, self.continueGame.frame.origin.y, self.continueGame.frame.size.width, self.continueGame.frame.size.height)];
         [self.continueGame setHidden:NO];
     }else
     {
+        if ([currentLevel intValue]!=[currentDifficulty intValue] *20) {
+            [self.begainGame setImage:[UIImage imageNamed:@"重新开始"] forState:UIControlStateNormal];
+            [self.begainGame setFrame:CGRectMake([[UIScreen mainScreen] bounds].size.width - self.continueGame.frame.origin.x - self.continueGame.frame.size.width, self.continueGame.frame.origin.y, self.continueGame.frame.size.width, self.continueGame.frame.size.height)];
+            [self.continueGame setHidden:NO];
+        }else
+        {
         
         [self.begainGame setImage:[UIImage imageNamed:@"开始"] forState:UIControlStateNormal];
         [self.begainGame setFrame:CGRectMake([[UIScreen mainScreen] bounds].size.width/2 - self.continueGame.frame.size.width/2 , self.continueGame.frame.origin.y, self.continueGame.frame.size.width, self.continueGame.frame.size.height)];
         [self.continueGame setHidden:YES];
-        
+        }
         
     }
 //    
@@ -710,10 +718,18 @@ int difficultyNow;
         
     }else
     {
-        NSMutableArray *passMusics = [self configSongs];
-        myGameViewController.musicsArray = passMusics;
-        [self modifyPlist:@"gameData" withValue:passMusics forKey:@"musicPlaying"];
+        if([currentLevel intValue] == 100 )
+        {
+        UIAlertView *finishLevelAlert = [[UIAlertView alloc] initWithTitle:@"赞" message:@"玩爆关啦！我们会尽快更新曲库！重新游戏将对当前曲库重新组合。" delegate:self cancelButtonTitle:@"耐心期待" otherButtonTitles:nil, nil];
+        [finishLevelAlert show];
+        return;
+        }else
+        {
+            NSMutableArray *passMusics = [self configSongs];
+            myGameViewController.musicsArray = passMusics;
+            [self modifyPlist:@"gameData" withValue:passMusics forKey:@"musicPlaying"];
 
+        }
         
     }
     myGameViewController.delegate = self;
@@ -732,14 +748,15 @@ int difficultyNow;
     self.gameData = [self readDataFromPlist:@"gameData"] ;
 
     NSMutableArray *currentMusics = [self.gameData objectForKey:@"musicPlaying"];
+    NSString *currentLevel = [self.gameData objectForKey:@"currentLevel"];
 
-    if (currentMusics && currentMusics.count > 0) // renew game
+    if ((currentMusics && currentMusics.count > 0) || [currentLevel intValue]>=100) // renew game
     {
        
         [MobClick event:@"restart"];
 
         
-        myAlertView *resetAlert = [[myAlertView alloc] initWithTitle:@"且慢!" message:@"变更难度将重置已猜歌曲的进度,请君三思。" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确认", nil];
+        myAlertView *resetAlert = [[myAlertView alloc] initWithTitle:@"注意" message:@"重玩将删除当前已有进度，确定继续么？" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
         
         resetAlert.chooseWhichButton = sender;
         resetAlert.tag = 2;
@@ -748,6 +765,8 @@ int difficultyNow;
         
     }else// fresh new..
     {
+   
+        
         NSString *currentLevel = @"";
         NSString *currentDifficulty = @"";
         self.gameData = [self readDataFromPlist:@"gameData"] ;
@@ -755,6 +774,11 @@ int difficultyNow;
         currentLevel = [self.gameData objectForKey:@"currentLevel"];
         currentDifficulty = [self.gameData objectForKey:@"difficulty"];
         int levelNow = [currentLevel intValue] - [currentDifficulty intValue] * 20 + 1;
+        
+//        if(levelNow != 1)
+//        {
+//            
+//        }
         [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%d",levelNow + [currentDifficulty intValue] * 20] forKey:@"currentLevel"];
         
         gameViewController *myGameViewController = [[gameViewController alloc] initWithNibName:@"gameViewController" bundle:nil];
@@ -933,7 +957,12 @@ int difficultyNow;
     
     UILabel *coinsLabel = (UILabel *)[self.buyCoinsView viewWithTag:2];
     [coinsLabel setText:[NSString stringWithFormat:@"%d",[CommonUtility fetchCoinAmount]]];
-    self.myBuyController = [[buyCoinsViewController alloc] initWithCoinLabel:coinsLabel andParentController:self andParentCoinButton:self.coinsShowing andLoadingView:self.loadingView];
+    self.itemsToBuy = (UITableView *)[self.buyCoinsView viewWithTag:10];
+    
+    
+
+    
+    self.myBuyController = [[buyCoinsViewController alloc] initWithCoinLabel:coinsLabel andParentController:self andParentCoinButton:self.coinsShowing andLoadingView:self.loadingView andTableView:self.itemsToBuy];
  
     [self.buyCoinsView setFrame:CGRectMake(0, [UIScreen mainScreen].bounds.size.height, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
     
@@ -943,18 +972,13 @@ int difficultyNow;
     [closeBuyView addTarget:self action:@selector(closingBuy) forControlEvents:UIControlEventTouchUpInside];
     
     
-    
-    
-    self.itemsToBuy = (UITableView *)[self.buyCoinsView viewWithTag:10];
-
-    
     self.itemsToBuy.delegate = self.myBuyController;
     self.itemsToBuy.dataSource = self.myBuyController;
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.itemsToBuy addSubview:self.refreshControl];
     
-    [self.refreshControl addTarget:self.myBuyController action:@selector(reloadwithRefreshControl:andTableView:) forControlEvents:UIControlEventValueChanged];
-    [self.myBuyController reloadwithRefreshControl:self.refreshControl andTableView:self.itemsToBuy];
+    [self.refreshControl addTarget:self.myBuyController action:@selector(reloadwithRefreshControl:) forControlEvents:UIControlEventValueChanged];
+    [self.myBuyController reloadwithRefreshControl:self.refreshControl];
     [self.refreshControl beginRefreshing];
     
     [UIView animateWithDuration:0.45 delay:0.05 usingSpringWithDamping:1.0 initialSpringVelocity:0.4 options:0 animations:^{
@@ -1296,7 +1320,7 @@ int difficultyNow;
         [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%ld",Index*20] forKey:@"currentLevel"];
     }else
     {
-        myAlertView *resetAlert = [[myAlertView alloc] initWithTitle:@"且慢!" message:@"变更难度将重置已猜歌曲的进度,请君三思。" delegate:self cancelButtonTitle:nil otherButtonTitles:@"取消",@"确认", nil];
+        myAlertView *resetAlert = [[myAlertView alloc] initWithTitle:@"注意" message:@"变更难度将删除当前进度,确定要继续？" delegate:self cancelButtonTitle:nil otherButtonTitles:@"取消",@"确定", nil];
         
         resetAlert.lastSegmentIndex = lastSeg;
         resetAlert.tag = 1;

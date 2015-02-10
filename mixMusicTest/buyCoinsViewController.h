@@ -24,6 +24,6 @@
 //
 //@property (nonatomic,strong) UIRefreshControl *refreshControl NS_AVAILABLE_IOS(6_0);
 @property (nonatomic,weak) UIViewController *parentControler;
-- (id)initWithCoinLabel:(UILabel *)coinLabel andParentController:(UIViewController *)controller andParentCoinButton:(UIButton *)parentCoinsButton andLoadingView:(UIView *)loadingView;
--(void)reloadwithRefreshControl:(UIRefreshControl *)refreshControl andTableView:(UITableView *)tableview;
+- (id)initWithCoinLabel:(UILabel *)coinLabel andParentController:(UIViewController *)controller andParentCoinButton:(UIButton *)parentCoinsButton andLoadingView:(UIView *)loadingView andTableView:(UITableView *)tableview;
+-(void)reloadwithRefreshControl:(UIRefreshControl *)refreshControl;
 @end

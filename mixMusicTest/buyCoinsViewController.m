@@ -21,11 +21,12 @@
 
 @implementation buyCoinsViewController
 
-- (id)initWithCoinLabel:(UILabel *)coinLabel andParentController:(UIViewController *)controller andParentCoinButton:(UIButton *)parentCoinsButton andLoadingView:(UIView *)loadingView{
+- (id)initWithCoinLabel:(UILabel *)coinLabel andParentController:(UIViewController *)controller andParentCoinButton:(UIButton *)parentCoinsButton andLoadingView:(UIView *)loadingView andTableView:(UITableView *)tableview{
     
    	self = [super init];
     if (self != nil) {
-        
+        self.itemsTable = tableview;
+
         _loadingView = loadingView;
         _parentCoinsButton = parentCoinsButton;
         self.parentControler = controller;
@@ -86,13 +87,12 @@
     
 }
 
--(void)reloadwithRefreshControl:(UIRefreshControl *)refreshControl andTableView:(UITableView *)tableview{
+-(void)reloadwithRefreshControl:(UIRefreshControl *)refreshControl{
     _products = nil;
-    self.itemsTable = tableview;
     [[myIAPHelper sharedInstance] requestProductsWithCompletionHandler:^(BOOL success, NSArray *products) {
         if (success) {
             _products = products;
-            [tableview reloadData];
+            [self.itemsTable reloadData];
         }
         [refreshControl endRefreshing];
     }];
@@ -130,9 +130,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
     if (nil == cell)
     {
-//        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
         cell = [[[NSBundle mainBundle]loadNibNamed:@"buyCellView" owner:self options:nil] lastObject];//加载nib文件
-
     }
     cell.backgroundColor = [UIColor clearColor];
     [cell.textLabel setTextColor:[UIColor whiteColor]];
@@ -173,20 +171,6 @@
     }
 
 
-
-//    [_priceFormatter setLocale:product.priceLocale];
-//    cell.detailTextLabel.text = [_priceFormatter stringFromNumber:product.price];
-
-
-    
-//    UIButton *buyButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-//    buyButton.frame = CGRectMake(0, 0, 72, 37);
-//    [buyButton setTitle:@"Buy" forState:UIControlStateNormal];
-//    [buyButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-//    buyButton.tag = indexPath.row;
-//    [buyButton addTarget:self action:@selector(buyButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
-//    cell.accessoryType = UITableViewCellAccessoryNone;
-//    cell.accessoryView = buyButton;
     
     return cell;
 }

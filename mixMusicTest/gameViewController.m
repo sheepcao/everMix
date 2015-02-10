@@ -27,6 +27,7 @@
 @property (nonatomic, strong) UIImageView *musicNote8;
 @property (nonatomic, strong) NSArray *musicNotes;
 
+@property (nonatomic, strong) NSMutableArray *diskArray;
 @property (nonatomic, strong) NSMutableArray *musicsArrayForShare;
 @end
 
@@ -52,6 +53,9 @@ int answerPickedCount;
     
     
     self.musicNotes = [NSArray arrayWithObjects:self.musicNote1,self.musicNote2,self.musicNote3,self.musicNote4,self.musicNote5,self.musicNote6,self.musicNote7,self.musicNote8, nil];
+    
+    self.diskArray = [NSMutableArray arrayWithObjects:@"cd1",@"cd2",@"cd3",@"cd4",@"cd5",@"cd6",@"cd7",@"cd8",@"cd9",@"cd10",@"cd11",@"cd12",@"cd13", nil];
+
     
     [self dropDown];
 
@@ -205,7 +209,6 @@ int answerPickedCount;
     [MobClick beginLogPageView:@"gamePage"];
 
 
-    
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -234,7 +237,6 @@ int answerPickedCount;
     [self stopMusics];
     isplayed =false;
 
-
 }
 
 
@@ -260,7 +262,9 @@ int answerPickedCount;
     
     UILabel *coinsLabel = (UILabel *)[self.buyCoinsView viewWithTag:2];
     [coinsLabel setText:[NSString stringWithFormat:@"%d",[CommonUtility fetchCoinAmount]]];
-    self.myBuyController = [[buyCoinsViewController alloc] initWithCoinLabel:coinsLabel andParentController:self andParentCoinButton:self.coinShow andLoadingView:self.loadingView];
+    self.itemsToBuy = (UITableView *)[self.buyCoinsView viewWithTag:10];
+
+    self.myBuyController = [[buyCoinsViewController alloc] initWithCoinLabel:coinsLabel andParentController:self andParentCoinButton:self.coinShow andLoadingView:self.loadingView andTableView:self.itemsToBuy];
     
     [self.buyCoinsView setFrame:CGRectMake(0, [UIScreen mainScreen].bounds.size.height, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
     
@@ -270,15 +274,14 @@ int answerPickedCount;
     [closeBuyView addTarget:self action:@selector(closingBuy) forControlEvents:UIControlEventTouchUpInside];
     
     
-    
-    self.itemsToBuy = (UITableView *)[self.buyCoinsView viewWithTag:10];
     self.itemsToBuy.delegate = self.myBuyController;
     self.itemsToBuy.dataSource = self.myBuyController;
+
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.itemsToBuy addSubview:self.refreshControl];
     
-    [self.refreshControl addTarget:self.myBuyController action:@selector(reloadwithRefreshControl:andTableView:) forControlEvents:UIControlEventValueChanged];
-    [self.myBuyController reloadwithRefreshControl:self.refreshControl andTableView:self.itemsToBuy];
+    [self.refreshControl addTarget:self.myBuyController action:@selector(reloadwithRefreshControl:) forControlEvents:UIControlEventValueChanged];
+    [self.myBuyController reloadwithRefreshControl:self.refreshControl];
     [self.refreshControl beginRefreshing];
     
     [UIView animateWithDuration:0.65 delay:0.05 usingSpringWithDamping:0.8 initialSpringVelocity:0.4 options:0 animations:^{
@@ -365,11 +368,11 @@ int answerPickedCount;
     [cd5Btn addTarget:self action:@selector(diskTap:) forControlEvents:UIControlEventTouchUpInside];
     
     
-    [cd1Btn setImage:[UIImage imageNamed:@"cd1"] forState:UIControlStateDisabled];
-    [cd2Btn setImage:[UIImage imageNamed:@"cd2"] forState:UIControlStateDisabled];
-    [cd3Btn setImage:[UIImage imageNamed:@"cd3"] forState:UIControlStateDisabled];
-    [cd4Btn setImage:[UIImage imageNamed:@"cd4"] forState:UIControlStateDisabled];
-    [cd5Btn setImage:[UIImage imageNamed:@"cd5"] forState:UIControlStateDisabled];
+    [cd1Btn setImage:[UIImage imageNamed:[self randomDiskWithRange:13]] forState:UIControlStateDisabled];
+    [cd2Btn setImage:[UIImage imageNamed:[self randomDiskWithRange:12]] forState:UIControlStateDisabled];
+    [cd3Btn setImage:[UIImage imageNamed:[self randomDiskWithRange:11]] forState:UIControlStateDisabled];
+    [cd4Btn setImage:[UIImage imageNamed:[self randomDiskWithRange:10]] forState:UIControlStateDisabled];
+    [cd5Btn setImage:[UIImage imageNamed:[self randomDiskWithRange:9]] forState:UIControlStateDisabled];
     
     self.diskButtons = [NSArray arrayWithObjects:cd1Btn,cd2Btn,cd3Btn,cd4Btn,cd5Btn, nil];
     for (int i = 0; i<self.diskButtons.count; i++) {
@@ -387,9 +390,21 @@ int answerPickedCount;
 
 }
 
+-(NSString *)randomDiskWithRange:(int)range
+{
+    unsigned int randomNumber = arc4random()%range;
+    NSString *cdName = self.diskArray[randomNumber];
+    
+    [self.diskArray removeObjectAtIndex:randomNumber];
+    
+    return cdName;
+    
+}
+
 - (void)diskTap:(UIButton *)sender {
 
     [CommonUtility tapSound:@"click" withType:@"mp3"];
+    
     
     NSDictionary *allAnswers = [self.gameDataForSingleLevel objectForKey:@"choices"];
 
@@ -457,7 +472,12 @@ int answerPickedCount;
     
     [UIView animateWithDuration:0.9 delay:0.1 usingSpringWithDamping:0.5 initialSpringVelocity:0.89 options:0 animations:^{
         [self.choicesBoardView setFrame:CGRectMake(self.downPartView.frame.origin.x,self.downPartView.frame.origin.y, self.downPartView.frame.size.width,self.downPartView.frame.size.height - 50)];
-    } completion:nil];
+    } completion:^(BOOL finished){
+        
+        [self.navigationItem setHidesBackButton:YES];
+        
+        
+    }];
     
     [CommonUtility tapSound:@"Window_Appear" withType:@"mp3"];
     
@@ -694,20 +714,27 @@ int answerPickedCount;
     
     if (levelNow == 100) {
         
-        UIAlertView *finishLevelAlert = [[UIAlertView alloc] initWithTitle:@"赞" message:@"玩爆关啦！我们会尽快更新曲库，请大大持续关注！" delegate:self cancelButtonTitle:@"耐心期待" otherButtonTitles:nil, nil];
+        UIAlertView *finishLevelAlert = [[UIAlertView alloc] initWithTitle:@"赞" message:@"玩爆关啦！我们会尽快更新曲库！重新游戏将对当前曲库重新组合。" delegate:self cancelButtonTitle:@"耐心期待" otherButtonTitles:nil, nil];
         [finishLevelAlert show];
         
     }else if (levelNow % 20 == 0) {
-        //                    UIAlertView *finishLevelAlert = [[UIAlertView alloc] initWithTitle:@"恭喜" message:@"该难度已被你玩爆，下面来点更刺激的！" delegate:self cancelButtonTitle:nil otherButtonTitles:@"勇往直前", nil];
-        //                    finishLevelAlert.tag = 2;
-        //                    [finishLevelAlert show];
+
+        
+        self.gameDataForSingleLevel = [self readDataFromPlist:@"gameData"] ;
+        NSString *currentDifficulty = [self.gameDataForSingleLevel objectForKey:@"difficulty"];
+        
+        [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%d",[currentDifficulty intValue]+1] forKey:@"difficulty"];
+        
+        int levelNow = [[self.gameDataForSingleLevel objectForKey:@"currentLevel"] intValue];
+        [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%d",levelNow+1] forKey:@"currentLevel"];
+
         
         [self.levelPassMessage setHidden:YES];
         [self.difficultyPass setHidden:NO];
         UILabel *coinAmount = (UILabel *)[self.difficultyPass viewWithTag:1];
         [coinAmount setText:[NSString stringWithFormat:@"%d",coinReward]];
         
-        [UIView animateWithDuration:0.75 delay:0.15 usingSpringWithDamping:0.6 initialSpringVelocity:0.4 options:0 animations:^{
+        [UIView animateWithDuration:0.55 delay:0.15 usingSpringWithDamping:0.99 initialSpringVelocity:0.99 options:0 animations:^{
             CGRect aframe = self.levelPassView.frame;
             aframe.origin.y = 0;
             [self.levelPassView setFrame:aframe];
@@ -716,25 +743,21 @@ int answerPickedCount;
         } completion:nil];
         
         
-        
-//        [UIView animateWithDuration:0.75 delay:0.15 usingSpringWithDamping:0.6 initialSpringVelocity:0.4 options:0 animations:^{
-//            CGRect aframe = self.levelPassView.frame;
-//            aframe.origin.y = 0;
-//            [self.levelPassView setFrame:aframe];
-//            
-//            
-//        } completion:nil];
-        
-        
     }else
     {
+        self.gameDataForSingleLevel = [self readDataFromPlist:@"gameData"] ;
+        
+        
+        int levelNow = [[self.gameDataForSingleLevel objectForKey:@"currentLevel"] intValue];
+        [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%d",levelNow+1] forKey:@"currentLevel"];
+        
         [self.difficultyPass setHidden:YES];
         [self.levelPassMessage setHidden:NO];
         
         UILabel *coinAmount = (UILabel *)[self.levelPassMessage viewWithTag:1];
         [coinAmount setText:[NSString stringWithFormat:@"%d",coinReward]];
         
-        [UIView animateWithDuration:0.75 delay:0.15 usingSpringWithDamping:0.6 initialSpringVelocity:0.4 options:0 animations:^{
+        [UIView animateWithDuration:0.55 delay:0.15 usingSpringWithDamping:0.99 initialSpringVelocity:0.99 options:0 animations:^{
             CGRect aframe = self.levelPassView.frame;
             aframe.origin.y = 0;
             [self.levelPassView setFrame:aframe];
@@ -933,6 +956,7 @@ int answerPickedCount;
             NSString *currentDifficulty = [self.gameDataForSingleLevel objectForKey:@"difficulty"];
             
             [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%d",[currentDifficulty intValue]+1] forKey:@"difficulty"];
+            
             [self nextLevel];
         }
         if (alertView.tag == 3) {
@@ -1081,7 +1105,13 @@ int answerPickedCount;
     
     [UIView animateWithDuration:0.5 delay:0.1 usingSpringWithDamping:0.7 initialSpringVelocity:1.0 options:0 animations:^{
         [self.choicesBoardView setFrame:CGRectMake(self.downPartView.frame.origin.x,[UIScreen mainScreen].bounds.size.height , self.downPartView.frame.size.width,self.downPartView.frame.size.height - 50)];
-    } completion:nil];
+    } completion:^(BOOL finished){
+        [self.navigationItem setHidesBackButton:NO];
+
+        
+        
+        
+    }];
     [self stopSingleMusic];
     for (UIView *subview in [self.choicesBoardView subviews]) {
         if ([subview isKindOfClass:[AnswerButton class]]) {
@@ -1093,7 +1123,9 @@ int answerPickedCount;
         [self performSelector:@selector(goOnNext) withObject:nil afterDelay:0.35];
         [CommonUtility tapSound:@"s_levelup" withType:@"mp3"];
 
-//        [self goOnNext];
+    }else
+    {
+
     }
 
     
@@ -1374,11 +1406,11 @@ int answerPickedCount;
     [CommonUtility tapSound:@"go" withType:@"mp3"];
     
     self.gameDataForSingleLevel = [self readDataFromPlist:@"gameData"] ;
-
+//
     NSString *currentDifficulty = [self.gameDataForSingleLevel objectForKey:@"difficulty"];
-
+//
     int levelNow = [[self.gameDataForSingleLevel objectForKey:@"currentLevel"] intValue];
-    [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%d",levelNow+1] forKey:@"currentLevel"];
+//    [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%d",levelNow+1] forKey:@"currentLevel"];
     
     gameViewController *myGameViewController = [[gameViewController alloc] initWithNibName:@"gameViewController" bundle:nil];
 
@@ -1400,8 +1432,9 @@ int answerPickedCount;
     
 
     
+    
     myGameViewController.delegate = self.delegate;
-    myGameViewController.navigationItem.title = [NSString stringWithFormat:@"%d",(levelNow + 1 - [currentDifficulty intValue]*20)];
+    myGameViewController.navigationItem.title = [NSString stringWithFormat:@"%d",(levelNow  - [currentDifficulty intValue]*20)];
     myGameViewController.currentDifficulty = [self.gameDataForSingleLevel objectForKey:@"difficulty"];
     
     NSArray *arrayControllers = self.navigationController.viewControllers;
@@ -1610,10 +1643,10 @@ int answerPickedCount;
 
 - (IBAction)difficultyPassTap:(id)sender {
     
-    self.gameDataForSingleLevel = [self readDataFromPlist:@"gameData"] ;
-    NSString *currentDifficulty = [self.gameDataForSingleLevel objectForKey:@"difficulty"];
-    
-    [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%d",[currentDifficulty intValue]+1] forKey:@"difficulty"];
+//    self.gameDataForSingleLevel = [self readDataFromPlist:@"gameData"] ;
+//    NSString *currentDifficulty = [self.gameDataForSingleLevel objectForKey:@"difficulty"];
+//    
+//    [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%d",[currentDifficulty intValue]+1] forKey:@"difficulty"];
     [self nextLevel];
 }
 @end

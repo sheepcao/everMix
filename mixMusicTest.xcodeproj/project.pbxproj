@@ -100,7 +100,7 @@
 		A47E00381A67B8E6000FCAF7 /* 外婆的澎湖湾.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A47EFFD41A67B8E6000FCAF7 /* 外婆的澎湖湾.m4a */; };
 		A47E00391A67B8E6000FCAF7 /* 当爱已成往事.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A47EFFD51A67B8E6000FCAF7 /* 当爱已成往事.m4a */; };
 		A47E003A1A67B8E6000FCAF7 /* 忠孝东路走九遍.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A47EFFD61A67B8E6000FCAF7 /* 忠孝东路走九遍.m4a */; };
-		A47E003B1A67B8E6000FCAF7 /* 想把我唱给你听 .m4a in Resources */ = {isa = PBXBuildFile; fileRef = A47EFFD71A67B8E6000FCAF7 /* 想把我唱给你听 .m4a */; };
+		A47E003B1A67B8E6000FCAF7 /* 想把我唱给你听.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A47EFFD71A67B8E6000FCAF7 /* 想把我唱给你听.m4a */; };
 		A47E003C1A67B8E6000FCAF7 /* 我可以抱你吗.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A47EFFD81A67B8E6000FCAF7 /* 我可以抱你吗.m4a */; };
 		A47E003D1A67B8E6000FCAF7 /* 我的未来不是梦.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A47EFFD91A67B8E6000FCAF7 /* 我的未来不是梦.m4a */; };
 		A47E003E1A67B8E6000FCAF7 /* 有没有人告诉你.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A47EFFDA1A67B8E6000FCAF7 /* 有没有人告诉你.m4a */; };
@@ -221,6 +221,15 @@
 		A4ADB5FE1A83B5C200D991F8 /* note6.png in Resources */ = {isa = PBXBuildFile; fileRef = A4ADB5F41A83B5C200D991F8 /* note6.png */; };
 		A4ADB5FF1A83B5C200D991F8 /* note7.png in Resources */ = {isa = PBXBuildFile; fileRef = A4ADB5F51A83B5C200D991F8 /* note7.png */; };
 		A4ADB6001A83B5C200D991F8 /* note8.png in Resources */ = {isa = PBXBuildFile; fileRef = A4ADB5F61A83B5C200D991F8 /* note8.png */; };
+		A4AE92731A8A3273005104DA /* cd6.png in Resources */ = {isa = PBXBuildFile; fileRef = A4AE926A1A8A3273005104DA /* cd6.png */; };
+		A4AE92741A8A3273005104DA /* cd7.png in Resources */ = {isa = PBXBuildFile; fileRef = A4AE926B1A8A3273005104DA /* cd7.png */; };
+		A4AE92751A8A3273005104DA /* cd8.png in Resources */ = {isa = PBXBuildFile; fileRef = A4AE926C1A8A3273005104DA /* cd8.png */; };
+		A4AE92761A8A3273005104DA /* cd9.png in Resources */ = {isa = PBXBuildFile; fileRef = A4AE926D1A8A3273005104DA /* cd9.png */; };
+		A4AE92771A8A3273005104DA /* cd10.png in Resources */ = {isa = PBXBuildFile; fileRef = A4AE926E1A8A3273005104DA /* cd10.png */; };
+		A4AE92781A8A3273005104DA /* cd11.png in Resources */ = {isa = PBXBuildFile; fileRef = A4AE926F1A8A3273005104DA /* cd11.png */; };
+		A4AE92791A8A3273005104DA /* cd12.png in Resources */ = {isa = PBXBuildFile; fileRef = A4AE92701A8A3273005104DA /* cd12.png */; };
+		A4AE927A1A8A3273005104DA /* cd13.png in Resources */ = {isa = PBXBuildFile; fileRef = A4AE92711A8A3273005104DA /* cd13.png */; };
+		A4AE927B1A8A3273005104DA /* cd14.png in Resources */ = {isa = PBXBuildFile; fileRef = A4AE92721A8A3273005104DA /* cd14.png */; };
 		A4B268A91A8377570037DA16 /* fallAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = A4B268A81A8377570037DA16 /* fallAnimation.m */; };
 		A4B76C1D1A3997600014014D /* choicesBoardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4B76C1C1A3997600014014D /* choicesBoardView.xib */; };
 		A4B9F7DF1A81AFA300076531 /* gameBack.png in Resources */ = {isa = PBXBuildFile; fileRef = A4B9F7DC1A81AFA300076531 /* gameBack.png */; };
@@ -404,7 +413,7 @@
 		A47EFFD41A67B8E6000FCAF7 /* 外婆的澎湖湾.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "外婆的澎湖湾.m4a"; sourceTree = "<group>"; };
 		A47EFFD51A67B8E6000FCAF7 /* 当爱已成往事.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "当爱已成往事.m4a"; sourceTree = "<group>"; };
 		A47EFFD61A67B8E6000FCAF7 /* 忠孝东路走九遍.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "忠孝东路走九遍.m4a"; sourceTree = "<group>"; };
-		A47EFFD71A67B8E6000FCAF7 /* 想把我唱给你听 .m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "想把我唱给你听 .m4a"; sourceTree = "<group>"; };
+		A47EFFD71A67B8E6000FCAF7 /* 想把我唱给你听.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "想把我唱给你听.m4a"; sourceTree = "<group>"; };
 		A47EFFD81A67B8E6000FCAF7 /* 我可以抱你吗.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "我可以抱你吗.m4a"; sourceTree = "<group>"; };
 		A47EFFD91A67B8E6000FCAF7 /* 我的未来不是梦.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "我的未来不是梦.m4a"; sourceTree = "<group>"; };
 		A47EFFDA1A67B8E6000FCAF7 /* 有没有人告诉你.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "有没有人告诉你.m4a"; sourceTree = "<group>"; };
@@ -546,6 +555,15 @@
 		A4ADB5F41A83B5C200D991F8 /* note6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = note6.png; sourceTree = "<group>"; };
 		A4ADB5F51A83B5C200D991F8 /* note7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = note7.png; sourceTree = "<group>"; };
 		A4ADB5F61A83B5C200D991F8 /* note8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = note8.png; sourceTree = "<group>"; };
+		A4AE926A1A8A3273005104DA /* cd6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cd6.png; sourceTree = "<group>"; };
+		A4AE926B1A8A3273005104DA /* cd7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cd7.png; sourceTree = "<group>"; };
+		A4AE926C1A8A3273005104DA /* cd8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cd8.png; sourceTree = "<group>"; };
+		A4AE926D1A8A3273005104DA /* cd9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cd9.png; sourceTree = "<group>"; };
+		A4AE926E1A8A3273005104DA /* cd10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cd10.png; sourceTree = "<group>"; };
+		A4AE926F1A8A3273005104DA /* cd11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cd11.png; sourceTree = "<group>"; };
+		A4AE92701A8A3273005104DA /* cd12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cd12.png; sourceTree = "<group>"; };
+		A4AE92711A8A3273005104DA /* cd13.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cd13.png; sourceTree = "<group>"; };
+		A4AE92721A8A3273005104DA /* cd14.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cd14.png; sourceTree = "<group>"; };
 		A4B268A71A8377570037DA16 /* fallAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fallAnimation.h; sourceTree = "<group>"; };
 		A4B268A81A8377570037DA16 /* fallAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = fallAnimation.m; sourceTree = "<group>"; };
 		A4B76C1C1A3997600014014D /* choicesBoardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = choicesBoardView.xib; sourceTree = "<group>"; };
@@ -807,7 +825,7 @@
 				A47EFFD41A67B8E6000FCAF7 /* 外婆的澎湖湾.m4a */,
 				A47EFFD51A67B8E6000FCAF7 /* 当爱已成往事.m4a */,
 				A47EFFD61A67B8E6000FCAF7 /* 忠孝东路走九遍.m4a */,
-				A47EFFD71A67B8E6000FCAF7 /* 想把我唱给你听 .m4a */,
+				A47EFFD71A67B8E6000FCAF7 /* 想把我唱给你听.m4a */,
 				A47EFFD81A67B8E6000FCAF7 /* 我可以抱你吗.m4a */,
 				A47EFFD91A67B8E6000FCAF7 /* 我的未来不是梦.m4a */,
 				A47EFFDA1A67B8E6000FCAF7 /* 有没有人告诉你.m4a */,
@@ -941,6 +959,15 @@
 				A4A6C1291A6B713600C6095C /* cd3.png */,
 				A4A6C12A1A6B713600C6095C /* cd4.png */,
 				A4A6C12B1A6B713600C6095C /* cd5.png */,
+				A4AE926A1A8A3273005104DA /* cd6.png */,
+				A4AE926B1A8A3273005104DA /* cd7.png */,
+				A4AE926C1A8A3273005104DA /* cd8.png */,
+				A4AE926D1A8A3273005104DA /* cd9.png */,
+				A4AE926E1A8A3273005104DA /* cd10.png */,
+				A4AE926F1A8A3273005104DA /* cd11.png */,
+				A4AE92701A8A3273005104DA /* cd12.png */,
+				A4AE92711A8A3273005104DA /* cd13.png */,
+				A4AE92721A8A3273005104DA /* cd14.png */,
 				A4A0C2551A8109DE0032DF0B /* point.png */,
 				A4A0C2571A810C810032DF0B /* pointYellow.png */,
 				A4A0C2451A8108430032DF0B /* coin.png */,
@@ -1356,6 +1383,7 @@
 				A47EFFF81A67B8E6000FCAF7 /* 小苹果.m4a in Resources */,
 				A47E00071A67B8E6000FCAF7 /* 那一天.m4a in Resources */,
 				A47E00271A67B8E6000FCAF7 /* 我从草原来.m4a in Resources */,
+				A4AE92781A8A3273005104DA /* cd11.png in Resources */,
 				A47E000C1A67B8E6000FCAF7 /* 因为爱情.m4a in Resources */,
 				A4DAF73C1A87975900D9A94F /* mail.png in Resources */,
 				A4BAEF661A84C22D00757BA6 /* iconNew.png in Resources */,
@@ -1373,6 +1401,7 @@
 				A47E00131A67B8E6000FCAF7 /* 时间煮雨.m4a in Resources */,
 				A4E094FC1A4BE07B001AD626 /* gameData.plist in Resources */,
 				A4A0C2541A8108430032DF0B /* 重新开始.png in Resources */,
+				A4AE927B1A8A3273005104DA /* cd14.png in Resources */,
 				A47E00321A67B8E6000FCAF7 /* 一场游戏一场梦.m4a in Resources */,
 				A47EFFE51A67B8E6000FCAF7 /* 大地.m4a in Resources */,
 				A4CAD75C1A8288BE00CF40D2 /* closeBuyBtn.png in Resources */,
@@ -1402,6 +1431,7 @@
 				A4E0A2FB1A86574E00AFF6D5 /* answerBoard.png in Resources */,
 				A466A13C1A890412005BD67C /* Window_Appear.mp3 in Resources */,
 				A466A1491A8906EE005BD67C /* go.mp3 in Resources */,
+				A4AE92751A8A3273005104DA /* cd8.png in Resources */,
 				A47E002F1A67B8E6000FCAF7 /* 至少还有你.m4a in Resources */,
 				A47EFFE81A67B8E6000FCAF7 /* 安静.m4a in Resources */,
 				A466A14E1A8908D9005BD67C /* click.mp3 in Resources */,
@@ -1410,6 +1440,7 @@
 				A47E00091A67B8E6000FCAF7 /* 为爱疯狂.m4a in Resources */,
 				A47E00301A67B8E6000FCAF7 /* BADBOY.m4a in Resources */,
 				A47E001D1A67B8E6000FCAF7 /* 一万个理由.m4a in Resources */,
+				A4AE92741A8A3273005104DA /* cd7.png in Resources */,
 				A47E003D1A67B8E6000FCAF7 /* 我的未来不是梦.m4a in Resources */,
 				A4E0A3011A865DB100AFF6D5 /* infoBtn.png in Resources */,
 				A47E00421A67B8E6000FCAF7 /* 看月亮爬上来.m4a in Resources */,
@@ -1421,6 +1452,7 @@
 				A4A5A2F51A74AAA8005634E9 /* UMSCommentDetailController.xib in Resources */,
 				A47EFFE91A67B8E6000FCAF7 /* 情书.m4a in Resources */,
 				A47E002A1A67B8E6000FCAF7 /* 我的滑板鞋.m4a in Resources */,
+				A4AE927A1A8A3273005104DA /* cd13.png in Resources */,
 				A47EFFF71A67B8E6000FCAF7 /* 女人花.m4a in Resources */,
 				A47E00171A67B8E6000FCAF7 /* 爱的海洋.m4a in Resources */,
 				A4A0C25C1A811B290032DF0B /* topbar.png in Resources */,
@@ -1443,8 +1475,10 @@
 				A47EFFE31A67B8E6000FCAF7 /* 十年.m4a in Resources */,
 				A4DAF7461A87B23800D9A94F /* nameBack.png in Resources */,
 				A47EFFEA1A67B8E6000FCAF7 /* 晴天.m4a in Resources */,
+				A4AE92791A8A3273005104DA /* cd12.png in Resources */,
 				A47E001C1A67B8E6000FCAF7 /* HIGH歌.m4a in Resources */,
 				A4E0A2FD1A86576E00AFF6D5 /* checkMark.png in Resources */,
+				A4AE92761A8A3273005104DA /* cd9.png in Resources */,
 				A4CAD7581A8288BE00CF40D2 /* answerBack.png in Resources */,
 				A47E003E1A67B8E6000FCAF7 /* 有没有人告诉你.m4a in Resources */,
 				A4E0A2FF1A86578A00AFF6D5 /* cycle.png in Resources */,
@@ -1452,7 +1486,7 @@
 				A4A5A2FC1A74AAA8005634E9 /* UMSShareListController.xib in Resources */,
 				A4A0C24F1A8108430032DF0B /* reviewBtn.png in Resources */,
 				A4E0A30A1A865FBF00AFF6D5 /* nextCoin.png in Resources */,
-				A47E003B1A67B8E6000FCAF7 /* 想把我唱给你听 .m4a in Resources */,
+				A47E003B1A67B8E6000FCAF7 /* 想把我唱给你听.m4a in Resources */,
 				A466A1411A890500005BD67C /* SolveQuestion.mp3 in Resources */,
 				A47E00021A67B8E6000FCAF7 /* 红蜻蜓.m4a in Resources */,
 				A47E00041A67B8E6000FCAF7 /* 说爱你.m4a in Resources */,
@@ -1516,8 +1550,10 @@
 				A47E00141A67B8E6000FCAF7 /* 没离开过.m4a in Resources */,
 				A47E00251A67B8E6000FCAF7 /* 布拉格广场.m4a in Resources */,
 				A47E00151A67B8E6000FCAF7 /* 海阔天空.m4a in Resources */,
+				A4AE92731A8A3273005104DA /* cd6.png in Resources */,
 				A4E0A3031A865DBA00AFF6D5 /* mainBack10.png in Resources */,
 				A47E00081A67B8E6000FCAF7 /* 一无所有.m4a in Resources */,
+				A4AE92771A8A3273005104DA /* cd10.png in Resources */,
 				A4A6C1331A6B713600C6095C /* cd3.png in Resources */,
 				A47E002D1A67B8E6000FCAF7 /* 突然的自我.m4a in Resources */,
 				A4ADB5FE1A83B5C200D991F8 /* note6.png in Resources */,
@@ -1739,7 +1775,7 @@
 					"-lstdc++",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "e4dfb84d-e42e-4984-9476-56081c02c7cc";
+				PROVISIONING_PROFILE = "0a336c09-8124-47c8-8d17-1d3f44633a58";
 			};
 			name = Debug;
 		};

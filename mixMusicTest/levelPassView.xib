@@ -99,6 +99,9 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q6h-8Q-Tch" userLabel="nextDifficulty">
                     <rect key="frame" x="15" y="144" width="290" height="180"/>
                     <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nextBack.png" translatesAutoresizingMaskIntoConstraints="NO" id="eKc-u9-scB">
+                            <rect key="frame" x="0.0" y="0.0" width="290" height="180"/>
+                        </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="该难度已被你玩爆 !       来点更刺激的！" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="184" translatesAutoresizingMaskIntoConstraints="NO" id="bvr-la-mLs">
                             <rect key="frame" x="54" y="64" width="184" height="63"/>
                             <constraints>
@@ -161,9 +164,6 @@
                                 <action selector="difficultyPassTap:" destination="-1" eventType="touchUpInside" id="TUe-rQ-uqf"/>
                             </connections>
                         </button>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nextBack.png" translatesAutoresizingMaskIntoConstraints="NO" id="eKc-u9-scB">
-                            <rect key="frame" x="0.0" y="0.0" width="290" height="180"/>
-                        </imageView>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
