@@ -59,6 +59,8 @@ int answerPickedCount;
 
     [self.navigationController setNavigationBarHidden:NO];
     
+    
+    
     UIView *buttonView = [[UIView alloc] initWithFrame:CGRectMake(0, 3, 75, 34)];
     
     
@@ -86,6 +88,18 @@ int answerPickedCount;
     
     UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithCustomView:buttonView];
     self.navigationItem.rightBarButtonItem = barButton;
+    
+//    UIButton *aButton = [UIButton buttonWithType:UIButtonTypeCustom];
+//
+//    aButton.frame = CGRectMake(0.0, 0.0, 50 , 30);
+//    
+//    // Initialize the UIBarButtonItem
+//    UIBarButtonItem *aBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:aButton];
+//    self.navigationItem.leftBarButtonItem = aBarButtonItem;
+//
+//    // Set the Target and Action for aButton
+//    [aButton addTarget:self action:@selector(backToLoginForm:) forControlEvents:UIControlEventTouchUpInside];
+    
     
 
 
@@ -164,14 +178,32 @@ int answerPickedCount;
     
     //control big AD when main page appears.
     backFromGame = YES;
+    
+//    if(IS_IPHONE_6P)
+//    {
+//        
+//        CGRect aframe = self.playConsoleView.frame;
+//        aframe.origin.y += 60;
+//        aframe.origin.x = (SCREEN_WIDTH-aframe.size.width)/2;
+//        
+//        [self.playConsoleView setFrame:aframe];
+//        
+//        
+//    }
 
 }
+
+//-(void)backToLoginForm:(id)sender
+//{
+//    [CommonUtility tapSound:@"Window_Disappear" withType:@"mp3"];
+//    [self.navigationController popViewControllerAnimated:YES];
+//}
 
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     [MobClick beginLogPageView:@"gamePage"];
-    
+
 
     
 }
@@ -181,24 +213,22 @@ int answerPickedCount;
     [super viewDidAppear:animated];
     // 设置广告视图的位置
     
+    NSLog(@"view3:%@",self.view);
 
-//    if(IS_IPHONE_6)
-//    {
-//        CGRect aframe = self.shareBtn.frame;
-//        CGRect bframe = self.deleteOneBtn.frame;
-//        
-//        aframe.origin.x+=10;
-//        bframe.origin.x-=10;
-//        
-////    _dmAdView.frame = CGRectMake(0, [UIScreen mainScreen].bounds.size.height - FLEXIBLE_SIZE.height-44, SCREEN_WIDTH,FLEXIBLE_SIZE.height);
-//
-//    }
 
+}
+- (void)willMoveToParentViewController:(UIViewController *)parent
+{
+    if (![parent isEqual:self.parentViewController]) {
+        [CommonUtility tapSound:@"Window_Disappear" withType:@"mp3"];
+    }
 }
 
 -(void)viewDidDisappear:(BOOL)animated
 {
     [super viewDidDisappear:animated];
+    
+
     [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(stop10secondMusics) object:nil];
     [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(stop13secondMusics) object:nil];
     [self stopMusics];
@@ -219,15 +249,20 @@ int answerPickedCount;
     if (!self.buyCoinsView) {
         
         self.buyCoinsView = [[[NSBundle mainBundle] loadNibNamed:@"buyCoinsViewController" owner:self options:nil] objectAtIndex:0];
+        [self.view addSubview:self.buyCoinsView];
+
+        
+        [self.loadingView setFrame:CGRectMake(0, 0, self.buyCoinsView.frame.size.width, self.buyCoinsView.frame.size.height)];
+        [self.loadingView setHidden:YES];
+        [self.buyCoinsView addSubview:self.loadingView];
     }
     
     
     UILabel *coinsLabel = (UILabel *)[self.buyCoinsView viewWithTag:2];
     [coinsLabel setText:[NSString stringWithFormat:@"%d",[CommonUtility fetchCoinAmount]]];
-    self.myBuyController = [[buyCoinsViewController alloc] initWithCoinLabel:coinsLabel andParentController:self adnParentCoinButton:self.coinShow];
+    self.myBuyController = [[buyCoinsViewController alloc] initWithCoinLabel:coinsLabel andParentController:self andParentCoinButton:self.coinShow andLoadingView:self.loadingView];
     
     [self.buyCoinsView setFrame:CGRectMake(0, [UIScreen mainScreen].bounds.size.height, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
-    [self.view addSubview:self.buyCoinsView];
     
     self.myBuyController.closeDelegate =self;
 
@@ -311,6 +346,8 @@ int answerPickedCount;
         cd3Btn = [[UIButton alloc] initWithFrame:CGRectMake(70, 2*distance-13+CD_SZIE, CD_SZIE+10, CD_SZIE+10)];
         cd4Btn = [[UIButton alloc] initWithFrame:CGRectMake(256, 2*distance-13+CD_SZIE, CD_SZIE+10, CD_SZIE+10)];
         cd5Btn = [[UIButton alloc] initWithFrame:CGRectMake(70, 3*distance-13+2*CD_SZIE, CD_SZIE+10, CD_SZIE+10)];
+        
+
     }else if(IS_IPHONE_4_OR_LESS)
     {
         cd1Btn = [[UIButton alloc] initWithFrame:CGRectMake(60, distance+55, CD_SZIE-10, CD_SZIE-10)];
@@ -374,7 +411,7 @@ int answerPickedCount;
     if(!self.choicesBoardView)
     {
         self.choicesBoardView = [[[NSBundle mainBundle] loadNibNamed:@"choicesBoardView" owner:self options:nil] objectAtIndex:0];
-        [self.choicesBoardView setFrame:CGRectMake(self.downPartView.frame.origin.x,[UIScreen mainScreen].bounds.size.height , self.downPartView.frame.size.width,self.downPartView.frame.size.height - 50)];
+        [self.choicesBoardView setFrame:CGRectMake(self.downPartView.frame.origin.x,[UIScreen mainScreen].bounds.size.height , self.downPartView.frame.size.width,self.downPartView.frame.size.height - 60)];
         self.choicesBoardView.songName = @"";
         [self.choicesBoardView setupBoard];
         [self.view addSubview:self.choicesBoardView];
@@ -422,14 +459,15 @@ int answerPickedCount;
         [self.choicesBoardView setFrame:CGRectMake(self.downPartView.frame.origin.x,self.downPartView.frame.origin.y, self.downPartView.frame.size.width,self.downPartView.frame.size.height - 50)];
     } completion:nil];
     
+    [CommonUtility tapSound:@"Window_Appear" withType:@"mp3"];
+    
     //init this song's answer pick count.
     self.choicesBoardView.songName = songName;
     self.choicesBoardView.songNumber = diskNumber;
 
     answerPickedCount = 0;
     
-//    NSLog(@"buttonText:%@",sender.titleLabel.text);
-//    NSLog(@"buttonNum:%@",[self.diskButtons[diskNumber] titleLabel].text);
+
 
     
 }
@@ -521,20 +559,34 @@ int answerPickedCount;
             [MobClick event:@"rightAnswer"];
 
             [self.diskButtons[self.choicesBoardView.songNumber] setHidden:YES];
-            UILabel *songResult = [[UILabel alloc] initWithFrame:[(UIButton *)self.diskButtons[self.choicesBoardView.songNumber] frame] ];
+            CGRect diskFrame = [(UIButton *)self.diskButtons[self.choicesBoardView.songNumber] frame];
+            diskFrame.size.width = CD_SZIE;
+            diskFrame.size.height = CD_SZIE;
+            
+            UILabel *songResult = [[UILabel alloc] initWithFrame:diskFrame];
+            songResult.center = [(UIButton *)self.diskButtons[self.choicesBoardView.songNumber] center];
+//            UILabel *songResult = [[UILabel alloc] initWithFrame:[(UIButton *)self.diskButtons[self.choicesBoardView.songNumber] frame] ];
             songResult.text = songNameGuessed;
             songResult.font = [UIFont fontWithName:@"Oriya Sangam MN" size:18];
+            
             songResult.numberOfLines = 2;
             songResult.textAlignment = NSTextAlignmentCenter;
             [songResult setTextColor:[UIColor whiteColor]];
             
             UIImageView *rightBackImg = [[UIImageView alloc] initWithFrame:songResult.frame];
             [rightBackImg setImage:[UIImage imageNamed:@"rightBack"]];
+            
+            if (songNameGuessed.length >3) {
+                CGRect aframe = songResult.frame;
+                aframe.origin.y -= 6;
+                [rightBackImg setFrame:aframe];
+            }
             [self.downPartView addSubview:rightBackImg];
 
             UIImageView *checkMark = [[UIImageView alloc] initWithFrame:CGRectMake(songResult.frame.size.width -15, songResult.frame.size.height-20, 20, 20)  ];
             [checkMark setImage:[UIImage imageNamed:@"checkMark"]];
-           
+         
+
             [songResult addSubview:checkMark];
             [self.downPartView addSubview:songResult];
             [self.musicsPlayArray removeObject:songNameGuessed];
@@ -542,7 +594,7 @@ int answerPickedCount;
 
             if (self.musicsPlayArray.count == 0) {
                 
-                [self goOnNext];
+//                [self goOnNext];
             
             }else
             {
@@ -613,16 +665,18 @@ int answerPickedCount;
 {
     //load levelPassView
     
-    [CommonUtility tapSound:@"s_levelup" withType:@"mp3"];
     if(!self.levelPassView)
     {
         self.levelPassView = [[[NSBundle mainBundle] loadNibNamed:@"levelPassView" owner:self options:nil] objectAtIndex:0];
+        [self.levelPassView setFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
         
         CGRect aframe = self.levelPassView.frame;
         aframe.origin.y = -[UIScreen mainScreen].bounds.size.height;
         [self.levelPassView setFrame:aframe];
         
         [self.view addSubview:self.levelPassView];
+        
+        NSLog(@"passView%@",self.levelPassView);
         
     }
     
@@ -695,7 +749,7 @@ int answerPickedCount;
     }
 
 
-    
+
     
 }
 
@@ -932,7 +986,7 @@ int answerPickedCount;
         if (alertView.tag == 12)//公布答案
         {
             [MobClick event:@"showAnswer"];
-            [CommonUtility tapSound:@"SolveQuestion" withType:@"mp3"];
+            [CommonUtility tapSound:@"go" withType:@"mp3"];
 
             NSString *songName = self.choicesBoardView.songName;
             for (int i = 0; i < [songName length]; i++) {
@@ -943,7 +997,13 @@ int answerPickedCount;
             
             
             [self.diskButtons[self.choicesBoardView.songNumber] setHidden:YES];
-            UILabel *songResult = [[UILabel alloc] initWithFrame:[(UIButton *)self.diskButtons[self.choicesBoardView.songNumber] frame] ];
+            CGRect diskFrame = [(UIButton *)self.diskButtons[self.choicesBoardView.songNumber] frame];
+            diskFrame.size.width = CD_SZIE;
+            diskFrame.size.height = CD_SZIE;
+
+            UILabel *songResult = [[UILabel alloc] initWithFrame:diskFrame];
+            songResult.center = [(UIButton *)self.diskButtons[self.choicesBoardView.songNumber] center];
+          
             songResult.text = songName;
             songResult.font = [UIFont fontWithName:@"Oriya Sangam MN" size:18];
             songResult.numberOfLines = 2;
@@ -952,6 +1012,11 @@ int answerPickedCount;
             
             UIImageView *rightBackImg = [[UIImageView alloc] initWithFrame:songResult.frame];
             [rightBackImg setImage:[UIImage imageNamed:@"rightBack"]];
+           if (songName.length >3) {
+                CGRect aframe = songResult.frame;
+                aframe.origin.y -= 6;
+                [rightBackImg setFrame:aframe];
+            }
             [self.downPartView addSubview:rightBackImg];
             
             UIImageView *checkMark = [[UIImageView alloc] initWithFrame:CGRectMake(songResult.frame.size.width -15, songResult.frame.size.height-20, 20, 20)  ];
@@ -1026,6 +1091,8 @@ int answerPickedCount;
     if (self.musicsPlayArray.count == 0) {
         
         [self performSelector:@selector(goOnNext) withObject:nil afterDelay:0.35];
+        [CommonUtility tapSound:@"s_levelup" withType:@"mp3"];
+
 //        [self goOnNext];
     }
 
@@ -1087,7 +1154,7 @@ int answerPickedCount;
         CGRect destFrame = [self.diskButtons[i] frame];
         
         CGRect startFrame = destFrame;
-        startFrame.origin.y = 0 - self.playConsoleView.frame.size.height - destFrame.size.height;
+        startFrame.origin.y = 0 - self.playConsoleView.frame.size.height - destFrame.size.height * 2;
         [self.diskButtons[i] setFrame:startFrame];
         
        
@@ -1133,7 +1200,7 @@ int answerPickedCount;
         [self.diskButtons[i] setEnabled:NO];
 
         
-        [UIView animateWithDuration:0.65+i*0.12 delay:0.35 usingSpringWithDamping:0.5 initialSpringVelocity:0.4 options:0 animations:^{
+        [UIView animateWithDuration:0.65+i*0.12 delay:0.2 usingSpringWithDamping:0.55 initialSpringVelocity:0.4 options:0 animations:^{
             [self.diskButtons[i] setFrame:[[self.diskButtonFrameArray objectAtIndex:i] CGRectValue]];
 
             
@@ -1304,7 +1371,7 @@ int answerPickedCount;
 -(void)nextLevel
 {
     
-    [CommonUtility tapSound:@"SolveQuestion" withType:@"mp3"];
+    [CommonUtility tapSound:@"go" withType:@"mp3"];
     
     self.gameDataForSingleLevel = [self readDataFromPlist:@"gameData"] ;
 

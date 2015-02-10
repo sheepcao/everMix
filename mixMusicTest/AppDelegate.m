@@ -12,7 +12,7 @@
 #import "UMSocialWechatHandler.h"
 #import "UMSocialSinaHandler.h"
 #import "UMSocialQQHandler.h"
-
+#import "Flurry.h"
 
 @interface AppDelegate ()
 
@@ -38,7 +38,8 @@
 
     [UMSocialQQHandler setQQWithAppId:@"1104216238" appKey:@"2a2fBc4MyEPqyIdc" url:nil];
 
-
+    [Flurry setCrashReportingEnabled:YES];
+    [Flurry startSession:@"M3THR4J6RYNGWCP4PJWR"];
 
 
     [NSThread sleepForTimeInterval:1.0];

@@ -110,6 +110,7 @@
 @property (nonatomic,strong) UIRefreshControl *refreshControl NS_AVAILABLE_IOS(6_0);
 
 - (IBAction)playBtn:(id)sender;
+@property (strong, nonatomic) IBOutlet UIView *loadingView;
 
 @property (strong, nonatomic) NSArray *diskButtons;
 - (IBAction)diskTap:(UIButton *)sender;

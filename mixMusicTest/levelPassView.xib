@@ -18,7 +18,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="abx-z9-wIR" userLabel="nextLevel">
-                    <rect key="frame" x="15" y="232" width="290" height="104"/>
+                    <rect key="frame" x="15" y="182" width="290" height="104"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nextBack.png" translatesAutoresizingMaskIntoConstraints="NO" id="qOM-aB-qh1">
                             <rect key="frame" x="0.0" y="0.0" width="290" height="104"/>
@@ -97,7 +97,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q6h-8Q-Tch" userLabel="nextDifficulty">
-                    <rect key="frame" x="15" y="194" width="290" height="180"/>
+                    <rect key="frame" x="15" y="144" width="290" height="180"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="该难度已被你玩爆 !       来点更刺激的！" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="184" translatesAutoresizingMaskIntoConstraints="NO" id="bvr-la-mLs">
                             <rect key="frame" x="54" y="64" width="184" height="63"/>
@@ -191,8 +191,8 @@
             <color key="backgroundColor" red="0.057937956200000001" green="0.060161952550000002" blue="0.060161952550000002" alpha="0.5" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstAttribute="centerX" secondItem="abx-z9-wIR" secondAttribute="centerX" id="8Je-E2-Rwy"/>
-                <constraint firstAttribute="centerY" secondItem="abx-z9-wIR" secondAttribute="centerY" id="W4M-Pn-KW4"/>
-                <constraint firstAttribute="centerY" secondItem="Q6h-8Q-Tch" secondAttribute="centerY" id="YkC-FX-iI9"/>
+                <constraint firstAttribute="centerY" secondItem="abx-z9-wIR" secondAttribute="centerY" constant="50" id="W4M-Pn-KW4"/>
+                <constraint firstAttribute="centerY" secondItem="Q6h-8Q-Tch" secondAttribute="centerY" constant="50" id="YkC-FX-iI9"/>
                 <constraint firstAttribute="centerX" secondItem="Q6h-8Q-Tch" secondAttribute="centerX" id="aYn-s0-HRU"/>
             </constraints>
             <point key="canvasLocation" x="243" y="26"/>

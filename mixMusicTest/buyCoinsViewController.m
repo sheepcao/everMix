@@ -15,17 +15,18 @@
     NSNumberFormatter * _priceFormatter;
     UILabel *currentCoinsLabel;
     UIButton *_parentCoinsButton;
+    UIView *_loadingView;
 }
 @end
 
 @implementation buyCoinsViewController
 
-- (id)initWithCoinLabel:(UILabel *)coinLabel andParentController:(UIViewController *)controller adnParentCoinButton:(UIButton *)parentCoinsButton{
+- (id)initWithCoinLabel:(UILabel *)coinLabel andParentController:(UIViewController *)controller andParentCoinButton:(UIButton *)parentCoinsButton andLoadingView:(UIView *)loadingView{
     
    	self = [super init];
     if (self != nil) {
         
-        
+        _loadingView = loadingView;
         _parentCoinsButton = parentCoinsButton;
         self.parentControler = controller;
         
@@ -198,7 +199,9 @@
         SKProduct *product = _products[indexPath.row];
         
         NSLog(@"Buying %@...", product.productIdentifier);
-        [[myIAPHelper sharedInstance] buyProduct:product];
+        [[myIAPHelper sharedInstance] buyProduct:product withLoadingView:_loadingView];
+        
+        [_loadingView setHidden:NO];
         
     }
     else if(indexPath.row == _products.count)

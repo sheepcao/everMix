@@ -44,6 +44,7 @@
 
 @property (strong,nonatomic) NSMutableDictionary *gameData;
 
+@property (strong, nonatomic) IBOutlet UIView *loadingView;
 @property (strong,nonatomic) buyCoinsViewController *myBuyController;
 @property (strong,nonatomic) UIView *buyCoinsView;
 

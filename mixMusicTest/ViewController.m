@@ -23,7 +23,7 @@
 @interface ViewController ()<MFMailComposeViewControllerDelegate>
 {
     bool first;
-    
+    int bounceNumber;
 }
 @property (nonatomic,strong)CustomIOS7AlertView *dailyRewardAlert;
 @property (nonatomic,strong)NSArray *difficultyButtons;
@@ -90,7 +90,7 @@ int difficultyNow;
     self.difficultyButtons = [NSArray arrayWithObjects:self.difficulty1,self.difficulty2,self.difficulty3,self.difficulty4,self.difficulty5, nil];
     
     
-    timer = [NSTimer scheduledTimerWithTimeInterval:10.0 target:self selector:@selector(bigADshow) userInfo:nil repeats:NO];
+    timer = [NSTimer scheduledTimerWithTimeInterval:25.0 target:self selector:@selector(bigADshow) userInfo:nil repeats:NO];
 
     //big AD...
     
@@ -112,7 +112,7 @@ int difficultyNow;
     
 
     
-
+    NSLog(@"view:%@",self.view);
     
 }
 
@@ -161,7 +161,9 @@ int difficultyNow;
         [self bigADshow];
       
     }
-    
+    NSLog(@"view2:%@",self.view);
+    NSLog(@"image:%@",self.backgroundImg);
+
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -213,19 +215,19 @@ int difficultyNow;
     [self setupPointFor:self.difficulty4];
     [self setupPointFor:self.difficulty5];
     
-    CGRect kframe = CGRectMake(25, 327, 63, 30);
+    CGRect kframe = CGRectMake(25, 327+17, 63, 30);
     [self.difficulty1 setFrame:kframe];
     
-    CGRect mframe = CGRectMake(98, 300, 63, 30);
+    CGRect mframe = CGRectMake(98, 300+17, 63, 30);
     [self.difficulty2 setFrame:mframe];
     
-    CGRect nframe = CGRectMake(141, 365, 63, 30);
+    CGRect nframe = CGRectMake(141, 365+17, 63, 30);
     [self.difficulty3 setFrame:nframe];
     
-    CGRect oframe = CGRectMake(191, 273, 63, 30);
+    CGRect oframe = CGRectMake(191, 273+17, 63, 30);
     [self.difficulty4 setFrame:oframe];
     
-    CGRect pframe = CGRectMake(257, 308, 63, 30);
+    CGRect pframe = CGRectMake(257, 308+20, 63, 30);
     [self.difficulty5 setFrame:pframe];
     
     if(IS_IPHONE_5)
@@ -325,10 +327,49 @@ int difficultyNow;
     [self.view addSubview:self.difficulty5];
     
     
+    [self goUpper];
+    bounceNumber = 0;
+
+    
+    
+    
     
     NSLog(@"1:%@\n2:%@\n3:%@\n4:%@\n5:%@\n",self.difficulty1,self.difficulty2,self.difficulty3,self.difficulty4,self.difficulty5);
     
 
+}
+-(void)goUpper
+{
+    UIButton *button = self.difficultyButtons[bounceNumber%5];
+    
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.2];
+    [button setFrame:CGRectMake(button.frame.origin.x, button.frame.origin.y-10, button.frame.size.width,button.frame.size.height)];
+    [UIView commitAnimations];
+    
+    [self performSelector:@selector(startBounce:) withObject:button afterDelay:0.22];
+}
+
+-(void)startBounce:(UIButton *)button
+{
+    [UIView animateWithDuration:0.6
+                          delay:0
+         usingSpringWithDamping:0.25
+          initialSpringVelocity:0.4
+                        options:0 animations:^{
+                            
+                            CGRect aframe = button.frame;
+                            aframe.origin.y +=10;
+                            [button setFrame:aframe];
+                        }
+                     completion:^(BOOL finished) {
+                         bounceNumber ++;
+                         if (bounceNumber ==10000000)
+                         {
+                             bounceNumber = 0;
+                         }
+                         [self performSelector:@selector(goUpper) withObject:nil afterDelay:0.95];
+                     }];
 }
 -(void)setupPointFor:(UIButton *)button
 {
@@ -636,6 +677,10 @@ int difficultyNow;
         if (alertView.tag == 1) {
             [self changeDifficultyTo:[NSString stringWithFormat:@"%d",alertView.lastSegmentIndex]];
         }
+        
+        if (alertView.tag == 100) {
+            [self getCoinsTapped];
+        }
     }
   
 }
@@ -878,13 +923,17 @@ int difficultyNow;
         
         self.buyCoinsView = [[[NSBundle mainBundle] loadNibNamed:@"buyCoinsViewController" owner:self options:nil] objectAtIndex:0];
         [self.view addSubview:self.buyCoinsView];
+        
+        [self.loadingView setFrame:CGRectMake(0, 0, self.buyCoinsView.frame.size.width, self.buyCoinsView.frame.size.height)];
+        [self.loadingView setHidden:YES];
+        [self.buyCoinsView addSubview:self.loadingView];
 
     }
 
     
     UILabel *coinsLabel = (UILabel *)[self.buyCoinsView viewWithTag:2];
     [coinsLabel setText:[NSString stringWithFormat:@"%d",[CommonUtility fetchCoinAmount]]];
-    self.myBuyController = [[buyCoinsViewController alloc] initWithCoinLabel:coinsLabel andParentController:self adnParentCoinButton:self.coinsShowing];
+    self.myBuyController = [[buyCoinsViewController alloc] initWithCoinLabel:coinsLabel andParentController:self andParentCoinButton:self.coinsShowing andLoadingView:self.loadingView];
  
     [self.buyCoinsView setFrame:CGRectMake(0, [UIScreen mainScreen].bounds.size.height, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
     
@@ -1124,33 +1173,51 @@ int difficultyNow;
 -(void)giveReward:(NSString *)day
 {
     [[NSUserDefaults standardUserDefaults] setObject:day forKey:@"lastDailyReword"];
-    CustomIOS7AlertView *alert = [[CustomIOS7AlertView alloc] init];
-    [alert setButtonTitles:[NSMutableArray arrayWithObjects:nil]];
-    alert.tag = 1;
     
-    UIView *tmpCustomView = [[UIView alloc] initWithFrame:CGRectMake(0, 0 , 300, 211)];
-    UIImageView *imageInTag = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 300, 211)];
+    UIAlertView *rewardAlert = [[UIAlertView alloc] initWithTitle:@"感谢您的支持" message:@"登录奖励,天天都有！这100金币您先用着!" delegate:self cancelButtonTitle:nil otherButtonTitles:@"笑纳", nil];
     
-    [tmpCustomView addSubview:imageInTag];
-    [tmpCustomView sendSubviewToBack:imageInTag];
-    imageInTag.image = [UIImage imageNamed:@"background"];
+    rewardAlert.tag = 100;
+    [rewardAlert show];
     
-    UIButton *getCoins = [[UIButton alloc] initWithFrame:CGRectMake(tmpCustomView.frame.size.width/2 -35, tmpCustomView.frame.size.height-50, 70, 40)];
-    [getCoins setTitle:@"领取" forState:UIControlStateNormal];
-    [getCoins addTarget:self action:@selector(getCoinsTapped) forControlEvents:UIControlEventTouchUpInside];
-    
-    [tmpCustomView addSubview:getCoins];
-    
-    [alert setContainerView:tmpCustomView];
-    self.dailyRewardAlert = alert;
-    [alert show];
+//    CustomIOS7AlertView *alert = [[CustomIOS7AlertView alloc] init];
+//    [alert setButtonTitles:[NSMutableArray arrayWithObjects:nil]];
+//    alert.tag = 1;
+//    
+//    alert.parentView.backgroundColor = [UIColor clearColor];
+//    alert.containerView.backgroundColor = [UIColor clearColor];
+//    
+////    UIView *tmpCustomView = [[UIView alloc] initWithFrame:CGRectMake(3  , 3 , 290, 200)];
+////    tmpCustomView.backgroundColor = [UIColor clearColor];
+//    
+//    UIImageView *imageInTag = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 300, 211)];
+//    
+////    [tmpCustomView addSubview:imageInTag];
+////    [tmpCustomView sendSubviewToBack:imageInTag];
+//    imageInTag.image = [UIImage imageNamed:@"nextBack"];
+//    
+//    UILabel *rewardText = [[UILabel alloc] initWithFrame:CGRectMake(imageInTag.frame.size.width/2 -60, imageInTag.frame.size.height-90, 120, 35)];
+//    [rewardText setText:@"登录奖励,天天都有！这200金币您先用着！"];
+//    
+//    [imageInTag addSubview:rewardText];
+//
+//    
+//    
+//    UIButton *getCoins = [[UIButton alloc] initWithFrame:CGRectMake(imageInTag.frame.size.width/2 -35, imageInTag.frame.size.height-50, 70, 40)];
+//    [getCoins setTitle:@"领取" forState:UIControlStateNormal];
+//    [getCoins addTarget:self action:@selector(getCoinsTapped) forControlEvents:UIControlEventTouchUpInside];
+//    
+//    [imageInTag addSubview:getCoins];
+//    
+//    [alert setContainerView:imageInTag];
+//    self.dailyRewardAlert = alert;
+//    [alert show];
     
     
 }
 
 -(void)getCoinsTapped
 {
-    [CommonUtility coinsChange:80];
+    [CommonUtility coinsChange:100];
     [self.coinsShowing setTitle:[NSString stringWithFormat:@"%d",[CommonUtility fetchCoinAmount]] forState:UIControlStateNormal];
     [self.dailyRewardAlert close];
 }

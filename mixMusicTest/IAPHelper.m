@@ -8,6 +8,9 @@ NSString *const IAPHelperProductPurchasedNotification = @"IAPHelperProductPurcha
 
 // 2
 @interface IAPHelper () <SKProductsRequestDelegate, SKPaymentTransactionObserver>
+{
+    UIView *_loadingView;
+}
 @end
 
 // 3
@@ -24,6 +27,7 @@ NSString *const IAPHelperProductPurchasedNotification = @"IAPHelperProductPurcha
     if ((self = [super init])) {
         
         // Store product identifiers
+        _loadingView = nil;
         _productIdentifiers = productIdentifiers;
         
 
@@ -54,7 +58,9 @@ NSString *const IAPHelperProductPurchasedNotification = @"IAPHelperProductPurcha
 //    return [_purchasedProductIdentifiers containsObject:productIdentifier];
 //}
 
-- (void)buyProduct:(SKProduct *)product {
+- (void)buyProduct:(SKProduct *)product withLoadingView:(UIView *)loadingView{
+    
+    _loadingView = loadingView;
     
     NSLog(@"Buying %@...", product.productIdentifier);
     
@@ -112,6 +118,9 @@ NSString *const IAPHelperProductPurchasedNotification = @"IAPHelperProductPurcha
                 break;
         }
     };
+    
+    [_loadingView setHidden:YES];
+    
 }
 
 - (void)completeTransaction:(SKPaymentTransaction *)transaction {
