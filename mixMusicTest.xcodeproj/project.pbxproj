@@ -230,6 +230,8 @@
 		A4AE92791A8A3273005104DA /* cd12.png in Resources */ = {isa = PBXBuildFile; fileRef = A4AE92701A8A3273005104DA /* cd12.png */; };
 		A4AE927A1A8A3273005104DA /* cd13.png in Resources */ = {isa = PBXBuildFile; fileRef = A4AE92711A8A3273005104DA /* cd13.png */; };
 		A4AE927B1A8A3273005104DA /* cd14.png in Resources */ = {isa = PBXBuildFile; fileRef = A4AE92721A8A3273005104DA /* cd14.png */; };
+		A4AE927D1A8A7991005104DA /* 停止.png in Resources */ = {isa = PBXBuildFile; fileRef = A4AE927C1A8A7991005104DA /* 停止.png */; };
+		A4AF18BB1A8AF49E00C5F2D3 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4AF18BA1A8AF49E00C5F2D3 /* Crashlytics.framework */; };
 		A4B268A91A8377570037DA16 /* fallAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = A4B268A81A8377570037DA16 /* fallAnimation.m */; };
 		A4B76C1D1A3997600014014D /* choicesBoardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4B76C1C1A3997600014014D /* choicesBoardView.xib */; };
 		A4B9F7DF1A81AFA300076531 /* gameBack.png in Resources */ = {isa = PBXBuildFile; fileRef = A4B9F7DC1A81AFA300076531 /* gameBack.png */; };
@@ -241,7 +243,6 @@
 		A4CAD75D1A8288BE00CF40D2 /* deleteOneBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = A4CAD7501A8288BE00CF40D2 /* deleteOneBtn.png */; };
 		A4CAD7611A8288BE00CF40D2 /* playSingleBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = A4CAD7541A8288BE00CF40D2 /* playSingleBtn.png */; };
 		A4CAD7631A8288BE00CF40D2 /* showAnswerBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = A4CAD7561A8288BE00CF40D2 /* showAnswerBtn.png */; };
-		A4CAD7641A8288BE00CF40D2 /* 停止.png in Resources */ = {isa = PBXBuildFile; fileRef = A4CAD7571A8288BE00CF40D2 /* 停止.png */; };
 		A4D050181A7612CA000D0A77 /* CustomIOS7AlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D050171A7612CA000D0A77 /* CustomIOS7AlertView.m */; };
 		A4D77D001A899D5F007FB122 /* libFlurry_6.0.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A4D77CFF1A899D5F007FB122 /* libFlurry_6.0.0.a */; };
 		A4D77D021A89A1A8007FB122 /* back_ios7.png in Resources */ = {isa = PBXBuildFile; fileRef = A4D77D011A89A1A8007FB122 /* back_ios7.png */; };
@@ -564,6 +565,8 @@
 		A4AE92701A8A3273005104DA /* cd12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cd12.png; sourceTree = "<group>"; };
 		A4AE92711A8A3273005104DA /* cd13.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cd13.png; sourceTree = "<group>"; };
 		A4AE92721A8A3273005104DA /* cd14.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cd14.png; sourceTree = "<group>"; };
+		A4AE927C1A8A7991005104DA /* 停止.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "停止.png"; sourceTree = "<group>"; };
+		A4AF18BA1A8AF49E00C5F2D3 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		A4B268A71A8377570037DA16 /* fallAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fallAnimation.h; sourceTree = "<group>"; };
 		A4B268A81A8377570037DA16 /* fallAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = fallAnimation.m; sourceTree = "<group>"; };
 		A4B76C1C1A3997600014014D /* choicesBoardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = choicesBoardView.xib; sourceTree = "<group>"; };
@@ -577,7 +580,6 @@
 		A4CAD7501A8288BE00CF40D2 /* deleteOneBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = deleteOneBtn.png; sourceTree = "<group>"; };
 		A4CAD7541A8288BE00CF40D2 /* playSingleBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playSingleBtn.png; sourceTree = "<group>"; };
 		A4CAD7561A8288BE00CF40D2 /* showAnswerBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = showAnswerBtn.png; sourceTree = "<group>"; };
-		A4CAD7571A8288BE00CF40D2 /* 停止.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "停止.png"; sourceTree = "<group>"; };
 		A4D050161A7612CA000D0A77 /* CustomIOS7AlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomIOS7AlertView.h; sourceTree = "<group>"; };
 		A4D050171A7612CA000D0A77 /* CustomIOS7AlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomIOS7AlertView.m; sourceTree = "<group>"; };
 		A4D77CFE1A899D5F007FB122 /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
@@ -626,6 +628,7 @@
 				A48B304C1A80D54100A4DF8D /* AVFoundation.framework in Frameworks */,
 				A48B304A1A80D53A00A4DF8D /* EventKit.framework in Frameworks */,
 				A48B30481A80D53400A4DF8D /* Social.framework in Frameworks */,
+				A4AF18BB1A8AF49E00C5F2D3 /* Crashlytics.framework in Frameworks */,
 				A45C2E6A1A80CC2300CC73F6 /* CoreGraphics.framework in Frameworks */,
 				A48B30461A80D52500A4DF8D /* CoreText.framework in Frameworks */,
 				A4ACD30D1A7B580400C60454 /* QuartzCore.framework in Frameworks */,
@@ -1102,6 +1105,7 @@
 		A4AC85F81A36CFE700CD19CA = {
 			isa = PBXGroup;
 			children = (
+				A4AF18BA1A8AF49E00C5F2D3 /* Crashlytics.framework */,
 				A4ABE9FC1A888A3E0012E956 /* CoreMotion.framework */,
 				A422F3611A851579008209D4 /* libstdc++.dylib */,
 				A422F35F1A851521008209D4 /* libiconv.dylib */,
@@ -1238,7 +1242,7 @@
 				A4CAD7501A8288BE00CF40D2 /* deleteOneBtn.png */,
 				A4CAD7541A8288BE00CF40D2 /* playSingleBtn.png */,
 				A4CAD7561A8288BE00CF40D2 /* showAnswerBtn.png */,
-				A4CAD7571A8288BE00CF40D2 /* 停止.png */,
+				A4AE927C1A8A7991005104DA /* 停止.png */,
 			);
 			name = Page2;
 			sourceTree = "<group>";
@@ -1285,6 +1289,7 @@
 				A4AC85FD1A36CFE700CD19CA /* Sources */,
 				A4AC85FE1A36CFE700CD19CA /* Frameworks */,
 				A4AC85FF1A36CFE700CD19CA /* Resources */,
+				A4AF18B91A8AF47F00C5F2D3 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1379,6 +1384,7 @@
 				A4DAF7381A87208300D9A94F /* UMS_wechat_icon.png in Resources */,
 				A4A6C1301A6B713600C6095C /* cd1.png in Resources */,
 				A47EFFF41A67B8E6000FCAF7 /* 倍儿爽.m4a in Resources */,
+				A4AE927D1A8A7991005104DA /* 停止.png in Resources */,
 				A47EFFE11A67B8E6000FCAF7 /* 倔强.m4a in Resources */,
 				A47EFFF81A67B8E6000FCAF7 /* 小苹果.m4a in Resources */,
 				A47E00071A67B8E6000FCAF7 /* 那一天.m4a in Resources */,
@@ -1537,7 +1543,6 @@
 				A4CAD75B1A8288BE00CF40D2 /* choiceBack.png in Resources */,
 				A47E000F1A67B8E6000FCAF7 /* 快乐崇拜.m4a in Resources */,
 				A466A13E1A890412005BD67C /* s_levelup.mp3 in Resources */,
-				A4CAD7641A8288BE00CF40D2 /* 停止.png in Resources */,
 				A47E00061A67B8E6000FCAF7 /* 走天涯.m4a in Resources */,
 				A4E0A30B1A865FBF00AFF6D5 /* rightBack.png in Resources */,
 				A47E003F1A67B8E6000FCAF7 /* 流着泪的你的脸.m4a in Resources */,
@@ -1581,6 +1586,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A4AF18B91A8AF47F00C5F2D3 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Crashlytics.framework/run bc367a445f88cf5a5c02a54966d1432f00fe93f0 5a2c732e92a103f4fcf7314bf13b68af30f265bb910535ec139bfa839fc8b638";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A4AC85FD1A36CFE700CD19CA /* Sources */ = {
@@ -1750,6 +1771,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/mixMusicTest/UMSocial_Sdk_4.2.1/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = mixMusicTest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -1791,6 +1813,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/mixMusicTest/UMSocial_Sdk_4.2.1/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = mixMusicTest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;

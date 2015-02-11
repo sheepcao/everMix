@@ -13,6 +13,7 @@
 #import "UMSocialSinaHandler.h"
 #import "UMSocialQQHandler.h"
 #import "Flurry.h"
+#import <Crashlytics/Crashlytics.h>
 
 @interface AppDelegate ()
 
@@ -41,6 +42,8 @@
     [Flurry setCrashReportingEnabled:YES];
     [Flurry startSession:@"M3THR4J6RYNGWCP4PJWR"];
 
+    
+    [Crashlytics startWithAPIKey:@"bc367a445f88cf5a5c02a54966d1432f00fe93f0"];
 
     [NSThread sleepForTimeInterval:1.0];
 

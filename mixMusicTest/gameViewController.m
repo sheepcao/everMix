@@ -815,8 +815,20 @@ int answerPickedCount;
         if ([audio isPlaying]) {
             [audio stop];
             
+            
         }
     }
+    if (animating) {
+        [self stopSpin];
+        [self.deleteOneBtn setEnabled:YES];
+        [self.shareBtn setEnabled:YES];
+        [self.playBtn setImage:[UIImage imageNamed:@"开始"] forState:UIControlStateNormal];
+        
+        isplayed =false;
+
+        [self enableButtons];
+    }
+
 }
 
 -(void)stop10secondMusics
