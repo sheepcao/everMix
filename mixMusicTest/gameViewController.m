@@ -907,8 +907,14 @@ int answerPickedCount;
                                        delegate:(id)self];
     
     NSString *musicsURL = [self jointURL];
+    NSLog(@"string1:%@",musicsURL);
+    NSMutableString * theURL = [[NSMutableString alloc]initWithString:musicsURL];
+    
+    NSString * escaped = [theURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSLog(@"string2:%@",escaped);
+
     // music url
-    [[UMSocialData defaultData].urlResource setResourceType:UMSocialUrlResourceTypeMusic url:musicsURL];
+    [[UMSocialData defaultData].urlResource setResourceType:UMSocialUrlResourceTypeMusic url:escaped];
     
     [UMSocialData defaultData].extConfig.wechatTimelineData.url = musicsURL;
     [UMSocialData defaultData].extConfig.wechatSessionData.url = musicsURL;

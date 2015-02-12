@@ -1797,7 +1797,7 @@
 					"-lstdc++",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "0a336c09-8124-47c8-8d17-1d3f44633a58";
+				PROVISIONING_PROFILE = "06bea0a2-4c25-4cd9-9cfa-fe1a97aaf444";
 			};
 			name = Debug;
 		};
