@@ -11,7 +11,7 @@
 #import <StoreKit/StoreKit.h>
 
 @interface buyCoinsViewController (){
-    NSArray *_products;
+    NSMutableArray *_products;
     NSNumberFormatter * _priceFormatter;
     UILabel *currentCoinsLabel;
     UIButton *_parentCoinsButton;
@@ -56,8 +56,6 @@
     NSString * productIdentifier = notification.object;
     [_products enumerateObjectsUsingBlock:^(SKProduct * product, NSUInteger idx, BOOL *stop) {
         if ([product.productIdentifier isEqualToString:productIdentifier]) {
-//            [self.itemsTable reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:idx inSection:0]] withRowAnimation:UITableViewRowAnimationFade];
-//            *stop = YES;
             
             if ([product.productIdentifier isEqualToString:@"sheepcao.mixedMusic.money"]) {
                 [MobClick event:@"ClickTier1"];
@@ -91,7 +89,19 @@
     _products = nil;
     [[myIAPHelper sharedInstance] requestProductsWithCompletionHandler:^(BOOL success, NSArray *products) {
         if (success) {
-            _products = products;
+//            _products = products;
+            _products = [NSMutableArray arrayWithArray:products];
+            if (![[[NSUserDefaults standardUserDefaults] objectForKey:@"wechatShare"] isEqualToString:@"yes"]) {
+                [_products addObject:@"分享朋友圈奖励300金币"];
+            }
+            if (![[[NSUserDefaults standardUserDefaults] objectForKey:@"sinaShare"] isEqualToString:@"yes"]) {
+                [_products addObject:@"分享新浪微博奖励300金币"];
+            }
+            if (![[[NSUserDefaults standardUserDefaults] objectForKey:@"reviewed"] isEqualToString:@"yes"] &&[CommonUtility fetchCoinAmount] < 400) {
+                [_products addObject:@"好评一下，奖励300金币"];
+            }
+
+            
             [self.itemsTable reloadData];
         }
         [refreshControl endRefreshing];
@@ -109,18 +119,9 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSInteger productCount = _products.count + 3;
+
+    return _products.count;
     
-    if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"wechatShare"] isEqualToString:@"yes"]) {
-        productCount--;
-    }
-    if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"sinaShare"] isEqualToString:@"yes"]) {
-        productCount--;
-    }
-    if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"reviewed"] isEqualToString:@"yes"] ||[CommonUtility fetchCoinAmount] > 400) {
-        productCount--;
-    }
-    return productCount;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -136,41 +137,60 @@
     [cell.textLabel setTextColor:[UIColor whiteColor]];
     cell.textLabel.font = [UIFont systemFontOfSize:17];
 
-    if (indexPath.row < _products.count) {
+    if ([_products[indexPath.row] isKindOfClass:[SKProduct class]]) {
         SKProduct * product = (SKProduct *) _products[indexPath.row];
+    
         cell.textLabel.text = product.localizedTitle;
-    }else if (indexPath.row == _products.count)
+    }else if([_products[indexPath.row] isKindOfClass:[NSString class]])
     {
-        if(![[[NSUserDefaults standardUserDefaults] objectForKey:@"wechatShare"] isEqualToString:@"yes"])
-        {
-        cell.textLabel.text = @"分享朋友圈奖励300金币";
-        }else if(![[[NSUserDefaults standardUserDefaults] objectForKey:@"sinaShare"] isEqualToString:@"yes"])
-        {
-            cell.textLabel.text = @"分享新浪微博奖励300金币";
-
-        }
-
-    }else if (indexPath.row == _products.count + 1)
-    {
-        if(![[[NSUserDefaults standardUserDefaults] objectForKey:@"sinaShare"] isEqualToString:@"yes"])
-        {
-        cell.textLabel.text = @"分享新浪微博奖励300金币";
-        }
-
-    }
-    else if ([CommonUtility fetchCoinAmount] < 400 && indexPath.row == _products.count + 2)
-    {
-        NSLog(@"review!!!");
+        NSString *product = (NSString *) _products[indexPath.row];
         
-        if(![[[NSUserDefaults standardUserDefaults] objectForKey:@"reviewed"] isEqualToString:@"yes"])
-        {
-            cell.textLabel.text = @"好评一下，奖励300金币";
-            
-        }
-        
+        cell.textLabel.text = product;
     }
-
-
+//    
+//    if (indexPath.row < _products.count) {
+//        SKProduct * product = (SKProduct *) _products[indexPath.row];
+//        cell.textLabel.text = product.localizedTitle;
+//    }else if (indexPath.row == _products.count)
+//    {
+//        if(![[[NSUserDefaults standardUserDefaults] objectForKey:@"wechatShare"] isEqualToString:@"yes"])
+//        {
+//        cell.textLabel.text = @"分享朋友圈奖励300金币";
+//        }else if(![[[NSUserDefaults standardUserDefaults] objectForKey:@"sinaShare"] isEqualToString:@"yes"])
+//        {
+//            cell.textLabel.text = @"分享新浪微博奖励300金币";
+//
+//        }else if ([CommonUtility fetchCoinAmount] < 400 && ![[[NSUserDefaults standardUserDefaults] objectForKey:@"reviewed"] isEqualToString:@"yes"])
+//        {
+//            cell.textLabel.text = @"好评一下，奖励300金币";
+//
+//        }
+//
+//    }else if (indexPath.row == _products.count + 1)
+//    {
+//        if(![[[NSUserDefaults standardUserDefaults] objectForKey:@"sinaShare"] isEqualToString:@"yes"])
+//        {
+//            cell.textLabel.text = @"分享新浪微博奖励300金币";
+//        }else if ([CommonUtility fetchCoinAmount] < 400 && ![[[NSUserDefaults standardUserDefaults] objectForKey:@"reviewed"] isEqualToString:@"yes"])
+//        {
+//            cell.textLabel.text = @"好评一下，奖励300金币";
+//            
+//        }
+//
+//    }
+//    else if ([CommonUtility fetchCoinAmount] < 400 && indexPath.row == _products.count + 2)
+//    {
+//        NSLog(@"review!!!");
+//        
+//        if(![[[NSUserDefaults standardUserDefaults] objectForKey:@"reviewed"] isEqualToString:@"yes"])
+//        {
+//            cell.textLabel.text = @"好评一下，奖励300金币";
+//            
+//        }
+//        
+//    }
+//
+//
     
     return cell;
 }
@@ -178,54 +198,77 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [CommonUtility tapSound:@"click" withType:@"mp3"];
-    
-    if (indexPath.row < _products.count) {
+    if ([_products[indexPath.row] isKindOfClass:[SKProduct class]]) {
+
         SKProduct *product = _products[indexPath.row];
-        
         NSLog(@"Buying %@...", product.productIdentifier);
         [[myIAPHelper sharedInstance] buyProduct:product withLoadingView:_loadingView];
         
         [_loadingView setHidden:NO];
         
-    }
-    else if(indexPath.row == _products.count)
+    }else if([_products[indexPath.row] isKindOfClass:[NSString class]])
     {
-        if(![[[NSUserDefaults standardUserDefaults] objectForKey:@"wechatShare"] isEqualToString:@"yes"])
-        {
+        NSString *product = (NSString *) _products[indexPath.row];
+        if ([product isEqualToString:@"分享朋友圈奖励300金币"]) {
             [self shareToWechat];
-            
-            
-        }else if(![[[NSUserDefaults standardUserDefaults] objectForKey:@"sinaShare"] isEqualToString:@"yes"])
+
+        }else if([product isEqualToString:@"分享新浪微博奖励300金币"])
         {
             [self shareToSina];
 
+        }else if([product isEqualToString:@"好评一下，奖励300金币"])
+        {
+            [self reviewUS];
         }
+        
         [self.closeDelegate closingBuy];
-
 
         
-    }else if(indexPath.row == _products.count + 1)
-    {
-        if(![[[NSUserDefaults standardUserDefaults] objectForKey:@"sinaShare"] isEqualToString:@"yes"])
-        {
-            
-            [self shareToSina];
-            
-        }
-        [self.closeDelegate closingBuy];
-
-
-    }else if ([CommonUtility fetchCoinAmount] < 400 )
-    {
-        if(![[[NSUserDefaults standardUserDefaults] objectForKey:@"reviewed"] isEqualToString:@"yes"])
-        {
-        [self reviewUS];
-        }
-        [self.closeDelegate closingBuy];
-
     }
-    
-    
+
+
+//    else if(indexPath.row == _products.count)
+//    {
+//        if(![[[NSUserDefaults standardUserDefaults] objectForKey:@"wechatShare"] isEqualToString:@"yes"])
+//        {
+//            [self shareToWechat];
+//            
+//            
+//        }else if(![[[NSUserDefaults standardUserDefaults] objectForKey:@"sinaShare"] isEqualToString:@"yes"])
+//        {
+//
+//        }else if ([CommonUtility fetchCoinAmount] < 400 && ![[[NSUserDefaults standardUserDefaults] objectForKey:@"reviewed"] isEqualToString:@"yes"])
+//        {
+//            [self reviewUS];
+//        }
+//
+//
+//        
+//    }else if(indexPath.row == _products.count + 1)
+//    {
+//        if(![[[NSUserDefaults standardUserDefaults] objectForKey:@"sinaShare"] isEqualToString:@"yes"])
+//        {
+//            
+//            [self shareToSina];
+//            
+//        }else if ([CommonUtility fetchCoinAmount] < 400 && ![[[NSUserDefaults standardUserDefaults] objectForKey:@"reviewed"] isEqualToString:@"yes"])
+//        {
+//            [self reviewUS];
+//        }
+//        [self.closeDelegate closingBuy];
+//
+//
+//    }else if ([CommonUtility fetchCoinAmount] < 400 )
+//    {
+//        if(![[[NSUserDefaults standardUserDefaults] objectForKey:@"reviewed"] isEqualToString:@"yes"])
+//        {
+//        [self reviewUS];
+//        }
+//        [self.closeDelegate closingBuy];
+//
+//    }
+//    
+//    
 }
 
 -(void)reviewUS
@@ -247,10 +290,12 @@
 
 -(void)shareToWechat
 {
+    UIImage *shareImg = [UIImage imageNamed:[NSString stringWithFormat:@"cd%u.png",[self randomDiskNumberWithRange:13]]];
+    
     [UMSocialSnsService presentSnsIconSheetView:self.parentControler
                                          appKey:@"54c46ea7fd98c5071d000668"
                                       shareText:@"我在玩魔音大师，还挺挑战的，朋友们也来试试!"
-                                     shareImage:[UIImage imageNamed:@"iconNew.png"]
+                                     shareImage:shareImg
                                 shareToSnsNames:@[UMShareToWechatTimeline]
                                        delegate:(id)self];
     
@@ -260,13 +305,23 @@
     [UMSocialData defaultData].extConfig.wechatTimelineData.url = @"http://itunes.apple.com/cn/app/mo-yin-da-shi-feng-kuang-cai-ge/id954971485?ls=1&mt=8";
     [UMSocialData defaultData].extConfig.wechatSessionData.url = @"http://itunes.apple.com/cn/app/mo-yin-da-shi-feng-kuang-cai-ge/id954971485?ls=1&mt=8";
 }
+-(unsigned int)randomDiskNumberWithRange:(int)range
+{
+    unsigned int randomNumber = arc4random()%13+1;
+    
+    
+    return randomNumber;
+    
+}
 
 -(void)shareToSina
 {
+    UIImage *shareImg = [UIImage imageNamed:[NSString stringWithFormat:@"cd%u.png",[self randomDiskNumberWithRange:13]]];
+    
     [UMSocialSnsService presentSnsIconSheetView:self.parentControler
                                          appKey:@"54c46ea7fd98c5071d000668"
                                       shareText:@"我在玩魔音大师，还挺挑战的，朋友们也来试试!"
-                                     shareImage:[UIImage imageNamed:@"iconNew.png"]
+                                     shareImage:shareImg
                                 shareToSnsNames:@[UMShareToSina]
                                        delegate:(id)self];
     

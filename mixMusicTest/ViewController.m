@@ -98,14 +98,7 @@ int difficultyNow;
     self.interstitialView.delegate = self;
     self.interstitialView.interstitialType = BaiduMobAdViewTypeInterstitialGame;
     [self.interstitialView load];
-    // 初始化插屏⼲⼴广告,此处使⽤用的是测试ID,请登陆多盟官⺴⽹网(www.domob.cn)获取新的ID _dmInterstitial = [[DMInterstitialAdController alloc]
-//    _dmInterstitial = [[DMInterstitialAdController alloc] initWithPublisherId:DMPUBLISHERID
-//                                                                  placementId:DMPLCAEMENTID_INTER
-//                                                           rootViewController:self];
-//    _dmInterstitial.delegate = self;
-//    // load advertisement
-//    [_dmInterstitial loadAd];
-    
+
     backFromGame = NO;
     first = YES;
     [self dropDown];
@@ -796,16 +789,34 @@ int difficultyNow;
     }
 
 }
-
+-(unsigned int)randomDiskNumberWithRange:(int)range
+{
+    unsigned int randomNumber = arc4random()%13+1;
+    
+    
+    return randomNumber;
+    
+}
 - (IBAction)socialShare {
     
     [CommonUtility tapSound:@"click" withType:@"mp3"];
     [MobClick event:@"shareFromHome"];
     
+    UIImage *shareImg = [UIImage imageNamed:[NSString stringWithFormat:@"cd%u.png",[self randomDiskNumberWithRange:13]]];
+    
+//    NSString *musicsURL = @"http://itunes.apple.com/cn/app/mo-yin-da-shi-feng-kuang-cai-ge/id954971485?ls=1&mt=8";
+//    NSLog(@"string1:%@",musicsURL);
+//
+//    NSMutableString * theURL = [[NSMutableString alloc]initWithString:musicsURL];
+//    
+//    NSString * escaped = [theURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+//    NSLog(@"string2:%@",escaped);
+//    
+    
     [UMSocialSnsService presentSnsIconSheetView:self
                                          appKey:@"54c46ea7fd98c5071d000668"
                                       shareText:@"我在玩魔音大师，还挺挑战的，朋友们也来试试!"
-                                     shareImage:[UIImage imageNamed:@"iconNew.png"]
+                                     shareImage:shareImg
                                 shareToSnsNames:@[UMShareToSina,UMShareToWechatSession,UMShareToWechatTimeline,UMShareToWechatFavorite]
                                        delegate:(id)self];
     
@@ -1245,29 +1256,7 @@ int difficultyNow;
     [self.coinsShowing setTitle:[NSString stringWithFormat:@"%d",[CommonUtility fetchCoinAmount]] forState:UIControlStateNormal];
     [self.dailyRewardAlert close];
 }
-//-(IBAction)segmentAction:(UISegmentedControl *)Seg{
-//    NSInteger Index = Seg.selectedSegmentIndex;
-////    NSLog(@"Seg.selectedSegmentIndex:%d",Index);
-//    
-//    [MobClick event:@"chooseDifficulty"];
-//    int lastSeg = [[self.gameData objectForKey:@"difficulty"] intValue];
-//
-//    if ([self.continueGame isHidden]) {
-// 
-//        [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%ld",(long)Index] forKey:@"difficulty"];
-//        
-//        [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%ld",Index*20] forKey:@"currentLevel"];
-//    }else
-//    {
-//        myAlertView *resetAlert = [[myAlertView alloc] initWithTitle:@"且慢!" message:@"变更难度将重置已猜歌曲的进度,请君三思。" delegate:self cancelButtonTitle:nil otherButtonTitles:@"取消",@"确认", nil];
-//        
-//        resetAlert.lastSegmentIndex = lastSeg;
-//        resetAlert.tag = 1;
-//        
-//        [resetAlert show];
-//    }
-//    
-//}
+
 
 #pragma mark button flash
 
@@ -1317,7 +1306,7 @@ int difficultyNow;
         
         [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%ld",(long)Index] forKey:@"difficulty"];
         
-        [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%ld",Index*20] forKey:@"currentLevel"];
+        [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%ld",(long)Index*20] forKey:@"currentLevel"];
     }else
     {
         myAlertView *resetAlert = [[myAlertView alloc] initWithTitle:@"注意" message:@"变更难度将删除当前进度,确定要继续？" delegate:self cancelButtonTitle:nil otherButtonTitles:@"取消",@"确定", nil];
@@ -1339,13 +1328,13 @@ int difficultyNow;
 //}
 - (NSString *)publisherId
 {
-    return  @"b33a25dc"; //@"your_own_app_id";
+    return  @"d388c08d"; //@"your_own_app_id";
 }
 
 - (NSString*) appSpec
 {
     //注意：该计费名为测试用途，不会产生计费，请测试广告展示无误以后，替换为您的应用计费名，然后提交AppStore.
-    return @"b33a25dc";
+    return @"d388c08d";
 }
 - (void)bigADshow
 {
@@ -1463,70 +1452,6 @@ int difficultyNow;
             //prepair for the next advertisement view
             [self.interstitialView load];
 }
-
-//
-//- (void)dmInterstitialSuccessToLoadAd:(DMInterstitialAdController *)dmInterstitial
-//{
-//    NSLog(@"[Domob Interstitial] success to load ad.");
-//}
-//
-//// 当插屏广告加载失败后，回调该方法
-//// This method will be used after failed
-//- (void)dmInterstitialFailToLoadAd:(DMInterstitialAdController *)dmInterstitial withError:(NSError *)err
-//{
-//
-//    
-//    NSLog(@"[Domob Interstitial] fail to load ad. %@", err);
-//}
-//
-//// 当插屏广告要被呈现出来前，回调该方法
-//// This method will be used before being presented
-//- (void)dmInterstitialWillPresentScreen:(DMInterstitialAdController *)dmInterstitial
-//{
-//    NSLog(@"[Domob Interstitial] will present.");
-//}
-//
-//// 当插屏广告被关闭后，回调该方法
-//// This method will be used after Interstitial view  has been closed
-//- (void)dmInterstitialDidDismissScreen:(DMInterstitialAdController *)dmInterstitial
-//{
-//    NSLog(@"[Domob Interstitial] did dismiss.");
-//    if (timer != nil)
-//    {
-//        [timer invalidate];
-//        timer = nil;
-//        
-//    }
-//    
-//    
-//    
-//    timer = [NSTimer scheduledTimerWithTimeInterval:45.0 target:self selector:@selector(bigADshow) userInfo:nil repeats:NO];
-//    
-//    // 插屏广告关闭后，加载一条新广告用于下次呈现
-//    //prepair for the next advertisement view
-//    [_dmInterstitial loadAd];
-//}
-//
-//// 当将要呈现出 Modal View 时，回调该方法。如打开内置浏览器。
-//// When will be showing a Modal View, call this method. Such as open built-in browser
-//- (void)dmInterstitialWillPresentModalView:(DMInterstitialAdController *)dmInterstitial
-//{
-//    NSLog(@"[Domob Interstitial] will present modal view.");
-//}
-//
-//// 当呈现的 Modal View 被关闭后，回调该方法。如内置浏览器被关闭。
-//// When presented Modal View is closed, this method will be called. Such as built-in browser is closed
-//- (void)dmInterstitialDidDismissModalView:(DMInterstitialAdController *)dmInterstitial
-//{
-//    NSLog(@"[Domob Interstitial] did dismiss modal view.");
-//}
-//
-//// 当因用户的操作（如点击下载类广告，需要跳转到Store），需要离开当前应用时，回调该方法
-//// When the result of the user's actions (such as clicking download class advertising, you need to jump to the Store), need to leave the current application, this method will be called
-//- (void)dmInterstitialApplicationWillEnterBackground:(DMInterstitialAdController *)dmInterstitial
-//{
-//    NSLog(@"[Domob Interstitial] will enter background.");
-//}
 
 
 #pragma mark music note animation
