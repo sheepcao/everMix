@@ -50,7 +50,7 @@
 		A47E00061A67B8E6000FCAF7 /* 走天涯.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A47EFF9F1A67B8E6000FCAF7 /* 走天涯.m4a */; };
 		A47E00071A67B8E6000FCAF7 /* 那一天.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A47EFFA01A67B8E6000FCAF7 /* 那一天.m4a */; };
 		A47E00081A67B8E6000FCAF7 /* 一无所有.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A47EFFA21A67B8E6000FCAF7 /* 一无所有.m4a */; };
-		A47E00091A67B8E6000FCAF7 /* 为爱疯狂.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A47EFFA31A67B8E6000FCAF7 /* 为爱疯狂.m4a */; };
+		A47E00091A67B8E6000FCAF7 /* 为爱痴狂.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A47EFFA31A67B8E6000FCAF7 /* 为爱痴狂.m4a */; };
 		A47E000A1A67B8E6000FCAF7 /* 勇敢的心.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A47EFFA41A67B8E6000FCAF7 /* 勇敢的心.m4a */; };
 		A47E000B1A67B8E6000FCAF7 /* 匆匆那年.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A47EFFA51A67B8E6000FCAF7 /* 匆匆那年.m4a */; };
 		A47E000C1A67B8E6000FCAF7 /* 因为爱情.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A47EFFA61A67B8E6000FCAF7 /* 因为爱情.m4a */; };
@@ -363,7 +363,7 @@
 		A47EFF9F1A67B8E6000FCAF7 /* 走天涯.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "走天涯.m4a"; sourceTree = "<group>"; };
 		A47EFFA01A67B8E6000FCAF7 /* 那一天.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "那一天.m4a"; sourceTree = "<group>"; };
 		A47EFFA21A67B8E6000FCAF7 /* 一无所有.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "一无所有.m4a"; sourceTree = "<group>"; };
-		A47EFFA31A67B8E6000FCAF7 /* 为爱疯狂.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "为爱疯狂.m4a"; sourceTree = "<group>"; };
+		A47EFFA31A67B8E6000FCAF7 /* 为爱痴狂.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "为爱痴狂.m4a"; sourceTree = "<group>"; };
 		A47EFFA41A67B8E6000FCAF7 /* 勇敢的心.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "勇敢的心.m4a"; sourceTree = "<group>"; };
 		A47EFFA51A67B8E6000FCAF7 /* 匆匆那年.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "匆匆那年.m4a"; sourceTree = "<group>"; };
 		A47EFFA61A67B8E6000FCAF7 /* 因为爱情.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "因为爱情.m4a"; sourceTree = "<group>"; };
@@ -760,7 +760,7 @@
 			isa = PBXGroup;
 			children = (
 				A47EFFA21A67B8E6000FCAF7 /* 一无所有.m4a */,
-				A47EFFA31A67B8E6000FCAF7 /* 为爱疯狂.m4a */,
+				A47EFFA31A67B8E6000FCAF7 /* 为爱痴狂.m4a */,
 				A47EFFA41A67B8E6000FCAF7 /* 勇敢的心.m4a */,
 				A47EFFA51A67B8E6000FCAF7 /* 匆匆那年.m4a */,
 				A47EFFA61A67B8E6000FCAF7 /* 因为爱情.m4a */,
@@ -1429,7 +1429,7 @@
 				A466A14E1A8908D9005BD67C /* click.mp3 in Resources */,
 				A47EFFFE1A67B8E6000FCAF7 /* 爱相随.m4a in Resources */,
 				A4A0C2531A8108430032DF0B /* 继续.png in Resources */,
-				A47E00091A67B8E6000FCAF7 /* 为爱疯狂.m4a in Resources */,
+				A47E00091A67B8E6000FCAF7 /* 为爱痴狂.m4a in Resources */,
 				A47E00301A67B8E6000FCAF7 /* BADBOY.m4a in Resources */,
 				A47E001D1A67B8E6000FCAF7 /* 一万个理由.m4a in Resources */,
 				A4AE92741A8A3273005104DA /* cd7.png in Resources */,
@@ -1784,6 +1784,7 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "06bea0a2-4c25-4cd9-9cfa-fe1a97aaf444";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -1821,7 +1822,8 @@
 					"-lstdc++",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "0443f749-ff5f-456a-8cab-207a55f02f19";
+				PROVISIONING_PROFILE = "b2c1c871-cdbd-42ce-8627-6cd3f6c70057";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

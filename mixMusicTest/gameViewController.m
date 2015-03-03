@@ -711,11 +711,12 @@ int answerPickedCount;
         self.gameDataForSingleLevel = [self readDataFromPlist:@"gameData"] ;
         NSString *currentDifficulty = [self.gameDataForSingleLevel objectForKey:@"difficulty"];
         
-        [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%d",[currentDifficulty intValue]+1] forKey:@"difficulty"];
+//        [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%d",[currentDifficulty intValue]+1] forKey:@"difficulty"];
         
         int levelNow = [[self.gameDataForSingleLevel objectForKey:@"currentLevel"] intValue];
+        [self.delegate resetPlist];
         [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%d",levelNow+1] forKey:@"currentLevel"];
-
+        [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%d",[currentDifficulty intValue]+1] forKey:@"difficulty"];
         
         [self.levelPassMessage setHidden:YES];
         [self.difficultyPass setHidden:NO];

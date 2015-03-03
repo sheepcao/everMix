@@ -35,6 +35,7 @@
 
 @protocol prepareSongsDelegate <NSObject,UMSocialUIDelegate>
 -(NSMutableArray *)configSongs;
+-(void)resetPlist;
 
 @end
 

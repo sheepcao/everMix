@@ -623,28 +623,14 @@ int difficultyNow;
 -(void)resetPlist
 {
     [self removePlistFromDocument:@"gameData"];
-//    NSMutableArray *currentMusics = [[[NSUserDefaults standardUserDefaults] objectForKey:@"currentMusics"] mutableCopy];
-//    [currentMusics removeAllObjects];
-//    [[NSUserDefaults standardUserDefaults] setObject:currentMusics forKey:@"currentMusics"];
+
     
     [self.begainGame setImage:[UIImage imageNamed:@"开始"] forState:UIControlStateNormal];
     [self.begainGame setFrame:CGRectMake([[UIScreen mainScreen] bounds].size.width/2 - self.continueGame.frame.size.width/2 , self.continueGame.frame.origin.y, self.continueGame.frame.size.width, self.continueGame.frame.size.height)];
-//    
-//    [self.ripple setFrame: CGRectMake(self.begainGame.frame.origin.x+10, self.begainGame.frame.origin.y+10, self.begainGame.frame.size.width-20,self.begainGame.frame.size.height-20) ];
-//
-//    //
-//    [self.ripple2 setFrame: CGRectMake(self.begainGame.frame.origin.x+10, self.begainGame.frame.origin.y+10, self.begainGame.frame.size.width-20,self.begainGame.frame.size.height-20) ];
-//    
-//    [self.ripple3 setFrame: CGRectMake(self.begainGame.frame.origin.x+10, self.begainGame.frame.origin.y+10, self.begainGame.frame.size.width-20,self.begainGame.frame.size.height-20) ];
-//
-//
-//    
-//    
-    
+
     [self.continueGame setHidden:YES];
     
-    
-    
+   
     [self copyPlistToDocument:@"gameData"];
 
 }
