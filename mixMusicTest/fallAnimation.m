@@ -8,6 +8,8 @@
 
 #import "fallAnimation.h"
 
+#define NOTE_DISTANCE ((UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)?65:40)
+
 @implementation fallAnimation
 
 
@@ -63,7 +65,7 @@
 -(void)endDisplayLink
 {
     double size = [self randomSize];
-    [self.animatingView setFrame:CGRectMake([self randomXfrom:((int)(self.animatingView.frame.origin.x/40))*40  toEnd:40+((int)(self.animatingView.frame.origin.x/40))*40], -50, size,size)];
+    [self.animatingView setFrame:CGRectMake([self randomXfrom:((int)(self.animatingView.frame.origin.x/NOTE_DISTANCE))*NOTE_DISTANCE  toEnd:NOTE_DISTANCE+((int)(self.animatingView.frame.origin.x/NOTE_DISTANCE))*NOTE_DISTANCE], -50, size,size)];
     [self.animatingView setImage:[self randomImage]];
     self.animatingView.alpha =0.4;
      [self performSelector:@selector(startDisplayLink2) withObject:nil afterDelay:0.01];
@@ -91,9 +93,9 @@
 -(void)endDisplayOnGame
 {
     double size = [self randomSize];
-    [self.animatingView setFrame:CGRectMake([self randomXfrom:((int)(self.animatingView.frame.origin.x/40))*40  toEnd:40+((int)(self.animatingView.frame.origin.x/40))*40], -50, size,size)];
+    [self.animatingView setFrame:CGRectMake([self randomXfrom:((int)(self.animatingView.frame.origin.x/NOTE_DISTANCE))*NOTE_DISTANCE  toEnd:NOTE_DISTANCE+((int)(self.animatingView.frame.origin.x/NOTE_DISTANCE))*NOTE_DISTANCE], -50, size,size)];
     [self.animatingView setImage:[self randomImage]];
-    self.animatingView.alpha =0.22;
+    self.animatingView.alpha =0.28;
     [self performSelector:@selector(startDisplayOnGame2) withObject:nil afterDelay:0.01];
     
     
@@ -211,7 +213,16 @@
 }
 -(double)randomSize
 {
-    unsigned int randomNumber = 10 + arc4random()%30;
+    unsigned int randomNumber;
+    
+    if (IS_IPAD) {
+        randomNumber = 18 + arc4random()%40;
+
+    }else
+    {
+        randomNumber = 10 + arc4random()%30;
+
+    }
     return (double)randomNumber;
     
 }

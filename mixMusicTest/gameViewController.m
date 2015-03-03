@@ -25,6 +25,17 @@
 @property (nonatomic, strong) UIImageView *musicNote6;
 @property (nonatomic, strong) UIImageView *musicNote7;
 @property (nonatomic, strong) UIImageView *musicNote8;
+@property (nonatomic, strong) UIImageView *musicNote9;
+@property (nonatomic, strong) UIImageView *musicNote10;
+@property (nonatomic, strong) UIImageView *musicNote11;
+@property (nonatomic, strong) UIImageView *musicNote12;
+@property (nonatomic, strong) UIImageView *musicNote13;
+@property (nonatomic, strong) UIImageView *musicNote14;
+@property (nonatomic, strong) UIImageView *musicNote15;
+@property (nonatomic, strong) UIImageView *musicNote16;
+@property (nonatomic, strong) UIImageView *musicNote17;
+@property (nonatomic, strong) UIImageView *musicNote18;
+@property (nonatomic, strong) UIImageView *musicNote19;
 @property (nonatomic, strong) NSArray *musicNotes;
 
 @property (nonatomic, strong) NSMutableArray *diskArray;
@@ -40,7 +51,6 @@ int answerPickedCount;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
     self.musicNote1 = [[UIImageView alloc] init];
     self.musicNote2 = [[UIImageView alloc] init];
     self.musicNote3 = [[UIImageView alloc] init];
@@ -49,11 +59,22 @@ int answerPickedCount;
     self.musicNote6 = [[UIImageView alloc] init];
     self.musicNote7 = [[UIImageView alloc] init];
     self.musicNote8 = [[UIImageView alloc] init];
+    self.musicNote9 = [[UIImageView alloc] init];
+    self.musicNote10 = [[UIImageView alloc] init];
+    self.musicNote11 = [[UIImageView alloc] init];
+    self.musicNote12 = [[UIImageView alloc] init];
+    self.musicNote13 = [[UIImageView alloc] init];
+    self.musicNote14 = [[UIImageView alloc] init];
+    self.musicNote15 = [[UIImageView alloc] init];
+    self.musicNote16 = [[UIImageView alloc] init];
+    self.musicNote17 = [[UIImageView alloc] init];
+    self.musicNote18 = [[UIImageView alloc] init];
+    self.musicNote19 = [[UIImageView alloc] init];
     
     
     
-    self.musicNotes = [NSArray arrayWithObjects:self.musicNote1,self.musicNote2,self.musicNote3,self.musicNote4,self.musicNote5,self.musicNote6,self.musicNote7,self.musicNote8, nil];
     
+    self.musicNotes = [NSArray arrayWithObjects:self.musicNote1,self.musicNote2,self.musicNote3,self.musicNote4,self.musicNote5,self.musicNote6,self.musicNote7,self.musicNote8,self.musicNote9,self.musicNote10,self.musicNote11,self.musicNote12,self.musicNote13,self.musicNote14,self.musicNote15,self.musicNote16,self.musicNote17,self.musicNote18,self.musicNote19, nil];
     self.diskArray = [NSMutableArray arrayWithObjects:@"cd1",@"cd2",@"cd3",@"cd4",@"cd5",@"cd6",@"cd7",@"cd8",@"cd9",@"cd10",@"cd11",@"cd12",@"cd13", nil];
 
     
@@ -1634,11 +1655,19 @@ int answerPickedCount;
 -(void)dropDown
 {
     
+    int distance = 40;
+    int noteNum = [[UIScreen mainScreen] bounds].size.width/distance;
     
-    for (int i = 0; i<8; i++) {
+    if (IS_IPAD) {
+        distance = 65;
+        noteNum = [[UIScreen mainScreen] bounds].size.width/distance;
+    }
+    
+    
+    for (int i = 0; i<noteNum; i++) {
         
         double size = [self randomSize];
-        CGRect aframe = CGRectMake([self randomXfrom:40*i toEnd:40+40*i], -50, size, size);
+        CGRect aframe = CGRectMake([self randomXfrom:distance*i toEnd:distance+distance*i], -50, size, size);
         [self setupAnimationNote:self.musicNotes[i] imageName:[NSString stringWithFormat:@"note%d",i] ImageFrame:aframe];
         
     }
