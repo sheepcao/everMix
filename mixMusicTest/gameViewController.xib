@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
@@ -19,20 +19,23 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="4Wa-kH-Ij8">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gameBack.png" translatesAutoresizingMaskIntoConstraints="NO" id="cTZ-3e-AHo">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EJw-dq-Ooh" userLabel="playConsoleView">
-                    <rect key="frame" x="15" y="72" width="290" height="104"/>
+                    <rect key="frame" x="155" y="88" width="290" height="104"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EA8-fi-MW9">
                             <rect key="frame" x="93" y="0.0" width="104" height="104"/>
                             <state key="normal" image="开始.png">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                <rect key="frame" x="230" y="6" width="175" height="175"/>
+                            </variation>
                             <connections>
                                 <action selector="playBtn:" destination="-1" eventType="touchUpInside" id="Qep-KP-VuW"/>
                             </connections>
@@ -42,6 +45,9 @@
                             <state key="normal" image="shareBtn2.png">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                <rect key="frame" x="144" y="56" width="113" height="102"/>
+                            </variation>
                             <connections>
                                 <action selector="shareButton:" destination="-1" eventType="touchUpInside" id="wu5-iE-7ni"/>
                             </connections>
@@ -51,6 +57,9 @@
                             <state key="normal" title="Button" image="bomb.png">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                <rect key="frame" x="378" y="56" width="113" height="102"/>
+                            </variation>
                             <connections>
                                 <action selector="refreshMusics:" destination="-1" eventType="touchUpInside" id="fss-dV-Mg3"/>
                             </connections>
@@ -58,45 +67,75 @@
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="290" id="Lpd-Zl-0tN"/>
-                        <constraint firstAttribute="height" constant="104" id="h4Y-bQ-k1f"/>
+                        <constraint firstAttribute="width" constant="290" id="Lpd-Zl-0tN">
+                            <variation key="heightClass=regular-widthClass=regular" constant="635"/>
+                        </constraint>
+                        <constraint firstAttribute="height" constant="104" id="h4Y-bQ-k1f">
+                            <variation key="heightClass=regular-widthClass=regular" constant="184"/>
+                        </constraint>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mxj-Ad-wKo" userLabel="downPartView">
-                    <rect key="frame" x="0.0" y="181" width="320" height="387"/>
+                    <rect key="frame" x="0.0" y="213" width="600" height="387"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="387" id="Xa0-4F-jcT"/>
                     </constraints>
+                    <variation key="heightClass=regular-widthClass=regular">
+                        <mask key="constraints">
+                            <exclude reference="Xa0-4F-jcT"/>
+                        </mask>
+                    </variation>
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="mxj-Ad-wKo" firstAttribute="top" secondItem="EJw-dq-Ooh" secondAttribute="bottom" constant="116" id="8BE-LJ-4fU">
+                    <variation key="heightClass=regular-widthClass=regular" constant="30"/>
+                </constraint>
                 <constraint firstItem="cTZ-3e-AHo" firstAttribute="leading" secondItem="4Wa-kH-Ij8" secondAttribute="leading" id="CIE-sg-5rg"/>
                 <constraint firstItem="mxj-Ad-wKo" firstAttribute="leading" secondItem="4Wa-kH-Ij8" secondAttribute="leading" id="F3f-OW-x6u"/>
                 <constraint firstAttribute="trailing" secondItem="mxj-Ad-wKo" secondAttribute="trailing" id="Hw1-lK-o1Y"/>
+                <constraint firstItem="EJw-dq-Ooh" firstAttribute="top" secondItem="4Wa-kH-Ij8" secondAttribute="top" constant="148" id="Ji1-yq-Bjo">
+                    <variation key="heightClass=regular-widthClass=regular" constant="51"/>
+                </constraint>
                 <constraint firstAttribute="bottom" secondItem="cTZ-3e-AHo" secondAttribute="bottom" id="bE8-m6-ENN"/>
-                <constraint firstAttribute="bottom" secondItem="mxj-Ad-wKo" secondAttribute="bottom" id="c5R-ba-I6u"/>
+                <constraint firstAttribute="bottom" secondItem="mxj-Ad-wKo" secondAttribute="bottom" id="c5R-ba-I6u">
+                    <variation key="heightClass=regular-widthClass=regular" constant="15"/>
+                </constraint>
                 <constraint firstItem="cTZ-3e-AHo" firstAttribute="top" secondItem="4Wa-kH-Ij8" secondAttribute="top" id="fMH-NP-uPZ"/>
                 <constraint firstItem="cTZ-3e-AHo" firstAttribute="centerX" secondItem="EJw-dq-Ooh" secondAttribute="centerX" id="nmU-Wd-dzA"/>
                 <constraint firstItem="cTZ-3e-AHo" firstAttribute="centerY" secondItem="EJw-dq-Ooh" secondAttribute="centerY" constant="160" id="s1X-Vq-aPm"/>
                 <constraint firstAttribute="trailing" secondItem="cTZ-3e-AHo" secondAttribute="trailing" id="xQx-Ce-ZBB"/>
             </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="Ji1-yq-Bjo"/>
+                    <exclude reference="8BE-LJ-4fU"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=regular-widthClass=regular">
+                <mask key="constraints">
+                    <exclude reference="s1X-Vq-aPm"/>
+                    <include reference="Ji1-yq-Bjo"/>
+                    <include reference="8BE-LJ-4fU"/>
+                </mask>
+            </variation>
             <point key="canvasLocation" x="139" y="152"/>
         </view>
         <view contentMode="scaleToFill" id="Aa7-Xy-g4p" userLabel="waiting view">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Loading..." lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Hgg-Ql-RIN">
-                    <rect key="frame" x="125" y="249" width="76.5" height="21.5"/>
+                    <rect key="frame" x="265" y="265" width="76.5" height="21.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                     <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
                 </label>
                 <activityIndicatorView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" hidesWhenStopped="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="3o4-ZJ-qWJ">
-                    <rect key="frame" x="150" y="274" width="20" height="20"/>
+                    <rect key="frame" x="290" y="290" width="20" height="20"/>
                 </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
@@ -114,9 +153,4 @@
         <image name="shareBtn2.png" width="320" height="320"/>
         <image name="开始.png" width="420" height="420"/>
     </resources>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
-    </simulatedMetricsContainer>
 </document>

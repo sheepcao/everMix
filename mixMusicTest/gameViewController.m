@@ -12,7 +12,7 @@
 #import "BaiduMobAdView.h"
 
 #define kAdViewPortraitRect CGRectMake(0, [[UIScreen mainScreen] bounds].size.height-48-44,[[UIScreen mainScreen] bounds].size.width,48)
-
+#define kAdViewPortraitRect_IPAD CGRectMake(0, [[UIScreen mainScreen] bounds].size.height-60-60,[[UIScreen mainScreen] bounds].size.width,60)
 
 @interface gameViewController ()<UIAlertViewDelegate>
 
@@ -71,7 +71,14 @@ int answerPickedCount;
     self.coinShow = [UIButton buttonWithType:UIButtonTypeCustom];
     [self.coinShow setFrame:CGRectMake(21, 0, 60, 34)];
     [self.coinShow setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+//    self.coinShow.titleLabel.font =[UIFont fontWithName:@"Helvetica Neue" size:15];
+    if (IS_IPAD) {
+    self.coinShow.titleLabel.font =[UIFont fontWithName:@"Helvetica Neue" size:18];
+    }else
+    {
     self.coinShow.titleLabel.font =[UIFont fontWithName:@"Helvetica Neue" size:15];
+    }
+    
     self.coinShow.titleLabel.textAlignment = NSTextAlignmentRight ;
     
 
@@ -151,7 +158,13 @@ int answerPickedCount;
     //sharedAdView.AdUnitTag = @"myAdPlaceId1";
     //此处为广告位id，可以不进行设置，如需设置，在百度移动联盟上设置广告位id，然后将得到的id填写到此处。
     sharedAdView.AdType = BaiduMobAdViewTypeBanner;
-    sharedAdView.frame = kAdViewPortraitRect;
+    if (IS_IPAD) {
+        sharedAdView.frame = kAdViewPortraitRect_IPAD;
+
+    }else
+    {
+        sharedAdView.frame = kAdViewPortraitRect;
+    }
     sharedAdView.delegate = self;
     [self.view addSubview:sharedAdView];
     [sharedAdView start];
@@ -346,8 +359,19 @@ int answerPickedCount;
         cd3Btn = [[UIButton alloc] initWithFrame:CGRectMake(60, 2*distance+CD_SZIE+35, CD_SZIE-10, CD_SZIE-10)];
         cd4Btn = [[UIButton alloc] initWithFrame:CGRectMake(190, 2*distance+CD_SZIE+35, CD_SZIE-10, CD_SZIE-10)];
         cd5Btn = [[UIButton alloc] initWithFrame:CGRectMake(60, 3*distance+2*CD_SZIE+15, CD_SZIE-10, CD_SZIE-10)];
-    }
+    }else if(IS_IPAD)
+    {
+        distance = 65;
+        CGFloat base = 22;
+        NSLog(@"width:%f",[[UIScreen mainScreen] bounds].size.width);
         
+        cd1Btn = [[UIButton alloc] initWithFrame:CGRectMake(180, base, CD_SZIE_IPAD, CD_SZIE_IPAD)];
+        cd2Btn = [[UIButton alloc] initWithFrame:CGRectMake([[UIScreen mainScreen] bounds].size.width-320, base, CD_SZIE_IPAD, CD_SZIE_IPAD)];
+        cd3Btn = [[UIButton alloc] initWithFrame:CGRectMake(180, base + distance+CD_SZIE_IPAD, CD_SZIE_IPAD, CD_SZIE_IPAD)];
+        cd4Btn = [[UIButton alloc] initWithFrame:CGRectMake([[UIScreen mainScreen] bounds].size.width-320, base + distance+CD_SZIE_IPAD, CD_SZIE_IPAD, CD_SZIE_IPAD)];
+        cd5Btn = [[UIButton alloc] initWithFrame:CGRectMake(180, base + 2*distance+2*CD_SZIE_IPAD, CD_SZIE_IPAD, CD_SZIE_IPAD)];
+    }
+    
     
     [cd1Btn addTarget:self action:@selector(diskTap:) forControlEvents:UIControlEventTouchUpInside];
     [cd2Btn addTarget:self action:@selector(diskTap:) forControlEvents:UIControlEventTouchUpInside];
@@ -413,7 +437,15 @@ int answerPickedCount;
     
     if(!self.choicesBoardView)
     {
-        self.choicesBoardView = [[[NSBundle mainBundle] loadNibNamed:@"choicesBoardView" owner:self options:nil] objectAtIndex:0];
+        if(IS_IPAD)
+        {
+            self.choicesBoardView = [[[NSBundle mainBundle] loadNibNamed:@"choiceBoardView_iPad" owner:self options:nil] objectAtIndex:0];
+            
+        }else
+        {
+            self.choicesBoardView = [[[NSBundle mainBundle] loadNibNamed:@"choicesBoardView" owner:self options:nil] objectAtIndex:0];
+        }
+        
         [self.choicesBoardView setFrame:CGRectMake(self.downPartView.frame.origin.x,[UIScreen mainScreen].bounds.size.height , self.downPartView.frame.size.width,self.downPartView.frame.size.height - 60)];
         self.choicesBoardView.songName = @"";
         [self.choicesBoardView setupBoard];
@@ -430,15 +462,31 @@ int answerPickedCount;
     }
     //only support less than 7 letters.
     NSLog(@"center:%f",self.choicesBoardView.center.x);
-    CGFloat firstAnswerSquare_X = (self.choicesBoardView.center.x - (33+4) *songName.length/2 - self.choicesBoardView.frame.origin.x);//considering the distance between two squares . distance = 2.
+    
+    CGFloat base_Y;
+    CGFloat answerBtnSize;
+    CGFloat fontSize;
+    if (IS_IPAD) {
+        base_Y = 100;
+        answerBtnSize = 45;
+        fontSize = 22;
+    }else
+    {
+        base_Y = 70;
+        answerBtnSize = 32;
+        fontSize = 15;
+    }
+    
+    CGFloat firstAnswerSquare_X = (self.choicesBoardView.center.x - (answerBtnSize+5) *songName.length/2 - self.choicesBoardView.frame.origin.x);//considering the distance between two squares . distance = 2.
     UIImage *buttonBackImage = [UIImage imageNamed:@"answerBack"];
     for (int i = 0; i<songName.length; i++) {
          UIButton *answerButton = (UIButton *)[self.choicesBoardView viewWithTag:1];
         
-        AnswerButton *myAnswerBtn = [[AnswerButton alloc] initWithFrame:CGRectMake(firstAnswerSquare_X+1 + i*(4+33), answerButton.frame.origin.y - 75, 33, 33)];
+        AnswerButton *myAnswerBtn = [[AnswerButton alloc] initWithFrame:CGRectMake(firstAnswerSquare_X+1 + i*(answerBtnSize+5), answerButton.frame.origin.y - base_Y, answerBtnSize, answerBtnSize)];
         
         [myAnswerBtn addTarget:self action:@selector(answerTapped:) forControlEvents:UIControlEventTouchUpInside];
-        myAnswerBtn.titleLabel.font = [UIFont fontWithName:@"Helvetica Neue" size:20];        [myAnswerBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        myAnswerBtn.titleLabel.font = [UIFont fontWithName:@"Helvetica Neue" size:20];
+        [myAnswerBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         myAnswerBtn.tag = i+100;
         myAnswerBtn.isFromTag = -1;
         [myAnswerBtn setBackgroundImage:buttonBackImage forState:UIControlStateNormal];
@@ -568,14 +616,22 @@ int answerPickedCount;
 
             [self.diskButtons[self.choicesBoardView.songNumber] setHidden:YES];
             CGRect diskFrame = [(UIButton *)self.diskButtons[self.choicesBoardView.songNumber] frame];
-            diskFrame.size.width = CD_SZIE;
-            diskFrame.size.height = CD_SZIE;
+            
+//            diskFrame.size.width = CD_SZIE;
+//            diskFrame.size.height = CD_SZIE;
             
             UILabel *songResult = [[UILabel alloc] initWithFrame:diskFrame];
             songResult.center = [(UIButton *)self.diskButtons[self.choicesBoardView.songNumber] center];
 //            UILabel *songResult = [[UILabel alloc] initWithFrame:[(UIButton *)self.diskButtons[self.choicesBoardView.songNumber] frame] ];
             songResult.text = songNameGuessed;
-            songResult.font = [UIFont fontWithName:@"Oriya Sangam MN" size:18];
+            if (IS_IPAD) {
+                songResult.font = [UIFont fontWithName:@"Oriya Sangam MN" size:24];
+
+            }else
+            {
+                songResult.font = [UIFont fontWithName:@"Oriya Sangam MN" size:18];
+
+            }
             
             songResult.numberOfLines = 2;
             songResult.textAlignment = NSTextAlignmentCenter;
@@ -887,11 +943,13 @@ int answerPickedCount;
     [CommonUtility tapSound:@"click" withType:@"mp3"];
     
     [MobClick event:@"shareFromGame"];
+  
+    UIImage *shareImg = [UIImage imageNamed:[NSString stringWithFormat:@"cd%u.png",[self randomDiskNumberWithRange:13]]];
 
     [UMSocialSnsService presentSnsIconSheetView:self
                         appKey:@"54c46ea7fd98c5071d000668"
                                       shareText:@"谁的耳力还有富裕,快来帮帮忙！"
-                                     shareImage:[UIImage imageNamed:@"iconNew.png"]
+                                     shareImage:shareImg
                                 shareToSnsNames:@[UMShareToSina,UMShareToWechatSession,UMShareToWechatTimeline,UMShareToWechatFavorite]
                                        delegate:(id)self];
     
@@ -910,6 +968,15 @@ int answerPickedCount;
     [UMSocialData defaultData].extConfig.qqData.url = musicsURL;
     [UMSocialData defaultData].extConfig.qzoneData.url = musicsURL;
 
+}
+
+-(unsigned int)randomDiskNumberWithRange:(int)range
+{
+    unsigned int randomNumber = arc4random()%13+1;
+    
+    
+    return randomNumber;
+    
 }
 -(void)didFinishGetUMSocialDataInViewController:(UMSocialResponseEntity *)response
 {
@@ -1029,14 +1096,22 @@ int answerPickedCount;
             
             [self.diskButtons[self.choicesBoardView.songNumber] setHidden:YES];
             CGRect diskFrame = [(UIButton *)self.diskButtons[self.choicesBoardView.songNumber] frame];
-            diskFrame.size.width = CD_SZIE;
-            diskFrame.size.height = CD_SZIE;
+//            diskFrame.size.width = CD_SZIE;
+//            diskFrame.size.height = CD_SZIE;
 
             UILabel *songResult = [[UILabel alloc] initWithFrame:diskFrame];
             songResult.center = [(UIButton *)self.diskButtons[self.choicesBoardView.songNumber] center];
           
             songResult.text = songName;
-            songResult.font = [UIFont fontWithName:@"Oriya Sangam MN" size:18];
+            if (IS_IPAD) {
+                songResult.font = [UIFont fontWithName:@"Oriya Sangam MN" size:24];
+                
+            }else
+            {
+                songResult.font = [UIFont fontWithName:@"Oriya Sangam MN" size:18];
+                
+            }
+            
             songResult.numberOfLines = 2;
             songResult.textAlignment = NSTextAlignmentCenter;
             [songResult setTextColor:[UIColor whiteColor]];
@@ -1142,11 +1217,27 @@ int answerPickedCount;
 #pragma mark disk animation
 
 - (void)spinWithOptions: (UIViewAnimationOptions) options :(UIView *)destRotateView {
-    [UIView animateWithDuration: 0.015f
+    
+    CGFloat duration ;
+    CGFloat spinAngle ;
+    
+    
+    if(IS_IPAD)
+    {
+        duration = 0.02f;
+        spinAngle = M_PI/128;
+        
+    }else
+    {
+        duration = 0.015f;
+        spinAngle = M_PI/128;
+    }
+    
+    [UIView animateWithDuration: duration
                           delay: 0.0f
                         options: options
                      animations: ^{
-                         destRotateView.transform = CGAffineTransformRotate(destRotateView.transform, M_PI/128 );
+                         destRotateView.transform = CGAffineTransformRotate(destRotateView.transform, spinAngle );
                      }
                      completion: ^(BOOL finished) {
                          if (finished) {
@@ -1158,8 +1249,7 @@ int answerPickedCount;
                                  // if flag still set, keep spinning with constant speed
 
                                 [self spinWithOptions:UIViewAnimationOptionTransitionNone :destRotateView];
-                                 
-                                 
+   
                              }
                          }
                      }];
@@ -1344,6 +1434,15 @@ int answerPickedCount;
         
         if (![button isHidden]) {
             [button setEnabled:YES];
+            if (IS_IPAD) {
+                button.titleLabel.font = [UIFont fontWithName:@"Helvetica Neue" size:28];
+
+            }else
+            {
+                button.titleLabel.font = [UIFont fontWithName:@"Helvetica Neue" size:18];
+
+            }
+
             [button setTitle:[NSString stringWithFormat:@"%lu字歌",(unsigned long)[self.musicsArray[i] length]] forState:UIControlStateNormal];
 
         }

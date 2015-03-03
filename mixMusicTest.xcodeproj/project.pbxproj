@@ -212,6 +212,8 @@
 		A4AC86211A36CFE700CD19CA /* mixMusicTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A4AC86201A36CFE700CD19CA /* mixMusicTestTests.m */; };
 		A4AC86401A36F47100CD19CA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4AC863F1A36F47100CD19CA /* ViewController.m */; };
 		A4ACD30D1A7B580400C60454 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4ACD30C1A7B580400C60454 /* QuartzCore.framework */; };
+		A4AD6DDE1AA5749700F689D6 /* choiceBoardView_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4AD6DDD1AA5749700F689D6 /* choiceBoardView_iPad.xib */; };
+		A4AD6DE11AA57B9700F689D6 /* UIButton+customNav.m in Sources */ = {isa = PBXBuildFile; fileRef = A4AD6DE01AA57B9700F689D6 /* UIButton+customNav.m */; };
 		A4ADB5F81A83B5C200D991F8 /* note0.png in Resources */ = {isa = PBXBuildFile; fileRef = A4ADB5EE1A83B5C200D991F8 /* note0.png */; };
 		A4ADB5F91A83B5C200D991F8 /* note1.png in Resources */ = {isa = PBXBuildFile; fileRef = A4ADB5EF1A83B5C200D991F8 /* note1.png */; };
 		A4ADB5FA1A83B5C200D991F8 /* note2.png in Resources */ = {isa = PBXBuildFile; fileRef = A4ADB5F01A83B5C200D991F8 /* note2.png */; };
@@ -546,6 +548,9 @@
 		A4AC863E1A36F47100CD19CA /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		A4AC863F1A36F47100CD19CA /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		A4ACD30C1A7B580400C60454 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		A4AD6DDD1AA5749700F689D6 /* choiceBoardView_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = choiceBoardView_iPad.xib; sourceTree = "<group>"; };
+		A4AD6DDF1AA57B9700F689D6 /* UIButton+customNav.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+customNav.h"; sourceTree = "<group>"; };
+		A4AD6DE01AA57B9700F689D6 /* UIButton+customNav.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+customNav.m"; sourceTree = "<group>"; };
 		A4ADB5EE1A83B5C200D991F8 /* note0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = note0.png; sourceTree = "<group>"; };
 		A4ADB5EF1A83B5C200D991F8 /* note1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = note1.png; sourceTree = "<group>"; };
 		A4ADB5F01A83B5C200D991F8 /* note2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = note2.png; sourceTree = "<group>"; };
@@ -1132,6 +1137,8 @@
 				A4D050151A7612CA000D0A77 /* custonAlert */,
 				A450C7511A6F97F300E63ED6 /* IAP class */,
 				A4A375041A47D37F0064AF00 /* mixMusicTest.entitlements */,
+				A4AD6DDF1AA57B9700F689D6 /* UIButton+customNav.h */,
+				A4AD6DE01AA57B9700F689D6 /* UIButton+customNav.m */,
 				A4DDB6E11A4D036F00CFF980 /* AnswerButton.h */,
 				A4DDB6E21A4D036F00CFF980 /* AnswerButton.m */,
 				A4B9F7E41A820A9D00076531 /* globalVar.h */,
@@ -1147,6 +1154,7 @@
 				A4AC860C1A36CFE700CD19CA /* gameViewController.m */,
 				A4B268A71A8377570037DA16 /* fallAnimation.h */,
 				A4B268A81A8377570037DA16 /* fallAnimation.m */,
+				A4AD6DDD1AA5749700F689D6 /* choiceBoardView_iPad.xib */,
 				A4AC860E1A36CFE700CD19CA /* Main.storyboard */,
 				A4DAF7511A87BD6300D9A94F /* gameViewController.xib */,
 				A4DAF7331A87143D00D9A94F /* infoView.xib */,
@@ -1456,6 +1464,7 @@
 				A47EFFE01A67B8E6000FCAF7 /* 倒带.m4a in Resources */,
 				A4BAEF641A8464E800757BA6 /* levelPassView.xib in Resources */,
 				A466A14F1A8908D9005BD67C /* newGame.mp3 in Resources */,
+				A4AD6DDE1AA5749700F689D6 /* choiceBoardView_iPad.xib in Resources */,
 				A47E00051A67B8E6000FCAF7 /* 谁.m4a in Resources */,
 				A47E00201A67B8E6000FCAF7 /* 兄弟抱一下.m4a in Resources */,
 				A47EFFEC1A67B8E6000FCAF7 /* 王妃.m4a in Resources */,
@@ -1614,6 +1623,7 @@
 				A4ABE9F71A8889120012E956 /* ioapi.c in Sources */,
 				A4AC86401A36F47100CD19CA /* ViewController.m in Sources */,
 				A4DDB6E31A4D036F00CFF980 /* AnswerButton.m in Sources */,
+				A4AD6DE11AA57B9700F689D6 /* UIButton+customNav.m in Sources */,
 				A4ABE9F81A8889120012E956 /* mztools.c in Sources */,
 				A4E47CE81A539FC00039BDF6 /* myAlertView.m in Sources */,
 				A4AC86071A36CFE700CD19CA /* main.m in Sources */,

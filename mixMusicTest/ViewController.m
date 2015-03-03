@@ -224,6 +224,24 @@ int difficultyNow;
     CGRect pframe = CGRectMake(257, 308+20, 63, 30);
     [self.difficulty5 setFrame:pframe];
     
+    if (IS_IPAD) {
+        CGRect kframe = CGRectMake(50,625, 100, 50);
+        [self.difficulty1 setFrame:kframe];
+        
+        CGRect mframe = CGRectMake(170+20, 575, 100, 50);
+        [self.difficulty2 setFrame:mframe];
+        
+        CGRect nframe = CGRectMake(290+15, 710, 100, 50);
+        [self.difficulty3 setFrame:nframe];
+        
+        CGRect oframe = CGRectMake(413+15, 540, 100, 50);
+        [self.difficulty4 setFrame:oframe];
+        
+        CGRect pframe = CGRectMake(580+50, 592, 100, 50);
+        [self.difficulty5 setFrame:pframe];
+    }
+    
+    
     if(IS_IPHONE_5)
     {
       
@@ -373,6 +391,15 @@ int difficultyNow;
     
     [button setTitleEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 50)];
     [button setImageEdgeInsets:UIEdgeInsetsMake(10, 0, 9, 52)];
+    button.titleLabel.font = [UIFont boldSystemFontOfSize:15.0f ];
+
+    if (IS_IPAD) {
+        [button setTitleEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 50+20)];
+        [button setImageEdgeInsets:UIEdgeInsetsMake(15, 0, 14, 52+26)];
+        button.titleLabel.font = [UIFont boldSystemFontOfSize:24.0f ];
+        
+    }
+    
     [button setContentHorizontalAlignment:UIControlContentHorizontalAlignmentCenter];
     [button setContentVerticalAlignment:UIControlContentVerticalAlignmentFill];
 }
