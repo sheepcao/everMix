@@ -83,9 +83,11 @@ NSString *const IAPHelperProductPurchasedNotification = @"IAPHelperProductPurcha
               skProduct.localizedTitle,
               skProduct.price.floatValue);
     }
-    
-    _completionHandler(YES, skProducts);
-    _completionHandler = nil;
+    if (skProducts.count>0) {
+        _completionHandler(YES, skProducts);
+        _completionHandler = nil;
+    }
+
     
 }
 

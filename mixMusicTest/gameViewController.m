@@ -81,6 +81,10 @@ int answerPickedCount;
     [self dropDown];
 
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"topbar"] forBarMetrics: UIBarMetricsDefault];
+    if (IS_IPAD) {
+        NSDictionary *size = [NSDictionary dictionaryWithObjectsAndKeys:[UIFont boldSystemFontOfSize:21.0f],NSFontAttributeName,[UIColor whiteColor],NSForegroundColorAttributeName, nil];
+        self.navigationController.navigationBar.titleTextAttributes = size;
+    }
 
     [self.navigationController setNavigationBarHidden:NO];
     
@@ -286,7 +290,11 @@ int answerPickedCount;
     [coinsLabel setText:[NSString stringWithFormat:@"%d",[CommonUtility fetchCoinAmount]]];
     self.itemsToBuy = (UITableView *)[self.buyCoinsView viewWithTag:10];
 
-    self.myBuyController = [[buyCoinsViewController alloc] initWithCoinLabel:coinsLabel andParentController:self andParentCoinButton:self.coinShow andLoadingView:self.loadingView andTableView:self.itemsToBuy];
+    if (!self.myBuyController) {
+        
+        self.myBuyController = [[buyCoinsViewController alloc] initWithCoinLabel:coinsLabel andParentController:self andParentCoinButton:self.coinShow andLoadingView:self.loadingView andTableView:self.itemsToBuy];
+
+    }
     
     [self.buyCoinsView setFrame:CGRectMake(0, [UIScreen mainScreen].bounds.size.height, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
     
@@ -299,8 +307,11 @@ int answerPickedCount;
     self.itemsToBuy.delegate = self.myBuyController;
     self.itemsToBuy.dataSource = self.myBuyController;
 
-    self.refreshControl = [[UIRefreshControl alloc] init];
-    [self.itemsToBuy addSubview:self.refreshControl];
+    if (!self.refreshControl) {
+        self.refreshControl = [[UIRefreshControl alloc] init];
+        [self.itemsToBuy addSubview:self.refreshControl];
+    }
+
     
     [self.refreshControl addTarget:self.myBuyController action:@selector(reloadwithRefreshControl:) forControlEvents:UIControlEventValueChanged];
     [self.myBuyController reloadwithRefreshControl:self.refreshControl];
@@ -383,7 +394,7 @@ int answerPickedCount;
     }else if(IS_IPAD)
     {
         distance = 65;
-        CGFloat base = 22;
+        CGFloat base = 28;
         NSLog(@"width:%f",[[UIScreen mainScreen] bounds].size.width);
         
         cd1Btn = [[UIButton alloc] initWithFrame:CGRectMake(180, base, CD_SZIE_IPAD, CD_SZIE_IPAD)];
@@ -638,8 +649,17 @@ int answerPickedCount;
             [self.diskButtons[self.choicesBoardView.songNumber] setHidden:YES];
             CGRect diskFrame = [(UIButton *)self.diskButtons[self.choicesBoardView.songNumber] frame];
             
-//            diskFrame.size.width = CD_SZIE;
-//            diskFrame.size.height = CD_SZIE;
+            NSLog(@"diskFrame width:%f",diskFrame.size.width);
+
+            if (IS_IPAD) {
+                diskFrame.size.width = CD_SZIE_IPAD;
+                diskFrame.size.height = CD_SZIE_IPAD;
+            }else
+            {
+                diskFrame.size.width = CD_SZIE;
+                diskFrame.size.height = CD_SZIE;
+            }
+
             
             UILabel *songResult = [[UILabel alloc] initWithFrame:diskFrame];
             songResult.center = [(UIButton *)self.diskButtons[self.choicesBoardView.songNumber] center];
@@ -1284,7 +1304,7 @@ int answerPickedCount;
                 [button setEnabled:NO];
                 [button setTitle:@" " forState:UIControlStateNormal];
                 [self spinWithOptions: UIViewAnimationOptionTransitionNone:button];
-                NSLog(@"frame:%f",button.frame.origin.x);
+                NSLog(@"frame width:%f",button.frame.size.width);
             }
 
         }
@@ -1561,7 +1581,7 @@ int answerPickedCount;
     
     
     myGameViewController.delegate = self.delegate;
-    myGameViewController.navigationItem.title = [NSString stringWithFormat:@"%d",(levelNow  - [currentDifficulty intValue]*20)];
+    myGameViewController.navigationItem.title = [NSString stringWithFormat:@"第 %d 关",(levelNow  - [currentDifficulty intValue]*20)];
     myGameViewController.currentDifficulty = [self.gameDataForSingleLevel objectForKey:@"difficulty"];
     
     NSArray *arrayControllers = self.navigationController.viewControllers;

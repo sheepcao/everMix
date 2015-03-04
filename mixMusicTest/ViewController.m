@@ -135,6 +135,8 @@ int difficultyNow;
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    NSLog(@"viewWillAppear");
     [MobClick beginLogPageView:@"homePage"];
     
     [self.navigationController setNavigationBarHidden:YES];
@@ -165,6 +167,9 @@ int difficultyNow;
 
 -(void)viewDidAppear:(BOOL)animated
 {
+    
+    NSLog(@"viewDidAppear");
+
     [super viewDidAppear:animated];
     if (backFromGame) {
         if (timer != nil)
@@ -428,7 +433,7 @@ int difficultyNow;
 -(void)viewDidLayoutSubviews
 {
     [super viewDidLayoutSubviews];
-    
+    NSLog(@"viewDidLayoutSubviews");
     
     
     self.gameData = [self readDataFromPlist:@"gameData"] ;
@@ -456,7 +461,11 @@ int difficultyNow;
         {
         
         [self.begainGame setImage:[UIImage imageNamed:@"开始"] forState:UIControlStateNormal];
-        [self.begainGame setFrame:CGRectMake([[UIScreen mainScreen] bounds].size.width/2 - self.continueGame.frame.size.width/2 , self.continueGame.frame.origin.y, self.continueGame.frame.size.width, self.continueGame.frame.size.height)];
+        
+            CGPoint center = CGPointMake([[UIScreen mainScreen] bounds].size.width/2, self.continueGame.center.y);
+            [self.begainGame setCenter:center];
+//        [self.begainGame setFrame:CGRectMake([[UIScreen mainScreen] bounds].size.width/2 - self.continueGame.frame.size.width/2 , self.continueGame.frame.origin.y, self.continueGame.frame.size.width, self.continueGame.frame.size.height)];
+            
         [self.continueGame setHidden:YES];
         }
         
@@ -604,70 +613,7 @@ int difficultyNow;
 
 
 
-//-(void)drawStars:(int)Differentlevel
-//{
-//
-//    
-//    for (int i = 0; i<5; i++) {
-//        if (i <= Differentlevel) {
-//            [(UIButton *)self.starButtons[i] setImage:[UIImage imageNamed:@"star2"] forState:UIControlStateNormal];
-//        }
-//        if (i>Differentlevel) {
-//            [(UIButton *)self.starButtons[i] setImage:[UIImage imageNamed:@"star1"] forState:UIControlStateNormal];
-//        }
-//    }
-//    
-//    [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%d",Differentlevel] forKey:@"difficulty"];
-//
-//
-//    
-//}
-//
 
-//- (IBAction)starTapped:(UIButton *)sender {
-//    
-//    [MobClick event:@"chooseDifficulty"];
-//
-//    
-//    if ([self.continueGame isHidden]) {
-//        int starNumber = -1; //init with a invalid value.
-//        
-//        for (int i = 0; i<5; i++) {
-//            if(sender == self.starButtons[i])
-//            {
-//                starNumber = i;
-//            }
-//            
-//        }
-//        
-//        [self drawStars:starNumber];
-//        [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%d",starNumber*20] forKey:@"currentLevel"];
-//        
-//    }else
-//    {
-//        myAlertView *resetAlert = [[myAlertView alloc] initWithTitle:@"且慢!" message:@"变更难度将重置已猜歌曲的进度,请君三思。" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确认", nil];
-//        
-//        resetAlert.chooseWhichButton = sender;
-//        resetAlert.tag = 1;
-//        
-//        [resetAlert show];
-//    }
-//    
-//    
-//    
-////    int starNumber = -1; //init with a invalid value.
-////    
-////    for (int i = 0; i<5; i++) {
-////        if(sender == self.starButtons[i])
-////        {
-////            starNumber = i;
-////        }
-////
-////    }
-////    
-////    [self drawStars:starNumber];
-//
-//}
 
 -(void)resetPlist
 {
@@ -675,7 +621,8 @@ int difficultyNow;
 
     
     [self.begainGame setImage:[UIImage imageNamed:@"开始"] forState:UIControlStateNormal];
-    [self.begainGame setFrame:CGRectMake([[UIScreen mainScreen] bounds].size.width/2 - self.continueGame.frame.size.width/2 , self.continueGame.frame.origin.y, self.continueGame.frame.size.width, self.continueGame.frame.size.height)];
+    CGPoint center = CGPointMake([[UIScreen mainScreen] bounds].size.width/2, self.continueGame.center.y);
+    [self.begainGame setCenter:center];
 
     [self.continueGame setHidden:YES];
     
@@ -761,7 +708,9 @@ int difficultyNow;
         
     }
     myGameViewController.delegate = self;
-    myGameViewController.navigationItem.title = [NSString stringWithFormat:@"%d",levelNow];
+    myGameViewController.navigationItem.title = [NSString stringWithFormat:@"第 %d 关",levelNow];
+
+
     myGameViewController.currentDifficulty = [self.gameData objectForKey:@"difficulty"];
     [self.navigationController pushViewController:myGameViewController animated:YES];
 
@@ -817,7 +766,7 @@ int difficultyNow;
         [self modifyPlist:@"gameData" withValue:passMusics forKey:@"musicPlaying"];
 
         myGameViewController.delegate = self;
-        myGameViewController.navigationItem.title = [NSString stringWithFormat:@"%d",levelNow];
+        myGameViewController.navigationItem.title = [NSString stringWithFormat:@"第 %d 关",levelNow];
         myGameViewController.currentDifficulty = [self.gameData objectForKey:@"difficulty"];
         [self.navigationController pushViewController:myGameViewController animated:YES];
 
@@ -1007,8 +956,10 @@ int difficultyNow;
     
     
 
-    
+    if (!self.myBuyController) {
     self.myBuyController = [[buyCoinsViewController alloc] initWithCoinLabel:coinsLabel andParentController:self andParentCoinButton:self.coinsShowing andLoadingView:self.loadingView andTableView:self.itemsToBuy];
+    }
+
  
     [self.buyCoinsView setFrame:CGRectMake(0, [UIScreen mainScreen].bounds.size.height, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
     
@@ -1020,8 +971,12 @@ int difficultyNow;
     
     self.itemsToBuy.delegate = self.myBuyController;
     self.itemsToBuy.dataSource = self.myBuyController;
-    self.refreshControl = [[UIRefreshControl alloc] init];
-    [self.itemsToBuy addSubview:self.refreshControl];
+    if(!self.refreshControl)
+    {
+        self.refreshControl = [[UIRefreshControl alloc] init];
+        [self.itemsToBuy addSubview:self.refreshControl];
+    }
+
     
     [self.refreshControl addTarget:self.myBuyController action:@selector(reloadwithRefreshControl:) forControlEvents:UIControlEventValueChanged];
     [self.myBuyController reloadwithRefreshControl:self.refreshControl];
