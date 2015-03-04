@@ -366,6 +366,23 @@ int difficultyNow;
     [self.view addSubview:self.difficulty5];
     
     
+    UILabel *textTip = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 160, 40)];
+    textTip.center = CGPointMake(self.view.center.x, self.difficulty4.center.y - 32) ;
+    textTip.backgroundColor = [UIColor clearColor];
+    textTip.textColor = [UIColor lightTextColor];
+    textTip.textAlignment = NSTextAlignmentCenter;
+    textTip.text = @" 选择难度,开始猜歌";
+    
+    if (IS_IPAD) {
+        textTip.font = [UIFont systemFontOfSize:24.0f];
+        [textTip setFrame:CGRectMake(0, 0, 250, 45)];
+        [textTip setCenter:CGPointMake(self.view.center.x, self.difficulty4.center.y - 55)];
+
+    }
+    
+    [self.view addSubview:textTip];
+    
+    
     [self goUpper];
     bounceNumber = 0;
 

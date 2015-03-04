@@ -164,11 +164,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/ViewController.m"
-            timestampString = "447130185.092233"
+            timestampString = "447149069.413428"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "862"
-            endingLineNumber = "862"
+            startingLineNumber = "879"
+            endingLineNumber = "879"
             landmarkName = "-removePlistFromDocument:"
             landmarkType = "5">
          </BreakpointContent>
@@ -180,11 +180,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/ViewController.m"
-            timestampString = "447130185.092233"
+            timestampString = "447149069.413428"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "840"
-            endingLineNumber = "840"
+            startingLineNumber = "857"
+            endingLineNumber = "857"
             landmarkName = "-aboutUs:"
             landmarkType = "5">
          </BreakpointContent>
@@ -196,11 +196,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/ViewController.m"
-            timestampString = "447130029.60619"
+            timestampString = "447149069.413428"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "534"
-            endingLineNumber = "534"
+            startingLineNumber = "551"
+            endingLineNumber = "551"
             landmarkName = "-changeDifficultyTo:"
             landmarkType = "5">
          </BreakpointContent>
@@ -480,11 +480,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/ViewController.m"
-            timestampString = "447130185.092233"
+            timestampString = "447149069.413428"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "727"
-            endingLineNumber = "727"
+            startingLineNumber = "744"
+            endingLineNumber = "744"
             landmarkName = "-beginTapped:"
             landmarkType = "5">
          </BreakpointContent>
@@ -512,11 +512,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/ViewController.m"
-            timestampString = "447130185.092233"
+            timestampString = "447149069.413428"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "814"
-            endingLineNumber = "814"
+            startingLineNumber = "831"
+            endingLineNumber = "831"
             landmarkName = "-socialShare"
             landmarkType = "5">
          </BreakpointContent>
@@ -544,11 +544,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/ViewController.m"
-            timestampString = "447130185.092233"
+            timestampString = "447149069.413428"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "689"
-            endingLineNumber = "689"
+            startingLineNumber = "706"
+            endingLineNumber = "706"
             landmarkName = "-continueTapped:"
             landmarkType = "5">
          </BreakpointContent>
@@ -560,11 +560,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/ViewController.m"
-            timestampString = "447130185.092233"
+            timestampString = "447149069.413428"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "644"
-            endingLineNumber = "644"
+            startingLineNumber = "661"
+            endingLineNumber = "661"
             landmarkName = "-alertView:clickedButtonAtIndex:"
             landmarkType = "5">
          </BreakpointContent>
@@ -608,11 +608,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/ViewController.m"
-            timestampString = "447130185.092233"
+            timestampString = "447149069.413428"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "719"
-            endingLineNumber = "719"
+            startingLineNumber = "736"
+            endingLineNumber = "736"
             landmarkName = "-beginTapped:"
             landmarkType = "5">
          </BreakpointContent>
@@ -640,11 +640,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/ViewController.m"
-            timestampString = "447130185.092233"
+            timestampString = "447149069.413428"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "867"
-            endingLineNumber = "867"
+            startingLineNumber = "884"
+            endingLineNumber = "884"
             landmarkName = "-copyPlistToDocument:"
             landmarkType = "5">
          </BreakpointContent>
@@ -704,11 +704,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/ViewController.m"
-            timestampString = "447130185.092233"
+            timestampString = "447149069.413428"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "914"
-            endingLineNumber = "914"
+            startingLineNumber = "931"
+            endingLineNumber = "931"
             landmarkName = "-modifyPlist:withValue:forKey:"
             landmarkType = "5">
          </BreakpointContent>
@@ -762,11 +762,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/ViewController.m"
-            timestampString = "447130185.092233"
+            timestampString = "447149069.413428"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "940"
-            endingLineNumber = "940"
+            startingLineNumber = "957"
+            endingLineNumber = "957"
             landmarkName = "-buyCoinsTapped:"
             landmarkType = "5">
          </BreakpointContent>
@@ -874,11 +874,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/ViewController.m"
-            timestampString = "447130185.092233"
+            timestampString = "447149069.413428"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "641"
-            endingLineNumber = "641"
+            startingLineNumber = "658"
+            endingLineNumber = "658"
             landmarkName = "-alertView:clickedButtonAtIndex:"
             landmarkType = "5">
          </BreakpointContent>
@@ -890,11 +890,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/ViewController.m"
-            timestampString = "447145551.310897"
+            timestampString = "447149069.413428"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1189"
-            endingLineNumber = "1189"
+            startingLineNumber = "1206"
+            endingLineNumber = "1206"
             landmarkName = "-dailyReward"
             landmarkType = "5">
          </BreakpointContent>
@@ -970,11 +970,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/ViewController.m"
-            timestampString = "447145551.310897"
+            timestampString = "447149069.413428"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "962"
-            endingLineNumber = "962"
+            startingLineNumber = "979"
+            endingLineNumber = "979"
             landmarkName = "-buyCoinsTapped:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1082,11 +1082,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/ViewController.m"
-            timestampString = "447145551.310897"
+            timestampString = "447149069.413428"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1684"
-            endingLineNumber = "1684">
+            startingLineNumber = "1701"
+            endingLineNumber = "1701">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1096,11 +1096,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/ViewController.m"
-            timestampString = "447145551.310897"
+            timestampString = "447149069.413428"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1724"
-            endingLineNumber = "1724">
+            startingLineNumber = "1741"
+            endingLineNumber = "1741">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1110,11 +1110,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/ViewController.m"
-            timestampString = "447145551.310897"
+            timestampString = "447149069.413428"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1686"
-            endingLineNumber = "1686">
+            startingLineNumber = "1703"
+            endingLineNumber = "1703">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1188,11 +1188,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/ViewController.m"
-            timestampString = "447130185.092233"
+            timestampString = "447149069.413428"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "845"
-            endingLineNumber = "845"
+            startingLineNumber = "862"
+            endingLineNumber = "862"
             landmarkName = "-removePlistFromDocument:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1220,11 +1220,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/ViewController.m"
-            timestampString = "447145551.310897"
+            timestampString = "447149069.413428"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1017"
-            endingLineNumber = "1017"
+            startingLineNumber = "1034"
+            endingLineNumber = "1034"
             landmarkName = "-infoTap"
             landmarkType = "5">
          </BreakpointContent>
@@ -1268,11 +1268,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/ViewController.m"
-            timestampString = "447145551.310897"
+            timestampString = "447149069.413428"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1319"
-            endingLineNumber = "1319"
+            startingLineNumber = "1336"
+            endingLineNumber = "1336"
             landmarkName = "-publisherId"
             landmarkType = "5">
          </BreakpointContent>
@@ -1284,11 +1284,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/ViewController.m"
-            timestampString = "447130029.60619"
+            timestampString = "447149069.413428"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "529"
-            endingLineNumber = "529"
+            startingLineNumber = "546"
+            endingLineNumber = "546"
             landmarkName = "-changeDifficultyTo:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1412,11 +1412,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/ViewController.m"
-            timestampString = "447130185.092233"
+            timestampString = "447149069.413428"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "676"
-            endingLineNumber = "676"
+            startingLineNumber = "693"
+            endingLineNumber = "693"
             landmarkName = "-continueTapped:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1428,11 +1428,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/ViewController.m"
-            timestampString = "447128716.415174"
+            timestampString = "447149069.413428"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "448"
-            endingLineNumber = "448"
+            startingLineNumber = "465"
+            endingLineNumber = "465"
             landmarkName = "-viewDidLayoutSubviews"
             landmarkType = "5">
          </BreakpointContent>
@@ -1476,11 +1476,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/ViewController.m"
-            timestampString = "447128716.415174"
+            timestampString = "447149069.413428"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "436"
-            endingLineNumber = "436"
+            startingLineNumber = "453"
+            endingLineNumber = "453"
             landmarkName = "-viewDidLayoutSubviews"
             landmarkType = "5">
          </BreakpointContent>
@@ -1492,11 +1492,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/ViewController.m"
-            timestampString = "447130185.092233"
+            timestampString = "447149069.413428"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "729"
-            endingLineNumber = "729"
+            startingLineNumber = "746"
+            endingLineNumber = "746"
             landmarkName = "-beginTapped:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1540,11 +1540,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/ViewController.m"
-            timestampString = "447130185.092233"
+            timestampString = "447149069.413428"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "798"
-            endingLineNumber = "798"
+            startingLineNumber = "815"
+            endingLineNumber = "815"
             landmarkName = "-socialShare"
             landmarkType = "5">
          </BreakpointContent>
@@ -1556,11 +1556,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/ViewController.m"
-            timestampString = "447130029.60619"
+            timestampString = "447149069.413428"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "580"
-            endingLineNumber = "580"
+            startingLineNumber = "597"
+            endingLineNumber = "597"
             landmarkName = "-configSongs"
             landmarkType = "5">
          </BreakpointContent>
@@ -1572,11 +1572,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/ViewController.m"
-            timestampString = "447130029.60619"
+            timestampString = "447149069.413428"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "585"
-            endingLineNumber = "585"
+            startingLineNumber = "602"
+            endingLineNumber = "602"
             landmarkName = "-configSongs"
             landmarkType = "5">
          </BreakpointContent>
@@ -1588,11 +1588,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/ViewController.m"
-            timestampString = "447130185.092233"
+            timestampString = "447149069.413428"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "681"
-            endingLineNumber = "681"
+            startingLineNumber = "698"
+            endingLineNumber = "698"
             landmarkName = "-continueTapped:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1604,11 +1604,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/ViewController.m"
-            timestampString = "447145551.310897"
+            timestampString = "447149069.413428"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1474"
-            endingLineNumber = "1474"
+            startingLineNumber = "1491"
+            endingLineNumber = "1491"
             landmarkName = "-dropDown"
             landmarkType = "5">
          </BreakpointContent>
@@ -1637,11 +1637,11 @@
             condition = "i = 9"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/ViewController.m"
-            timestampString = "447145551.310897"
+            timestampString = "447149069.413428"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1480"
-            endingLineNumber = "1480"
+            startingLineNumber = "1497"
+            endingLineNumber = "1497"
             landmarkName = "-dropDown"
             landmarkType = "5">
          </BreakpointContent>
@@ -1653,11 +1653,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/ViewController.m"
-            timestampString = "447145551.310897"
+            timestampString = "447149069.413428"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1527"
-            endingLineNumber = "1527"
+            startingLineNumber = "1544"
+            endingLineNumber = "1544"
             landmarkName = "-setupAnimationNote:imageName:ImageFrame:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1669,11 +1669,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/ViewController.m"
-            timestampString = "447145551.310897"
+            timestampString = "447149069.413428"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1487"
-            endingLineNumber = "1487"
+            startingLineNumber = "1504"
+            endingLineNumber = "1504"
             landmarkName = "-dropDown"
             landmarkType = "5">
          </BreakpointContent>
@@ -1685,11 +1685,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/ViewController.m"
-            timestampString = "447145551.310897"
+            timestampString = "447149069.413428"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1526"
-            endingLineNumber = "1526"
+            startingLineNumber = "1543"
+            endingLineNumber = "1543"
             landmarkName = "-setupAnimationNote:imageName:ImageFrame:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1701,11 +1701,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/ViewController.m"
-            timestampString = "447145551.310897"
+            timestampString = "447149069.413428"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1533"
-            endingLineNumber = "1533"
+            startingLineNumber = "1550"
+            endingLineNumber = "1550"
             landmarkName = "-setupAnimationNote:imageName:ImageFrame:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1749,11 +1749,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/ViewController.m"
-            timestampString = "447128716.415174"
+            timestampString = "447149069.413428"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "461"
-            endingLineNumber = "461"
+            startingLineNumber = "478"
+            endingLineNumber = "478"
             landmarkName = "-viewDidLayoutSubviews"
             landmarkType = "5">
          </BreakpointContent>
@@ -1765,11 +1765,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/ViewController.m"
-            timestampString = "447130029.60619"
+            timestampString = "447149069.413428"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "469"
-            endingLineNumber = "469"
+            startingLineNumber = "486"
+            endingLineNumber = "486"
             landmarkName = "-viewDidLayoutSubviews"
             landmarkType = "5">
          </BreakpointContent>
@@ -1781,11 +1781,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/ViewController.m"
-            timestampString = "447129899.994295"
+            timestampString = "447149069.413428"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "464"
-            endingLineNumber = "464"
+            startingLineNumber = "481"
+            endingLineNumber = "481"
             landmarkName = "-viewDidLayoutSubviews"
             landmarkType = "5">
          </BreakpointContent>
@@ -1797,11 +1797,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/ViewController.m"
-            timestampString = "447145551.310897"
+            timestampString = "447149069.413428"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "973"
-            endingLineNumber = "973"
+            startingLineNumber = "990"
+            endingLineNumber = "990"
             landmarkName = "-buyCoinsTapped:"
             landmarkType = "5">
          </BreakpointContent>
