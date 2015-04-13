@@ -97,9 +97,6 @@
             if (![[[NSUserDefaults standardUserDefaults] objectForKey:@"sinaShare"] isEqualToString:@"yes"]) {
                 [_products addObject:@"分享新浪微博奖励300金币"];
             }
-            if (![[[NSUserDefaults standardUserDefaults] objectForKey:@"reviewed"] isEqualToString:@"yes"] /*&&[CommonUtility fetchCoinAmount] < 400*/) {
-                [_products addObject:@"好评一下，奖励300金币"];
-            }
 
             
             [self.itemsTable reloadData];

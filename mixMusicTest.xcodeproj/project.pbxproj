@@ -151,6 +151,33 @@
 		A48B304E1A80D54800A4DF8D /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A48B304D1A80D54800A4DF8D /* AudioToolbox.framework */; };
 		A48B30511A80D63400A4DF8D /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A48B304F1A80D5D200A4DF8D /* CoreTelephony.framework */; };
 		A48B30531A80D69300A4DF8D /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A48B30521A80D69300A4DF8D /* MessageUI.framework */; };
+		A49268911ADB5D2F007838F9 /* BAD.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A492688C1ADB5D2F007838F9 /* BAD.m4a */; };
+		A49268921ADB5D2F007838F9 /* CUBA.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A492688D1ADB5D2F007838F9 /* CUBA.m4a */; };
+		A49268931ADB5D2F007838F9 /* HALO.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A492688E1ADB5D2F007838F9 /* HALO.m4a */; };
+		A49268941ADB5D2F007838F9 /* MAPS.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A492688F1ADB5D2F007838F9 /* MAPS.m4a */; };
+		A49268951ADB5D2F007838F9 /* ROAR.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A49268901ADB5D2F007838F9 /* ROAR.m4a */; };
+		A49268971ADB5D76007838F9 /* ANIMALS.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A49268961ADB5D76007838F9 /* ANIMALS.m4a */; };
+		A49268991ADB5D84007838F9 /* ANGEL.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A49268981ADB5D84007838F9 /* ANGEL.m4a */; };
+		A492689B1ADB5D94007838F9 /* BABY.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A492689A1ADB5D94007838F9 /* BABY.m4a */; };
+		A492689D1ADB5D9E007838F9 /* BLUE.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A492689C1ADB5D9E007838F9 /* BLUE.m4a */; };
+		A49268A41ADB5DC5007838F9 /* CHICAGO.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A492689E1ADB5DC5007838F9 /* CHICAGO.m4a */; };
+		A49268A51ADB5DC5007838F9 /* COMPASS.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A492689F1ADB5DC5007838F9 /* COMPASS.m4a */; };
+		A49268A61ADB5DC5007838F9 /* HOLIDAY.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A49268A01ADB5DC5007838F9 /* HOLIDAY.m4a */; };
+		A49268A71ADB5DC5007838F9 /* IMAGINE.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A49268A11ADB5DC5007838F9 /* IMAGINE.m4a */; };
+		A49268A81ADB5DC5007838F9 /* JEALOUS.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A49268A21ADB5DC5007838F9 /* JEALOUS.m4a */; };
+		A49268A91ADB5DC5007838F9 /* MIRRORS.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A49268A31ADB5DC5007838F9 /* MIRRORS.m4a */; };
+		A49268B01ADB5DE4007838F9 /* DEMONS.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A49268AA1ADB5DE4007838F9 /* DEMONS.m4a */; };
+		A49268B11ADB5DE4007838F9 /* FANTASY.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A49268AB1ADB5DE4007838F9 /* FANTASY.m4a */; };
+		A49268B21ADB5DE4007838F9 /* HEAVEN.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A49268AC1ADB5DE4007838F9 /* HEAVEN.m4a */; };
+		A49268B31ADB5DE4007838F9 /* ROYALS.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A49268AD1ADB5DE4007838F9 /* ROYALS.m4a */; };
+		A49268B41ADB5DE4007838F9 /* SMOOTH.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A49268AE1ADB5DE4007838F9 /* SMOOTH.m4a */; };
+		A49268B51ADB5DE4007838F9 /* TIMBER.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A49268AF1ADB5DE4007838F9 /* TIMBER.m4a */; };
+		A49268B71ADB5E0B007838F9 /* HOME.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A49268B61ADB5E0B007838F9 /* HOME.m4a */; };
+		A49268BC1ADB5E29007838F9 /* PARTY.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A49268B81ADB5E29007838F9 /* PARTY.m4a */; };
+		A49268BD1ADB5E29007838F9 /* SHAME.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A49268B91ADB5E29007838F9 /* SHAME.m4a */; };
+		A49268BE1ADB5E29007838F9 /* SMILE.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A49268BA1ADB5E29007838F9 /* SMILE.m4a */; };
+		A49268BF1ADB5E29007838F9 /* VENUS.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A49268BB1ADB5E29007838F9 /* VENUS.m4a */; };
+		A49268C11ADB60D6007838F9 /* TRY.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A49268C01ADB60D6007838F9 /* TRY.m4a */; };
 		A4A0A3C61A5128C0007A0876 /* boardView.m in Sources */ = {isa = PBXBuildFile; fileRef = A4A0A3C51A5128C0007A0876 /* boardView.m */; };
 		A4A0C24D1A8108430032DF0B /* coin.png in Resources */ = {isa = PBXBuildFile; fileRef = A4A0C2451A8108430032DF0B /* coin.png */; };
 		A4A0C24F1A8108430032DF0B /* reviewBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = A4A0C2471A8108430032DF0B /* reviewBtn.png */; };
@@ -445,6 +472,33 @@
 		A48B304D1A80D54800A4DF8D /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		A48B304F1A80D5D200A4DF8D /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		A48B30521A80D69300A4DF8D /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		A492688C1ADB5D2F007838F9 /* BAD.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = BAD.m4a; path = ../2/BAD.m4a; sourceTree = "<group>"; };
+		A492688D1ADB5D2F007838F9 /* CUBA.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = CUBA.m4a; path = ../2/CUBA.m4a; sourceTree = "<group>"; };
+		A492688E1ADB5D2F007838F9 /* HALO.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = HALO.m4a; path = ../2/HALO.m4a; sourceTree = "<group>"; };
+		A492688F1ADB5D2F007838F9 /* MAPS.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = MAPS.m4a; path = ../2/MAPS.m4a; sourceTree = "<group>"; };
+		A49268901ADB5D2F007838F9 /* ROAR.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = ROAR.m4a; path = ../2/ROAR.m4a; sourceTree = "<group>"; };
+		A49268961ADB5D76007838F9 /* ANIMALS.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = ANIMALS.m4a; sourceTree = "<group>"; };
+		A49268981ADB5D84007838F9 /* ANGEL.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = ANGEL.m4a; sourceTree = "<group>"; };
+		A492689A1ADB5D94007838F9 /* BABY.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = BABY.m4a; sourceTree = "<group>"; };
+		A492689C1ADB5D9E007838F9 /* BLUE.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = BLUE.m4a; sourceTree = "<group>"; };
+		A492689E1ADB5DC5007838F9 /* CHICAGO.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = CHICAGO.m4a; sourceTree = "<group>"; };
+		A492689F1ADB5DC5007838F9 /* COMPASS.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = COMPASS.m4a; sourceTree = "<group>"; };
+		A49268A01ADB5DC5007838F9 /* HOLIDAY.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = HOLIDAY.m4a; sourceTree = "<group>"; };
+		A49268A11ADB5DC5007838F9 /* IMAGINE.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = IMAGINE.m4a; sourceTree = "<group>"; };
+		A49268A21ADB5DC5007838F9 /* JEALOUS.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = JEALOUS.m4a; sourceTree = "<group>"; };
+		A49268A31ADB5DC5007838F9 /* MIRRORS.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = MIRRORS.m4a; sourceTree = "<group>"; };
+		A49268AA1ADB5DE4007838F9 /* DEMONS.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = DEMONS.m4a; sourceTree = "<group>"; };
+		A49268AB1ADB5DE4007838F9 /* FANTASY.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = FANTASY.m4a; sourceTree = "<group>"; };
+		A49268AC1ADB5DE4007838F9 /* HEAVEN.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = HEAVEN.m4a; sourceTree = "<group>"; };
+		A49268AD1ADB5DE4007838F9 /* ROYALS.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = ROYALS.m4a; sourceTree = "<group>"; };
+		A49268AE1ADB5DE4007838F9 /* SMOOTH.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = SMOOTH.m4a; sourceTree = "<group>"; };
+		A49268AF1ADB5DE4007838F9 /* TIMBER.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = TIMBER.m4a; sourceTree = "<group>"; };
+		A49268B61ADB5E0B007838F9 /* HOME.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = HOME.m4a; sourceTree = "<group>"; };
+		A49268B81ADB5E29007838F9 /* PARTY.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = PARTY.m4a; sourceTree = "<group>"; };
+		A49268B91ADB5E29007838F9 /* SHAME.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = SHAME.m4a; sourceTree = "<group>"; };
+		A49268BA1ADB5E29007838F9 /* SMILE.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = SMILE.m4a; sourceTree = "<group>"; };
+		A49268BB1ADB5E29007838F9 /* VENUS.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = VENUS.m4a; sourceTree = "<group>"; };
+		A49268C01ADB60D6007838F9 /* TRY.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = TRY.m4a; sourceTree = "<group>"; };
 		A4A0A3C41A5128C0007A0876 /* boardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = boardView.h; sourceTree = "<group>"; };
 		A4A0A3C51A5128C0007A0876 /* boardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = boardView.m; sourceTree = "<group>"; };
 		A4A0C2451A8108430032DF0B /* coin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coin.png; sourceTree = "<group>"; };
@@ -759,6 +813,8 @@
 		A47EFF8C1A67B8E6000FCAF7 /* 3 */ = {
 			isa = PBXGroup;
 			children = (
+				A492688C1ADB5D2F007838F9 /* BAD.m4a */,
+				A49268C01ADB60D6007838F9 /* TRY.m4a */,
 				A47EFF8D1A67B8E6000FCAF7 /* 倍儿爽.m4a */,
 				A47EFF8E1A67B8E6000FCAF7 /* 喜欢你.m4a */,
 				A47EFF8F1A67B8E6000FCAF7 /* 在雨中.m4a */,
@@ -786,6 +842,13 @@
 		A47EFFA11A67B8E6000FCAF7 /* 4 */ = {
 			isa = PBXGroup;
 			children = (
+				A492689C1ADB5D9E007838F9 /* BLUE.m4a */,
+				A492689A1ADB5D94007838F9 /* BABY.m4a */,
+				A492688D1ADB5D2F007838F9 /* CUBA.m4a */,
+				A492688E1ADB5D2F007838F9 /* HALO.m4a */,
+				A492688F1ADB5D2F007838F9 /* MAPS.m4a */,
+				A49268901ADB5D2F007838F9 /* ROAR.m4a */,
+				A49268B61ADB5E0B007838F9 /* HOME.m4a */,
 				A47EFFA21A67B8E6000FCAF7 /* 一无所有.m4a */,
 				A47EFFA31A67B8E6000FCAF7 /* 为爱痴狂.m4a */,
 				A47EFFA41A67B8E6000FCAF7 /* 勇敢的心.m4a */,
@@ -814,6 +877,11 @@
 			isa = PBXGroup;
 			children = (
 				A47EFFB71A67B8E6000FCAF7 /* HIGH歌.m4a */,
+				A49268B81ADB5E29007838F9 /* PARTY.m4a */,
+				A49268B91ADB5E29007838F9 /* SHAME.m4a */,
+				A49268BA1ADB5E29007838F9 /* SMILE.m4a */,
+				A49268BB1ADB5E29007838F9 /* VENUS.m4a */,
+				A49268981ADB5D84007838F9 /* ANGEL.m4a */,
 				A47EFFB81A67B8E6000FCAF7 /* 一万个理由.m4a */,
 				A47EFFB91A67B8E6000FCAF7 /* 一生中最爱.m4a */,
 				A47EFFBA1A67B8E6000FCAF7 /* 不管有多苦.m4a */,
@@ -840,7 +908,20 @@
 		A47EFFCB1A67B8E6000FCAF7 /* 7 */ = {
 			isa = PBXGroup;
 			children = (
+				A49268961ADB5D76007838F9 /* ANIMALS.m4a */,
 				A47EFFCC1A67B8E6000FCAF7 /* BADBOY.m4a */,
+				A492689E1ADB5DC5007838F9 /* CHICAGO.m4a */,
+				A492689F1ADB5DC5007838F9 /* COMPASS.m4a */,
+				A49268A01ADB5DC5007838F9 /* HOLIDAY.m4a */,
+				A49268A11ADB5DC5007838F9 /* IMAGINE.m4a */,
+				A49268A21ADB5DC5007838F9 /* JEALOUS.m4a */,
+				A49268A31ADB5DC5007838F9 /* MIRRORS.m4a */,
+				A49268AA1ADB5DE4007838F9 /* DEMONS.m4a */,
+				A49268AB1ADB5DE4007838F9 /* FANTASY.m4a */,
+				A49268AC1ADB5DE4007838F9 /* HEAVEN.m4a */,
+				A49268AD1ADB5DE4007838F9 /* ROYALS.m4a */,
+				A49268AE1ADB5DE4007838F9 /* SMOOTH.m4a */,
+				A49268AF1ADB5DE4007838F9 /* TIMBER.m4a */,
 				A47EFFCD1A67B8E6000FCAF7 /* 一个人的精彩.m4a */,
 				A47EFFCE1A67B8E6000FCAF7 /* 一场游戏一场梦.m4a */,
 				A47EFFCF1A67B8E6000FCAF7 /* 今天你要嫁给我.m4a */,
@@ -1351,7 +1432,7 @@
 		A4AC85F91A36CFE700CD19CA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
+				LastUpgradeCheck = 0620;
 				ORGANIZATIONNAME = "Eric Cao";
 				TargetAttributes = {
 					A4AC86001A36CFE700CD19CA = {
@@ -1405,6 +1486,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4A6C1341A6B713600C6095C /* cd4.png in Resources */,
+				A49268B71ADB5E0B007838F9 /* HOME.m4a in Resources */,
 				A4A6C1321A6B713600C6095C /* cd2.png in Resources */,
 				A4ADB5FA1A83B5C200D991F8 /* note2.png in Resources */,
 				A47E001F1A67B8E6000FCAF7 /* 不管有多苦.m4a in Resources */,
@@ -1428,6 +1510,7 @@
 				A4AD6DEE1AA5A0A400F689D6 /* note10.png in Resources */,
 				A4DAF7481A87B46400D9A94F /* buyCellView.xib in Resources */,
 				A4D77D021A89A1A8007FB122 /* back_ios7.png in Resources */,
+				A49268951ADB5D2F007838F9 /* ROAR.m4a in Resources */,
 				A47EFFFF1A67B8E6000FCAF7 /* 牧马人.m4a in Resources */,
 				A4A0C2501A8108430032DF0B /* shareBtn.png in Resources */,
 				A4ADB6001A83B5C200D991F8 /* note8.png in Resources */,
@@ -1448,6 +1531,7 @@
 				A4CAD7611A8288BE00CF40D2 /* playSingleBtn.png in Resources */,
 				A4A5A2F31A74AAA8005634E9 /* UMSocialLocalizable.strings in Resources */,
 				A47E00191A67B8E6000FCAF7 /* 类似爱情.m4a in Resources */,
+				A49268A91ADB5DC5007838F9 /* MIRRORS.m4a in Resources */,
 				A4ADB5FB1A83B5C200D991F8 /* note3.png in Resources */,
 				A47E00361A67B8E6000FCAF7 /* 分手总要在雨天.m4a in Resources */,
 				A47E002B1A67B8E6000FCAF7 /* 新贵妃醉酒.m4a in Resources */,
@@ -1457,6 +1541,7 @@
 				A47EFFF01A67B8E6000FCAF7 /* 红日.m4a in Resources */,
 				A4A6C1351A6B713600C6095C /* cd5.png in Resources */,
 				A47E00371A67B8E6000FCAF7 /* 因为爱所以爱.m4a in Resources */,
+				A49268941ADB5D2F007838F9 /* MAPS.m4a in Resources */,
 				A4ADB5FC1A83B5C200D991F8 /* note4.png in Resources */,
 				A47E00291A67B8E6000FCAF7 /* 我的歌声里.m4a in Resources */,
 				A47E002E1A67B8E6000FCAF7 /* 终于等到你.m4a in Resources */,
@@ -1480,17 +1565,22 @@
 				A4E0A3011A865DB100AFF6D5 /* infoBtn.png in Resources */,
 				A47E00421A67B8E6000FCAF7 /* 看月亮爬上来.m4a in Resources */,
 				A4AD6DF51AA5A0A400F689D6 /* note17.png in Resources */,
+				A49268A81ADB5DC5007838F9 /* JEALOUS.m4a in Resources */,
 				A4DAF7501A87BD4700D9A94F /* shareBtn2.png in Resources */,
 				A4AD6DF01AA5A0A400F689D6 /* note12.png in Resources */,
+				A49268971ADB5D76007838F9 /* ANIMALS.m4a in Resources */,
 				A4DAF7401A879C5500D9A94F /* UMS_qq_icon.png in Resources */,
 				A47EFFEB1A67B8E6000FCAF7 /* 曹操.m4a in Resources */,
 				A4ADB5F81A83B5C200D991F8 /* note0.png in Resources */,
 				A47EFFEE1A67B8E6000FCAF7 /* 童话.m4a in Resources */,
+				A49268A41ADB5DC5007838F9 /* CHICAGO.m4a in Resources */,
 				A4A5A2F51A74AAA8005634E9 /* UMSCommentDetailController.xib in Resources */,
 				A47EFFE91A67B8E6000FCAF7 /* 情书.m4a in Resources */,
 				A47E002A1A67B8E6000FCAF7 /* 我的滑板鞋.m4a in Resources */,
 				A4AE927A1A8A3273005104DA /* cd13.png in Resources */,
 				A4AD6DF61AA5A0A400F689D6 /* note18.png in Resources */,
+				A49268BF1ADB5E29007838F9 /* VENUS.m4a in Resources */,
+				A49268A61ADB5DC5007838F9 /* HOLIDAY.m4a in Resources */,
 				A47EFFF71A67B8E6000FCAF7 /* 女人花.m4a in Resources */,
 				A47E00171A67B8E6000FCAF7 /* 爱的海洋.m4a in Resources */,
 				A4A0C25C1A811B290032DF0B /* topbar.png in Resources */,
@@ -1505,9 +1595,11 @@
 				A4AD6DDE1AA5749700F689D6 /* choiceBoardView_iPad.xib in Resources */,
 				A47E00051A67B8E6000FCAF7 /* 谁.m4a in Resources */,
 				A47E00201A67B8E6000FCAF7 /* 兄弟抱一下.m4a in Resources */,
+				A492689D1ADB5D9E007838F9 /* BLUE.m4a in Resources */,
 				A47EFFEC1A67B8E6000FCAF7 /* 王妃.m4a in Resources */,
 				A47E00161A67B8E6000FCAF7 /* 爱的供养.m4a in Resources */,
 				A47E000E1A67B8E6000FCAF7 /* 好久不见.m4a in Resources */,
+				A49268B11ADB5DE4007838F9 /* FANTASY.m4a in Resources */,
 				A4AD6DF31AA5A0A400F689D6 /* note15.png in Resources */,
 				A4A0C2521A8108430032DF0B /* 开始.png in Resources */,
 				A4B9F7DF1A81AFA300076531 /* gameBack.png in Resources */,
@@ -1517,13 +1609,18 @@
 				A47EFFEA1A67B8E6000FCAF7 /* 晴天.m4a in Resources */,
 				A4AE92791A8A3273005104DA /* cd12.png in Resources */,
 				A47E001C1A67B8E6000FCAF7 /* HIGH歌.m4a in Resources */,
+				A49268B41ADB5DE4007838F9 /* SMOOTH.m4a in Resources */,
+				A49268A51ADB5DC5007838F9 /* COMPASS.m4a in Resources */,
 				A4E0A2FD1A86576E00AFF6D5 /* checkMark.png in Resources */,
 				A4AE92761A8A3273005104DA /* cd9.png in Resources */,
 				A4CAD7581A8288BE00CF40D2 /* answerBack.png in Resources */,
+				A49268931ADB5D2F007838F9 /* HALO.m4a in Resources */,
 				A47E003E1A67B8E6000FCAF7 /* 有没有人告诉你.m4a in Resources */,
 				A4E0A2FF1A86578A00AFF6D5 /* cycle.png in Resources */,
 				A47E00121A67B8E6000FCAF7 /* 断桥残雪.m4a in Resources */,
+				A49268921ADB5D2F007838F9 /* CUBA.m4a in Resources */,
 				A4A5A2FC1A74AAA8005634E9 /* UMSShareListController.xib in Resources */,
+				A49268991ADB5D84007838F9 /* ANGEL.m4a in Resources */,
 				A4A0C24F1A8108430032DF0B /* reviewBtn.png in Resources */,
 				A4E0A30A1A865FBF00AFF6D5 /* nextCoin.png in Resources */,
 				A47E003B1A67B8E6000FCAF7 /* 想把我唱给你听.m4a in Resources */,
@@ -1545,7 +1642,10 @@
 				A4AD6DEF1AA5A0A400F689D6 /* note11.png in Resources */,
 				A466A1531A89110C005BD67C /* Correct.mp3 in Resources */,
 				A4DAF7521A87BD6300D9A94F /* gameViewController.xib in Resources */,
+				A49268911ADB5D2F007838F9 /* BAD.m4a in Resources */,
+				A49268A71ADB5DC5007838F9 /* IMAGINE.m4a in Resources */,
 				A47E00241A67B8E6000FCAF7 /* 如果没有你.m4a in Resources */,
+				A49268B21ADB5DE4007838F9 /* HEAVEN.m4a in Resources */,
 				A4DAF73E1A8799B900D9A94F /* Newsfeed-RSS-icon.png in Resources */,
 				A4ADB5F91A83B5C200D991F8 /* note1.png in Resources */,
 				A47EFFE71A67B8E6000FCAF7 /* 存在.m4a in Resources */,
@@ -1556,6 +1656,7 @@
 				A4ADB5FF1A83B5C200D991F8 /* note7.png in Resources */,
 				A4ABE9E91A8889120012E956 /* baidumobadsdk.bundle in Resources */,
 				A47E00381A67B8E6000FCAF7 /* 外婆的澎湖湾.m4a in Resources */,
+				A49268C11ADB60D6007838F9 /* TRY.m4a in Resources */,
 				A4A5A2FB1A74AAA8005634E9 /* UMSnsAccountViewController.xib in Resources */,
 				A47EFFF31A67B8E6000FCAF7 /* 逆战.m4a in Resources */,
 				A47E00011A67B8E6000FCAF7 /* 笨小孩.m4a in Resources */,
@@ -1578,6 +1679,7 @@
 				A47E00111A67B8E6000FCAF7 /* 我怀念的.m4a in Resources */,
 				A47EFFF91A67B8E6000FCAF7 /* 小酒窝.m4a in Resources */,
 				A4CAD75B1A8288BE00CF40D2 /* choiceBack.png in Resources */,
+				A49268BE1ADB5E29007838F9 /* SMILE.m4a in Resources */,
 				A47E000F1A67B8E6000FCAF7 /* 快乐崇拜.m4a in Resources */,
 				A466A13E1A890412005BD67C /* s_levelup.mp3 in Resources */,
 				A47E00061A67B8E6000FCAF7 /* 走天涯.m4a in Resources */,
@@ -1587,6 +1689,7 @@
 				A466A14B1A890780005BD67C /* s_remove.mp3 in Resources */,
 				A47E00391A67B8E6000FCAF7 /* 当爱已成往事.m4a in Resources */,
 				A47E003A1A67B8E6000FCAF7 /* 忠孝东路走九遍.m4a in Resources */,
+				A492689B1ADB5D94007838F9 /* BABY.m4a in Resources */,
 				A4DAF7371A87208300D9A94F /* UMS_sina_icon.png in Resources */,
 				A4A0C24D1A8108430032DF0B /* coin.png in Resources */,
 				A47E00141A67B8E6000FCAF7 /* 没离开过.m4a in Resources */,
@@ -1595,6 +1698,7 @@
 				A4AE92731A8A3273005104DA /* cd6.png in Resources */,
 				A4E0A3031A865DBA00AFF6D5 /* mainBack10.png in Resources */,
 				A47E00081A67B8E6000FCAF7 /* 一无所有.m4a in Resources */,
+				A49268B51ADB5DE4007838F9 /* TIMBER.m4a in Resources */,
 				A4AE92771A8A3273005104DA /* cd10.png in Resources */,
 				A4A6C1331A6B713600C6095C /* cd3.png in Resources */,
 				A47E002D1A67B8E6000FCAF7 /* 突然的自我.m4a in Resources */,
@@ -1611,9 +1715,13 @@
 				A47E00341A67B8E6000FCAF7 /* 像梦一样自由.m4a in Resources */,
 				A4DAF74F1A87BD4700D9A94F /* bomb.png in Resources */,
 				A466A1511A890BAD005BD67C /* comprar_coins.mp3 in Resources */,
+				A49268B31ADB5DE4007838F9 /* ROYALS.m4a in Resources */,
+				A49268B01ADB5DE4007838F9 /* DEMONS.m4a in Resources */,
 				A4A5A2F81A74AAA8005634E9 /* UMShareEditViewController.xib in Resources */,
 				A4A5A3101A750EF2005634E9 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
+				A49268BD1ADB5E29007838F9 /* SHAME.m4a in Resources */,
 				A47EFFFC1A67B8E6000FCAF7 /* 爱.m4a in Resources */,
+				A49268BC1ADB5E29007838F9 /* PARTY.m4a in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1757,7 +1865,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "0a336c09-8124-47c8-8d17-1d3f44633a58";
 				SDKROOT = iphoneos;
 			};
@@ -1802,7 +1910,6 @@
 		A4AC86251A36CFE700CD19CA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = mixMusicTest/mixMusicTest.entitlements;
@@ -1837,7 +1944,7 @@
 					"-lstdc++",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "06bea0a2-4c25-4cd9-9cfa-fe1a97aaf444";
+				PROVISIONING_PROFILE = "73c8e82a-1585-4388-9b5f-eafc930d6769";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1845,7 +1952,6 @@
 		A4AC86261A36CFE700CD19CA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = mixMusicTest/mixMusicTest.entitlements;
@@ -1876,7 +1982,7 @@
 					"-lstdc++",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "b2c1c871-cdbd-42ce-8627-6cd3f6c70057";
+				PROVISIONING_PROFILE = "8e7384fe-c509-4268-ab61-e827499311ee";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

@@ -6,6 +6,60 @@
 	<dict>
 		<key>红日</key>
 		<string>韩,孩,晚,相,遇,身,见,日,情,水,笨,歌,红,恨,你,单,手,小,爱,见,说</string>
+		<key>TIMBER</key>
+		<string>R,O,M,T,B,N,P,A,S,I,E,C,M,T,B,Y,U,W,Q,O,R</string>
+		<key>ANGEL</key>
+		<string>T,B,N,P,A,S,I,E,D,G,V,N,I,D,M,O,A,W,U,L,X</string>
+		<key>BABY</key>
+		<string>A,S,I,E,D,G,V,N,I,D,M,O,Y,B,G,A,Y,B,H,N,M</string>
+		<key>BAD</key>
+		<string>D,G,V,N,I,D,M,T,M,A,Q,W,E,B,R,O,P,L,D,T,C</string>
+		<key>BLUE</key>
+		<string>A,V,L,F,L,T,I,W,U,E,H,L,A,B,M,P,R,T,B,N,P</string>
+		<key>CUBA</key>
+		<string>H,L,A,B,M,B,M,E,U,X,I,C,P,O,U,R,T,A,N,P,S</string>
+		<key>HALO</key>
+		<string>P,A,S,I,E,O,L,T,I,W,U,E,H,D,B,G,U,R,K,A,T</string>
+		<key>HOME</key>
+		<string>G,U,R,K,A,T,E,L,M,Z,C,O,V,B,H,N,M,I,P,A,S</string>
+		<key>MAPS</key>
+		<string>L,M,Z,C,O,S,E,P,M,D,B,G,U,R,K,A,J,V,I,L,A</string>
+		<key>PARTY</key>
+		<string>P,S,K,C,R,F,E,N,T,W,R,M,G,A,Y,S,K,R,P,A,I</string>
+		<key>ROAR</key>
+		<string>N,R,E,Y,J,H,A,Q,W,R,E,T,Y,A,U,I,P,O,L,R,K,L</string>
+		<key>SHAME</key>
+		<string>M,F,E,N,T,A,H,J,H,A,Q,S,S,E,P,M,D,B,G,U,E</string>
+		<key>SMILE</key>
+		<string>N,E,Q,R,T,O,P,I,I,W,R,S,M,L,M,D,B,G,U,E,K</string>
+		<key>TRY</key>
+		<string>C,A,D,S,F,H,R,E,K,R,I,N,E,T,X,Q,T,G,C,Y,O</string>
+		<key>VENUS</key>
+		<string>K,O,P,F,D,S,U,F,Y,E,R,I,O,R,D,H,V,N,M,N,B</string>
+		<key>ANIMALS</key>
+		<string>Y,N,S,W,D,N,M,A,M,L,I,S,X,N,M,B,E,A,V,C,Z</string>
+		<key>CHICAGO</key>
+		<string>S,N,C,O,F,M,E,H,W,C,G,O,T,E,C,K,L,S,I,T,A</string>
+		<key>COMPASS</key>
+		<string>S,D,A,S,B,C,M,O,A,I,E,L,N,S,V,P,S,B,L,C,R</string>
+		<key>DEMONS</key>
+		<string>T,R,S,C,O,L,W,O,E,Z,C,V,B,D,L,J,N,G,Y,M,S</string>
+		<key>FANTASY</key>
+		<string>B,Y,U,A,K,G,A,N,H,J,O,S,Y,P,Q,F,T,Q,C,Y,T</string>
+		<key>HOLIDAY</key>
+		<string>Y,W,A,S,Y,D,Y,O,A,S,D,F,H,G,J,I,K,A,L,C,N</string>
+		<key>IMAGINE</key>
+		<string>L,E,N,O,I,V,M,G,E,S,N,E,L,Y,A,D,C,L,I,O,U</string>
+		<key>JEALOUS</key>
+		<string>P,E,L,P,N,S,R,Y,M,E,S,O,A,W,P,J,T,E,U,M,R</string>
+		<key>MIRRORS</key>
+		<string>W,E,A,S,A,D,L,R,O,S,R,A,R,D,F,G,I,H,M,K,L</string>
+		<key>ROYALS</key>
+		<string>N,W,Y,H,G,Z,I,A,Y,S,D,O,F,G,R,H,A,J,K,L,S</string>
+		<key>SMOOTH</key>
+		<string>Y,X,H,R,C,Z,L,H,O,L,A,R,M,E,X,N,O,S,P,V,T</string>
+		<key>HEAVEN</key>
+		<string>A,S,L,H,T,R,B,E,M,D,W,N,G,H,X,I,Y,V,C,O,E</string>
 		<key>我可以抱你吗</key>
 		<string>身,水,抱,相,我,喜,夜,水,吗,爱,以,单,你,爱,红,歌,手,小,日,红,可</string>
 		<key>一场游戏一场梦</key>
@@ -233,6 +287,8 @@
 		</array>
 		<array>
 			<string>在雨中</string>
+			<string>TRY</string>
+			<string>BAD</string>
 			<string>倍儿爽</string>
 			<string>喜欢你</string>
 			<string>女人花</string>
@@ -255,6 +311,13 @@
 		</array>
 		<array>
 			<string>为爱痴狂</string>
+			<string>BLUE</string>
+			<string>BABY</string>
+			<string>CUBA</string>
+			<string>HALO</string>
+			<string>MAPS</string>
+			<string>ROAR</string>
+			<string>HOME</string>
 			<string>一无所有</string>
 			<string>勇敢的心</string>
 			<string>匆匆那年</string>
@@ -277,6 +340,11 @@
 		</array>
 		<array>
 			<string>HIGH歌</string>
+			<string>PARTY</string>
+			<string>SHAME</string>
+			<string>SMILE</string>
+			<string>VENUS</string>
+			<string>ANGEL</string>
 			<string>一万个理由</string>
 			<string>一生中最爱</string>
 			<string>如果没有你</string>
@@ -299,6 +367,19 @@
 		</array>
 		<array>
 			<string>我可以抱你吗</string>
+			<string>ANIMALS</string>
+			<string>CHICAGO</string>
+			<string>COMPASS</string>
+			<string>HOLIDAY</string>
+			<string>IMAGINE</string>
+			<string>JEALOUS</string>
+			<string>MIRRORS</string>
+			<string>DEMONS</string>
+			<string>FANTASY</string>
+			<string>HEAVEN</string>
+			<string>ROYALS</string>
+			<string>SMOOTH</string>
+			<string>TIMBER</string>
 			<string>BADBOY</string>
 			<string>一个人的精彩</string>
 			<string>因为爱所以爱</string>

@@ -63,7 +63,7 @@ int difficultyNow;
 - (void)viewDidLoad {
     [super viewDidLoad];
  
-    
+    [self updatePlistWhenUpdateing];
 
     //eric:check font
 //    NSArray *fontFamilies = [UIFont familyNames];
@@ -110,7 +110,6 @@ int difficultyNow;
     [self setupDifficultyBtns];
 
     self.difficultyButtons = [NSArray arrayWithObjects:self.difficulty1,self.difficulty2,self.difficulty3,self.difficulty4,self.difficulty5, nil];
-    
     
     timer = [NSTimer scheduledTimerWithTimeInterval:25.0 target:self selector:@selector(bigADshow) userInfo:nil repeats:NO];
 
@@ -202,6 +201,20 @@ int difficultyNow;
         timer = nil;
     }
 }
+
+
+-(void)updatePlistWhenUpdateing
+{
+    if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"prior_version"] isEqualToString:VERSIONNUMBER]) {
+    
+        return;
+    }else
+    {
+        [self resetPlist];
+        [[NSUserDefaults standardUserDefaults] setObject:VERSIONNUMBER forKey:@"prior_version"];
+    }
+}
+
 -(void)setupDifficultyBtns
 {
     
