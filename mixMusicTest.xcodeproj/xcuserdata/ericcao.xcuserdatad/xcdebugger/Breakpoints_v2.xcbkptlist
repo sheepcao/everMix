@@ -1238,13 +1238,14 @@
                   continueAfterRunningActions = "No"
                   symbolName = "-[ViewController infoTap]"
                   moduleName = "mixMusicTest"
-                  urlString = "file:///Users/ericcao/develop/iOSTest/mixMusicCHN/mixMusicTest/ViewController.m"
-                  timestampString = "450609952.192194"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ericcao/Documents/develop/iOSTest/mixMusicCHN/mixMusicTest/ViewController.m"
+                  timestampString = "452672017.336929"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "1049"
                   endingLineNumber = "1049"
-                  offsetFromSymbolStart = "1352">
+                  offsetFromSymbolStart = "1157">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -1252,13 +1253,14 @@
                   continueAfterRunningActions = "No"
                   symbolName = "__25-[ViewController infoTap]_block_invoke"
                   moduleName = "mixMusicTest"
-                  urlString = "file:///Users/ericcao/develop/iOSTest/mixMusicCHN/mixMusicTest/ViewController.m"
-                  timestampString = "450609952.192638"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ericcao/Documents/develop/iOSTest/mixMusicCHN/mixMusicTest/ViewController.m"
+                  timestampString = "452672017.337054"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "1049"
                   endingLineNumber = "1049"
-                  offsetFromSymbolStart = "22">
+                  offsetFromSymbolStart = "15">
                </Location>
             </Locations>
          </BreakpointContent>
